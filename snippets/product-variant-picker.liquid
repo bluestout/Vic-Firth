@@ -1,0 +1,198 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - update_url: {Boolean} whether or not to update url when changing variants. If false, the url isn't updated. Default: true (optional).
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+{%- unless product.has_only_default_variant -%}
+  {%- if block.settings.picker_type == 'button' -%}
+    <variant-radios
+      id="variant-radios-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <fieldset class="js product-form__input">
+          <div class="fs-include-size-modal">
+            <legend class="form__label">{{ option.name }} : <span class="value fs-js-value">{{product.selected_or_first_available_variant.options[forloop.index0]}}</span><span>{% if option.name == 'Diameter' %}"{% endif %}</span></legend>
+            {% if product.metafields.magento.size_chart_media_images != blank and product.metafields.magento.size_chart_media_images != 'no_selection' %}
+            <div class="fs-size-modal-btn" id="fs-size-modal-btn">Size chart</div>
+            {% endif %}
+          </div>
+          {% if product.metafields.magento.size_chart_media_images != blank and product.metafields.magento.size_chart_media_images != 'no_selection' %}
+          {% assign size_img_name = product.metafields.magento.size_chart_media_images | split: "/"%}
+          <div id="fs-size-modal" class="fs-size-modal">
+            <!-- Modal content -->
+            <div class="fs-size-modal-content">
+              <div class="fs-size-modal-close-btn" id="fs-size-modal-close-btn">
+                <svg aria-hidden="true" focusable="false" width="25" height="25" class="icon icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+             
+              <div class="fs-size-modal-img-contain">
+              <img src="{{size_img_name.last | file_url}}" />
+              </div>
+              <div class="fs-size-modal-bottom">
+                <button class="fs-size-model-ok-btn" id="fs-size-model-ok-btn">OK</button>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          
+          {% render 'product-variant-options', product: product, option: option, block: block %}
+          
+        </fieldset>
+      {%- endfor -%}
+      <script type="application/json">
+        [
+          {% for variant in product.variants %}
+            {
+              "id":{{variant.id}},
+              "title":"{{variant.title | replace: '"', '%quote'}}",
+              "option1":{{variant.option1 | replace: '"', '%quote' | json}},
+              "option2":{{variant.option2 | replace: '"', '%quote' | json}},
+              "option3":{{variant.option3 | replace: '"', '%quote' | json}},
+              "sku":{{variant.sku | json}},
+              "requires_shipping":{{variant.requires_shipping | json}},
+              "taxable":{{variant.taxable | json}},
+              "featured_media":{{variant.featured_media | json}},
+              "available":{{variant.available | json}},
+              "name":{{variant.name | json}},
+              "public_title":{{variant.public_title | json}},
+              "options":{{variant.options | json}},
+              "price":{{variant.price | json}},
+              "weight":{{variant.weight | json}},
+              "compare_at_price":{{variant.compare_at_price | json}},
+              "inventory_management":{{variant.inventory_management | json}},
+              "barcode":{{variant.barcode | json}},
+              "requires_selling_plan":{{variant.requires_selling_plan | json}},
+              "selling_plan_allocations":{{variant.selling_plan_allocations | json}},
+              "quantity_rule":{{variant.quantity_rule | json}},
+              "upc": {{variant.barcode | json }}
+            } {% if forloop.last != true %},{% endif %}
+          {% endfor %}
+        ]
+      </script>
+    </variant-radios>
+  {%- else -%}
+    <variant-selects
+      id="variant-selects-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <div class="product-form__input product-form__input--dropdown">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+          <div class="select">
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {% render 'product-variant-options', product: product, option: option, block: block %}
+            </select>
+            {% render 'icon-caret' %}
+          </div>
+        </div>
+      {%- endfor -%}
+
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-selects>
+  {%- endif -%}
+{%- endunless -%}
+
+<noscript class="product-form__noscript-wrapper-{{ section.id }}">
+  <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+    <label class="form__label" for="Variants-{{ section.id }}">
+      {{- 'products.product.product_variants' | t -}}
+    </label>
+    <div class="select">
+      <select
+        name="id"
+        id="Variants-{{ section.id }}"
+        class="select__select"
+        form="{{ product_form_id }}"
+      >
+        {%- for variant in product.variants -%}
+          <option
+            {% if variant == product.selected_or_first_available_variant %}
+              selected="selected"
+            {% endif %}
+            {% if variant.available == false %}
+              disabled
+            {% endif %}
+            value="{{ variant.id }}"
+          >
+            {%- liquid
+              echo variant.title
+              echo variant.price | money | strip_html | prepend: ' - '
+              if variant.available == false
+                echo 'products.product.sold_out' | t | prepend: ' - '
+              endif
+              if variant.quantity_rule.increment > 1
+                echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
+              endif
+              if variant.quantity_rule.min > 1
+                echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
+              endif
+              if variant.quantity_rule.max != null
+                echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
+              endif
+              # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
+              # theme-check-disable
+              assign cart_quantity = cart | item_count_for_variant: variant.id
+              # theme-check-enable
+              if cart_quantity > 0
+                echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
+              endif
+            -%}
+          </option>
+        {%- endfor -%}
+      </select>
+      {% render 'icon-caret' %}
+    </div>
+  </div>
+</noscript>
+
+<script>
+  var size_modal = document.getElementById("fs-size-modal"); var size_btn = document.getElementById("fs-size-modal-btn");
+  var size_close = document.getElementById("fs-size-modal-close-btn");
+  var size_ok = document.getElementById("fs-size-model-ok-btn");
+ 
+  size_btn.onclick = function() {
+    size_modal.style.display = "block";
+  }
+  size_close.onclick = function() {
+    size_modal.style.display = "none";
+  }
+  size_ok.onclick = function() {
+    size_modal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == size_modal) {
+      size_modal.style.display = "none";
+    }
+  }
+ </script>

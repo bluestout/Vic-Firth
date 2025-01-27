@@ -1,0 +1,65 @@
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+{% comment %} First of all, we get last part of the URL that's supposedly the Youtube Video ID {% endcomment %}
+{% assign video_content = context.metafields.magento.sound_demo_video_link | split: '/' | last %}
+{% if video_content contains '&' %}
+  {% comment %} but we need strip any extra URL params {% endcomment %}
+  {% assign video_ids = video_content | split: '?' | last | split: '&' %}
+  {% for video_id_text in video_ids %}
+    {% if video_id_text contains 'v=' %}
+      {% assign video_id = video_id_text | split: '=' | last %}
+    {% endif %}
+  {% endfor %}
+  {% comment %} Finally, remove any hash string {% endcomment %}
+  {% else %}
+    {% assign video_ids = video_content | split: '?' | last %}
+    {% assign video_id = video_ids | split: '=' | last %}
+{% endif %}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="video-section isolate">
+    <deferred-media
+      class="video-section__media deferred-media no-js-hidden gradient global-media-settings global-media-settings--full-width"
+      data-media-id="{{ video_id }}" style="padding-bottom: 100%;">
+      <button
+        id="Deferred-Poster-Modal-{{ video_id }}"
+        class="video-section__poster media deferred-media__poster media--landscape"
+        type="button"
+        aria-label="{{ 'sections.video.load_video' | t: description: section.settings.description | escape }}"
+      >
+        {%- if context.metafields.magento.sound_demo_video != blank -%}
+          {%- capture sizes -%}
+              100vw
+          {%- endcapture -%}
+          {%- assign alt = 'sections.video.load_video' | t: description: section.settings.description | escape -%}
+          <img src="https://img.youtube.com/vi/{{video_id}}/hqdefault.jpg" loading="lazy" alt="{{alt}}">
+        {%- else -%}
+          {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+        {%- endif -%}
+        <span class="deferred-media__poster-button motion-reduce">
+          {%- render 'icon-play' -%}
+        </span>
+      </button>
+      <template>
+        {%- if context.metafields.magento.sound_demo_video_link contains 'youtu' -%}
+          <iframe
+            src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1"
+            class="js-youtube"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
+        {%- else -%}
+          <iframe
+            src="https://player.vimeo.com/video/{{ video_id }}"
+            class="js-vimeo"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
+        {%- endif -%}
+      </template>
+    </deferred-media>
+  </div>
+</div>

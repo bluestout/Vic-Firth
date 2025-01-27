@@ -1,0 +1,335 @@
+{%- assign columns = 3 -%}
+
+{%- style -%}
+  body {
+    overflow-x: hidden !important;
+  }
+    #shopify-section-{{ section.id }} {
+      background-color: #000;
+      position: relative;
+    }
+    #shopify-section-{{ section.id }} .page-width {
+      max-width: 1210px;
+    }
+    #shopify-section-{{ section.id }} .section-background {
+      background-image: url('{{ section.settings.background_image | img_url: '1920x' }}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+      // aspect-ratio: {{ section.settings.background_image.aspect_ratio }};
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 100%;
+      min-height: 968px;
+    }
+    @media (max-width: 768px) {
+      #shopify-section-{{ section.id }} .section-background {
+        min-height: 700px;
+        aspect-ratio: auto;
+      }
+    }
+
+    #shopify-section-{{ section.id }} .gradient,
+    #shopify-section-{{ section.id }} .container {
+      position: relative;
+    }
+    #shopify-section-{{ section.id }} .section-background::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%; 
+      background-image: linear-gradient(0deg, #000 15.48%, rgba(0, 0, 0, 0.00) 88.09%);
+    }
+    .section-{{ section.id }}-padding {
+        padding-top: calc({{ section.settings.padding_top }}px * 0.5);
+        padding-bottom: calc({{ section.settings.padding_bottom }}px  * 0.5);
+    }
+    
+    #shopify-section-{{ section.id }} .heading.uppercase {
+      text-align: center;
+      color: #FFF;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .description {
+      color: #FFF;
+      text-align: center;
+      font-family: 'Century Gothic', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 24px */
+      letter-spacing: 1px;
+      max-width: 750px;
+      margin: auto;
+      margin-bottom: 35px;
+    }
+    #shopify-section-{{ section.id }} .card {
+      background-image: linear-gradient(1deg, {{ section.settings.color1 }} 17.63%, {{ section.settings.color2 }} 32.89%, rgba(0, 0, 0, 0.43) 53.41%);
+      backdrop-filter: blur(2px);
+      padding: 9px 7px 3px;
+      border-radius: 8px;
+      height: 100%;
+    }
+    #shopify-section-{{ section.id }} .card .card__inner .card__media {
+      border-radius: 4px;
+      padding: 12px;
+      background: linear-gradient(180deg, #FFFBF3 81.28%, rgba(255, 251, 241, 0.57) 99.61%);
+    }
+    #shopify-section-{{ section.id }} .card .card__inner .card__media .media {
+      aspect-ratio: 1;
+      padding-bottom: 100%;
+    }
+    #shopify-section-{{ section.id }} .card .card__inner .card__content .title {
+      color: {{ section.settings.font_color }};
+      font-family: 'Century Gothic', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 160% */
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0;
+      letter-spacing: 0;
+    }
+    #shopify-section-{{ section.id }} .card .card__inner .card__content .title sup {
+      text-transform: lowercase;
+    }
+    #shopify-section-{{ section.id }} a.full-clicker {
+      display: block;
+      z-index: 6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: .3s ease;
+    }
+    #shopify-section-{{ section.id }} .card .card__inner .card__content {
+      height: 45px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+      #shopify-section-{{ section.id }} .heading.uppercase {
+        font-size: 50px;
+        margin-bottom: 30px;
+      }
+      #shopify-section-{{ section.id }} .description {
+        font-size: 20px;
+        margin-bottom:80px;
+      }
+      #shopify-section-{{ section.id }} .card {
+        padding: 22px 21px 5px;
+      }
+      #shopify-section-{{ section.id }} .card .card__inner .card__media {
+        padding: 20px;
+      }
+      #shopify-section-{{ section.id }} .card .card__inner .card__content .title {
+        font-size: 20px;
+        letter-spacing: 1px;
+      }
+      #shopify-section-{{ section.id }} .card .card__inner .card__content {
+        height: 80px;
+      }
+    }
+{%- endstyle -%}
+<div class="section-background"></div>
+<div class="color-{{ section.settings.color_scheme }} gradient page-width">
+  <div class="section-{{ section.id }}-padding">
+    <div class="container">
+        <h1 class="heading uppercase">{{ section.settings.heading }}</h1>
+        <div class="description">{{ section.settings.content }}</div>
+        <div class="grid grid--3-col-desktop grid--2-col">
+            {%- for block in section.blocks %}
+                <div class="grid__item">
+                  <div class="card">
+                    <div class="card__inner" style="position: relative;">
+                      <div class="card__media">
+                        <div class="media">
+                          {% liquid 
+                            assign image = block.settings.image
+                            if image == blank
+                                assign image = block.settings.collection.featured_image
+                            endif
+
+                            assign width = image.width
+                            assign height = width | divided_by: image.aspect_ratio | round
+                            assign alt = image.alt
+                          %}
+      
+                          <img
+                            srcset="{%- if image.width >= 165 -%}{{ image | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if image.width >= 330 -%}{{ image | image_url: width: 330 }} 330w,{%- endif -%}
+                            {%- if image.width >= 535 -%}{{ image | image_url: width: 535 }} 535w,{%- endif -%}
+                            {%- if image.width >= 750 -%}{{ image | image_url: width: 750 }} 750w,{%- endif -%}
+                            {%- if image.width >= 1000 -%}{{ image | image_url: width: 1000 }} 1000w,{%- endif -%}
+                            {%- if image.width >= 1500 -%}{{ image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                            {%- if image.width >= 3000 -%}{{ image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                            {{ image | image_url }} {{ image.width }}w"
+                            src="{{ image | image_url: width: 500 }}"
+                            sizes="
+                            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+                            (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+                            calc(100vw - 3rem)"
+                            alt="{{ alt }}"
+                            height="{{ height }}"
+                            width="{{ width }}"
+                            loading="lazy"
+                            class="motion-reduce"
+                          >
+                        </div>
+                      </div>
+                      <div class="card__content">
+                        <h2 class="title">{% if block.settings.title != blank %}{{ block.settings.title | replace: '400th', '400<sup>th</sup>' }}{% else %}{{ block.settings.collection.title }}{% endif %}</h2>
+                        <a href="{{ block.settings.collection.url }}" class="full-clicker"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {% endfor -%}
+        </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Holiday Gift",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    },
+    {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Holiday Gift Guide"
+    },
+    {
+        "type": "text",
+        "id": "content",
+        "label": "Content",
+        "default": "Lorem ipsum dolor sit amet consectetur. Malesuada quam eu mattis nullam facilisis urna. Congue lacus dui cras risus. Sed aenean faucibus lectus ut a in donec. Erat in semper pellentesque lacus. Donec at mattis tristique convallis sit nec at iaculis nibh."
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Card Gradient Setting"
+    },
+    {
+      "type": "color",
+      "id": "color1",
+      "label": "Color 1",
+      "default": "#AE041F"
+    },
+    {
+      "type": "color",
+      "id": "color2",
+      "label": "Color 2",
+      "default": "#CE0E2D"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Font Color",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "Collection"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image",
+                "info": "If you don't select the image here, the Featured image of that collection will be displayed."
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "info": "If you don't input here, the default title of that collection will be displayed."
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holiday Gift"
+    }
+  ]
+}
+{% endschema %}

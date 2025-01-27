@@ -1,0 +1,61 @@
+[data-section-type="past-episodes"] {
+  episode-slider {
+    .title {
+      text-align: center;
+      @media screen and (max-width: 749px) {
+        text-align: left;
+      }
+    }
+    display: block;
+    .splide__arrow {
+      top: auto;
+      bottom: 12px;
+      width: 44px;
+      height: 44px;
+      right: 0;
+      background: white;
+      border: 1px solid #5C5D60;
+      @media screen and (max-width: 749px) {
+        bottom: -11px;
+        right: auto;
+        left: 53px;
+      }
+      &.splide__arrow--prev {
+        display: none;
+      }
+    }
+    .splide__slide {
+      .info {
+        margin-top: 30px;
+        display: flex;
+        padding-right: 65px;
+        @media screen and (max-width: 749px) {
+          display: block;
+        }
+        .title-wrapper {
+          h3, p {
+            margin: 0;
+          }
+        }
+        .arrow-content {
+          margin-left: auto;
+          .right {
+            @media screen and (max-width: 749px) {
+              text-align: left;
+            }
+            h3, p {
+              margin: 0;
+            }
+            a {
+              color: black;
+              text-decoration: none;
+              @media screen and (max-width: 749px) { 
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

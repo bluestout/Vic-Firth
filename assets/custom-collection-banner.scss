@@ -1,0 +1,87 @@
+.collection-hero {
+  &.collection-hero--with-image {
+    position: relative;
+    &::after {
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 97.65%);
+      top: 0;
+      position: absolute;
+      z-index: 1;
+      opacity: 1;
+    }
+    &.original-banner-height--true {
+        padding: 0;
+        .collection-hero__inner {
+          display: flex;
+          align-items: center;
+          padding: 0;
+          max-width: initial;
+          .collection-hero__text-wrapper {
+            position: absolute;
+          }
+          .collection-hero__image-container {
+            position: initial;
+            img {
+              position: initial;
+            }
+          }
+        }
+    }
+    .collection-hero__inner {
+      justify-content: center;
+      align-items: center;
+      @media screen and (min-width: 990px) {
+        min-height: 300px;
+      }
+      @media screen and (max-width: 749px) {
+        min-height: initial;
+      }
+      
+      .collection-hero__text-wrapper {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        @media screen and (max-width: 749px) {
+          padding-top: 20px;
+        }
+        .collection-hero__title {
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          @media screen and (max-width: 749px) {
+            font-size: 24px;
+          }
+          img {
+            height: auto;
+            @media screen and (max-width: 749px) {
+              width: 81px;
+            }
+          }          
+        }
+        .collection-hero__description {
+          @media screen and (max-width: 749px) {
+            margin-top: 0;
+            p {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      .collection-hero__image-container {
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        border: none;
+        height: 100%;
+        top: 0;
+      }
+    }
+  }
+}
