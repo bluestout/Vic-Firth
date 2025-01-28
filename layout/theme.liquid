@@ -63,7 +63,7 @@
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
     {% assign content_for_header = content_for_header | remove_first: '"https:\/\/cdn.shopify.com\/s\/files\/1\/0729\/7938\/2564\/t\/1\/assets\/zendesk-embeddable.js?v=1680563681\u0026shop=zildjianshop.myshopify.com"' %}
-    {% render 'boost-sd-fallback' %}
+    
     {{ content_for_header }}
 
     {%- liquid
@@ -91,10 +91,10 @@
     </script>
 
  <!--begin-boost-pfs-filter-css-->
-   {% render 'boost-pfs-style' %}
+
  <!--end-boost-pfs-filter-css-->
  
- {{ 'tagalys-customisations.css' | asset_url | stylesheet_tag }}
+
   {{'custom-search.scss.css' | asset_url | stylesheet_tag }}
 </head>
 
@@ -102,8 +102,7 @@
 
     {% comment %} // Yotpo integration - add star rating to product grid in Search Results page {% endcomment %}
     {% comment %} {{ 'tagalys-customisations.js' | asset_url | script_tag }} {% endcomment %}
-    {{ 'tagalys-customisations.min.js' | asset_url | script_tag }}
-    <script src="https://storage.googleapis.com/tagalys-front-end-components/tagalys-ui-widgets-1.3.3.min.js"></script>
+
     <script type="text/javascript" src="https://cdn-widgetsrepository.yotpo.com/v1/loader/mCZeSZ8K6a4aMK16VZwVreN9r595I2azRrzMpQgd?languageCode=en"></script>
 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -174,7 +173,7 @@
  <!--end-boost-pfs-js-->
 
  <!--begin-boost-pfs-js-->
-   {% render 'boost-pfs' %}
+
  <!--end-boost-pfs-js-->
  {% comment %} <script src="//foursixty.com/media/scripts/fs.slider.v2.5.js" data-feed-id="zildjian-company" data-theme="slider_v2_5" data-open-links-in-same-page="true" data-cell-size="20%"></script>
  <style>.fs-has-links { display:none; } .fs-wrapper { height:auto; } .fs-slider_v2_5  .fs-entry-container { height:0 !important;width:20%!important;padding-top:20%!important; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:Times New Roman, serif;font-style:normal;font-weight:normal;font-size:14px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:14px; } .fs-wrapper div.fs-text-container * { color:#ffffff; } .fs-wrapper div.fs-text-container { background-color:rgba(0, 0, 0, 0.8);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-slider_v2_5 .fs-wrapper div.fs-timeline-entry { margin:1px; } </style> {% endcomment %}
