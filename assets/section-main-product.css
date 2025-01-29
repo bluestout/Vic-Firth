@@ -317,6 +317,10 @@ fieldset.product-form__input .form__label {
   margin: 0;
 }
 
+.product__info-container .shopify-app-block {
+  margin: 0;
+}
+
 .product__info-container iframe {
   max-width: 100%;
 }
