@@ -371,7 +371,7 @@
           "settings": {
             "image": "shopify://shop_images/Drumsticks-Catagory.jpg",
             "title": "Drumsticks",
-            "link": "shopify://products/american-classicr-1a"
+            "link": "shopify://collections/vic-firth-category-sticks"
           }
         },
         "column_38Fxn6": {
@@ -379,7 +379,7 @@
           "settings": {
             "image": "shopify://shop_images/Mallets-Category.jpg",
             "title": "Mallets",
-            "link": "shopify://products/american-classicr-1a"
+            "link": "shopify://collections/vic-firth-category-mallets"
           }
         },
         "column_xwcawE": {
@@ -387,7 +387,7 @@
           "settings": {
             "image": "shopify://shop_images/Alternative-Implements-Category_c45067fb-8a63-4fac-9e37-1cc3a7d18d88.jpg",
             "title": "Alt Implements",
-            "link": "shopify://products/american-classicr-1a"
+            "link": "shopify://collections/vic-firth-category-alternative-implements"
           }
         },
         "column_gJcAwP": {
@@ -395,7 +395,7 @@
           "settings": {
             "image": "shopify://shop_images/Gear-_-Accessories-Category.jpg",
             "title": "Apparel & Accessories",
-            "link": "shopify://products/american-classicr-1a"
+            "link": "shopify://collections/vic-firth-category-gear"
           }
         }
       },
