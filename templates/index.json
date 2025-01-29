@@ -321,7 +321,7 @@
             "badge": "NEW",
             "title": "SIGNATURE SERIES DRUMSTICKS",
             "link_label": "Shop Now",
-            "link": "shopify://pages/contact",
+            "link": "shopify://collections/vic-firth-category-sticks-drum-set-signature-series",
             "blank_link": false
           }
         },
@@ -333,7 +333,7 @@
             "badge": "Shop Now",
             "title": "AMERICAN CLASSIC",
             "link_label": "Shop Now",
-            "link": "shopify://products/american-classicr-2bn-nylon-tip",
+            "link": "shopify://collections/vic-firth-category-sticks-drum-set-american-classic",
             "blank_link": false
           }
         },
