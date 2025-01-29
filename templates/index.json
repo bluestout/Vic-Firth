@@ -340,8 +340,8 @@
         "column_iecrnL": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Terra--Promo-Block.jpg",
-            "mobile_image": "shopify://shop_images/Terra--Promo-Block.jpg",
+            "image": "shopify://shop_images/Terra--Promo-Block-1.jpg",
+            "mobile_image": "shopify://shop_images/Terra--Promo-Block-1.jpg",
             "badge": "Shop Now",
             "title": "Vic Firth Terra Series",
             "link_label": "Shop Now",
