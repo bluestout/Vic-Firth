@@ -466,10 +466,19 @@
         "6f00b032-06ec-45a4-abd8-fe6503bb4960": {
           "type": "artist",
           "settings": {
-            "featured_media": "shopify://shop_images/a20588-angle-shot_1_1.jpg",
-            "title": "Jharis Yokley",
-            "job": "My Brightest Diamond, Jose James, Chris Bullock",
-            "link": "shopify://blogs/artist/jharis-yokley-vf"
+            "featured_media": "shopify://shop_images/Joe-Styppa_d65b3ab0-b682-4389-abbb-9f5c3418d8b7.jpg",
+            "title": "Joe Styppa",
+            "job": "Jamie",
+            "link": "shopify://blogs/artist/joe-styppa-vf"
+          }
+        },
+        "d1138699-f745-4ba0-a4fb-1359ebec7f35": {
+          "type": "artist",
+          "settings": {
+            "featured_media": "shopify://shop_images/image_35eb17eb-3842-4d7c-a5ca-558c151ca2ba.jpg",
+            "title": "Adam Deitch",
+            "job": "Lettuce",
+            "link": "shopify://blogs/artist/adam-deitch-vf"
           }
         },
         "a17bec4a-0509-4dc3-b473-2a06dc79e9a2": {
@@ -484,27 +493,18 @@
         "d556e309-d411-4a05-b1fc-b8a9dd0e50d9": {
           "type": "artist",
           "settings": {
-            "featured_media": "shopify://shop_images/a20588-angle-shot_1.jpg",
-            "title": "Roni Kaspi",
-            "job": "Avishai Cohen Trio, Independent, Roniponi",
-            "link": "shopify://blogs/artist/roni-kaspi-vf"
-          }
-        },
-        "d1138699-f745-4ba0-a4fb-1359ebec7f35": {
-          "type": "artist",
-          "settings": {
-            "featured_media": "shopify://shop_images/image_35eb17eb-3842-4d7c-a5ca-558c151ca2ba.jpg",
-            "title": "Adam Deitch",
-            "job": "Lettuce",
-            "link": "shopify://blogs/artist/adam-deitch-vf"
+            "featured_media": "shopify://shop_images/Coleen-Clark_d5ac37fb-c038-464e-91b1-6a892904e808.jpg",
+            "title": "Coleen Clark",
+            "job": "Independent",
+            "link": "shopify://blogs/artist/colleen-clark-vf"
           }
         }
       },
       "block_order": [
         "6f00b032-06ec-45a4-abd8-fe6503bb4960",
+        "d1138699-f745-4ba0-a4fb-1359ebec7f35",
         "a17bec4a-0509-4dc3-b473-2a06dc79e9a2",
-        "d556e309-d411-4a05-b1fc-b8a9dd0e50d9",
-        "d1138699-f745-4ba0-a4fb-1359ebec7f35"
+        "d556e309-d411-4a05-b1fc-b8a9dd0e50d9"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.splide__slide {max-width: 195px; }}",
