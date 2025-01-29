@@ -5,13 +5,15 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    /* padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; */
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: 0;
   }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
+      padding-top: 0;
+      margin-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
@@ -37,75 +39,198 @@
   endif
 -%}
 
+<style>
+  [data-section-type=featured-artists] .collection{
+    justify-content: space-between;
+    background: #F8F8F9;
+  }
+  [data-section-type=featured-artists] .collection .img_wrapper{
+    width: 35%;
+  }
+  [data-section-type=featured-artists] .collection .content_wrapper{
+    width: 60%;
+  }
+  [data-section-type=featured-artists] .collection .content_wrapper .collection__title{
+    width: unset;
+    max-width: unset;
+    padding:0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+  }
+  [data-section-type=featured-artists] .collection .content_wrapper .collection__title .subtitle{
+    color: #ce0f2d;
+    text-align: center;
+    font-family: Century Gothic;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 14px */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  [data-section-type=featured-artists] .collection .collection__title .title{
+    margin-bottom: 10px;
+  }
+  [data-section-type=featured-artists] .collection .content_wrapper .collection__title .collection__view-all{
+    padding-right: 20px;
+  }
+  [data-section-type=featured-artists] .collection featured-article-component .splide__arrows .splide__arrow{
+    background: #fff;
+    top: 33%;
+  }
+  [data-section-type=featured-artists] .collection featured-article-component .splide__arrows{
+    position: unset;
+  }
+  [data-section-type=featured-artists] .collection featured-article-component .splide__arrows .splide__arrow--prev{
+    position: absolute;
+    left: 0;
+  }
+  [data-section-type=featured-artists] .collection featured-article-component .splide__arrows .splide__arrow--next{
+    position: absolute;
+    right: 0;
+  }
+  [data-section-type=featured-artists] .collection featured-article-component .artist-card .content h4{
+    color: var(--2, #000);
+    text-align: center;
+    font-family: Century Gothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 200% */
+    text-transform: uppercase;
+  }
+  [data-section-type=featured-artists] .collection featured-article-component .artist-card .content p{
+    color: var(--2, #000);
+    text-align: center;
+    font-family: Century Gothic;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 146.667% */
+    letter-spacing: 1px;
+  }
+  [data-section-type=featured-artists] .collection .img_wrapper .featured_artist_img{
+    position: absolute;
+    bottom:-60px;
+    right: -50px;
+    width: unset;
+    height: unset;
+  }
+  .img_wrapper{
+    position: relative;
+  }
+  @media screen and (max-width: 1300px) {
+    [data-section-type=featured-artists] .collection featured-article-component .splide__arrows .splide__arrow{
+      top: 25%;
+    }
+  }
+  @media screen and (max-width: 1300px) and (min-width: 769px){
+    .button{
+      letter-spacing: 1px;
+      padding: 0 1rem;
+    }
+    [data-section-type=featured-artists] .collection .content_wrapper .collection__title .subtitle{
+      text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    [data-section-type=featured-artists] .collection .content_wrapper .collection__title .subtitle{
+      text-align: unset;
+      display: none;
+    }
+    [data-section-type=featured-artists] .collection .collection__title .title{
+      margin-bottom: 0;
+    }
+    [data-section-type=featured-artists] .collection .content_wrapper .collection__title{
+      margin-bottom: 0;
+    }
+  }
+</style>
+
 <div data-section-type="featured-artists" class="color-{{ section.settings.color_scheme }} isolate gradient">
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
-    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
-      {%- if section.settings.title != blank -%}
-        <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
-      {%- endif -%}
-      
-      {%- if section.settings.url != blank -%}
-        <div class="collection__view-all">
-          <a
-            href="{{ section.settings.url }}"
-            class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
-            aria-label="BROWSE ALL ARTISTS"
-          >
-            BROWSE ALL ARTISTS
-          </a>
-        </div>
-      {%- endif -%}
+
+    <div class="img_wrapper">
+      <img src="{{ section.settings.bg_image |  image_url: width: 500  }}" class="featured_artist_bg_img">
+      <img src="{{ section.settings.image |  image_url: width: 450  }}" class="featured_artist_img">
     </div>
 
-    <featured-article-component>
-      <div class="splide">
-        <div class="splide__track">
-          <ul id="Slider-{{ section.id }}" class="splide__list">
-            {%- for block in section.blocks limit: section.settings.products_to_show -%}
-              <li
-                id="Slide-{{ section.id }}-{{ forloop.index }}"
-                class="splide__slide"
-              >
-                <div class="artist-card ratio"  style="--ratio-percent: 100%;">
-                  <a href="{{block.settings.link}}">
-                    <img
-                      srcset="
-                        {%- if block.settings.featured_media.width >= 165 -%}{{ block.settings.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
-                        {%- if block.settings.featured_media.width >= 360 -%}{{ block.settings.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
-                        {%- if block.settings.featured_media.width >= 533 -%}{{ block.settings.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
-                        {%- if block.settings.featured_media.width >= 720 -%}{{ block.settings.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
-                        {%- if block.settings.featured_media.width >= 940 -%}{{ block.settings.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
-                        {%- if block.settings.featured_media.width >= 1066 -%}{{ block.settings.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
-                        {{ block.settings.featured_media | image_url }} {{ block.settings.featured_media.width }}w
-                      "
-                      src="{{ block.settings.featured_media | image_url: width: 533 }}"
-                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                      alt="{{ block.settings.featured_media.alt | escape }}"
-                      class="motion-reduce"
-                      {% unless lazy_load == false %}
-                        loading="lazy"
-                      {% endunless %}
-                      width="{{ block.settings.featured_media.width }}"
-                      height="{{ block.settings.featured_media.height }}"
-                    > 
-                    <div class="content">
-                      <h4>{{block.settings.title}}</h4>
-                      <p>{{block.settings.job}}</p>
-                    </div>
-                  </a>
-                </div>
-              </li>
-            {%- else -%}
-              {%- for i in (1..4) -%}
-                <li class="grid__item">
-                  {% render 'card-product', show_vendor: section.settings.show_vendor %}
-                </li>
-              {%- endfor -%}
-            {%- endfor -%}
-          </ul>
-        </div>
+    <div class="content_wrapper">
+      <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+        {%- if section.settings.title != blank -%}
+          <div class="title_wrapper">
+            <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
+            <div class="subtitle">{{ section.settings.subtitle }}</div>
+          </div>
+
+        {%- endif -%}
+
+        {%- if section.settings.url != blank -%}
+          <div class="collection__view-all">
+            <a
+              href="{{ section.settings.url }}"
+              class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
+              aria-label="BROWSE ALL ARTISTS"
+            >
+              BROWSE ALL ARTISTS
+            </a>
+          </div>
+        {%- endif -%}
       </div>
-    </featured-article-component>
+
+      <featured-article-component>
+        <div class="splide">
+          <div class="splide__track">
+            <ul id="Slider-{{ section.id }}" class="splide__list">
+              {%- for block in section.blocks limit: section.settings.products_to_show -%}
+                <li
+                  id="Slide-{{ section.id }}-{{ forloop.index }}"
+                  class="splide__slide"
+                >
+                  <div class="artist-card ratio"  style="--ratio-percent: 100%;">
+                    <a href="{{block.settings.link}}">
+                      <img
+                        srcset="
+                          {%- if block.settings.featured_media.width >= 165 -%}{{ block.settings.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+                          {%- if block.settings.featured_media.width >= 360 -%}{{ block.settings.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+                          {%- if block.settings.featured_media.width >= 533 -%}{{ block.settings.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+                          {%- if block.settings.featured_media.width >= 720 -%}{{ block.settings.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+                          {%- if block.settings.featured_media.width >= 940 -%}{{ block.settings.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+                          {%- if block.settings.featured_media.width >= 1066 -%}{{ block.settings.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
+                          {{ block.settings.featured_media | image_url }} {{ block.settings.featured_media.width }}w
+                        "
+                        src="{{ block.settings.featured_media | image_url: width: 533 }}"
+                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                        alt="{{ block.settings.featured_media.alt | escape }}"
+                        class="motion-reduce"
+                        {% unless lazy_load == false %}
+                          loading="lazy"
+                        {% endunless %}
+                        width="{{ block.settings.featured_media.width }}"
+                        height="{{ block.settings.featured_media.height }}"
+                      > 
+                      <div class="content">
+                        <h4>{{block.settings.title}}</h4>
+                        <p>{{block.settings.job}}</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              {%- else -%}
+                {%- for i in (1..4) -%}
+                  <li class="grid__item">
+                    {% render 'card-product', show_vendor: section.settings.show_vendor %}
+                  </li>
+                {%- endfor -%}
+              {%- endfor -%}
+              </ul>
+          </div>
+        </div>
+       </featured-article-component>
+    </div>
+
   </div>
 </div>
 
@@ -121,7 +246,7 @@
     {
       "type": "text",
       "id": "title",
-      "default": "Featured artists",
+      "default": "Explore Our Artists",
       "label": "Title"
     },
     {
@@ -143,6 +268,22 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "Explore Sound Through Our Family Of Artists",
+      "label": "Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
     },
     {
       "type": "url",

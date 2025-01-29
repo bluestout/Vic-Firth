@@ -367,3 +367,30 @@
 main.collection .card__inner .card__badge.top {
   display: none;
 } */
+@media screen and (max-width: 480px) {
+  /* .card-wrapper .card .card__content .card__information .card__heading{
+    font-size: 14px !important;
+    line-height: 21px;
+  }
+  [data-section-type="featured-blog"] .title-wrapper-with-link .blog__title{
+    text-align: unset !important;
+    margin: unset !important;
+  }
+  [data-section-type="featured-blog"] .title-wrapper-with-link{
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  } */
+  [data-section-type=featured-artists] .collection .img_wrapper{
+    display: none;
+  }
+  [data-section-type=featured-artists] .collection .content_wrapper{
+    width: 100% !important;
+    padding-left: 20px;
+  }
+  /* [data-section-type="featured-blog"] .title-wrapper--self-padded-tablet-down{
+    padding: 0;
+  }
+  .grid--peek.slider .grid__item:first-of-type{
+    margin-left: 0 !important;
+  } */
+}

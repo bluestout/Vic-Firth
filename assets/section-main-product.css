@@ -313,6 +313,9 @@ fieldset.product-form__input .form__label {
 .product__info-container > * + * {
   margin: 1.5rem 0;
 }
+.product__info-container .shopify-app-block {
+  margin: 0;
+}
 
 .product__info-container .shopify-app-block {
   margin: 0;

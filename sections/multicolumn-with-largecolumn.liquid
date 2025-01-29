@@ -1,0 +1,244 @@
+<div class="multicolumn_with_large page-width">
+  <div class="columns_wrapper">
+    <div class="column-large">
+      <div class="column column-1">
+        {% for block in section.blocks %}
+          {% if forloop.index == 1%}
+          <a href="{{ block.settings.link }}" class="cover-link" {% if block.settings.blank_link %}target="_blank"{% endif %}></a>
+            <div class="img_wrapper desktop_only">
+              <img src="{{ block.settings.image | image_url}}">
+              <span class="badge_large">{{ block.settings.badge }}</span>
+            </div>
+            <div class="img_wrapper mobile_only">
+              <img src="{{ block.settings.mobile_image |  image_url }}">
+              <span class="badge_large">{{ block.settings.badge }}</span>
+            </div>
+            <div class="content_wrapper">
+              <h1 class="column_heading">{{ block.settings.title }}</h1>
+              <div class="column_link"><p>{{ block.settings.link_label }}</p><img src="{{ 'arrow-1.png' |  asset_url }}"></div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="column-large">
+      {% for block in section.blocks %}
+        {% if forloop.index > 1 %}
+          <div class="column column-{{ forloop.index }}">
+            <a href="{{ block.settings.link }}" class="cover-link" {% if block.settings.blank_link %}target="_blank"{% endif %}></a>
+            <div class="img_wrapper">
+              <img src="{{ block.settings.image |  image_url }}">
+              <span class="badge_large">{{ block.settings.badge }}</span>
+            </div>
+            <div class="content_wrapper">
+              <h1 class="column_heading">{{ block.settings.title }}</h1>
+              <div class="column_link"><p>{{ block.settings.link_label }}</p><img src="{{ 'arrow-1.png' |  asset_url }}"></div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .mobile_only{
+    display: none;
+  }
+  .multicolumn_with_large{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .multicolumn_with_large .columns_wrapper{
+    display: flex;
+    gap: 20px;
+  }
+  .multicolumn_with_large .columns_wrapper .cover-link{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+  }
+  .multicolumn_with_large .columns_wrapper .column-large{
+    width: 50%;
+    position: relative;
+    /* height: 800px; */
+  }
+  .img_wrapper img{
+    width: 100%;
+    height: 100%;
+  }
+  .img_wrapper{
+    position: relative;
+  }
+  
+  .column-2{
+    margin-bottom: 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .column-3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .badge_large{
+    position:absolute;
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid transparent;
+    border-radius: var(--badge-corner-radius);
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.1rem;
+    line-height: 1;
+    padding: 0.5rem 20px 0.5rem 20px;
+    text-align: center;
+    /* background-color: rgb(var(--color-badge-background)); */
+    border-color: rgba(var(--color-badge-border), var(--alpha-badge-border));
+    color: #fff;
+    word-break: break-word;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: rgba(var(--color-button), var(--alpha-button-background));
+  }
+  .column_heading{
+    color: var(--2, #000);
+    font-family: Century Gothic;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 24px */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .column_link{
+    display: flex;
+    align-items: center;
+    color: var(--2, #000);
+    font-family: "Century Gothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .column_link img{
+    padding-left: 10px;
+  }
+  .column_link p{
+    margin:0;
+  }
+  @media screen and (max-width: 1300px) and (min-width:500px) {
+    .column_heading{
+      font-size: 18px;
+      margin: 8px 0;
+    }
+    .column_link{
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .mobile_only{
+      display:block;
+    }
+    .desktop_only{
+      display: none;
+    }
+    .multicolumn_with_large .columns_wrapper{
+      flex-wrap: wrap;
+    }
+    .multicolumn_with_large .columns_wrapper .column-large{
+      width: 100%;
+    }
+    .column-2{
+      position: unset;
+    }
+    .column-3{
+      position: unset;
+    }
+    .column_heading{
+      font-size: 15px;
+    }
+    .column_link{
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+}
+</style>
+
+{% schema %}
+{
+  "name": "MultiColumn With Large",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile image"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link Label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blank_link",
+          "label": "open new windows"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MultiColumn With Large",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
