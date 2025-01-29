@@ -369,7 +369,7 @@
         "column_JTP6Up": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_81.jpg",
+            "image": "shopify://shop_images/Drumsticks-Catagory.jpg",
             "title": "Drumsticks",
             "link": "shopify://products/american-classicr-1a"
           }
@@ -377,7 +377,7 @@
         "column_38Fxn6": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Group_649.jpg",
+            "image": "shopify://shop_images/Mallets-Category.jpg",
             "title": "Mallets",
             "link": "shopify://products/american-classicr-1a"
           }
@@ -385,7 +385,7 @@
         "column_xwcawE": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_83.jpg",
+            "image": "shopify://shop_images/Alternative-Implements-Category_c45067fb-8a63-4fac-9e37-1cc3a7d18d88.jpg",
             "title": "Alt Implements",
             "link": "shopify://products/american-classicr-1a"
           }
@@ -393,7 +393,7 @@
         "column_gJcAwP": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_84.jpg",
+            "image": "shopify://shop_images/Gear-_-Accessories-Category.jpg",
             "title": "Apparel & Accessories",
             "link": "shopify://products/american-classicr-1a"
           }
@@ -463,24 +463,6 @@
     "c2348606-646b-4927-bb99-fa2e7e2d5711": {
       "type": "featured-artists",
       "blocks": {
-        "d556e309-d411-4a05-b1fc-b8a9dd0e50d9": {
-          "type": "artist",
-          "settings": {
-            "featured_media": "shopify://shop_images/a20588-angle-shot_1.jpg",
-            "title": "Roni Kaspi",
-            "job": "Avishai Cohen Trio, Independent, Roniponi",
-            "link": "shopify://blogs/artist/roni-kaspi-vf"
-          }
-        },
-        "d1138699-f745-4ba0-a4fb-1359ebec7f35": {
-          "type": "artist",
-          "settings": {
-            "featured_media": "shopify://shop_images/image_35eb17eb-3842-4d7c-a5ca-558c151ca2ba.jpg",
-            "title": "Adam Deitch",
-            "job": "Lettuce",
-            "link": "shopify://blogs/artist/adam-deitch-vf"
-          }
-        },
         "6f00b032-06ec-45a4-abd8-fe6503bb4960": {
           "type": "artist",
           "settings": {
@@ -498,13 +480,31 @@
             "job": "Vanderbilt University",
             "link": "shopify://blogs/artist/ji-hye-jung-vf"
           }
+        },
+        "d556e309-d411-4a05-b1fc-b8a9dd0e50d9": {
+          "type": "artist",
+          "settings": {
+            "featured_media": "shopify://shop_images/a20588-angle-shot_1.jpg",
+            "title": "Roni Kaspi",
+            "job": "Avishai Cohen Trio, Independent, Roniponi",
+            "link": "shopify://blogs/artist/roni-kaspi-vf"
+          }
+        },
+        "d1138699-f745-4ba0-a4fb-1359ebec7f35": {
+          "type": "artist",
+          "settings": {
+            "featured_media": "shopify://shop_images/image_35eb17eb-3842-4d7c-a5ca-558c151ca2ba.jpg",
+            "title": "Adam Deitch",
+            "job": "Lettuce",
+            "link": "shopify://blogs/artist/adam-deitch-vf"
+          }
         }
       },
       "block_order": [
-        "d556e309-d411-4a05-b1fc-b8a9dd0e50d9",
-        "d1138699-f745-4ba0-a4fb-1359ebec7f35",
         "6f00b032-06ec-45a4-abd8-fe6503bb4960",
-        "a17bec4a-0509-4dc3-b473-2a06dc79e9a2"
+        "a17bec4a-0509-4dc3-b473-2a06dc79e9a2",
+        "d556e309-d411-4a05-b1fc-b8a9dd0e50d9",
+        "d1138699-f745-4ba0-a4fb-1359ebec7f35"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.splide__slide {max-width: 195px; }}",
