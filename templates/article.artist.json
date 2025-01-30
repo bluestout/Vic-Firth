@@ -74,6 +74,7 @@
         },
         "fa2456f8-54be-441b-932f-6679729a8f65": {
           "type": "recent_post",
+          "disabled": true,
           "settings": {
             "title": "CHECK OUT OUR OTHER ARTISTS"
           }
@@ -137,11 +138,18 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "recent_articles_xaKkWU": {
+      "type": "recent_articles",
+      "settings": {
+        "title": "CHECK OUT OUR OTHER ARTISTS"
+      }
     }
   },
   "order": [
     "main",
     "main_article_question_section_MBxAgk",
-    "artist_featured_collection_tyUtrh"
+    "artist_featured_collection_tyUtrh",
+    "recent_articles_xaKkWU"
   ]
 }
