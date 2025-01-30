@@ -1,1 +1,150 @@
-{"sections":{"main":{"type":"main-article","blocks":{"featured_image":{"type":"featured_image","settings":{"image_height":"adapt"}},"5b90492d-846d-4a73-bfdc-0437c6de4f04":{"type":"title","settings":{"blog_show_date":false,"blog_show_author":false}},"content":{"type":"content","settings":{}},"543c39e1-2e95-4a79-9cb1-c4edf029d1f7":{"type":"image_text","settings":{"side_banner":false,"full_width":true,"image":"shopify:\/\/shop_images\/History-Photo-1_2_2_5.jpg","height":"adapt","desktop_image_width":"medium","layout":"image_first","desktop_content_position":"top","content_align":"middle","desktop_content_alignment":"left","content_layout":"no-overlap","color_scheme":"background-2","mobile_layout":"image_first","mobile_content_alignment":"left","text":"1. 14\" K Dark This Hihat(pair)* <br> 2. 22\" K Custom Dry Complex Ride* <br> 3. 22\" K Custom Dry Ride (Re-Lathed and Hammered) * <br> 4. 1970'S 20\" Swish * <br> 5. 22\" K Constantinople Renaissance Ride <br> 6. John Riley Artist Series Drumsticks <br> <br><br> * May be prototype","padding_top":100,"padding_bottom":36,"quote":false,"max_width":"450"}},"0668294f-ea6d-4c55-b965-4206b5e4208e":{"type":"featured_product","settings":{}},"6b1dec1c-8a5a-4507-9932-dda22b937df2":{"type":"about","settings":{}},"527a453f-7343-4051-869e-35f96d142bef":{"type":"video","settings":{"heading":"Video","heading_size":"h1","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","description":"","full_width":false,"color_scheme":"background-1","padding_top":36,"padding_bottom":36}}},"block_order":["featured_image","5b90492d-846d-4a73-bfdc-0437c6de4f04","content","543c39e1-2e95-4a79-9cb1-c4edf029d1f7","0668294f-ea6d-4c55-b965-4206b5e4208e","6b1dec1c-8a5a-4507-9932-dda22b937df2","527a453f-7343-4051-869e-35f96d142bef"],"custom_css":["{margin-bottom: 50px;}"],"settings":{}},"a4dfb8e7-5c4d-4afe-a8c0-8b68a4fb9ad6":{"type":"artist-featured-collection","settings":{"title":"{{ article.title }}’S GO-TO’S","heading_size":"h1","description":"","show_description":false,"description_style":"body","collection":"","new_blank":false,"products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"adapt","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"ff351b0d-8dcf-48a9-851a-c8ba63e220f2":{"type":"recent_articles","settings":{"title":"CHECK OUT OUR OTHER ARTISTS"}}},"order":["main","a4dfb8e7-5c4d-4afe-a8c0-8b68a4fb9ad6","ff351b0d-8dcf-48a9-851a-c8ba63e220f2"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "5b90492d-846d-4a73-bfdc-0437c6de4f04": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": false
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "543c39e1-2e95-4a79-9cb1-c4edf029d1f7": {
+          "type": "image_text",
+          "settings": {
+            "side_banner": false,
+            "full_width": true,
+            "image": "shopify://shop_images/History-Photo-1_2_2_5.jpg",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "image_first",
+            "desktop_content_position": "top",
+            "content_align": "middle",
+            "desktop_content_alignment": "left",
+            "content_layout": "no-overlap",
+            "color_scheme": "background-2",
+            "mobile_layout": "image_first",
+            "mobile_content_alignment": "left",
+            "padding_top": 100,
+            "padding_bottom": 36,
+            "quote": false,
+            "max_width": "450"
+          }
+        },
+        "0668294f-ea6d-4c55-b965-4206b5e4208e": {
+          "type": "featured_product",
+          "settings": {}
+        },
+        "6b1dec1c-8a5a-4507-9932-dda22b937df2": {
+          "type": "about",
+          "settings": {}
+        },
+        "527a453f-7343-4051-869e-35f96d142bef": {
+          "type": "video",
+          "settings": {
+            "heading": "Video",
+            "heading_size": "h1",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "full_width": false,
+            "color_scheme": "background-1",
+            "padding_top": 36,
+            "padding_bottom": 36
+          }
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "5b90492d-846d-4a73-bfdc-0437c6de4f04",
+        "content",
+        "543c39e1-2e95-4a79-9cb1-c4edf029d1f7",
+        "0668294f-ea6d-4c55-b965-4206b5e4208e",
+        "6b1dec1c-8a5a-4507-9932-dda22b937df2",
+        "527a453f-7343-4051-869e-35f96d142bef"
+      ],
+      "custom_css": [
+        "{margin-bottom: 50px;}"
+      ],
+      "settings": {}
+    },
+    "main_article_question_section_wcDEPU": {
+      "type": "main-article-question-section",
+      "blocks": {
+        "text_qUjbjw": {
+          "type": "text",
+          "settings": {
+            "arti_blg": "",
+            "Artists_Title": "{{ block.settings.arti_blg.title }}",
+            "quest": "",
+            "quest2": "",
+            "quest3": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_qUjbjw"
+      ],
+      "settings": {}
+    },
+    "a4dfb8e7-5c4d-4afe-a8c0-8b68a4fb9ad6": {
+      "type": "artist-featured-collection",
+      "settings": {
+        "title": "{{ article.title }}’S GO-TO’S",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "new_blank": false,
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ff351b0d-8dcf-48a9-851a-c8ba63e220f2": {
+      "type": "recent_articles",
+      "settings": {
+        "title": "CHECK OUT OUR OTHER ARTISTS"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_article_question_section_wcDEPU",
+    "a4dfb8e7-5c4d-4afe-a8c0-8b68a4fb9ad6",
+    "ff351b0d-8dcf-48a9-851a-c8ba63e220f2"
+  ]
+}
