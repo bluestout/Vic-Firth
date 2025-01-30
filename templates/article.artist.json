@@ -113,7 +113,7 @@
     "artist_featured_collection_tyUtrh": {
       "type": "artist-featured-collection",
       "settings": {
-        "title": "",
+        "title": "{{ article.title }}’S GO-TO’S",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
