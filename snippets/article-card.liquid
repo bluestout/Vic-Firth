@@ -37,7 +37,7 @@
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       <div
-        class="card__inner {% if settings.blog_card_style == 'standard' %} color-{{ settings.blog_card_color_scheme }} gradient{% endif %}ratio"
+        class="card__inner {% if settings.blog_card_style == 'standard' %} color-{{ settings.blog_card_color_scheme }} gradient{% endif %} ratio"
         style="--ratio-percent: {{ 1 | times: 100 }}%;"
       >
         {%- if show_image == true and article.image -%}
