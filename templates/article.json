@@ -108,6 +108,9 @@
     },
     "a4dfb8e7-5c4d-4afe-a8c0-8b68a4fb9ad6": {
       "type": "artist-featured-collection",
+      "custom_css": [
+        "@media screen and (max-width: 767px) {.yotpo-sr-bottom-line-summary {flex-direction: column !important;}}"
+      ],
       "settings": {
         "title": "{{ article.title }}’S GO-TO’S",
         "heading_size": "h1",
