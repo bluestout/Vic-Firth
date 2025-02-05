@@ -59,13 +59,22 @@
               </h2>
             </div>
             <div class="image">
-              <div class="media" style="padding-bottom: 130%;">
+              <div class="media" style="{% if article.image %} padding-bottom: 130%; {% else %} padding-bottom: 100%; {% endif %}">
                 {% comment %} <img src="{{block.settings.artist_img | img_url: 'master'}}" loading="lazy" width="356" height="485" > {% endcomment %}
-                <img
-                  src="{{article.image | img_url: 'master'}}"
+                {% if article.image %}
+                  <img
+                    src="{{article.image | img_url: 'master'}}"
+                    loading="lazy"
+                    width="356"
+                    height="485">
+                {% else %}
+                  <img
+                  src="https://cdn.shopify.com/s/files/1/0734/0271/2364/files/Vic-Firth-Artist-Placeholder-Profile-Graphic.jpg?v=1738342230"
+                  style="object-fit: contain;"
                   loading="lazy"
-                  width="356"
-                  height="485">
+                  width=""
+                  height="">
+                {% endif %}
               </div>
             </div>
             <div class="content">
