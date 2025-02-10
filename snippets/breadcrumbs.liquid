@@ -3,8 +3,6 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    position: relative;
-    z-index: 1;
   }
 
   .breadcrumbs__item {
@@ -17,6 +15,7 @@
     position: relative;
     font-size: 14px;
     letter-spacing: 0;
+    text-transform: capitalize;
   }
 
   .breadcrumbs__item:not(:last-child):after {
@@ -49,7 +48,7 @@
   .breadcrumbs{
     max-width: var(--page-width);
     margin: 20px auto;
-    padding: 10px 90px;
+    padding: 10px 20px;
     position: relative;
   }
   .breadcrumbs::before{
@@ -60,7 +59,7 @@
     border-radius: 50%;
     background: black;
     position: absolute;
-    left: 50px;
+    left: 13px;
     top: 22px;
     transform: translateY(-50%);
   }
@@ -71,23 +70,31 @@
   {% endif %}
   @media screen and (max-width: 989px) {
     .breadcrumbs{
-      padding: 20px 20px;
-      margin: 0;
+      padding: 10px 20px 10px 40px;
+      margin: 20px 0 20px 10px;
+    }
+    .breadcrumbs .fs-prev-arrow{
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
     }
     .breadcrumbs__item:not(:last-child):after {
       content: none;
     }
     .breadcrumbs::before{
-      width: 5px;
-      height: 5px;
+      width: 10px;
+      height: 10px;
       display: block;
-      border: 1px solid #5C5D60;
+      border: 2px solid #5C5D60;
       border-top: none;
       border-left: none;
       transform: rotate(135deg);
       margin-right: 10px;
-      left: 25px;
-      top: 30px;
+      left: 19px;
+      top: 18px;
       background: transparent;
       border-radius: 0;
     }
@@ -98,14 +105,11 @@
       display: block;
       border: 1px solid #5C5D60;
       margin-right: 10px;
-      left: 15px;
-      top: 20px;
+      left: 10px;
+      top: 10px;
       background: transparent;
       border-radius: 50%;
       position: absolute;
-    }
-    .breadcrumbs__item a {
-      padding-left: 26px;
     }
   }
 {% endstyle %}
@@ -115,28 +119,31 @@
 {%- assign t = template | split: '.' | first -%}
 
 <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  {% if template == 'article.artist' %}
+  <a href="https://zildjianshop.myshopify.com/blogs/artist" class="fs-prev-arrow"></a>
+  {% endif %}
   <ol class="breadcrumbs__list">
     {%- case t -%}
       {%- when 'page' -%}
         <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link small-hide medium-hide" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+          <a class="breadcrumbs__link small-hide" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
         </li>
       {%- when 'product' -%}
         {% if collection.title != blank %}
-          <li class="breadcrumbs__item">
-            {{ collection.title | link_to: collection.url }}
-          </li>
+        <li class="breadcrumbs__item">
+          {{ collection.title | split: '/' | last | link_to: collection.url }}
+        </li>
         {% else %}
-          {% for collection in product.collections %}
-            {% if forloop.index == 1 %}
-              <li class="breadcrumbs__item">
-                {{ collection.title | link_to: collection.url }}
-              </li>
-            {% endif %}
-          {% endfor %}
+        {% for collection in product.collections %}
+        {% if forloop.index == 1 %}
+        <li class="breadcrumbs__item">
+          {{ collection.title | split: '/' | last | link_to: collection.url }}
+        </li>
+        {% endif %}
+      {% endfor %}
         {% endif %}
         
-        <li class="breadcrumbs__item small-hide medium-hide">
+        <li class="breadcrumbs__item small-hide">
           <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
         </li>
       {%- when 'collection' and collection.handle -%}
@@ -146,36 +153,37 @@
           </li>
           <li class="breadcrumbs__item">
             {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
-            <a class="breadcrumbs__link small-hide medium-hide" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
+            <a class="breadcrumbs__link small-hide" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
           </li>
         {%- else -%}
-          <li class="breadcrumbs__item small-hide medium-hide">
+          <li class="breadcrumbs__item small-hide">
             <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
           </li>
         {%- endif -%}
       {%- when 'blog' -%}
         {% if template == 'blog.education' %}
-        <li class="breadcrumbs__item">
+        <li class="breadcrumbs__item t">
+        {% comment %} large-up-hide {% endcomment %}
           <a class="breadcrumbs__link" href="/">Home</a>
         </li>
-        <li class="breadcrumbs__item small-hide medium-hide">
+        <li class="breadcrumbs__item small-hide">
           <a class="breadcrumbs__link" href="/pages/education">Education</a>
         </li>
         {% endif %}
         {%- if current_tags -%}
-          <li class="breadcrumbs__item">
+          <li class="breadcrumbs__item tt">
             {{ blog.title | link_to: blog.url }}
           </li>
-          <li class="breadcrumbs__item small-hide medium-hide">
+          <li class="breadcrumbs__item small-hide">
             {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
             <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + " }}</a>
           </li>
         {%- else -%}
-          <li class="breadcrumbs__item small-hide medium-hide">
+          <li class="breadcrumbs__item small-hide ttt">
             <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
           </li>
         {%- endif -%}
-      %- when 'article' -%}
+      {%- when 'article' -%}
             <li class="breadcrumbs__item nth">
                <a class="breadcrumbs__link small-hide" href="/">Home</a> <span class="small-hide" style="margin-left: 3px;">-</span> {% if article.handle contains 'education' %}<a class="breadcrumbs__link" href="/blogs/education">Education</a>{% else %}<a class="breadcrumbs__link" href="/blogs/artist">Artist</a>{% endif %} <span class="small-hide" style="margin-left: 3px;">-</span> <span class="small-hide">{{ blog.title | link_to: blog.url }}</span>
             </li>
