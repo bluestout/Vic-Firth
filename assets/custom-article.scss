@@ -351,6 +351,10 @@
   [data-section-type=recent-blog] .page-width {
     padding: 0 30px;
   }
+  .card__content,
+  .card__information{
+    padding: 0;
+  }
 }
 @media screen and (max-width: 767px) {
   .article-template .article-template__hero-container .content .page-width {
