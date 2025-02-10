@@ -344,6 +344,9 @@
   align-items: center;
   gap: 15px;
 }
+[data-section-type=recent-blog] .card__heading a:after {
+  position: relative;
+}
 @media only screen and (min-width: 750px) and (max-width: 1280px) {
   [data-section-type=recent-blog] .page-width slider-component .blog__posts .blog__post .article-card {
     align-items: flex-start;
