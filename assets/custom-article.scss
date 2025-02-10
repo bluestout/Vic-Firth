@@ -300,6 +300,10 @@
                 .card__heading {
                   margin: 0;
                   font-size: 15px;
+                  .link.animate-arrow {
+                      display: flex;
+                      align-items: center;
+                  }
                 }
                 p {
                   font-weight: normal;
