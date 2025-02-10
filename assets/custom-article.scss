@@ -348,6 +348,9 @@
   [data-section-type=recent-blog] .page-width slider-component .blog__posts .blog__post .article-card .card__content .card__information .card__heading {
     font-size: 10px;
   }
+  [data-section-type=recent-blog] .page-width {
+    padding: 0 30px;
+  }
 }
 @media screen and (max-width: 767px) {
   .article-template .article-template__hero-container .content .page-width {
