@@ -45,6 +45,15 @@
       }
     }
   }
+  .breadcrumbs {
+    margin: 0;
+    @media screen and (min-width: 989px) {
+      padding: 10px 86px;
+      &::before {
+        left: 73px;
+      }
+    }
+  }
   .article-template__content {
     @media screen and (max-width: 989px) {
       margin-top: 0;
