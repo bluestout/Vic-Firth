@@ -27,7 +27,8 @@
       "custom_css": [
         ".banner .banner__content .banner__box {background: none;}",
         ".banner .banner__content .banner__box .banner__heading.h1 {color: #fff;}",
-        "@media only screen and (max-width: 1023px) {.banner__media {height: 100% !important; position: absolute; } .banner--medium:not(.banner--adapt) {min-height: 36rem; } .banner__box .banner__heading.h1 {font-size: 40px; }}",
+        " .banner__box .banner__heading.h1 {font-size: 40px; }",
+        "@media only screen and (max-width: 1023px) {.banner__media {height: 100% !important; position: absolute; } .banner--medium:not(.banner--adapt) {min-height: 36rem; }}",
         "@media only screen and (max-width: 767px) {.banner--medium:not(.banner--adapt) {min-height: auto; } .banner__box .banner__heading.h1 {font-size: 24px; }}"
       ],
       "settings": {
