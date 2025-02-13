@@ -27,7 +27,8 @@
       "custom_css": [
         ".banner .banner__content .banner__box {background: none;}",
         ".banner .banner__content .banner__box .banner__heading.h1 {color: #fff;}",
-        "@media only screen and (max-width: 1023px) {.banner__media {height: auto !important; position: absolute; }}"
+        "@media only screen and (max-width: 1023px) {.banner__media {height: auto !important; position: absolute; } .banner--medium:not(.banner--adapt) {min-height: 36rem; }}",
+        "@media only screen and (max-width: 767px) {.banner--medium:not(.banner--adapt) {min-height: auto; }}"
       ],
       "settings": {
         "image": "shopify://shop_images/Vic-Firth-Warranty-Banner_8f52375a-dba9-49d5-84ba-57372cd40cd3.jpg",
