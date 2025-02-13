@@ -364,6 +364,11 @@
 [data-section-type=recent-blog] .card__heading a:after {
   position: relative;
 }
+[data-section-type=recent-blog] .page-width slider-component .blog__posts .blog__post .article-card .card__content .card__information p {
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: normal;
+}
 @media only screen and (min-width: 750px) and (max-width: 1280px) {
   [data-section-type=recent-blog] .page-width slider-component .blog__posts .blog__post .article-card {
     align-items: flex-start;
