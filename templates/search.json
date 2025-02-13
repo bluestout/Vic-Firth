@@ -1,1 +1,93 @@
-{"sections":{"main":{"type":"main-search","disabled":true,"settings":{"columns_desktop":4,"image_ratio":"adapt","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_filtering":false,"filter_type":"horizontal","enable_sorting":false,"article_show_date":false,"article_show_author":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"60e83333-ea7d-4b92-9fd2-c564dbd63d73":{"type":"apps","blocks":{"34a27393-c9e2-4f87-8900-ebf3f6e848f0":{"type":"shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/filter-product-list-ssr\/7fc998ae-a150-4367-bab8-505d8a4503f7","settings":{}}},"block_order":["34a27393-c9e2-4f87-8900-ebf3f6e848f0"],"settings":{}}},"order":["main","60e83333-ea7d-4b92-9fd2-c564dbd63d73"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_e7TgeL": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_VByP9g": {
+          "type": "heading",
+          "settings": {
+            "heading": "Search results",
+            "heading_size": "h1",
+            "uppercase": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_VByP9g"
+      ],
+      "custom_css": [
+        ".banner .banner__content .banner__box {background: none;}",
+        ".banner .banner__content .banner__box .banner__heading.h1 {color: #fff;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Vic-Firth-Warranty-Banner_8f52375a-dba9-49d5-84ba-57372cd40cd3.jpg",
+        "mobile_image": "shopify://shop_images/Vic-Firth-Warranty-Banner-Mobile_a97fe1cd-a53b-44ef-8848-99e105d676f5.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "content_width": "",
+        "contnet_full_width": "full",
+        "padding_left": "",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "center_mobile": false,
+        "full_mobile": false,
+        "content_padding": 20,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-search",
+      "disabled": true,
+      "settings": {
+        "columns_desktop": 4,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "article_show_date": false,
+        "article_show_author": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "60e83333-ea7d-4b92-9fd2-c564dbd63d73": {
+      "type": "apps",
+      "blocks": {
+        "34a27393-c9e2-4f87-8900-ebf3f6e848f0": {
+          "type": "shopify://apps/boost-ai-search-discovery/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "34a27393-c9e2-4f87-8900-ebf3f6e848f0"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "image_banner_e7TgeL",
+    "main",
+    "60e83333-ea7d-4b92-9fd2-c564dbd63d73"
+  ]
+}
