@@ -375,7 +375,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: linear-gradient(180deg,#fff0,#00000080 99%,#000);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5) 99%, black);
 }
 @media only screen and (min-width: 750px) and (max-width: 1280px) {
   [data-section-type=recent-blog] .page-width slider-component .blog__posts .blog__post .article-card {
