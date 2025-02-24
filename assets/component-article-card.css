@@ -63,6 +63,11 @@
   padding-top: 0.4rem;
 }
 
+.article-card__info > span {
+  font-size: 14px;
+  word-break: break-word;
+}
+
 .article-card__footer {
   letter-spacing: 0.1rem;
   font-size: 1.4rem;
