@@ -28,6 +28,7 @@
                   class="article-card__image media media--hover-effect" 
                     style="padding-bottom: 100%;"
                 >
+                  <a href="{{ r_article.url }}"></a>
                   {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
                   <img
                     srcset="
@@ -59,7 +60,8 @@
                       {{ r_article.title | truncate: 50 | escape }}  <span class="icon-wrap">{% render 'icon-arrow' %}</span>
                     </a>
                   </h3>
-                  <p>{{r_article.metafields.global.author}}</p>
+                  <p style="overflow-wrap: anywhere; ">{{r_article.metafields.global.affiliation | truncate: 100 | escape}}</p> 
+                  <!-- <p>{{r_article.metafields.global.author}}</p> -->
                 </div>
               </div>
             </div>

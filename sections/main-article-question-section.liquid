@@ -1,0 +1,142 @@
+{% if article.metafields.global.qestion_1 == blank %}
+    <style>
+      #shopify-section-{{ section.id }}.article-template {
+        display: none;
+      }
+      .rich-text.content-container {
+        display: none;
+      }
+      .new-art-imm {
+        display: none;
+      }
+    </style>
+  {% endif %}
+  
+  {% capture questions %}
+    {% if article.metafields.global.qestion_1 != blank %}
+    <li>
+      <p class="first-pp">WHAT INSPIRES YOU?</p>
+      <p>{{ article.metafields.global.qestion_1 }}</p>
+    </li>
+    {% endif %}
+    {% if article.metafields.global.qestion_2 != blank %}
+    <li>
+      <p class="first-pp">WORDS OF WISDOM FOR THE NEXT GENERATION OF DRUMMERS</p>
+      <p>{{ article.metafields.global.qestion_2 }}</p>
+    </li>
+    {% endif %}
+    {% if article.metafields.global.question_3 != blank %}
+    <li>
+      <p class="first-pp">FAVORITE ZILDJIAN CYMBAL/COMBO</p>
+      <p>{{ article.metafields.global.question_3 }}</p>
+    </li>
+    {% endif %}
+  {% endcapture %}
+  {% if questions != blank %}
+  <article class="article-template">
+    <div m1 class="about-artist-section page-width--narrow page-width">
+      <div class="grid">
+        {% for block in section.blocks %}
+          {% assign getblog = block.settings.arti_blg %}
+          {% assign artttl = article.title %}
+          {% if getblog.title == getblog.title %}
+            <div class="title">
+              {% assign q_num = 1 %}
+              {% if article.metafields.global.qestion_1 != blank %}
+                {% assign q_num = 1 %}
+              {% endif %}
+              {% if article.metafields.global.qestion_2 != blank %}
+                {% assign q_num = 2 %}
+              {% endif %}
+              {% if article.metafields.global.question_3 != blank %}
+                {% assign q_num = 3 %}
+              {% endif %}
+              <h2 class="h1 small-hide medium-hide">{{ article.title | replace: ' ', '<br>' }}'s<br> IN
+                <span>{{ q_num }}</span>
+              </h2>
+              <h2 class="h1 large-up-hide">{{ article.title }}'s<br> IN
+                <span>{{ q_num }}</span>
+              </h2>
+            </div>
+            <div class="image">
+              <div class="media" style="{% if article.image %} padding-bottom: 130%; {% else %} padding-bottom: 100%; {% endif %}">
+                {% comment %} <img src="{{block.settings.artist_img | img_url: 'master'}}" loading="lazy" width="356" height="485" > {% endcomment %}
+                {% if article.image %}
+                  <img
+                    src="{{article.image | img_url: 'master'}}"
+                    loading="lazy"
+                    width="356"
+                    height="485">
+                {% else %}
+                  <img
+                  src="https://cdn.shopify.com/s/files/1/0734/0271/2364/files/Vic-Firth-Artist-Placeholder-Profile-Graphic.jpg?v=1738342230"
+                  style="object-fit: contain;"
+                  loading="lazy"
+                  width=""
+                  height="">
+                {% endif %}
+              </div>
+            </div>
+            <div class="content">
+              <div class="info">
+                <ul>
+                  {{questions}}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </article>
+  {% endif %}
+  
+  {% schema %}
+    {
+      "name": "Artist Question",
+      "blocks": [
+        {
+          "type": "text",
+          "name": "Description Portion",
+          "settings": [
+            {
+              "type": "article",
+              "id": "arti_blg",
+              "label": "Select Article"
+            },
+            {
+              "type": "header",
+              "content": "About Artist"
+            },
+            {
+              "type": "text",
+              "id": "Artists_Title",
+              "label": "Title"
+            },
+            {
+              "type": "image_picker",
+              "id": "artist_img",
+              "label": "Image"
+            }, {
+              "type": "html",
+              "id": "quest",
+              "label": "Question text 1"
+            }, {
+              "type": "html",
+              "id": "quest2",
+              "label": "Question text 2"
+            }, {
+              "type": "html",
+              "id": "quest3",
+              "label": "Question text 3"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Artist About Section"
+        }
+      ]
+    }
+  {% endschema %}
