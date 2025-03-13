@@ -12,35 +12,11 @@
     "d75dd4ef-8e47-487d-9740-f50edc07b08d": {
       "type": "slideshow",
       "blocks": {
-        "262998ab-7eb4-4458-9650-2ecbe593dff8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Signature-Series-Promotion-Homepage-Banners_e24977ce-ba86-43fd-81c4-e058746eca77.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Signature-Series-Promotion-Homepage-Banners-Mobile_06b8ccde-d2fb-4e23-b0fa-29b3f53c4b3d.jpg",
-            "video": "",
-            "content_width": "450",
-            "heading": "",
-            "uppercase": true,
-            "heading_size": "h0",
-            "heading_color": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/vic-firth-category-sticks-drum-set-signature-series",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center",
-            "mobile_box_align": "middle"
-          }
-        },
         "6b7c598a-839d-4439-a8c4-abd0a698fd46": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Start-Fresh-Homepage-Banner-Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Start-Fresh-Homepage-Banner-Mobile.jpg",
+            "image": "shopify://shop_images/New-Apparel-Fall-2024-Homepage-Banner_Desktop_4774afba-c722-419c-8bbc-ef39729c4c6c.jpg",
+            "mobile_image": "shopify://shop_images/New-Apparel-Fall-2024-Homepage-Banner_mobile_895e81ab-22e9-4741-8c2f-da33c3a7b323.jpg",
             "video": "",
             "content_width": "450",
             "heading": "",
@@ -49,7 +25,7 @@
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/start-fresh",
+            "link": "shopify://collections/vic-firth-category-new-arrivals",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
@@ -63,8 +39,8 @@
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/New-Bags-Homepage-Banner_Desktop_bb78a2e9-37e0-45ed-844e-9440ecc33636.jpg",
-            "mobile_image": "shopify://shop_images/New-Bags-Homepage-Banner_mobile_2ed752a5-038f-424f-ab37-65c605da0c21.jpg",
+            "image": "shopify://shop_images/New-Signature-Sticks-Homepage-Banner_Desktop_bdb8787e-c220-4ae4-bbf6-230288d845b7.jpg",
+            "mobile_image": "shopify://shop_images/New-Signature-Sticks-Homepage-Banner_Mobile_deb527f1-a261-45bd-8483-eb78ecd450a0.jpg",
             "video": "",
             "content_width": "",
             "heading": "",
@@ -73,7 +49,7 @@
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/vic-firth-category-gear-accessories-stick-mallet-bags",
+            "link": "shopify://collections/vic-firth-category-sticks-drum-set-signature-series",
             "button_style_secondary": false,
             "box_align": "middle-right",
             "show_text_box": false,
@@ -100,6 +76,31 @@
             "link": "shopify://pages/terra",
             "button_style_secondary": false,
             "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center",
+            "mobile_box_align": "middle"
+          }
+        },
+        "262998ab-7eb4-4458-9650-2ecbe593dff8": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Vic-Firth-Signature-Series-Promotion-Homepage-Banners_e24977ce-ba86-43fd-81c4-e058746eca77.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Signature-Series-Promotion-Homepage-Banners-Mobile_06b8ccde-d2fb-4e23-b0fa-29b3f53c4b3d.jpg",
+            "video": "",
+            "content_width": "450",
+            "heading": "",
+            "uppercase": true,
+            "heading_size": "h0",
+            "heading_color": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/vic-firth-category-sticks-drum-set-signature-series",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
@@ -135,10 +136,10 @@
         }
       },
       "block_order": [
-        "262998ab-7eb4-4458-9650-2ecbe593dff8",
         "6b7c598a-839d-4439-a8c4-abd0a698fd46",
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f",
         "32f9ef7e-529b-4262-8994-75ae15e876ce",
+        "262998ab-7eb4-4458-9650-2ecbe593dff8",
         "slide_UtACbe"
       ],
       "settings": {
@@ -317,12 +318,12 @@
         "column_MrYGhY": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Sigature-Series-Verticle-Promo-Block_760004c9-e2cf-4293-b548-d5c5b62ff632.jpg",
-            "mobile_image": "shopify://shop_images/Sigature-Series-Promo-Block_e521d88c-5787-416f-a97e-119bce9ede66.jpg",
+            "image": "shopify://shop_images/Vic-Firth-New-Bags-Promo-Block-Verticle.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-New-Bags-Promo-Block-Horizontal.jpg",
             "badge": "NEW",
-            "title": "SIGNATURE SERIES DRUMSTICKS",
+            "title": "Vic Firth Stick & Mallet Bags",
             "link_label": "Shop Now",
-            "link": "shopify://collections/vic-firth-category-sticks-drum-set-signature-series",
+            "link": "shopify://collections/vic-firth-category-gear-accessories-stick-mallet-bags",
             "blank_link": false
           }
         },
