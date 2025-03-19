@@ -20,6 +20,10 @@
     gap: 25px;
 }
 
+.image-with-text .grid {
+    width: calc(100% - 272px);
+}
+
 #CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text {
     display: flex;
     flex-direction: row;
