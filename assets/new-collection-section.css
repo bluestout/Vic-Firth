@@ -20,6 +20,23 @@
     gap: 25px;
 }
 
+#CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-bottom: 0px!important;
+}
+
+#CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__media-item {
+    max-width: unset !important;
+    width: calc(60% - 13px) !important;
+}
+
+.image-with-text .image-with-text__grid.width--large .image-with-text__text-item {
+    max-width: unset;
+    width: calc(40% - 13px);
+}
+
 @media (max-width: 991px) {
     .boost-pfs-filter-right-col {
         padding: 0px !important;
