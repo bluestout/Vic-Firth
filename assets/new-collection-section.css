@@ -1,0 +1,31 @@
+.boost-pfs-container-default-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__text-item .image-with-text__content {
+    padding: 0px !important;
+}
+
+.metafield-multi_line_text_field {
+    color: var(--2, #000);
+    font-family: "Century Old Style Std";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.image-with-text .grid {
+    gap: 25px;
+}
+
+@media (max-width: 991px) {
+    .boost-pfs-filter-right-col {
+        padding: 0px !important;
+    }
+
+    #CollectionProductGrid .collection .boost-pfs-filter-right-col {
+        max-width: unset !important;
+    }
+}
