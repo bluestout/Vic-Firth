@@ -81,7 +81,22 @@
         "enable_sorting": true,
         "columns_mobile": "2",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 0
+      }
+    },
+    "abfb0f36-b3a1-414b-a259-79634409a843": {
+      "type": "apps",
+      "blocks": {
+        "5b3d005e-0b0e-423f-bcc1-5150ee7d65c9": {
+          "type": "shopify://apps/boost-ai-search-discovery/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "5b3d005e-0b0e-423f-bcc1-5150ee7d65c9"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "6d74cc0e-7a3a-4a75-9041-afbfeb922234": {
@@ -115,21 +130,6 @@
         "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "abfb0f36-b3a1-414b-a259-79634409a843": {
-      "type": "apps",
-      "blocks": {
-        "5b3d005e-0b0e-423f-bcc1-5150ee7d65c9": {
-          "type": "shopify://apps/boost-ai-search-discovery/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "5b3d005e-0b0e-423f-bcc1-5150ee7d65c9"
-      ],
-      "settings": {
-        "include_margins": true
       }
     }
   },
