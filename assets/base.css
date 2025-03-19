@@ -10,6 +10,7 @@
   --tooltip-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
   --tooltip-border-radius: 5px;
 }
+
 :root,
 .color-background-1 {
   --color-foreground: var(--color-base-text);
