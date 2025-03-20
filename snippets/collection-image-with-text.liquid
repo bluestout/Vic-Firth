@@ -85,10 +85,22 @@
               {% endif %}
               
               {% if object.settings.text != blank %}
-                {% assign size = object.settings.text | size  %}
-                <div class="image-with-text__text rte {{ object.settings.text_style }} {% if size > 200  %}long-text{% endif %} " {{ block.shopify_attributes }}>
-                  {{ object.settings.text }}
-                  <a class="read-more">Read more</a>
+                <div 7 class="image-with-text__text rte  {{ object.settings.text_style }}" {{ block.shopify_attributes }}>
+                  {% assign text_length = object.settings.text | size%}
+                  {% if text_length < 400%}
+                    <div class = "small-hide" >
+                    {{ object.settings.text }}
+                    </div>
+                    <div class = "large-up-hide medium-hide">
+                      <div id="fs_lessDesc1"><div>{{ object.settings.text | truncate: 200}}</div><span id="fs_moreDesc1" class="fs_moreDesc1">READ MORE</span></div>
+                      <div id="fs_fullDesc"><div>{{ object.settings.text }}</div><span id="fs_lessBtn" class="fs_lessBtn">READ LESS</span></div>
+                    </div>
+                  {% else %}
+                    <div class = "">
+                      <div id="fs_lessDesc1"><div>{{ object.settings.text | truncate: 200}}</div><span id="fs_moreDesc1" class="fs_moreDesc1">READ MORE</span></div>
+                      <div id="fs_fullDesc"><div>{{ object.settings.text }}</div><span id="fs_lessBtn" class="fs_lessBtn">READ LESS</span></div>
+                    </div>
+                  {% endif %}
                 </div>
               {% endif %}
 
@@ -116,15 +128,18 @@
 </div>
 
 <script>
-  document.querySelector('.read-more').addEventListener('click', function (e) {
-    if (document.querySelector('.image-with-text__text').classList.contains('expand')) {
-      document.querySelector('.image-with-text__text').classList.remove('expand');
-      document.querySelector('.read-more').textContent = 'Read more';
-    } else {
-      document.querySelector('.image-with-text__text').classList.add('expand');
-      document.querySelector('.read-more').textContent = 'Read less';
-    }
-    
 
-  })
+ var fs_lessDesc1 = document.getElementById("fs_lessDesc1"); 
+ var fs_fullDesc = document.getElementById("fs_fullDesc");
+ var fs_moreDesc1 = document.getElementById("fs_moreDesc1");
+ var fs_lessBtn = document.getElementById("fs_lessBtn");
+
+ fs_moreDesc1.onclick = function() {
+   fs_fullDesc.style.display = "block";
+   fs_lessDesc1.style.display = "none";
+ }
+ fs_lessBtn.onclick = function() {
+   fs_fullDesc.style.display = "none";
+   fs_lessDesc1.style.display = "block";
+ }
 </script>
