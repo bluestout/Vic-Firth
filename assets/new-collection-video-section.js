@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     if (window.innerWidth >= 992) {
+        change();
+    }
+
+    document.querySelector('#fs_moreDesc1').addEventListener("click", change)
+    document.querySelector('#fs_lessBtn').addEventListener("click", change)
+
+    function change() {
         if (document.querySelector('.boost-pfs-filter-right-col')) {
 
             var height = document.querySelector('.boost-pfs-filter-right-col').offsetHeight;
