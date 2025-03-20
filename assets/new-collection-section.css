@@ -20,15 +20,27 @@
     gap: 25px;
 }
 
-.image-with-text .grid {
-    width: calc(100% - 272px);
+@media (min-width: 992px) {
+    .image-with-text .grid {
+        width: calc(100% - 272px);
+    }
+}
+
+@media (max-width: 991px) {
+    .image-with-text .grid {
+        width: 100%;
+    }
+
+    #CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__media-item {
+        padding: 0px;
+    }
 }
 
 #CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-bottom: 0px!important;
+    padding-bottom: 0px !important;
 }
 
 #CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__media-item {
@@ -37,12 +49,16 @@
 }
 
 .image-with-text .image-with-text__grid.width--large .image-with-text__text-item {
-    max-width: unset!important;
-    width: calc(40% - 13px)!important;
+    max-width: unset !important;
+    width: calc(40% - 13px) !important;
 }
 
 .image-with-text__content .info {
     margin-top: unset !important;
+}
+
+.image-with-text .image-with-text__grid .image-with-text__text-item .image-with-text__content .info .text .image-with-text__heading {
+    font-size: 30px;
 }
 
 @media (max-width: 991px) {
