@@ -50,6 +50,14 @@
     font-size: 30px;
 }
 
+.deferred-media__poster {
+    background: none!important;
+}
+
+.deferred-media__poster img {
+    position: relative!important;
+}
+
 @media (max-width: 991px) {
     .boost-pfs-filter-right-col {
         padding: 0px !important;
