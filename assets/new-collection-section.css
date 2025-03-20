@@ -41,6 +41,10 @@
     width: calc(40% - 13px)!important;
 }
 
+.image-with-text__content .info {
+    margin-top: unset !important;
+}
+
 @media (max-width: 991px) {
     .boost-pfs-filter-right-col {
         padding: 0px !important;
