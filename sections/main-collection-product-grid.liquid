@@ -34,6 +34,8 @@
   }
 {%- endstyle -%}
 
+
+
 {{ 'component-facets.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 
@@ -114,6 +116,29 @@ var boostPFSTemplate = {
   'sortingHtml': {%- render 'boost-pfs-filter-html', layout: 'sortingHtml' -%}
 };
 </script>
+
+<style>
+  .video-section__media.deferred-media {
+    padding-bottom: 0px!important;
+    display: flex;
+    align-items: center;
+  }
+
+  .media--landscape {
+    max-height: 350px;
+  }
+
+  .image-with-text .image-with-text__grid .image-with-text__text-item .image-with-text__content.horizontal-align-content--middle .info {
+    margin: auto !important;
+  }
+
+  @media (max-width: 992px) {
+    [data-section-type=collection-content] .collapsible-content .collapsible-content-wrapper-narrow .collapsible-content__grid .accordion details .accordion__content .content .info ul li {
+      text-indent: -12px!important;
+    }
+  }
+</style>
+
 {% schema %}
 
 {
