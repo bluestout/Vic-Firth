@@ -20,6 +20,22 @@
     gap: 25px;
 }
 
+@media (max-width: 1024px) {
+    .image-with-text .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__media-item {
+        padding: 0px;
+        width: 100% !important;
+    }
+
+    .image-with-text .image-with-text__grid.width--large .image-with-text__text-item {
+        width: 100% !important;
+    }
+}
+
 @media (min-width: 992px) {
     .image-with-text .grid {
         width: calc(100% - 272px);
@@ -29,10 +45,6 @@
 @media (max-width: 991px) {
     .image-with-text .grid {
         width: 100%;
-    }
-
-    #CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__media-item {
-        padding: 0px;
     }
 }
 
