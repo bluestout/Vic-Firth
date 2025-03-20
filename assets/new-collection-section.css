@@ -20,6 +20,9 @@
     gap: 25px;
 }
 
+#CollectionProductGrid .collection .boost-pfs-filter-right-col {
+    width: 100%;
+}
 
 #CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text {
     display: flex;
