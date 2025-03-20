@@ -86,7 +86,7 @@
               
               {% if object.settings.text != blank %}
                 <div class="image-with-text__text rte  {{ object.settings.text_style }}" {{ block.shopify_attributes }}>
-                  {% assign text_length = object.settings.text | size%}
+                  {% assign text_length = object.settings.text | size%}</div>
                   {% if text_length < 400%}
                     <div class = "small-hide" >
                     {{ object.settings.text }}
@@ -103,7 +103,10 @@
                       </div>
                     </div>
                   {% else %}
-                    <div>
+                    <div class="small-hide desktop">
+                      {{ object.settings.text }}
+                    </div>
+                    <div class="mobile">
                       <div id="fs_lessDesc1">
                         <div>{{ object.settings.text | truncate: 200}}</div>
                         <span id="fs_moreDesc1" class="fs_moreDesc1">READ MORE</span>
@@ -148,6 +151,18 @@
 
   #fs_lessDesc1 {
     cursor: pointer;
+  }
+
+  @media (min-width: 992px) {
+    .mobile {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .desktop {
+      display: none!important;
+    }
   }
 </style>
 
