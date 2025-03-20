@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector('#fs_moreDesc1').addEventListener("click", change)
     document.querySelector('#fs_lessBtn').addEventListener("click", change)
+    window.addEventListener('resize', change)
 
     function change() {
         if (document.querySelector('.boost-pfs-filter-right-col')) {
@@ -48,5 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     }
+
 
 })
