@@ -1,0 +1,99 @@
+.boost-pfs-container-default-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__text-item .image-with-text__content {
+    padding: 0px !important;
+}
+
+.metafield-multi_line_text_field {
+    color: var(--2, #000);
+    font-family: "Century Old Style Std";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.image-with-text .grid {
+    gap: 25px;
+}
+
+#CollectionProductGrid .collection .boost-pfs-filter-right-col {
+    width: 100%;
+}
+
+#CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-bottom: 0px !important;
+}
+
+#CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__media-item {
+    max-width: unset !important;
+    width: calc(60% - 13px) !important;
+    margin-bottom: unset!important;
+}
+
+.image-with-text .image-with-text__grid.width--large .image-with-text__text-item {
+    max-width: unset !important;
+    width: calc(40% - 13px) !important;
+}
+
+.image-with-text__content .info {
+    margin-top: unset !important;
+}
+
+.image-with-text .image-with-text__grid .image-with-text__text-item .image-with-text__content .info .text .image-with-text__heading {
+    font-size: 30px;
+}
+
+.deferred-media__poster {
+    background: none!important;
+}
+
+.deferred-media__poster img {
+    position: relative!important;
+    height: auto !important;
+}
+
+@media (max-width: 991px) {
+    .boost-pfs-filter-right-col {
+        padding: 0px !important;
+    }
+
+    #CollectionProductGrid .collection .boost-pfs-filter-right-col {
+        max-width: unset !important;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .image-with-text .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #CollectionProductGrid .collection .boost-pfs-filter-right-col .image-with-text .image-with-text__media-item {
+        padding: 0px;
+        width: 100% !important;
+    }
+
+    .image-with-text .image-with-text__grid.width--large .image-with-text__text-item {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .image-with-text .grid {
+        width: calc(100% - 272px);
+    }
+}
+
+@media (max-width: 991px) {
+    .image-with-text .grid {
+        width: 100%;
+    }
+}

@@ -99,6 +99,11 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
   {{'custom-search.scss.css' | asset_url | stylesheet_tag }}
+
+  {% if template contains 'collection' %}
+    {{'new-collection-section.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'new-collection-video-section.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
 </head>
 
   <body class="gradient hide-price">

@@ -34,6 +34,8 @@
   }
 {%- endstyle -%}
 
+
+
 {{ 'component-facets.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 
@@ -43,93 +45,14 @@
   <div id="CollectionProductGrid">
     <div class="boost-pfs-filter-wrapper collection page-width">
       <div class="boost-pfs-container-default-box">
-        <div class="boost-pfs-filter-left-col">
-          <div class="filter-heading">
-            <h5 class="uppercase">Filter</h5>
-          </div>
-          <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v">
-            {%- unless enable_filter_tree_button_desktop_v -%}
-              {% render 'boost-pfs-filter-skeleton', type: 'filter-tree' %}
-            {%- endunless -%}
-          </div>
-        </div>
         <div class="boost-pfs-filter-right-col">
           {% for block in section.blocks %}
             {% if block.type == 'image_text' and collection.metafields.global.banner_image != blank %}
             {% include 'collection-image-with-text' with object: block %}
             {% endif %}
-           
           {% endfor %}
-          <div class="collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
-            <div class="boost-pfs-container-default boost-pfs-filter-wrapper-page facets facets-container">
-              {%- comment -%} TOOLBAR TOP MOBILE {%- endcomment -%}
-              {% if boost_in_collection_search == 'true' %}
-                <div class="boost-pfs-in-collection-search">
-                  {% render 'boost-pfs-filter-skeleton', width: 4 %}
-                </div>
-              {% endif %}
-              <div class="product-count light" role="status">
-                <p class="product-count__text boost-pfs-filter-total-product">
-                  {%- render 'boost-pfs-filter-skeleton' -%}
-                </p>
-              </div>
-              <div class="facets__form {% if enable_filter_tree_button_desktop_v and enable_filter_sticky_d  %} boost-pfs-filter-tree-desktop-button-sticky-wrapper {% endif %}">
-                <div class="facets__wrapper">
-                  {%- if enable_filter_tree_button_desktop_v -%}
-                    <div class="boost-pfs-filter-tree-desktop-button">{%- render 'boost-pfs-filter-skeleton', type: 'button' -%}</div>
-                  {%- endif -%}
-                </div>
-                {%- if section.settings.enable_sorting -%}
-                  <div class="facet-filters sorting caption">
-                    <div class="facet-filters__field">
-                      <label class="facet-filters__label caption-large" for="SortBy">
-                        <span class="small-hide">Sort by:</span>
-                        <span class="medium-hide large-up-hide">Sort</span>
-                      </label>
-                      <div class="select boost-pfs-filter-custom-sorting boost-pfs-filter-top-sorting">
-                        {%- render 'boost-pfs-filter-skeleton' -%}
-                      </div>
-                    </div>
-                  </div>
-                {%- endif -%}
-              </div>
-        
-              <div class="boost-pfs-filter-toolbar-top-mobile">
-                <div class="boost-pfs-filter-tree-mobile-button">
-                  {%- render 'boost-pfs-filter-skeleton', type: 'button' -%}
-                </div>
-              </div>
-              {%- comment -%} END TOOLBAR TOP MOBILE {%- endcomment -%}
-            </div>
-          </div>
-          <div class="product-grid negative-margin">
-            <ul id="product-grid" data-id="{{ section.id }}" class="
-              boost-pfs-filter-products
-              grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
-              grid--3-col-desktop grid--{{ section.settings.columns_desktop }}-col-wide">
-              {%- for product in collection.products -%}
-                {% assign lazy_load = false %}
-                {%- if forloop.index > 2 -%}
-                  {%- assign lazy_load = true -%}
-                {%- endif -%}
-                <li class="grid__item">
-                  {% render 'card-product',
-                    card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
-                    lazy_load: lazy_load,
-                    section_id: section.id
-                  %}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
-          <div class="boost-pfs-filter-load-more"></div>
           <link rel="stylesheet" href="{{ 'component-pagination.css' | asset_url }}" media="print" onload="this.media='all'">
           <noscript>{{ 'component-pagination.css' | asset_url | stylesheet_tag }}</noscript>
-          <div class="boost-pfs-filter-bottom-pagination"></div>
         </div>
       </div>
     </div>
@@ -193,6 +116,29 @@ var boostPFSTemplate = {
   'sortingHtml': {%- render 'boost-pfs-filter-html', layout: 'sortingHtml' -%}
 };
 </script>
+
+<style>
+  .video-section__media.deferred-media {
+    padding-bottom: 0px!important;
+    display: flex;
+    align-items: center;
+  }
+
+  .media--landscape {
+    max-height: 350px;
+  }
+
+  .image-with-text .image-with-text__grid .image-with-text__text-item .image-with-text__content.horizontal-align-content--middle .info {
+    margin: auto !important;
+  }
+
+  @media (max-width: 992px) {
+    [data-section-type=collection-content] .collapsible-content .collapsible-content-wrapper-narrow .collapsible-content__grid .accordion details .accordion__content .content .info ul li {
+      text-indent: -12px!important;
+    }
+  }
+</style>
+
 {% schema %}
 
 {
