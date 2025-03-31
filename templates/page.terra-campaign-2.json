@@ -102,7 +102,7 @@
         "color_scheme": "background-1",
         "mobile_layout": "image_first",
         "mobile_content_alignment": "left",
-        "mobile_space": false,
+        "mobile_space": true,
         "overlay_section": false,
         "padding_top": 36,
         "padding_bottom": 36,
