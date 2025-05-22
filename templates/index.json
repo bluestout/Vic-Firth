@@ -14,6 +14,7 @@
       "blocks": {
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Vic-Firh-Wooden-Tip-Collections_Banner_mobile.jpg",
             "mobile_image": "shopify://shop_images/Vic-Firth-Wooden-Tip-Promotion-Homepage-Banner_mobile.jpg",
