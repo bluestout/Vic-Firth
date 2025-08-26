@@ -40,6 +40,18 @@
 -%}
 
 <style>
+  .artist-card .content-title {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: Century Gothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    text-transform: uppercase;
+    margin: 20px 0 10px;
+  }
+
   [data-section-type=featured-artists] .collection{
     justify-content: space-between;
     background: #F8F8F9;
@@ -212,7 +224,7 @@
                         height="{{ block.settings.featured_media.height }}"
                       > 
                       <div class="content">
-                        <h4>{{block.settings.title}}</h4>
+                        <span class="content-title">{{block.settings.title}}</span>
                         <p>{{block.settings.job}}</p>
                       </div>
                     </a>
