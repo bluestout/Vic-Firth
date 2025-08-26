@@ -40,16 +40,16 @@
 -%}
 
 <style>
-  .artist-card .content-title {
-    color: var(--2, #000);
-    text-align: center;
-    font-family: Century Gothic;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px;
-    text-transform: uppercase;
-    margin: 20px 0 10px;
+  .artist-card-content-title {
+    color: var(--2, #000) !important;
+    text-align: center !important;
+    font-family: Century Gothic !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 32px !important;
+    text-transform: uppercase !important;
+    margin: 20px 0 10px !important;
   }
 
   [data-section-type=featured-artists] .collection{
@@ -224,7 +224,7 @@
                         height="{{ block.settings.featured_media.height }}"
                       > 
                       <div class="content">
-                        <h4>{{block.settings.title}}</h4>
+                        <p class="artist-card-content-title">{{block.settings.title}}</p>
                         <p>{{block.settings.job}}</p>
                       </div>
                     </a>
