@@ -249,7 +249,8 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("featured-article-component .splide__slide").forEach((item, index) => {
-      item.removeAttribute('aria-label')
+      item.removeAttribute('aria-label');
+      item.removeAttribute('aria-roledescription');
     })
   })
 </script>
