@@ -153,8 +153,8 @@
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
 
     <div class="img_wrapper">
-      <img src="{{ section.settings.bg_image |  image_url: width: 500  }}" class="featured_artist_bg_img">
-      <img src="{{ section.settings.image |  image_url: width: 450  }}" class="featured_artist_img">
+      <img src="{{ section.settings.bg_image |  image_url: width: 500  }}" alt="{{ section.settings.bg_image.alt | default: "feature artist big image" | escape }}" class="featured_artist_bg_img">
+      <img src="{{ section.settings.image |  image_url: width: 450  }}" alt="{{ section.settings.bg_image.alt | default: "feature artist small image" | escape }}" class="featured_artist_img">
     </div>
 
     <div class="content_wrapper">
