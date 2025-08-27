@@ -15,10 +15,6 @@
   {{ 'custom-product.scss.css' | asset_url | stylesheet_tag }}
 
   {%- style -%}
-    [data-section-type=product] .product__info-wrapper .product__info-container .product__accordion .accordion__content .lcly-dealers-wrap .lcly-dealer .lcly-dealer-phone {
-      padding: 5px 0px;
-    }
-
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0 | round: 0 }}px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
