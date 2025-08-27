@@ -24,7 +24,7 @@
     <div class="collection-hero__text-wrapper">
       <h1 class="collection-hero__title h0 uppercase">
         {% if collection.metafields.global.header_banner_logo != blank %}
-          <img class="collection-hero__icon" src="{{collection.metafields.global.header_banner_logo | img_url: '186x' }}" loading="lazy" >
+          <img class="collection-hero__icon" src="{{collection.metafields.global.header_banner_logo | img_url: '186x' }}" alt="collection hero icon" loading="lazy" >
         {% endif %}
         <span>{{-  collection.metafields.global.header_banner_title | default: collection.title | escape -}}</span>
       </h1>
