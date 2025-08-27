@@ -110,7 +110,7 @@
                         {%- endif -%}
                         <div class="footer-block__image-wrapper global-media-settings" style="max-width: min(100%, {{ settings.brand_image_width }}px);">
                           <div class="brand">
-                            <a target="_blank" href="{{block.settings.brand_link_1}}">
+                            <a target="_blank" href="{{block.settings.brand_link_1}}" aria-label="footer icon">
                               {{ block.settings.brand_image_1 | image_url: width: 1100 | image_tag:
                                 loading: 'lazy',
                                 widths: '100, 150, 200, 300, 400, 550, 800, 1100'
@@ -118,7 +118,7 @@
                             </a>
                           </div>
                           <div class="brand">
-                            <a target="_blank" href="{{block.settings.brand_link_2}}">
+                            <a target="_blank" href="{{block.settings.brand_link_2}}" aria-label="footer icon">
                               {{ block.settings.brand_image_2 | image_url: width: 1100 | image_tag:
                                 loading: 'lazy',
                                 widths: '100, 150, 200, 300, 400, 550, 800, 1100'
@@ -126,7 +126,7 @@
                             </a>
                           </div>
                           <div target="_blank" class="brand">
-                            <a href="{{block.settings.brand_link_3}}">
+                            <a href="{{block.settings.brand_link_3}}" aria-label="footer icon">
                               {{ block.settings.brand_image_3 | image_url: width: 1100 | image_tag:
                                 loading: 'lazy',
                                 widths: '100, 150, 200, 300, 400, 550, 800, 1100'
