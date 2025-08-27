@@ -124,5 +124,8 @@
 <script>
   document.addEventListener("DOMContentLoaded", ()=>{
     document.querySelector("#thumbsCarousel .splide__list").removeAttribute("aria-orientation");
+    document.querySelectorAll("product-gallery-component #mainCarousel .splide__slide").forEach((item, index)=>{
+      item.removeAttribute('role')
+    })
   })
 </script>
