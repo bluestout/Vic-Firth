@@ -149,7 +149,7 @@ window.addEventListener('load', function() {
         if (typeof Yotpo !== 'undefined' && typeof window.yotpo !== 'undefined') {  var api = new Yotpo.API(window.yotpo);  api.refreshWidgets();}if (typeof yotpoWidgetsContainer !== 'undefined') {  yotpoWidgetsContainer.initWidgets();}
 
         
-        const html = document.createElement('div');
+        const html = document.createElement('ul');
         html.innerHTML = text;
         const recommendations = html.querySelector('.product-recommendations');
 
