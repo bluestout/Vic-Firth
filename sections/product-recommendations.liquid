@@ -100,7 +100,7 @@
 
     <div class="product-recommendations-product-lists">
       {%- for product in recommendations.products -%}
-        <li class="product">
+        <div class="product">
           <a href="{{ product.url }}">
             {% if product.available != false %}
               {% for tag in product.tags %}
@@ -127,7 +127,7 @@
             <p class="product__price">{{ product.price | money}}</p>
             <div class="yotpo-widget-instance" data-yotpo-instance-id="851116" data-yotpo-product-id="{{product.id}}" data-yotpo-cart-product-id="{{product.id}}" data-yotpo-section-id="collection"></div>
           </a>
-        </li>
+        </div>
       {%- endfor -%}
     </div>
   {%- endif -%}
