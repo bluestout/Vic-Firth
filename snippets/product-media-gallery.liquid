@@ -129,6 +129,8 @@
     })
     document.querySelectorAll("product-gallery-component #thumbsCarousel .splide__slide").forEach((item, index)=>{
       item.removeAttribute('role')
+      item.removeAttribute('aria-label')
+      item.removeAttribute('aria-controls')
     })
   })
 </script>
