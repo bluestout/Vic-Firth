@@ -531,12 +531,13 @@
                         {{ block.settings.heading | replace: "$type", type | default: block.settings.page.title }} 
                         {% if block.settings.heading contains 'Find a store' %}
                         <span class="lcly-city-name"></span>? 
-                        <a id="lcly-location-prompt-link-0" class="lcly-location-prompt-link" data-switchlive="true" data-switchlive-mode="auto" data-switchlive-id-pl="5" href="javascript:;">Change</a>
-                        {% endif %}
-                      </div>
+                        <span class="change-copy lcly-location-link-tag"><u>Change</u></span>
+                      {% endif %}
                     </div>
-                    {% render 'icon-caret' %}
-                  </summary>
+                  </div>
+                  {% render 'icon-caret' %}
+                </summary>
+                <a id="lcly-location-prompt-link-0" class="lcly-location-prompt-link" data-switchlive="true" data-switchlive-mode="auto" data-switchlive-id-pl="5" href="javascript:;" style="display: none;">Change</a>
                   <div class="accordion__content rte {{block.settings.heading | strip_html | handleize }}" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                     {{content}}
                   </div>
@@ -884,6 +885,15 @@
     }
   </script>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", ()=>{
+    let change_btn = document.querySelector(".change-copy");
+    change_btn.addEventListener('click', (e)=>{
+      document.querySelector('.origin-change').click()
+    })
+  })
+</script>
 
 
 {% schema %}
