@@ -29,9 +29,11 @@
         </span>
         {% render 'icon-minus' %}
       </button>
-      <label for="Quantity-{{ section.id }}">
-        Quantity
-      </label>
+      <div style="display: none;">
+        <label for="Quantity-{{ section.id }}">
+          Quantity
+        </label>
+      </div>
       <input
         class="quantity__input"
         type="number"
