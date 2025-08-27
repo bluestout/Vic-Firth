@@ -98,7 +98,7 @@
       <h2>Pair it with</h2>
     {% endif %}
 
-    <ul>
+    <div class="product-recommendations-product-lists">
       {%- for product in recommendations.products -%}
         <li class="product">
           <a href="{{ product.url }}">
@@ -129,7 +129,7 @@
           </a>
         </li>
       {%- endfor -%}
-    </ul>
+    </div>
   {%- endif -%}
 </div>
 
@@ -155,7 +155,7 @@ window.addEventListener('load', function() {
 
         if (recommendations && recommendations.innerHTML.trim().length) {
           productRecommendationsSection.innerHTML = recommendations.innerHTML;
-          $('.product-recommendations ul').slick({
+          $('.product-recommendations .product-recommendations-product-lists').slick({
                 infinite: true,
                 slidesToShow: 3,
                 slidesToScroll: 1,
