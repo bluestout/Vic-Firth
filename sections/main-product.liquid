@@ -845,9 +845,13 @@
 
 
       const interval = setInterval(()=>{
-        document.querySelectorAll(".lcly-dealer").forEach((item, index)=>{
-          item.removeAttribute("role")
-        })
+        if(document.querySelectorAll(".lcly-dealer").length > 0) {
+          document.querySelectorAll(".lcly-dealer").forEach((item, index)=>{
+            item.removeAttribute("role")
+          })
+
+          clearInterval(interval)
+        }
       }, 1000)
     });
   </script>
