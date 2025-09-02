@@ -843,11 +843,12 @@
         hiddenInput.value = event.currentTarget.value;
       });
 
-      setTimeout(()=>{
+
+      const interval = setInterval(()=>{
         document.querySelectorAll(".lcly-dealer").forEach((item, index)=>{
           item.removeAttribute("role")
         })
-      }, 5000)
+      }, 1000)
     });
   </script>
 
