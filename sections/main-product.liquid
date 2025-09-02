@@ -48,6 +48,10 @@
     .lcly-location-feature-secondary {
       color: #000000 !important;
     }
+
+    .quantity__input {
+      border: 1px solid #000000 !important;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -830,7 +834,7 @@
           clearInterval(interval)
         }
       }, 1000)
-      
+
       function isIE() {
         const ua = window.navigator.userAgent;
         const msie = ua.indexOf('MSIE ');
