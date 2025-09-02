@@ -820,6 +820,17 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+       const interval = setInterval(()=>{
+        console.log('okokok')
+        if(document.querySelectorAll(".lcly-dealer").length > 0) {
+          document.querySelectorAll(".lcly-dealer").forEach((item, index)=>{
+            item.removeAttribute("role")
+          })
+
+          clearInterval(interval)
+        }
+      }, 1000)
+      
       function isIE() {
         const ua = window.navigator.userAgent;
         const msie = ua.indexOf('MSIE ');
@@ -844,16 +855,7 @@
       });
 
 
-      const interval = setInterval(()=>{
-        console.log('okokok')
-        if(document.querySelectorAll(".lcly-dealer").length > 0) {
-          document.querySelectorAll(".lcly-dealer").forEach((item, index)=>{
-            item.removeAttribute("role")
-          })
-
-          clearInterval(interval)
-        }
-      }, 1000)
+     
     });
   </script>
 
