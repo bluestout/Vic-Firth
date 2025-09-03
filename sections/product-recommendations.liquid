@@ -120,7 +120,7 @@
             <img
               class="product__img"
               src="{{ product.featured_image | image_url: width: 300, height: 300 }}"
-              alt="{{ product.featured_image.alt }}"
+              alt="{{ product.featured_image.alt }}-{{ forloop.index }}"
             />
 
             <p class="product__title">{{ product.title }}</p>
