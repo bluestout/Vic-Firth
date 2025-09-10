@@ -214,9 +214,6 @@
             &.swatch--true {
               border-radius: 50%;
               padding: 10px;
-              span {
-                display: none;
-              }
             }
           }
           input[type=radio]:checked+label {
