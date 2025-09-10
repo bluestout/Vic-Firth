@@ -113,9 +113,7 @@
 
     <script type="text/javascript" src="https://cdn-widgetsrepository.yotpo.com/v1/loader/mCZeSZ8K6a4aMK16VZwVreN9r595I2azRrzMpQgd?languageCode=en"></script>
 
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-      {{ "accessibility.skip_to_text" | t }}
-    </a>
+    
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
@@ -124,6 +122,9 @@
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none {{template}} {{template.suffix}}" role="main" tabindex="-1">
+      <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+        {{ "accessibility.skip_to_text" | t }}
+      </a>
       {% if template == 'cart' %}
         <div class="page-width {% if cart == empty %}empty-cart{% endif %} ">
           {{ content_for_layout }}
@@ -132,9 +133,9 @@
         {{ content_for_layout }}
       {% endif %}
       
+      {% sections 'footer-group' %}
     </main>
 
-    {% sections 'footer-group' %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
