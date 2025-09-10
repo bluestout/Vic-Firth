@@ -113,7 +113,13 @@
 
     <script type="text/javascript" src="https://cdn-widgetsrepository.yotpo.com/v1/loader/mCZeSZ8K6a4aMK16VZwVreN9r595I2azRrzMpQgd?languageCode=en"></script>
 
-    
+    <style>
+      [data-acsb="sr-trigger"].acsb-sr-only {
+        width: 0px !important;
+        height: 0px !important;
+        display: none !important;
+      }
+    </style>
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
