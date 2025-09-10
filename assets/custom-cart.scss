@@ -122,8 +122,13 @@ cart-drawer {
                 }
                 border: none;
                 width: 76px;
+                align-items: center;
                 .quantity__button {
                   width: 20px;
+                  width: 24px;
+                  min-width: 24px;
+                  height: 24px;
+                  min-height: 24px;
                 }
               }
             }
