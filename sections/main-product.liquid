@@ -832,8 +832,16 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-       const interval = setInterval(()=>{
-        console.log('okokok')
+      const ts = setInterval(()=>{
+        if(dicument.querySelector('.yotpo-widget-clear')) {
+          dicument.querySelector('.yotpo-widget-clear').removeAttribute('aria-labelledby');
+
+          clearInterval(ts)
+        }
+      }, 1000)
+
+      const interval = setInterval(()=>{
+        
         if(document.querySelectorAll(".lcly-dealer").length > 0) {
           document.querySelectorAll(".lcly-dealer").forEach((item, index)=>{
             item.removeAttribute("role")
