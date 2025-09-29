@@ -14,6 +14,7 @@
       "blocks": {
         "6b7c598a-839d-4439-a8c4-abd0a698fd46": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Back-In-Session-Homepage-Banner-Desktop.jpg",
             "mobile_image": "shopify://shop_images/Back-In-Session-Homepage-Banner-Mobile.jpg",
