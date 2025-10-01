@@ -35,6 +35,31 @@
         top: 5px!important;
       }
     }
+
+    .lcly-dealer-phone a {
+      display: flex;
+      height: 24px;
+    }
+
+    .lcly-location-feature-primary {
+      color: #000000 !important;
+    }
+
+    .lcly-location-feature-secondary {
+      color: #000000 !important;
+    }
+
+    .quantity__input {
+      border: 1px solid #000000 !important;
+    }
+
+    #searchInput {
+      border: 1px solid #000000 !important;
+    }
+
+    .product-form__input .form__label span {
+      color: #000000 !important;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -531,12 +556,13 @@
                         {{ block.settings.heading | replace: "$type", type | default: block.settings.page.title }} 
                         {% if block.settings.heading contains 'Find a store' %}
                         <span class="lcly-city-name"></span>? 
-                        <a id="lcly-location-prompt-link-0" class="lcly-location-prompt-link" data-switchlive="true" data-switchlive-mode="auto" data-switchlive-id-pl="5" href="javascript:;">Change</a>
-                        {% endif %}
-                      </div>
+                        <span class="change-copy lcly-location-link-tag"><u>Change</u></span>
+                      {% endif %}
                     </div>
-                    {% render 'icon-caret' %}
-                  </summary>
+                  </div>
+                  {% render 'icon-caret' %}
+                </summary>
+                <a id="lcly-location-prompt-link-0" class="lcly-location-prompt-link" data-switchlive="true" data-switchlive-mode="auto" data-switchlive-id-pl="5" href="javascript:;" style="display: none;">Change</a>
                   <div class="accordion__content rte {{block.settings.heading | strip_html | handleize }}" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                     {{content}}
                   </div>
@@ -806,6 +832,25 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      const ts = setInterval(()=>{
+        if(document.querySelector('.yotpo-widget-clear')) {
+          document.querySelector('.yotpo-widget-clear').removeAttribute('aria-labelledby');
+
+          clearInterval(ts)
+        }
+      }, 1000)
+
+      const interval = setInterval(()=>{
+        
+        if(document.querySelectorAll(".lcly-dealer").length > 0) {
+          document.querySelectorAll(".lcly-dealer").forEach((item, index)=>{
+            item.removeAttribute("role")
+          })
+
+          clearInterval(interval)
+        }
+      }, 1000)
+
       function isIE() {
         const ua = window.navigator.userAgent;
         const msie = ua.indexOf('MSIE ');
@@ -828,6 +873,9 @@
       document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function (event) {
         hiddenInput.value = event.currentTarget.value;
       });
+
+
+     
     });
   </script>
 
@@ -884,6 +932,15 @@
     }
   </script>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", ()=>{
+    let change_btn = document.querySelector(".change-copy");
+    change_btn.addEventListener('click', (e)=>{
+      document.querySelector('.origin-change').click()
+    })
+  })
+</script>
 
 
 {% schema %}

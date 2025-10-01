@@ -108,6 +108,14 @@
 
   <body class="gradient hide-price">
 
+    <style>
+      [data-acsb="sr-trigger"] .acsb-sr-only {
+        width: 0px !important;
+        height: 0px !important;
+        display: none !important;
+      }
+    </style>
+
     {% comment %} // Yotpo integration - add star rating to product grid in Search Results page {% endcomment %}
     {% comment %} {{ 'tagalys-customisations.js' | asset_url | script_tag }} {% endcomment %}
 

@@ -98,9 +98,9 @@
       <h2>Pair it with</h2>
     {% endif %}
 
-    <ul>
+    <div class="product-recommendations-product-lists">
       {%- for product in recommendations.products -%}
-        <li class="product">
+        <div class="product">
           <a href="{{ product.url }}">
             {% if product.available != false %}
               {% for tag in product.tags %}
@@ -120,16 +120,16 @@
             <img
               class="product__img"
               src="{{ product.featured_image | image_url: width: 300, height: 300 }}"
-              alt="{{ product.featured_image.alt }}"
+              alt="{{ product.featured_image.alt }}-{{ forloop.index }}"
             />
 
             <p class="product__title">{{ product.title }}</p>
             <p class="product__price">{{ product.price | money}}</p>
             <div class="yotpo-widget-instance" data-yotpo-instance-id="851116" data-yotpo-product-id="{{product.id}}" data-yotpo-cart-product-id="{{product.id}}" data-yotpo-section-id="collection"></div>
           </a>
-        </li>
+        </div>
       {%- endfor -%}
-    </ul>
+    </div>
   {%- endif -%}
 </div>
 
@@ -155,7 +155,7 @@ window.addEventListener('load', function() {
 
         if (recommendations && recommendations.innerHTML.trim().length) {
           productRecommendationsSection.innerHTML = recommendations.innerHTML;
-          $('.product-recommendations ul').slick({
+          $('.product-recommendations .product-recommendations-product-lists').slick({
                 infinite: true,
                 slidesToShow: 3,
                 slidesToScroll: 1,
