@@ -6,7 +6,7 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'announcement' -%}
-                <div id="Slide-{{ section.id }}-{{ forloop.index }}" class="announcement-bar splide__slide color-{{ block.settings.color_scheme }} gradient" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
+                <div id="Slide-{{ section.id }}-{{ forloop.index }}" class="announcement-bar splide__slide color-{{ block.settings.color_scheme }} gradient" role="region" {{ block.shopify_attributes }}>
                   {%- if block.settings.text != blank -%}
                     {%- if block.settings.link != blank -%}
                       <a href="{{ block.settings.link }}" class="announcement-bar__link">
