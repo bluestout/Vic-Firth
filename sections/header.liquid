@@ -29,6 +29,7 @@
 {{ 'custom-header.scss.css' | asset_url | stylesheet_tag  }}
 
 <style>
+
   header-drawer {
     grid-area: left-icon;
     justify-self: start;
@@ -678,7 +679,7 @@
 
     <div class="header__icons">
 
-      <a href="{{ pages['dealer-locator'].url }}" class="header__icon link focus-inset" aria-label="dealer locator">
+      <a href="{{ pages['dealer-locator'].url }}" class="header__icon link focus-inset" aria-label="dealer-locator">
         {% render 'icon-locator' %}
       </a>
 
