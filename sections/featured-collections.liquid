@@ -12,11 +12,11 @@
         {% comment %} <a href="{{ block.settings.link }}" class="cover-link"></a> {% endcomment %}
         <a href="{{ block.settings.link }}" class="cover-link">
           <div class="img_wrapper">
-            <img src="{{ block.settings.image |  image_url: width: 300 }}">
+            <img src="{{ block.settings.image |  image_url: width: 300 }}" alt="{{ block.settings.image.alt | default: "featured collection image" | escape }}">
           </div>
           <div class="home_subtitle">
             <p>{{ block.settings.title }}</p>
-            <img src="{{ 'arrow-2.png' |  asset_url}}">
+            <img src="{{ 'arrow-2.png' |  asset_url}}" alt="{{ block.settings.image.alt | default: "featured collection image" | escape }}">
           </div>
           </a>
         </div>

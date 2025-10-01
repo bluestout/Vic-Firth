@@ -11,7 +11,7 @@
   }
 {%- endstyle -%}
 
-<div class="newsletter center  section-{{ section.id }}-padding {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
+<div class="newsletter center  section-{{ section.id }}-padding {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}" id="{{ section.id }}">
   <div class="newsletter__wrapper element--{{section.settings.content_type}} color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %}">
     <div class="page-width ">
       {%- for block in section.blocks -%}

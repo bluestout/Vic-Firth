@@ -40,6 +40,18 @@
 -%}
 
 <style>
+  .artist-card-content-title {
+    color: var(--2, #000) !important;
+    text-align: center !important;
+    font-family: Century Gothic !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 32px !important;
+    text-transform: uppercase !important;
+    margin: 20px 0 10px !important;
+  }
+
   [data-section-type=featured-artists] .collection{
     justify-content: space-between;
     background: #F8F8F9;
@@ -153,8 +165,8 @@
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
 
     <div class="img_wrapper">
-      <img src="{{ section.settings.bg_image |  image_url: width: 500  }}" class="featured_artist_bg_img">
-      <img src="{{ section.settings.image |  image_url: width: 450  }}" class="featured_artist_img">
+      <img src="{{ section.settings.bg_image |  image_url: width: 500  }}" alt="{{ section.settings.bg_image.alt | default: "feature artist big image" | escape }}" class="featured_artist_bg_img">
+      <img src="{{ section.settings.image |  image_url: width: 450  }}" alt="{{ section.settings.bg_image.alt | default: "feature artist small image" | escape }}" class="featured_artist_img">
     </div>
 
     <div class="content_wrapper">
@@ -212,7 +224,7 @@
                         height="{{ block.settings.featured_media.height }}"
                       > 
                       <div class="content">
-                        <h4>{{block.settings.title}}</h4>
+                        <p class="artist-card-content-title">{{block.settings.title}}</p>
                         <p>{{block.settings.job}}</p>
                       </div>
                     </a>
@@ -233,6 +245,14 @@
 
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("featured-article-component .splide__slide").forEach((item, index) => {
+      item.removeAttribute('role');
+    })
+  })
+</script>
 
 {% schema %}
 {

@@ -4,18 +4,18 @@
       <div class="column column-1">
         {% for block in section.blocks %}
           {% if forloop.index == 1%}
-          <a href="{{ block.settings.link }}" class="cover-link" {% if block.settings.blank_link %}target="_blank"{% endif %}></a>
+          <a href="{{ block.settings.link }}" class="cover-link" aria-label="cover-link" {% if block.settings.blank_link %}target="_blank"{% endif %}></a>
             <div class="img_wrapper desktop_only">
-              <img src="{{ block.settings.image | image_url}}">
+              <img src="{{ block.settings.image | image_url}}" alt="{{ block.settings.image.alt | default: "multicolume image" | escape }}">
               <span class="badge_large">{{ block.settings.badge }}</span>
             </div>
             <div class="img_wrapper mobile_only">
-              <img src="{{ block.settings.mobile_image |  image_url }}">
+              <img src="{{ block.settings.mobile_image |  image_url }}" alt="{{ block.settings.image.alt | default: "multicolume image" | escape }}">
               <span class="badge_large">{{ block.settings.badge }}</span>
             </div>
             <div class="content_wrapper">
               <h1 class="column_heading">{{ block.settings.title }}</h1>
-              <div class="column_link"><p>{{ block.settings.link_label }}</p><img src="{{ 'arrow-1.png' |  asset_url }}"></div>
+              <div class="column_link"><p>{{ block.settings.link_label }}</p><img src="{{ 'arrow-1.png' |  asset_url }}" alt="{{ block.settings.image.alt | default: "multicolume image" | escape }}"></div>
             </div>
           {% endif %}
         {% endfor %}
@@ -25,14 +25,14 @@
       {% for block in section.blocks %}
         {% if forloop.index > 1 %}
           <div class="column column-{{ forloop.index }}">
-            <a href="{{ block.settings.link }}" class="cover-link" {% if block.settings.blank_link %}target="_blank"{% endif %}></a>
+            <a href="{{ block.settings.link }}" class="cover-link" aria-label="cover-link" {% if block.settings.blank_link %}target="_blank"{% endif %}></a>
             <div class="img_wrapper">
-              <img src="{{ block.settings.image |  image_url }}">
+              <img src="{{ block.settings.image |  image_url }}" alt="{{ block.settings.image.alt | default: "multicolume image" | escape }}">
               <span class="badge_large">{{ block.settings.badge }}</span>
             </div>
             <div class="content_wrapper">
               <h1 class="column_heading">{{ block.settings.title }}</h1>
-              <div class="column_link"><p>{{ block.settings.link_label }}</p><img src="{{ 'arrow-1.png' |  asset_url }}"></div>
+              <div class="column_link"><p>{{ block.settings.link_label }}</p><img src="{{ 'arrow-1.png' |  asset_url }}" alt="{{ block.settings.image.alt | default: "multicolume image" | escape }}"></div>
             </div>
           </div>
         {% endif %}
