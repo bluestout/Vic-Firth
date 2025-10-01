@@ -11,7 +11,7 @@
       }
     }
     a {
-      color: #B6B8BA!important;
+      color: #000000 !important;
       @media screen and (max-width: 989px) {
       padding: 0;
       }
@@ -215,7 +215,10 @@
               border-radius: 50%;
               padding: 10px;
               span {
-                display: none;
+                height: 0px;
+                display: flex;
+                width: 0px;
+                overflow: hidden;
               }
             }
           }

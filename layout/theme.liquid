@@ -108,8 +108,17 @@
 
   <body class="gradient hide-price">
 
+    <style>
+      [data-acsb="sr-trigger"] .acsb-sr-only {
+        width: 0px !important;
+        height: 0px !important;
+        display: none !important;
+      }
+    </style>
+
     {% comment %} // Yotpo integration - add star rating to product grid in Search Results page {% endcomment %}
     {% comment %} {{ 'tagalys-customisations.js' | asset_url | script_tag }} {% endcomment %}
+
 
     <script type="text/javascript" src="https://cdn-widgetsrepository.yotpo.com/v1/loader/mCZeSZ8K6a4aMK16VZwVreN9r595I2azRrzMpQgd?languageCode=en"></script>
 
@@ -125,8 +134,8 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
-
+      {% sections 'header-group' %}
+    
     <main id="MainContent" class="content-for-layout focus-none {{template}} {{template.suffix}}" role="main" tabindex="-1">
       <a class="skip-to-content-link button visually-hidden" href="#MainContent">
         {{ "accessibility.skip_to_text" | t }}

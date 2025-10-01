@@ -13,6 +13,7 @@
     padding: calc(4rem + var(--page-width-margin)) 0
       calc(4rem + var(--page-width-margin));
     overflow: hidden;
+    background: black !important;
   }
 
   .collection-hero--with-image .collection-hero__inner {
@@ -38,6 +39,10 @@
 
 .collection-hero__title {
   margin: 2.5rem 0;
+}
+
+.collection-hero__title span {
+  color: #ffffff;
 }
 
 .collection-hero__title + .collection-hero__description {

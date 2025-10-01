@@ -1,5 +1,5 @@
 <product-gallery-component class="thumbs-{{section.settings.gallery_layout}}">
-  <div id="mainCarousel" class="splide">
+  <div id="mainCarousel" class="splide" aria-label="main carousel">
     <div class="splide__track">
       <ul class="product__media-list splide__list " role="list">
         {%- for media in product.media -%}
@@ -120,3 +120,17 @@
  }
 </style>
 {% endif %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", ()=>{
+    document.querySelector("#thumbsCarousel .splide__list").removeAttribute("aria-orientation");
+    document.querySelectorAll("product-gallery-component #mainCarousel .splide__slide").forEach((item, index)=>{
+      item.removeAttribute('role')
+    })
+    document.querySelectorAll("product-gallery-component #thumbsCarousel .splide__slide").forEach((item, index)=>{
+      item.removeAttribute('role')
+      item.removeAttribute('aria-label')
+      item.removeAttribute('aria-controls')
+    })
+  })
+</script>
