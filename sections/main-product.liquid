@@ -1,4 +1,9 @@
 {% include 'breadcrumbs' %}
+<style>
+  span.yotpo-dropdown-placeholder {
+    border: 1px solid #000000 !important;
+  }
+</style>
 <section
   id="MainProduct-{{ section.id }}"
   class="page-width section-{{ section.id }}-padding"
@@ -15,9 +20,7 @@
   {{ 'custom-product.scss.css' | asset_url | stylesheet_tag }}
 
   {%- style -%}
-    span.yotpo-dropdown-placeholder {
-      border: 1px solid #000000 !important;
-    }
+    
 
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0 | round: 0 }}px;
