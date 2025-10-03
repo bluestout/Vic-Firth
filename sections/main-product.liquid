@@ -16,7 +16,9 @@
   {{ 'custom-product.scss.css' | asset_url | stylesheet_tag }}
 
   {%- style -%}
-    
+    .yotpo-selected-value__label--inside {
+      font-weight: 700 !important;
+    }
 
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0 | round: 0 }}px;
