@@ -943,16 +943,14 @@
       document.querySelector('.origin-change').click()
     })
   })
-
-  const removeSortLabel = setInverval(()=>{
-    if(document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--textual")) {
-      document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--textual").remove();
-      clearInterval(removeSortLabel);
-    }
-  }, 1000)
 </script>
 
 <style>
+  .yotpo-dropdown-label.yotpo-dropdown-label--inside {
+    opacity: 0 !important;
+    font-size: 18px !important;
+  }
+
   .yotpo-selected-value__label--textual {
     opacity: 1 !important;
   }
