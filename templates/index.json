@@ -14,10 +14,9 @@
       "blocks": {
         "6b7c598a-839d-4439-a8c4-abd0a698fd46": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Back-In-Session-Homepage-Banner-Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Back-In-Session-Homepage-Banner-Mobile.jpg",
+            "image": "shopify://shop_images/New-Multi-Tenor-Drumsticks-Homepage-Banner_Desktop_2abe0343-fd83-4a6f-8e9a-0ceb939cd7e4.jpg",
+            "mobile_image": "shopify://shop_images/New-Multi-Tenor-Drumsticks-Homepage-_Banner_mobile.jpg",
             "video": "",
             "content_width": "450",
             "heading": "",
@@ -26,7 +25,7 @@
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/back-in-session",
+            "link": "shopify://collections/vic-firth-category-sticks-marching-corpsmaster-multi-tenor",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
