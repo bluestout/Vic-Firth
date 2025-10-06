@@ -943,6 +943,13 @@
       document.querySelector('.origin-change').click()
     })
   })
+
+  const removeSortLabel = setInverval(()=>{
+    if(document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--textual")) {
+      document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--textual").remove();
+      clearInterval(removeSortLabel);
+    }
+  }, 1000)
 </script>
 
 
