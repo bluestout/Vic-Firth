@@ -954,6 +954,20 @@
     change_btn.addEventListener('click', (e)=>{
       document.querySelector('.origin-change').click()
     })
+
+    const removeRatingLabel = setInterval(()=>{
+      if(document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--inside")) {
+        document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--inside").remove();
+        clearInterval(removeRatingLabel);
+      }
+    }, 1000)
+
+    const removeSortLabel = setInterval(()=>{
+      if(document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--textual")) {
+        document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--textual").remove();
+        clearInterval(removeSortLabel);
+      }
+    }, 1000)
   })
 </script>
 
