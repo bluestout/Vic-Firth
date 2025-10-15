@@ -113,9 +113,9 @@
         "template--18450609439012__bb971613-28f6-40b2-8c87-e4f6cf6e064e-1680591730cc09166e-0": {
           "type": "heading",
           "settings": {
-            "heading": "OUR VALUES",
+            "heading": "Looking for more deals?",
             "heading_link": "",
-            "heading_size": "h1",
+            "heading_size": "h2",
             "heading_color": "",
             "max_width": ""
           }
@@ -123,7 +123,7 @@
         "template--18450609439012__bb971613-28f6-40b2-8c87-e4f6cf6e064e-1680591730cc09166e-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Our values are the pillars on which the Company and brands were built. We live these values each day in all that we do.</p>",
+            "text": "<p>Check out amazing savings on closeout apparel and gear at the Vic Firth Trunk Sale!</p>",
             "text_style": "body",
             "color": "#5c5d60"
           }
@@ -131,10 +131,10 @@
         "template--18450609439012__bb971613-28f6-40b2-8c87-e4f6cf6e064e-1680591730cc09166e-2": {
           "type": "button",
           "settings": {
-            "button_label": "See our values",
-            "button_link": "shopify://pages/about-us",
+            "button_label": "Shop Zildjian",
+            "button_link": "https://zildjian.com/pages/trunk-sale",
             "link": true,
-            "blank_button": false
+            "blank_button": true
           }
         }
       },
@@ -147,7 +147,7 @@
         "tag": "",
         "side_banner": false,
         "full_width": true,
-        "image": "shopify://shop_images/Our-Values_6b204fe9-517d-4a24-9f34-95016bf04dc2.jpg",
+        "image": "shopify://shop_images/Email_horizontal.jpg",
         "mobile_image": "shopify://shop_images/Our-Values-Mobile_08a76ca8-e6b6-4cde-87f7-462c68a21d4b.jpg",
         "video_url": "",
         "height": "adapt",
