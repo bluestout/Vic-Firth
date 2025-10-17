@@ -52,7 +52,7 @@
         "image": "shopify://shop_images/Vic-Firth-Trunk-Sale-Banner_Collections_Banner_desktop.jpg",
         "mobile_image": "shopify://shop_images/Vic-Firth-Trunk-Sale-Banner_Collection-Banner_mobile.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "small",
         "content_width": "",
         "contnet_full_width": "full",
         "padding_left": "",
