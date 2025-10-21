@@ -71,3 +71,26 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+
+.boost-sd__refine-by-vertical-refine-by-value,
+.boost-sd__button--clear,
+.boost-sd__sorting-label{
+  font-family: 'Century Gothic'!important;
+}
+
+.boost-sd__toolbar-item--product-count .boost-sd__product-count{
+  font-family: 'Century Gothic'!important;
+}
+
+.boost-sd-container *{
+  font-family: 'Century Gothic'!important;
+}
+
+.boost-sd__product-title,
+.boost-sd__filter-option-title{
+  font-family: 'Century Gothic Bold'!important;
+}
+.boost-sd__pagination-number--active {
+  color: #CE0E2D;
+}

@@ -76,7 +76,7 @@
       "type": "apps",
       "blocks": {
         "34a27393-c9e2-4f87-8900-ebf3f6e848f0": {
-          "type": "shopify://apps/boost-ai-search-discovery/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "type": "shopify://apps/boost-ai-search-filter/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
           "settings": {}
         }
       },

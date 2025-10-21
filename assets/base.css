@@ -674,7 +674,7 @@ h6:empty {
   color: rgb(var(--color-link));
   background-color: transparent;
   font-size: 1.4rem;
-  font-family: inherit;
+  font-family: 'Century Gothic';
 }
 
 .link--text {
@@ -2107,6 +2107,7 @@ input[type='checkbox'] {
   width: calc(4.5rem / var(--font-body-scale));
   flex-shrink: 0;
   font-size: 1.8rem;
+  font-family: 'Century Gothic';
   border: 0;
   background-color: transparent;
   cursor: pointer;

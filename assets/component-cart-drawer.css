@@ -97,6 +97,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-family: 'Century Gothic';
 }
 
 .cart-drawer__warnings .drawer__close {

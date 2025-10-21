@@ -258,6 +258,10 @@
               display: block;
               thead {
                 display: none;
+                tr {
+                  font-family: 'Century Gothic'!important;
+                  font-weight: 400!important;
+                }
               }
               tbody {
                 display: block;
@@ -346,7 +350,7 @@
               border: none;
               border-bottom: 1px solid #D4CCBC;
               font-weight: 500;
-              font-family: var(--font-heading-family);
+              font-family: 'Century Gothic';
           }
           tr{
               td{
@@ -488,7 +492,7 @@
         p {
           font-size: 13px;
           line-height: 26px;
-          color: #1F2020CC;
+          color: black;
           font-weight: 500;
         }
       }

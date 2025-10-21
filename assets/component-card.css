@@ -394,3 +394,8 @@ main.collection .card__inner .card__badge.top {
     margin-left: 0 !important;
   } */
 }
+
+/* CUSTOM CSS */
+.yotpo-sr-bottom-line-text.yotpo-sr-bottom-line-text--right-panel {
+  font-size: 14px!important;
+}

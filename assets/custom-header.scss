@@ -83,7 +83,7 @@
                       display: flex;
                       align-items: center;
                       padding-right: 40px;
-                      color: inherit;
+                      color: black;
                       pointer-events: none;
                       svg {
                         margin-left: auto;
@@ -95,6 +95,9 @@
                       background: white;
                       border-left: 4px solid #CE0E2D;
                       color: #CE0E2D;
+                      span {
+                        color: #CE0E2D;
+                      }
                     }
                   }
                 }
