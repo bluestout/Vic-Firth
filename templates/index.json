@@ -86,10 +86,9 @@
         },
         "slide_UtACbe": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Trunk-Sale-Homepage-Banner_Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Trunk-Sale-Homepage-Banner_mobile.jpg",
+            "image": "shopify://shop_images/Vic-Firth-Headphones-Homepage-Banner-Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Headphones-Homepage-Banner-Mobile.jpg",
             "video": "",
             "content_width": "",
             "heading": "",
@@ -98,7 +97,7 @@
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://pages/trunk-sale",
+            "link": "shopify://collections/vic-firth-category-gear-accessories-hearing-protection",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
