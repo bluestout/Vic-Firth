@@ -12,28 +12,28 @@
     "d75dd4ef-8e47-487d-9740-f50edc07b08d": {
       "type": "slideshow",
       "blocks": {
-        "6b7c598a-839d-4439-a8c4-abd0a698fd46": {
+        "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/New-Multi-Tenor-Drumsticks-Homepage-Banner_Desktop_2abe0343-fd83-4a6f-8e9a-0ceb939cd7e4.jpg",
-            "mobile_image": "shopify://shop_images/New-Multi-Tenor-Drumsticks-Homepage-_Banner_mobile.jpg",
+            "image": "shopify://shop_images/Shop-Gifts-From-Vics-Workshop-Homepage-Banner_Desktop_18796caf-3b75-4770-a512-b619b5c9057a.jpg",
+            "mobile_image": "shopify://shop_images/Shop-Gifts-From-Vics-Workshop-Homepage-Banner_mobile_682fa7ef-0f8d-4439-924f-793a9167b630.jpg",
             "video": "",
-            "content_width": "450",
+            "content_width": "",
             "heading": "",
             "uppercase": true,
             "heading_size": "h0",
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/vic-firth-category-sticks-marching-corpsmaster-multi-tenor",
+            "link": "https://vicfirth.com/collections/gifts-from-vics-workshop",
             "button_style_secondary": false,
-            "box_align": "middle-left",
+            "box_align": "middle-right",
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
-            "mobile_box_align": "middle"
+            "mobile_box_align": "bottom"
           }
         },
         "262998ab-7eb4-4458-9650-2ecbe593dff8": {
@@ -60,32 +60,33 @@
             "mobile_box_align": "middle"
           }
         },
-        "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
+        "6b7c598a-839d-4439-a8c4-abd0a698fd46": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Apparel-Homepage-Banner-Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Apparel-Homepage-Banner-Mobile.jpg",
+            "image": "shopify://shop_images/New-Multi-Tenor-Drumsticks-Homepage-Banner_Desktop_2abe0343-fd83-4a6f-8e9a-0ceb939cd7e4.jpg",
+            "mobile_image": "shopify://shop_images/New-Multi-Tenor-Drumsticks-Homepage-_Banner_mobile.jpg",
             "video": "",
-            "content_width": "",
+            "content_width": "450",
             "heading": "",
             "uppercase": true,
             "heading_size": "h0",
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/vic-firth-category-gear-apparel-lifestyle-apparel",
+            "link": "shopify://collections/vic-firth-category-sticks-marching-corpsmaster-multi-tenor",
             "button_style_secondary": false,
-            "box_align": "middle-right",
+            "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
-            "mobile_box_align": "bottom"
+            "mobile_box_align": "middle"
           }
         },
         "slide_UtACbe": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Vic-Firth-Headphones-Homepage-Banner-Desktop.jpg",
             "mobile_image": "shopify://shop_images/Vic-Firth-Headphones-Homepage-Banner-Mobile.jpg",
@@ -135,9 +136,9 @@
         }
       },
       "block_order": [
-        "6b7c598a-839d-4439-a8c4-abd0a698fd46",
-        "262998ab-7eb4-4458-9650-2ecbe593dff8",
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f",
+        "262998ab-7eb4-4458-9650-2ecbe593dff8",
+        "6b7c598a-839d-4439-a8c4-abd0a698fd46",
         "slide_UtACbe",
         "32f9ef7e-529b-4262-8994-75ae15e876ce"
       ],
