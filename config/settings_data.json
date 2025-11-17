@@ -187,6 +187,11 @@
         "type": "shopify://apps/boost-ai-search-discovery/blocks/boost-sd/7fc998ae-a150-4367-bab8-505d8a4503f7",
         "disabled": true,
         "settings": {}
+      },
+      "15351435345818755577": {
+        "type": "shopify://apps/pandectes-gdpr/blocks/banner/58c0baa2-6cc1-480c-9ea6-38d6d559556a",
+        "disabled": true,
+        "settings": {}
       }
     }
   },
