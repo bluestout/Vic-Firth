@@ -775,6 +775,7 @@ tab-component {
 }
 
 #shopify-pc__banner {
+  display: none !important;
   .shopify-pc__banner__btns {
     .shopify-pc__banner__btn-accept:hover, .shopify-pc__banner__btn-decline:hover {
       border-color: #ce0e2d;
