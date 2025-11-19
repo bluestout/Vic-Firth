@@ -773,15 +773,3 @@ tab-component {
   }
   &.classic { padding: 0.8em 1em; }
 }
-
-#shopify-pc__banner {
-  display: none !important;
-  .shopify-pc__banner__btns {
-    .shopify-pc__banner__btn-accept:hover, .shopify-pc__banner__btn-decline:hover {
-      border-color: #ce0e2d;
-      background: #ce0e2d;
-      color: white;
-    }
-
-  }
-}
