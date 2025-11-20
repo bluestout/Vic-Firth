@@ -217,6 +217,7 @@
 
 @media screen and (max-width: 749px) {
   /*
+
     On a small screen we want all the items to be centered
     because they will be stacked.
    */
@@ -598,6 +599,9 @@ noscript .localization-selector.link {
 .policies li a {
   padding: 0.6rem 0;
   display: block;
+  color: white;
+  font-size: 10px !important;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 750px) {
@@ -635,7 +639,7 @@ noscript .localization-selector.link {
   @media screen and (max-width: 749px) {
     .footer .grid {
       margin-left: 0;
-    }
+    } 
   }
 
   @media screen and (min-width: 750px) {
@@ -646,5 +650,19 @@ noscript .localization-selector.link {
     .footer__content-top .grid__item {
       padding-left: 3rem;
     }
+  }
+}
+
+#PBarNextFrameWrapper {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .policies li a {
+    padding: 1px !important;
+  }
+
+  .donotsell::after {
+    content: none !important;
   }
 }
