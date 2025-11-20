@@ -3315,5 +3315,22 @@ html #tagalys-namespace .search-suggestions{ height: 350px; overflow-y: scroll !
   display: none !important;
 }
 
+@media (max-width: 500px) {
+  
+  
+  footer .footer__content-bottom .footer__copyright .policies li:before {
+    content: none !important;
+  }
+  
+  footer .footer__content-bottom .footer__copyright .policies li:after {
+    content: " ";
+    width: 1px;
+    height: 8px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    right: 0;
+  }
+}
 {% endstyle %}
 
