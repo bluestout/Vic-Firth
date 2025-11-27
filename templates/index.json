@@ -12,6 +12,30 @@
     "d75dd4ef-8e47-487d-9740-f50edc07b08d": {
       "type": "slideshow",
       "blocks": {
+        "slide_UtACbe": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Vic-Firth-Black-Friday-Cyber-Monday-Homepage-Banner-Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Black-Friday-Cyber-Monday-Homepage-Banner-Mobile.jpg",
+            "video": "",
+            "content_width": "",
+            "heading": "",
+            "uppercase": true,
+            "heading_size": "h1",
+            "heading_color": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/black-friday",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center",
+            "mobile_box_align": "middle"
+          }
+        },
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
           "type": "slide",
           "settings": {
@@ -84,31 +108,6 @@
             "mobile_box_align": "middle"
           }
         },
-        "slide_UtACbe": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Headphones-Homepage-Banner-Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Headphones-Homepage-Banner-Mobile.jpg",
-            "video": "",
-            "content_width": "",
-            "heading": "",
-            "uppercase": true,
-            "heading_size": "h1",
-            "heading_color": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/vic-firth-category-gear-accessories-hearing-protection",
-            "button_style_secondary": false,
-            "box_align": "middle-left",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center",
-            "mobile_box_align": "middle"
-          }
-        },
         "32f9ef7e-529b-4262-8994-75ae15e876ce": {
           "type": "slide",
           "disabled": true,
@@ -136,10 +135,10 @@
         }
       },
       "block_order": [
+        "slide_UtACbe",
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f",
         "262998ab-7eb4-4458-9650-2ecbe593dff8",
         "6b7c598a-839d-4439-a8c4-abd0a698fd46",
-        "slide_UtACbe",
         "32f9ef7e-529b-4262-8994-75ae15e876ce"
       ],
       "settings": {

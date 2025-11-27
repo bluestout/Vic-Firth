@@ -14,6 +14,15 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_DnrK3M": {
+          "type": "announcement",
+          "settings": {
+            "text": "Black Friday Deals: Live Now Through December 3!",
+            "text_alignment": "center",
+            "color_scheme": "accent-1",
+            "link": "shopify://collections/black-friday"
+          }
+        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
@@ -25,6 +34,7 @@
         }
       },
       "block_order": [
+        "announcement_DnrK3M",
         "announcement-bar-0"
       ],
       "settings": {}
