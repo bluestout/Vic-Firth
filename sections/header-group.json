@@ -16,6 +16,7 @@
       "blocks": {
         "announcement_DnrK3M": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Black Friday Deals: Live Now Through December 3!",
             "text_alignment": "center",
