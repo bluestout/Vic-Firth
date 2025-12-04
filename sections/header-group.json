@@ -16,12 +16,11 @@
       "blocks": {
         "announcement_DnrK3M": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Black Friday Deals: Live Now Through December 3!",
+            "text": "Order by Dec 16th for Guaranteed Christmas Delivery",
             "text_alignment": "center",
             "color_scheme": "accent-1",
-            "link": "shopify://collections/black-friday"
+            "link": ""
           }
         },
         "announcement-bar-0": {
