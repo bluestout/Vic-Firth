@@ -14,6 +14,7 @@
       "blocks": {
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Shop-Gifts-From-Vics-Workshop-Homepage-Banner_Desktop_18796caf-3b75-4770-a512-b619b5c9057a.jpg",
             "mobile_image": "shopify://shop_images/Shop-Gifts-From-Vics-Workshop-Homepage-Banner_mobile_682fa7ef-0f8d-4439-924f-793a9167b630.jpg",
