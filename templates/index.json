@@ -64,8 +64,8 @@
         "6b7c598a-839d-4439-a8c4-abd0a698fd46": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/New-Multi-Tenor-Drumsticks-Homepage-Banner_Desktop_2abe0343-fd83-4a6f-8e9a-0ceb939cd7e4.jpg",
-            "mobile_image": "shopify://shop_images/New-Multi-Tenor-Drumsticks-Homepage-_Banner_mobile.jpg",
+            "image": "shopify://shop_images/Vic-Firth-Bags-Homepage-Banner-Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Bags-Homepage-Banner-Mobile.jpg",
             "video": "",
             "content_width": "450",
             "heading": "",
@@ -74,7 +74,7 @@
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/vic-firth-category-sticks-marching-corpsmaster-multi-tenor",
+            "link": "shopify://collections/vic-firth-category-gear-accessories-stick-mallet-bags",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
