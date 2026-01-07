@@ -16,6 +16,7 @@
       "blocks": {
         "announcement_DnrK3M": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Order by Dec 16th for Guaranteed Christmas Delivery",
             "text_alignment": "center",
