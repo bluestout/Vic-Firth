@@ -134,6 +134,35 @@
         "max_width": "468"
       }
     },
+    "rich_text_WXXaha": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_d9wczn": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand</p>",
+            "heading_size": "h1",
+            "max_width": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_d9wczn"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "center",
+        "color_scheme": "accent-2",
+        "full_width": true,
+        "mobile_border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 60,
+        "max_width": ""
+      }
+    },
     "rich_text_PYpAXz": {
       "type": "rich-text",
       "blocks": {
@@ -155,11 +184,11 @@
         "desktop_content_position": "center",
         "contnet_type": "list",
         "content_alignment": "center",
-        "color_scheme": "background-1",
+        "color_scheme": "inverse",
         "full_width": true,
         "mobile_border_bottom": false,
         "padding_top": 36,
-        "padding_bottom": 60,
+        "padding_bottom": 16,
         "max_width": ""
       }
     },
@@ -249,7 +278,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "mobile_overlay": false,
-        "padding_top": 52,
+        "padding_top": 40,
         "padding_bottom": 0,
         "max_width": ""
       }
@@ -341,7 +370,7 @@
         "swipe_on_mobile": false,
         "mobile_overlay": false,
         "padding_top": 48,
-        "padding_bottom": 80,
+        "padding_bottom": 100,
         "max_width": ""
       }
     },
@@ -377,9 +406,10 @@
     "multicolumn_73cKBb": {
       "type": "multicolumn",
       "blocks": {
-        "column_DfejBt": {
+        "column_VB4DyR": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Matty_Meyer2-VF-Profile.png",
             "badge": "",
             "title": "Column",
             "heading_size": "h3",
@@ -394,13 +424,12 @@
             "blank_link": false
           }
         },
-        "column_iYt9Jy": {
+        "column_DfejBt": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Salin-Profile.jpg",
-            "mobile_image": "shopify://shop_images/Salin-Profile.jpg",
+            "image": "shopify://shop_images/Payton-Taylor-Profile.jpg",
             "badge": "",
-            "title": "ASjasjas",
+            "title": "Column",
             "heading_size": "h3",
             "heading_color": "",
             "download_label": "",
@@ -416,6 +445,7 @@
         "column_AJ8tVh": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Salin-Profile.jpg",
             "badge": "",
             "title": "Column",
             "heading_size": "h3",
@@ -433,6 +463,7 @@
         "column_PATRqV": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/J-J-Garcia-Profile.jpg",
             "badge": "",
             "title": "Column",
             "heading_size": "h3",
@@ -449,8 +480,8 @@
         }
       },
       "block_order": [
+        "column_VB4DyR",
         "column_DfejBt",
-        "column_iYt9Jy",
         "column_AJ8tVh",
         "column_PATRqV"
       ],
@@ -530,6 +561,7 @@
         "row_WApPwm",
         "row_zbigPe"
       ],
+      "disabled": true,
       "name": "t:sections.multirow.presets.name",
       "settings": {
         "header": "",
@@ -684,6 +716,7 @@
   "order": [
     "3141c904-b6a6-4f2b-a1fe-aa2b9e911af8",
     "3ecbccab-bd42-4007-a0cf-7fdf878e010c",
+    "rich_text_WXXaha",
     "rich_text_PYpAXz",
     "multicolumn_f6aVT7",
     "multicolumn_UUhxcD",
