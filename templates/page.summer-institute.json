@@ -142,6 +142,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Salin-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Salin-Profile.jpg",
             "badge": "",
             "title": "ASjasjas",
             "heading_size": "h3",
@@ -199,7 +200,7 @@
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "side_banner": false,
-        "full_width": false,
+        "full_width": true,
         "title": "",
         "heading_size": "h1",
         "heading_align": "left",
@@ -207,7 +208,7 @@
         "image_ratio": "adapt",
         "mobile_image_ratio": "adapt",
         "overlay_image": true,
-        "dark_overlay": false,
+        "dark_overlay": true,
         "columns_desktop": 3,
         "swipe_on_desktop": false,
         "step_style": false,
