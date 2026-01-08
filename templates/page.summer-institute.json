@@ -209,7 +209,7 @@
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>$1500 - Tuition include room and board and all institute activities/classes.</p>",
+            "text": "<p>$1500 - Tuition includes room and board and all institute activities/classes.</p>",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -325,7 +325,7 @@
         "image_ratio": "adapt",
         "mobile_image_ratio": "adapt",
         "overlay_image": false,
-        "dark_overlay": true,
+        "dark_overlay": false,
         "columns_desktop": 3,
         "swipe_on_desktop": false,
         "step_style": false,
@@ -341,7 +341,7 @@
         "swipe_on_mobile": false,
         "mobile_overlay": false,
         "padding_top": 48,
-        "padding_bottom": 48,
+        "padding_bottom": 80,
         "max_width": ""
       }
     },
