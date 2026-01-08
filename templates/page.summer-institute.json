@@ -78,12 +78,11 @@
         },
         "tags_WiQFjC": {
           "type": "tags",
-          "disabled": true,
           "settings": {
-            "button_label_1": "asasa",
-            "button_link_1": "",
+            "button_label_1": "AUDITION REQUIRMENTS",
+            "button_link_1": "shopify://collections/all",
             "button_label_2": "Apply",
-            "button_link_2": "",
+            "button_link_2": "shopify://collections/all",
             "button_label_3": "",
             "button_link_3": "",
             "button_label_4": "",
@@ -92,9 +91,10 @@
         },
         "button_gQqm7r": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_label": "Apply",
-            "button_link": "",
+            "button_link": "shopify://products/american-classicr-1a",
             "link": false,
             "blank_button": false
           }
@@ -133,6 +133,59 @@
         "padding_bottom": 36,
         "quote": false,
         "max_width": "468"
+      }
+    },
+    "rich_text_PYpAXz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XAMtwT": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand</p>",
+            "heading_size": "h1",
+            "max_width": ""
+          }
+        },
+        "text_btPdFa": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "hide_mobile": false,
+            "max_width": ""
+          }
+        },
+        "button_DREL9M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "blank": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_XAMtwT",
+        "text_btPdFa",
+        "button_DREL9M"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "mobile_border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 60,
+        "max_width": ""
       }
     },
     "multicolumn_73cKBb": {
@@ -374,6 +427,7 @@
   "order": [
     "3141c904-b6a6-4f2b-a1fe-aa2b9e911af8",
     "3ecbccab-bd42-4007-a0cf-7fdf878e010c",
+    "rich_text_PYpAXz",
     "multicolumn_73cKBb",
     "multirow_NLgBpg",
     "collapsible_content_mwniwH",
