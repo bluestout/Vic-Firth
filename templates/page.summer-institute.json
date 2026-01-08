@@ -171,7 +171,7 @@
           "settings": {
             "badge": "",
             "title": "Program Length",
-            "heading_size": "h3",
+            "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
@@ -188,7 +188,7 @@
           "settings": {
             "badge": "",
             "title": "Program dates",
-            "heading_size": "h3",
+            "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
@@ -204,12 +204,12 @@
           "type": "column",
           "settings": {
             "badge": "",
-            "title": "Column",
-            "heading_size": "h3",
+            "title": "Tuition",
+            "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>$1500 - Tuition include room and board and all institute activities/classes.</p>",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -227,7 +227,7 @@
       "settings": {
         "side_banner": false,
         "full_width": false,
-        "title": "",
+        "title": "PROGRAM DETAILS",
         "heading_size": "h2",
         "heading_align": "left",
         "image_width": "full",
@@ -239,18 +239,109 @@
         "swipe_on_desktop": false,
         "step_style": false,
         "column_alignment": "left",
-        "no_gap": true,
+        "no_gap": false,
         "no_padding": false,
         "number": false,
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
-        "color_scheme": "background-1",
+        "color_scheme": "inverse-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "mobile_overlay": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 52,
+        "padding_bottom": 0,
+        "max_width": ""
+      }
+    },
+    "multicolumn_UUhxcD": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_EjmnHr": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Age Range",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>6 DAYS</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_hMY9pt": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Application Deadline",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>May 31st, 2026 to June 5th, 2026</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_fNaVVM": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Location",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>The University of Maine Campus</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_EjmnHr",
+        "column_hMY9pt",
+        "column_fNaVVM"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "side_banner": false,
+        "full_width": false,
+        "title": "",
+        "heading_size": "h2",
+        "heading_align": "center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "mobile_image_ratio": "adapt",
+        "overlay_image": false,
+        "dark_overlay": true,
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "step_style": false,
+        "column_alignment": "left",
+        "no_gap": false,
+        "no_padding": false,
+        "number": false,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "inverse-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "mobile_overlay": false,
+        "padding_top": 48,
+        "padding_bottom": 48,
         "max_width": ""
       }
     },
@@ -464,7 +555,7 @@
         "collapsible_row_ffTRem": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What if I need to cancel",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -535,6 +626,59 @@
         "padding_top": 60,
         "padding_bottom": 100
       }
+    },
+    "rich_text_KRLax6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_azYDai": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand</p>",
+            "heading_size": "h1",
+            "max_width": ""
+          }
+        },
+        "text_wfHXFU": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "hide_mobile": false,
+            "max_width": ""
+          }
+        },
+        "button_PfkFRG": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "blank": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_azYDai",
+        "text_wfHXFU",
+        "button_PfkFRG"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "mobile_border_bottom": false,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "max_width": ""
+      }
     }
   },
   "order": [
@@ -542,10 +686,12 @@
     "3ecbccab-bd42-4007-a0cf-7fdf878e010c",
     "rich_text_PYpAXz",
     "multicolumn_f6aVT7",
+    "multicolumn_UUhxcD",
     "rich_text_8U4XDW",
     "multicolumn_73cKBb",
     "multirow_NLgBpg",
     "collapsible_content_mwniwH",
-    "main"
+    "main",
+    "rich_text_KRLax6"
   ]
 }
