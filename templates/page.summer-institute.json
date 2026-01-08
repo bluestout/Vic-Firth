@@ -78,6 +78,7 @@
         },
         "tags_WiQFjC": {
           "type": "tags",
+          "disabled": true,
           "settings": {
             "button_label_1": "AUDITION REQUIRMENTS",
             "button_link_1": "shopify://collections/all",
@@ -200,7 +201,7 @@
           "settings": {
             "badge": "",
             "title": "Program Length",
-            "heading_size": "h5",
+            "heading_size": "h3",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
@@ -217,7 +218,7 @@
           "settings": {
             "badge": "",
             "title": "Program dates",
-            "heading_size": "h5",
+            "heading_size": "h3",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
@@ -234,11 +235,62 @@
           "settings": {
             "badge": "",
             "title": "Tuition",
-            "heading_size": "h5",
+            "heading_size": "h3",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
             "text": "<p>$1500 - Tuition includes room and board and all institute activities/classes.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_xejYgK": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Age Range",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>18 yeas and over.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_GgiTn7": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Application Deadline",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>May 31st, 2026 to June 5th, 2026</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_KThnU8": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Location",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>The University of Maine Campus</p>",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -250,7 +302,10 @@
       "block_order": [
         "column_zM6meV",
         "column_pFq9eh",
-        "column_pbrK6d"
+        "column_pbrK6d",
+        "column_xejYgK",
+        "column_GgiTn7",
+        "column_KThnU8"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
@@ -279,97 +334,6 @@
         "swipe_on_mobile": false,
         "mobile_overlay": false,
         "padding_top": 40,
-        "padding_bottom": 0,
-        "max_width": ""
-      }
-    },
-    "multicolumn_UUhxcD": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_EjmnHr": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Age Range",
-            "heading_size": "h5",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>6 DAYS</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_hMY9pt": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Application Deadline",
-            "heading_size": "h5",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>May 31st, 2026 to June 5th, 2026</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_fNaVVM": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Location",
-            "heading_size": "h5",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>The University of Maine Campus</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        }
-      },
-      "block_order": [
-        "column_EjmnHr",
-        "column_hMY9pt",
-        "column_fNaVVM"
-      ],
-      "name": "t:sections.multicolumn.presets.name",
-      "settings": {
-        "side_banner": false,
-        "full_width": false,
-        "title": "",
-        "heading_size": "h2",
-        "heading_align": "center",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "mobile_image_ratio": "adapt",
-        "overlay_image": false,
-        "dark_overlay": false,
-        "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "step_style": false,
-        "column_alignment": "left",
-        "no_gap": false,
-        "no_padding": false,
-        "number": false,
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "inverse-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "mobile_overlay": false,
-        "padding_top": 48,
         "padding_bottom": 100,
         "max_width": ""
       }
@@ -719,7 +683,6 @@
     "rich_text_WXXaha",
     "rich_text_PYpAXz",
     "multicolumn_f6aVT7",
-    "multicolumn_UUhxcD",
     "rich_text_8U4XDW",
     "multicolumn_73cKBb",
     "multirow_NLgBpg",
