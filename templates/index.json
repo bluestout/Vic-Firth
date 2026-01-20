@@ -14,10 +14,9 @@
       "blocks": {
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Shop-Gifts-From-Vics-Workshop-Homepage-Banner_Desktop_18796caf-3b75-4770-a512-b619b5c9057a.jpg",
-            "mobile_image": "shopify://shop_images/Shop-Gifts-From-Vics-Workshop-Homepage-Banner_mobile_682fa7ef-0f8d-4439-924f-793a9167b630.jpg",
+            "image": "shopify://shop_images/Vic-Firth-Feel-The-Precision-Homepage-Banner_Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Feel-The-Precision-Homepage-Banner_mobile.jpg",
             "video": "",
             "content_width": "",
             "heading": "",
@@ -26,7 +25,7 @@
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "https://vicfirth.com/collections/gifts-from-vics-workshop",
+            "link": "shopify://collections/vic-firth-category-sticks",
             "button_style_secondary": false,
             "box_align": "middle-right",
             "show_text_box": false,
@@ -37,44 +36,20 @@
             "mobile_box_align": "bottom"
           }
         },
-        "262998ab-7eb4-4458-9650-2ecbe593dff8": {
+        "32f9ef7e-529b-4262-8994-75ae15e876ce": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Terra-Promo-Homepage-Banner_Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Terra-Promo-Homepage-Banner_Mobile.jpg",
-            "video": "",
-            "content_width": "450",
-            "heading": "",
+            "image": "shopify://shop_images/Terra-Drumstick-Collection-Homepage-Banner-Final_78bca6bf-2627-4e04-b546-2df3c1f38748.jpg",
+            "mobile_image": "shopify://shop_images/Terra-Drumstick-Collection-Homepage-Banner-Mobile_7b1c7c5e-83f1-42c5-b485-145f354c0fd1.jpg",
+            "video": "https://cdn.shopify.com/videos/c/o/v/e8f9fa62529d4d17abd62386fed785ba.mp4",
+            "content_width": "",
+            "heading": "Experience  Terra Series",
             "uppercase": true,
             "heading_size": "h0",
             "heading_color": "",
             "subheading": "",
-            "button_label": "",
+            "button_label": "LEARN MORE",
             "link": "shopify://pages/terra",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center",
-            "mobile_box_align": "middle"
-          }
-        },
-        "6b7c598a-839d-4439-a8c4-abd0a698fd46": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Bags-Homepage-Banner-Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Bags-Homepage-Banner-Mobile.jpg",
-            "video": "",
-            "content_width": "450",
-            "heading": "",
-            "uppercase": true,
-            "heading_size": "h0",
-            "heading_color": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/vic-firth-category-gear-accessories-stick-mallet-bags",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
@@ -109,21 +84,46 @@
             "mobile_box_align": "middle"
           }
         },
-        "32f9ef7e-529b-4262-8994-75ae15e876ce": {
+        "262998ab-7eb4-4458-9650-2ecbe593dff8": {
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Terra-Drumstick-Collection-Homepage-Banner-Final_78bca6bf-2627-4e04-b546-2df3c1f38748.jpg",
-            "mobile_image": "shopify://shop_images/Terra-Drumstick-Collection-Homepage-Banner-Mobile_7b1c7c5e-83f1-42c5-b485-145f354c0fd1.jpg",
-            "video": "https://cdn.shopify.com/videos/c/o/v/e8f9fa62529d4d17abd62386fed785ba.mp4",
-            "content_width": "",
-            "heading": "Experience  Terra Series",
+            "image": "shopify://shop_images/Terra-Promo-Homepage-Banner_Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Terra-Promo-Homepage-Banner_Mobile.jpg",
+            "video": "",
+            "content_width": "450",
+            "heading": "",
             "uppercase": true,
             "heading_size": "h0",
             "heading_color": "",
             "subheading": "",
-            "button_label": "LEARN MORE",
+            "button_label": "",
             "link": "shopify://pages/terra",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center",
+            "mobile_box_align": "middle"
+          }
+        },
+        "6b7c598a-839d-4439-a8c4-abd0a698fd46": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Vic-Firth-Bags-Homepage-Banner-Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Bags-Homepage-Banner-Mobile.jpg",
+            "video": "",
+            "content_width": "450",
+            "heading": "",
+            "uppercase": true,
+            "heading_size": "h0",
+            "heading_color": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/vic-firth-category-gear-accessories-stick-mallet-bags",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
@@ -137,10 +137,10 @@
       },
       "block_order": [
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f",
-        "262998ab-7eb4-4458-9650-2ecbe593dff8",
-        "6b7c598a-839d-4439-a8c4-abd0a698fd46",
+        "32f9ef7e-529b-4262-8994-75ae15e876ce",
         "slide_UtACbe",
-        "32f9ef7e-529b-4262-8994-75ae15e876ce"
+        "262998ab-7eb4-4458-9650-2ecbe593dff8",
+        "6b7c598a-839d-4439-a8c4-abd0a698fd46"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -320,7 +320,7 @@
           "settings": {
             "image": "shopify://shop_images/Heavy-Hitter-Promo-Block-Verticle.jpg",
             "mobile_image": "shopify://shop_images/Heavy-Hitter-Promo-Block-Horizontal.jpg",
-            "badge": "Shop Now",
+            "badge": "Shop Collection",
             "title": "Heavy Hitter Practice Pads",
             "link_label": "Shop Now",
             "link": "shopify://collections/vic-firth-category-gear-accessories-practice-accessories",
