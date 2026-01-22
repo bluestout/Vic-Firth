@@ -120,6 +120,9 @@
         "125bc9fb-debc-449c-a53c-10226197f2d0",
         "fbe15e98-645b-4a45-9432-fa0face0b078"
       ],
+      "custom_css": [
+        ".price-container {margin-top: 40px !important;}"
+      ],
       "settings": {
         "enable_sticky_info": false,
         "media_size": "small",
