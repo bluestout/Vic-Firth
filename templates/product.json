@@ -76,7 +76,6 @@
         },
         "cdf7bb7f-d55b-4a46-a7c0-822ce5dc0327": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
             "heading": "<p><strong>SPECS</strong></p>",
             "icon": "<svg width=\"30\" height=\"30\" viewbox=\"0 0 30 30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"1\" y=\"12\" width=\"28\" height=\"8\" stroke=\"#CE0E2D\" stroke-width=\"2\"></rect>\n<path d=\"M7 20L7 16\" stroke=\"#CE0E2D\"></path>\n<path d=\"M17 20L17 16\" stroke=\"#CE0E2D\"></path>\n<line x1=\"11.5\" y1=\"20\" x2=\"11.5\" y2=\"15\" stroke=\"#CE0E2D\"></line>\n<line x1=\"22.5\" y1=\"20\" x2=\"22.5\" y2=\"15\" stroke=\"#CE0E2D\"></line>\n</svg>",
@@ -86,7 +85,6 @@
         },
         "125bc9fb-debc-449c-a53c-10226197f2d0": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
             "heading": "<p><strong>DISCLAIMER</strong></p>",
             "icon": "",
@@ -96,7 +94,6 @@
         },
         "fbe15e98-645b-4a45-9432-fa0face0b078": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
             "heading": "<p>Find a store near you in </p>",
             "icon": "<svg width=\"14\" height=\"19\" viewbox=\"0 0 14 19\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12.6618 6.81132C12.6618 7.57353 12.3083 8.67642 11.6869 9.98012C11.0781 11.2574 10.2594 12.6327 9.43015 13.9073C8.6026 15.1794 7.7737 16.3374 7.15099 17.1781C6.98683 17.3998 6.83719 17.5991 6.70588 17.7724C6.57458 17.5991 6.42493 17.3998 6.26078 17.1781C5.63806 16.3374 4.80916 15.1794 3.98161 13.9073C3.15237 12.6327 2.33363 11.2574 1.72483 9.98012C1.10345 8.67642 0.75 7.57353 0.75 6.81132C0.75 3.45267 3.42753 0.75 6.70588 0.75C9.98424 0.75 12.6618 3.45267 12.6618 6.81132Z\" stroke=\"#CE0E2D\" stroke-width=\"1.5\"></path>\n</svg>",
@@ -337,7 +334,6 @@
     },
     "product_recommendations_UFefqe": {
       "type": "product-recommendations",
-      "disabled": true,
       "settings": {}
     },
     "related-products": {
