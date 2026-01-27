@@ -70,7 +70,11 @@
       background-color: white !important;
     }
 
-    
+    {% if product.title == "Summer Institute Enrollment" %}
+      .product-recommendations {
+        display: none;
+      }
+      {% endif %}
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
