@@ -1,4 +1,5 @@
 {% include 'breadcrumbs' %}
+
 <section
   id="MainProduct-{{ section.id }}"
   class="page-width section-{{ section.id }}-padding"
@@ -15,109 +16,61 @@
   {{ 'custom-product.scss.css' | asset_url | stylesheet_tag }}
 
   {%- style -%}
+    
+
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0 | round: 0 }}px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: 990px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
-
-    .yotpo-title-text {
-      color: #986e28!important;
-    }
-
-    .yotpo-new-review-btn-wrapper .yotpo-new-review-btn {
-      background-color: #CC9F53 !important;
-      color: black !important;
-    }
-
-    .yotpo-new-review-btn-wrapper .yotpo-btn-s {
-      background-color: #CC9F53 !important;
-      color: black !important;
-    }
-
-    .yotpo-new-review-btn-wrapper>button {
-      background-color: #CC9F53 !important;
-      color: black !important;
+    @media screen and (max-width: 989px) {
+      .product__media-wrapper {
+        position: relative!important;
+      }
+      .product__media-wrapper .card__badge {
+        left: 0!important;
+        top: 5px!important;
+      }
     }
 
     .lcly-dealer-phone a {
-      line-height: 24px;
-      min-height: 24px;
-      padding: 10px 0px;
-    }
-
-    .yotpo-reviewer-verified-buyer-text {
-      color: #986e28 !important;
-    }
-
-    .yotpo-star-distribution-index-wrapper .yotpo-star-distribution-index, .yotpo-star-distribution-value {
-      color: #986e28 !important;
-    }
-
-    .yotpo-bottom-line .yotpo-bottom-line-left-panel.yotpo-bottom-line-score {
-      color: #986e28 !important;
-    }
-
-    .yotpo-search-filter .yotpo-search-input {
-      color: black;
-    }
-
-    .yotpo-search-filter .yotpo-search-input,
-    #scoreDropdownInput {
-      border: 1px solid black !important;
-    }
-
-    #scoreDropdownInput {
-      border: 1px solid black !important;
+      display: flex;
+      height: 24px;
     }
 
     .lcly-location-feature-primary {
-      color: #5c5d60 !important;
+      color: #000000 !important;
     }
 
-    .change-copy {
-      text-decoration: underline;
+    .lcly-location-feature-secondary {
+      color: #000000 !important;
     }
 
-    .yotpo-text-container .yotpo-read-more {
-      color: #986E28 !important;
+    .quantity__input {
+      border: 1px solid #000000 !important;
     }
 
-    .yotpo-reviews-pagination-item.yotpo-pagination-number {
-      background-color: #CC9F53 !important;
-      color: black !important;
+    #searchInput {
+      border: 1px solid #000000 !important;
     }
 
-    .zildjian .selected-offer {
-      background-color: #CC9F53 !important;
-}
-    .accordion__content .button-list .button {
-      background-color: #CC9F53;
-      color: black !important;
+    .product-form__input .form__label span {
+      color: #000000 !important;
     }
 
-    .p-specifications__2-cols-item-label {
-      color: inherit !important;
+    .yotpo-selected-value__label--textual,
+    .yotpo-dropdown-base .yotpo-selected-value span {
+      color: #000000 !important;
+      background-color: white !important;
     }
 
-    .p-specifications__2-cols-item {
-      color: inherit !important;
-    }
-
-    .p-specifications__2-cols {
-      color: inherit !important;
-    }
-
-    .p-specifications__item:nth-child(even) .p-specifications__2-cols-item-label {
-
-      color: black !important;
-    }
+    
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -148,25 +101,19 @@
     >
   {%- endif -%}
 
-  {% assign flag_class = "" %}
-  {%if product.metafields.magento.product_flag contains 'NEW' %}
-    {% assign flag_class = "fs_flag_new" %}
-  {%elsif product.metafields.magento.product_flag contains 'BEST SELLER'%}
-    {% assign flag_class = "fs_flag__best_seller" %}
-  {%else%}
-  {%endif%}
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div data-section-type="product" class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-desktop{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-      <div class="card__badge {{ settings.badge_position }} {{flag_class}}" >
-        {% if product.metafields.magento.product_flag != blank %}
-          <span
-            id="NoMediaStandardBadge-{{ section_id }}-{{ product.id }}"
-            class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-          >
-            {{ product.metafields.magento.product_flag }}
-          </span>
-        {%- elsif product.available == false -%}
+      <div class="card__badge {{ settings.badge_position }}">
+        {% for tag in product.tags %}
+          {% if tag contains '_label:' %}
+            {% assign badge = tag | remove: '_label:' %}
+            <span class="badge badge--top-right {{badge | handleize }} color-{{ settings.sale_badge_color_scheme }}">
+              {{badge}}
+            </span>
+          {% endif %}
+        {% endfor %}
+        {% if product.available == false -%}
           <span
             id="NoMediaStandardBadge-{{ section_id }}-{{ product.id }}"
             class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
@@ -181,17 +128,6 @@
             {{- 'products.product.on_sale' | t -}}
           </span>
         {%- endif -%}
-
-        {% if product.available != false %}
-          {% for tag in product.tags %}
-            {% if tag contains '_label:' %}
-              {% assign badge = tag | remove: '_label:' %}
-              <span class="badge p1 badge--top-right {{badge | handleize }} color-{{ settings.sale_badge_color_scheme }}">
-                {{badge}}
-              </span>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
       </div>
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
@@ -237,17 +173,6 @@
                 -%}
               </div>
             </div>
-              
-              {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-                <div class="product__tax caption rte">
-                  {%- if shop.taxes_included -%}
-                    {{ 'products.product.include_taxes' | t }}
-                  {%- endif -%}
-                  {%- if shop.shipping_policy.body != blank -%}
-                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                  {%- endif -%}
-                </div>
-              {%- endif -%}
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -302,408 +227,218 @@
                 </div>
               {%- endif -%}
             {%- when 'sku' -%}
+               {% assign skus = product.selected_or_first_available_variant.sku %}
+              {% if skus != blank %}
               <p
                 class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
                 id="Sku-{{ section.id }}"
                 role="status"
                 {{ block.shopify_attributes }}
               >
-                <span>{{ 'products.product.sku' | t }}: </span> {{- product.selected_or_first_available_variant.sku -}}
+                <span>{{ 'products.product.sku' | t }}:</span> {{- product.selected_or_first_available_variant.sku -}}
               </p>
+            {% endif %}
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
             {%- when 'collapsible_tab' -%}
-              {% unless block.settings.heading contains 'Find a store' and product.tags contains "hidden_find_a_store"%}
-                {% capture content %}
-                  {% if block.settings.content == 'demo_video' %}
-                    {% if product.metafields.custom.demo_video_link == blank%}
-                      <style>
-                      .demo_video{
-                        display: none;
-                      }
-                      </style>
+              {% capture content %}
+                {% if block.settings.content == 'spec' %}
+                {% capture intro %}
+                  {% if product.metafields.magento.dia_inches != blank %}
+                  <div class="grid__item">Diameter: <strong>
+                    {% if product.metafields.magento.dia_inches != blank %}
+                    {{product.metafields.magento.dia_inches}}”
                     {% endif %}
-                    {% comment %} custom.demo_video_link {% endcomment %}
-                    <div class="fs-demo-video-modal-block">
-                      <div class="fs-demo-video-modal-btn" id="fs-demo-video-modal-btn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demo Video</div>
+                    {% if product.metafields.magento.dia_cm != blank %}
+                      | {{product.metafields.magento.dia_cm  | round: 2 }}cm
+                    {% endif %}</strong>
+                  </div>
+                  {% endif %}
+                  {% if product.metafields.magento.length_inches != blank %}
+                  <div class="grid__item">Length: <strong>
+                    {% if product.metafields.magento.length_inches != blank %}
+                    {{product.metafields.magento.length_inches}}”
+                    {% endif %}
+                    {% if product.metafields.magento.length_cm != blank %}
+                    | {{product.metafields.magento.length_cm | round: 2 }}cm
+                    {% endif %}
+                    </strong></div>
+                  {% endif %}
+                  {% if product.metafields.magento.weight_des != blank %}
+                  <div class="grid__item">Weight: <strong>
+                    {{product.metafields.magento.weight_des}}
+                    {% if product.metafields.magento.weight_lbs != blank %}
+                    | {{product.metafields.magento.weight_lbs}}lbs
+                    {% endif %}
+                    {% if product.metafields.magento.weight_oz != blank %}
+                    | {{product.metafields.magento.weight_oz}}oz
+                    {% endif %}
+                    </strong></div>
+                  {% endif %}
+                  {% if product.metafields.magento.family != blank %}
+                  <div class="grid__item">Family: <strong>{{product.metafields.magento.family}}</strong></div>
+                  {% endif %}
+                  {% if product.metafields.magento.type != blank %}
+                  {% endif %}
+                  {% if product.metafields.magento.wood_type != blank %}
+                  <div class="grid__item">Wood Type: <strong>{{product.metafields.magento.wood_type}}</strong></div>
+                  {% endif %}
+                {% endcapture %}
+                {% if intro != blank %}
+                <ul class="spec">
+                  <li>
+                    <div class="intro grid grid--1-col grid--2-col-desktop">
+                      {{intro}}
                     </div>
-                    <div id="fs-demo-video-modal" class="fs-demo-video-modal">
-                      <!-- Modal content -->
-                      <div class="fs-demo-video-modal-content">
-                        <div class="fs-demo-video-modal-close-btn" id="fs-demo-video-modal-close-btn">
-                          <svg aria-hidden="true" focusable="false" width="25" height="25" class="icon icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                        </div>
-                        <div class="fs-demo-video-modal-contain">
-                        {% if product.metafields.custom.demo_video_link != blank%}
-                          {% include 'pdp-demo-video'  with context: product %}
-                          {% comment %} <iframe width="560" height="315" src="{{product.metafields.custom.demo_video_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> {% endcomment %}
-                        {% endif %}
-                        </div>
-                        <div class="fs-demo-video-modal-bottom">
-                          <button class="fs-demo-video-model-ok-btn" id="fs-demo-video-model-ok-btn">OK</button>
-                        </div>
-                      </div>
-                    </div>
-                  {% elsif block.settings.content == 'spec' %}
-                    {% unless product.has_only_default_variant %}
-                      {% for variant in product.variants %}
-                        {% capture intro %}
-                          {% if variant.metafields.magento.dia_inches != blank %}
-                          <div class="grid__item">Diameter: <strong>
-                            {% if variant.metafields.magento.dia_inches contains "."%}
-                              {% assign temp_str = variant.metafields.magento.dia_inches | split : "." %}
-                              {{temp_str | first}}.{{temp_str | last | truncate: 3,"" }}”
-                            {% else %}
-                              {{variant.metafields.magento.dia_inches}}”
-                            {% endif %}
-                            {% if variant.metafields.magento.dia_cm != blank %}
-                              {% if variant.metafields.magento.dia_cm contains "."%}
-                                {% assign temp_str = variant.metafields.magento.dia_cm | split : "." %}
-                                | {{temp_str | first}}.{{temp_str | last | truncate: 2,"" }}cm
-                              {% else %}
-                                | {{variant.metafields.magento.dia_cm}}cm
-                              {% endif %}
-                            {% endif %}</strong>
-                          </div>
-                          {% endif %}
-                          {% if variant.metafields.magento.length_inches != blank %}
-                          <div class="grid__item">Length: <strong>
-                            {% if variant.metafields.magento.length_inches contains "."%}
-                              {% assign temp_str = variant.metafields.magento.length_inches | split : "." %}
-                              {{temp_str | first}}.{{temp_str | last | truncate: 2,"" }}”
-                            {% else %}
-                              {{variant.metafields.magento.length_inches}}”
-                            {% endif %}
-                            {% if variant.metafields.magento.length_cm != blank %}
-                              {% if variant.metafields.magento.length_cm contains "."%}
-                                {% assign temp_str = variant.metafields.magento.length_cm | split : "." %}
-                                | {{temp_str | first}}.{{temp_str | last | truncate: 2,"" }}cm
-                              {% else %}
-                                | {{variant.metafields.magento.length_cm}}cm
-                              {% endif %}
-                            {% endif %}
-                            </strong></div>
-                          {% endif %}
-                          {% if variant.metafields.magento.weight_des != blank %}
-                          <div class="grid__item">Weight: <strong>
-                            {{variant.metafields.magento.weight_des}}
-                            {% comment %} {% if variant.metafields.magento.weight_lbs != blank %}
-                            | {{variant.metafields.magento.weight_lbs}}lbs
-                            {% endif %}
-                            {% if variant.metafields.magento.weight_oz != blank %}
-                            | {{variant.metafields.magento.weight_oz}}oz
-                            {% endif %} {% endcomment %}
-                            </strong></div>
-                          {% endif %}
-                          {% if variant.metafields.magento.family != blank %}
-                          <div class="grid__item">Family: <strong>{{variant.metafields.magento.family}}</strong></div>
-                          {% endif %}
-                          {% if variant.metafields.magento.type != blank %}
-                          {% endif %}
-                          {% if variant.metafields.magento.wood_type != blank %}
-                          <div class="grid__item">Wood Type: <strong>{{variant.metafields.magento.wood_type}}</strong></div>
-                          {% endif %}
-                        {% endcapture %}
-                        {% if intro != blank %}
-                          <div class="varaint_item {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}" data-variant-id="{{variant.id}}">
-                            <ul class="spec 1">
-                              <li>
-                                <div class="intro grid grid--1-col grid--2-col-desktop">
-                                  {{intro}}
-                                </div>
-                              </li>
-                              {% if variant.metafields.magento.taper != blank %}
-                              <li class="grid grid--1-col">
-                                <div class="grid__item">Taper: <strong>{{variant.metafields.magento.taper}}</strong></div>
-                              </li>
-                              {% endif %}
-                              {% if template contains "sticks" %}
-                              <li class="grid grid--1-col">
-                                <div class="">
-                                  <img src="{{'Group_101.png' | file_url}}"   alt="spec taper" width="469" height="82" loading="lazy" style="border: none;"> 
-                                </div>
-                              </li>
-                              {% endif %}
-                              {% assign stick_spec_flag = true %}
-                              {% assign spec_label = "" %}
-                              {% if variant.tags contains 'Zildjian Category/Cymbals' or template contains 'cymbal'%}
-                                {% assign stick_spec_flag = false %}
-                              {% endif %}
-                              {% if template contains 'sticks' %}
-                                {% assign stick_spec_flag = true %}
-                                {% assign spec_label = "STICK" %}
-                              {% endif %}
-                              {% if template contains 'accessories' %}
-                                {% assign stick_spec_flag = true %}
-                                {% assign spec_label = "ACCESSORY" %}
-                              {% endif %}
-                              {% if template contains 'accessories' %}
-                                {% assign stick_spec_flag = true %}
-                                {% assign spec_label = "ACCESSORY" %}
-                              {% endif %}
+                  </li>
 
-                              {% if variant.tags contains '400th' or stick_spec_flag == true %}
-                                {% if variant.metafields.magento.series != blank or variant.metafields.magento.surface_coating != blank %}
-                                <li class="grid grid--1-col heading">
-                                  <div class="grid__item">{{ spec_label }}</div>
-                                </li>
-                                <li class="grid grid--1-col grid--2-col-desktop">
-                                  {% if variant.metafields.magento.series != blank %}
-                                  <div class="grid__item">Series: <strong>{{variant.metafields.magento.series}}</strong></div>
-                                  {% endif %}
-                                  {% if variant.metafields.magento.surface_coating != blank %}
-                                  <div class="grid__item">Finish: <strong>{{variant.metafields.magento.surface_coating}}</strong></div>
-                                  {% endif %}
-                                </li>
-                                {% endif %}
-                              {% endif %}
-                              {% if variant.metafields.magento.tip_material != blank or variant.metafields.magento.tip_shape != blank %}
-                                <li class="grid grid--1-col heading">
-                                  <div class="grid__item">Tip</div>
-                                </li>
-                                <li class="grid grid--1-col grid--2-col-desktop" >
-                                  {% if variant.metafields.magento.tip_material %}
-                                  <div class="grid__item" >Material: <strong>{{variant.metafields.magento.tip_material}}</strong></div>
-                                  {% endif %}
-                                  {% if variant.metafields.magento.tip_shape != blank %}
-                                  <div class="grid__item" >Shape: <strong>{{variant.metafields.magento.tip_shape}}</strong></div>
-                                  {% endif %}
-                                </li>
-                              {% endif %}
-                            </ul>    
-                          </div>
-                        {% endif %}
-                      {% endfor %}
+                  {% if product.metafields.magento.taper != blank %}
+                  <li class="grid grid--1-col">
+                    <div class="grid__item">Taper: <strong>{{product.metafields.magento.taper}}</strong>
+                      <a class="tooltip">?<span class="classic">Taper affects the feel and balance of a stick. A long taper produces a back-heavy feel with more flex and a faster response. A short taper provides more power and durability with a front-heavy feel. A medium taper gives you the best balance between the butt and the tip.</span></a>
+                    </td>
+                  </li>
+                  {% endif %}
+                  
+                  {% if product.metafields.magento.type contains 'stick' %}
+                  <li class="grid grid--1-col">
+                    <div class="">
+                      <img src="{{ 'sticker.png' | asset_url }}" alt="spec taper" width="469" height="82" loading="lazy" style="border: none;">
+                    </div>
+                  </li>
+                  {% endif %}
+                  {% if product.metafields.magento.series != blank or product.metafields.magento.surface_coating != blank %}
+                  <li class="grid grid--1-col heading">
+                    {% if product.type != "Accessories" %}
+                      <div class="grid__item">{{product.type | remove_last: 's' }}</td>
                     {% else %}
-                      {% capture intro %}
-                        {% if product.metafields.magento.dia_inches != blank %}
-                        <div class="grid__item">Diameter: <strong>
-                          {% if product.metafields.magento.dia_inches contains "."%}
-                            {% assign temp_str = product.metafields.magento.dia_inches | split : "." %}
-                            {{temp_str | first}}.{{temp_str | last | truncate: 3,"" }}”
-                          {% else %}
-                            {{product.metafields.magento.dia_inches}}”
-                          {% endif %}
-                          {% if product.metafields.magento.dia_cm != blank %}
-                            {% if product.metafields.magento.dia_cm contains "."%}
-                              {% assign temp_str = product.metafields.magento.dia_cm | split : "." %}
-                              | {{temp_str | first}}.{{temp_str | last | truncate: 2,"" }}cm
-                            {% else %}
-                              | {{product.metafields.magento.dia_cm}}cm
-                            {% endif %}
-                          {% endif %}</strong>
-                        </div>
-                        {% endif %}
-                        {% if product.metafields.magento.length_inches != blank %}
-                        <div class="grid__item">Length: <strong>
-                          {% if product.metafields.magento.length_inches contains "."%}
-                            {% assign temp_str = product.metafields.magento.length_inches | split : "." %}
-                            {{temp_str | first}}.{{temp_str | last | truncate: 2,"" }}”
-                          {% else %}
-                            {{product.metafields.magento.length_inches}}”
-                          {% endif %}
-                          {% if product.metafields.magento.length_cm != blank %}
-                            {% if product.metafields.magento.length_cm contains "."%}
-                              {% assign temp_str = product.metafields.magento.length_cm | split : "." %}
-                              | {{temp_str | first}}.{{temp_str | last | truncate: 2,"" }}cm
-                            {% else %}
-                              | {{product.metafields.magento.length_cm}}cm
-                            {% endif %}
-                          {% endif %}
-                          </strong></div>
-                        {% endif %}
-                        {% if product.metafields.magento.weight_des != blank %}
-                        <div class="grid__item">Weight: <strong>
-                          {{product.metafields.magento.weight_des}}
-                          {% comment %} {% if product.metafields.magento.weight_lbs != blank %}
-                          | {{product.metafields.magento.weight_lbs}}lbs
-                          {% endif %}
-                          {% if product.metafields.magento.weight_oz != blank %}
-                          | {{product.metafields.magento.weight_oz}}oz
-                          {% endif %} {% endcomment %}
-                          </strong></div>
-                        {% endif %}
-                        {% if product.metafields.magento.family != blank %}
-                        <div class="grid__item">Family: <strong>{{product.metafields.magento.family}}</strong></div>
-                        {% endif %}
-                        {% if product.metafields.magento.type != blank %}
-                        {% endif %}
-                        {% if product.metafields.magento.wood_type != blank %}
-                        <div class="grid__item">Wood Type: <strong>{{product.metafields.magento.wood_type}}</strong></div>
-                        {% endif %}
-                      {% endcapture %}
-                      {% if intro != blank %}
-                      <ul class="spec 1">
-                        <li>
-                          <div class="intro grid grid--1-col grid--2-col-desktop">
-                            {{intro}}
-                          </div>
-                        </li>
-                        {% if product.metafields.magento.taper != blank %}
-                        <li class="grid grid--1-col">
-                          <div class="grid__item">Taper: <strong>{{product.metafields.magento.taper}}</strong></div>
-                        </li>
-                        {% endif %}
-                        {% if template contains "sticks" %}
-                        <li class="grid grid--1-col">
-                          <div class="">
-                            <img src="{{'Group_101.png' | file_url}}"   alt="spec taper" width="469" height="82" loading="lazy" style="border: none;"> 
-                          </div>
-                        </li>
-                        {% endif %}
-                        {% comment %} {% if product.metafields.magento.taper_image != blank and product.metafields.magento.taper_image contains 'cdn.shopify' %}
-                        <li class="grid grid--1-col">
-                          <div class="">
-                            {% assign img_name = product.metafields.magento.taper_image | split: "/" %}
-                            <img src="{{img_name.last | file_url}}"   alt="spec taper" width="469" height="82" loading="lazy" style="border: none;">
-                          </div>
-                        </li>
-                        {% endif %} {% endcomment %}
-
-                        {% assign stick_spec_flag = true %}
-                        {% assign spec_label = "" %}
-
-                        {% if product.tags contains 'Zildjian Category/Cymbals' or template contains 'cymbal'%}
-                          {% assign stick_spec_flag = false %}
-                        {% endif %}
-                        {% if template contains 'sticks' %}
-                          {% assign stick_spec_flag = true %}
-                          {% assign spec_label = "STICK" %}
-                        {% endif %}
-                        {% if template contains 'accessories' %}
-                          {% assign stick_spec_flag = true %}
-                          {% assign spec_label = "ACCESSORY" %}
-                        {% endif %}
-                        {% if product.tags contains '400th' or stick_spec_flag == true %}
-                        {% if product.metafields.magento.series != blank or product.metafields.magento.surface_coating != blank %}
-                        <li class="grid grid--1-col heading">
-                          <div class="grid__item">{{ spec_label }}</div>
-                          {% comment %} <div class="grid__item">Electronic Drum Kit</td> {% endcomment %}
-                        </li>
-                        <li class="grid grid--1-col grid--2-col-desktop">
-                          {% if product.metafields.magento.series != blank %}
-                          <div class="grid__item">Series: <strong>{{product.metafields.magento.series}}</strong></div>
-                          {% endif %}
-                        {% endif %}
-                        {% endif %}
-                        {% if product.metafields.magento.tip_material != blank or product.metafields.magento.tip_shape != blank %}
-                          <li class="grid grid--1-col heading">
-                            <div class="grid__item">Tip</div>
-                          </li>
-                          <li class="grid grid--1-col grid--2-col-desktop" >
-                            {% if product.metafields.magento.tip_material %}
-                            <div class="grid__item" >Material: <strong>{{product.metafields.magento.tip_material}}</strong></div>
-                            {% endif %}
-                            {% if product.metafields.magento.tip_shape != blank %}
-                            <div class="grid__item" >Shape: <strong>{{product.metafields.magento.tip_shape}}</strong></div>
-                            {% endif %}
-                          </li>
-                        {% endif %}
-                      </ul>
+                      <div class="grid__item">Accessory</td>
+                    {% endif %}
+                  </li>
+                  <li class="grid grid--1-col grid--2-col-desktop">
+                    {% if product.metafields.magento.series != blank %}
+                    <div class="grid__item">Series: <strong>{{product.metafields.magento.series}}</strong></div>
+                    {% endif %}
+                    {% if product.metafields.magento.surface_coating != blank %}
+                    <div class="grid__item">Finish: <strong>{{product.metafields.magento.surface_coating}}</strong></div>
+                    {% endif %}
+                  </li>
+                  {% endif %}
+                  {% if product.metafields.magento.tip_material != blank or product.metafields.magento.tip_shape != blank %}
+                    <li class="grid grid--1-col heading">
+                      <div class="grid__item">Tip</div>
+                    </li>
+                    <li class="grid grid--1-col grid--2-col-desktop" >
+                      {% if product.metafields.magento.tip_material %}
+                      <div class="grid__item" >Material: <strong>{{product.metafields.magento.tip_material}}</strong></div>
                       {% endif %}
-                    {% endunless %}
-                        
-                  {% elsif block.settings.content == 'audio' %}
-                    {% if product.metafields.global.sound_video_link != blank %}
-                      <modal-dialog id="PopupModal-sound_video_{{variant.id}}" class="product-popup-modal" {{ block.shopify_attributes }}>
-                        <div
-                          role="dialog"
-                          aria-label="{{ block.settings.text }}"
-                          aria-modal="true"
-                          class="product-popup-modal__content"
-                          tabindex="-1"
-                        >
-                          <button
-                            id="ModalClose-sound_video_{{product.id}}"
-                            type="button"
-                            class="product-popup-modal__toggle"
-                            aria-label="{{ 'accessibility.close' | t }}"
-                          >
-                            {% render 'icon-close' %}
-                          </button>
-                          <div class="product-popup-modal__content-info">
-                            {% include 'product-video' with context: product %}
-                          </div>
-                        </div>
-                      </modal-dialog>
-                      <modal-opener data-variant-id="{{variant.id}}"
-                        class="varaint_item product-popup-modal__opener no-js-hidden quick-add-hidden {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}"
-                        data-modal="#PopupModal-sound_video_{{variant.id}}"
-                        {{ block.shopify_attributes }}
+                      {% if product.metafields.magento.tip_shape != blank %}
+                      <div class="grid__item" >Shape: <strong>{{product.metafields.magento.tip_shape}}</strong></div>
+                      {% endif %}
+                    </li>
+                  {% endif %}
+                </ul>
+                {% endif %}
+                
+                {% elsif block.settings.content == 'audio' %}
+                  {% if product.metafields.magento.sound_demo_video_link != blank %}
+                    <modal-dialog id="PopupModal-sound_video_{{product.id}}" class="product-popup-modal" {{ block.shopify_attributes }}>
+                      <div
+                        role="dialog"
+                        aria-label="{{ block.settings.text }}"
+                        aria-modal="true"
+                        class="product-popup-modal__content"
+                        tabindex="-1"
                       >
                         <button
-                          id="ProductPopup-sound_video_{{variant.id}}"
-                          class="product-popup-modal__button link"
+                          id="ModalClose-sound_video_{{product.id}}"
                           type="button"
-                          aria-haspopup="dialog"
+                          class="product-popup-modal__toggle"
+                          aria-label="{{ 'accessibility.close' | t }}"
                         >
-                          Demo Video
+                          {% render 'icon-close' %}
                         </button>
-                      </modal-opener>
-                    {% endif %}
-                    {% unless product.has_only_default_variant %}
-                      {% for variant in product.variants %}
-                        {% if variant.metafields.magento.audio_1_title != blank %}
-                          <audio-player data-variant-id="{{variant.id}}" class="varaint_item  {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}" >
-                            <div class="padding">
-                              <div class="container">
-                                <audio preload="metadata" controls controlslist="nodownload">
-                                  <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{variant.metafields.magento.audio_1}}" type="audio/mpeg">
-                                  Your browser does not support the audio tag.
-                                </audio>
-                                <div class="play-button">{{variant.metafields.magento.audio_1_title}}</div>
-                              </div>
+                        <div class="product-popup-modal__content-info">
+                          {% include 'product-video' with context: product %}
+                        </div>
+                      </div>
+                    </modal-dialog>
+                    <modal-opener
+                      class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+                      data-modal="#PopupModal-sound_video_{{product.id}}"
+                      {{ block.shopify_attributes }}
+                    >
+                      <button
+                        id="ProductPopup-sound_video_{{product.id}}"
+                        class="product-popup-modal__button link"
+                        type="button"
+                        aria-haspopup="dialog"
+                      >
+                        Demo Video
+                      </button>
+                    </modal-opener>
+                  {% endif %}
+                  
+                  {% unless product.has_only_default_variant %}
+                    {% for variant in product.variants %}
+                      {% if variant.metafields.magento.audio_1_title != blank %}
+                        <audio-player data-variant-id="{{variant.id}}" class="varaint_item  {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}" >
+                          <div class="padding">
+                            <div class="container">
+                              <audio preload="metadata" controls controlslist="nodownload">
+                                <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{variant.metafields.magento.audio_1}}" type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                              </audio>
+                              <div class="play-button">{{variant.metafields.magento.audio_1_title}}</div>
                             </div>
-                          </audio-player>
-                        {% endif %}
-                        {% if variant.metafields.magento.audio_2_title != blank %}
-                          <audio-player data-variant-id="{{variant.id}}" class="varaint_item {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}" >
-                            <div class="padding">
-                              <div class="container">
-                                <audio preload="metadata" controls controlslist="nodownload">
-                                  <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{variant.metafields.magento.audio_2}}" type="audio/mpeg">
-                                  Your browser does not support the audio tag.
-                                </audio>
-                                <div class="play-button">{{variant.metafields.magento.audio_2_title}}</div>
-                              </div>
+                          </div>
+                        </audio-player>
+                      {% endif %}
+                      {% if variant.metafields.magento.audio_2_title != blank %}
+                        <audio-player data-variant-id="{{variant.id}}" class="varaint_item {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}" >
+                          <div class="padding">
+                            <div class="container">
+                              <audio preload="metadata" controls controlslist="nodownload">
+                                <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{variant.metafields.magento.audio_2}}" type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                              </audio>
+                              <div class="play-button">{{variant.metafields.magento.audio_2_title}}</div>
                             </div>
-                          </audio-player>
-                        {% endif %}
-                        {% if variant.metafields.magento.audio_3_title != blank %}
-                          <audio-player data-variant-id="{{variant.id}}" class="varaint_item {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}">
-                            <div class="padding">
-                              <div class="container">
-                                <audio preload="metadata" controls controlslist="nodownload">
-                                  <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{variant.metafields.magento.audio_3}}" type="audio/mpeg">
-                                  Your browser does not support the audio tag.
-                                </audio>
-                                <div class="play-button">{{variant.metafields.magento.audio_3_title}}</div>
-                              </div>
+                          </div>
+                        </audio-player>
+                      {% endif %}
+                      {% if variant.metafields.magento.audio_3_title != blank %}
+                        <audio-player data-variant-id="{{variant.id}}" class="varaint_item {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}">
+                          <div class="padding">
+                            <div class="container">
+                              <audio preload="metadata" controls controlslist="nodownload">
+                                <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{variant.metafields.magento.audio_3}}" type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                              </audio>
+                              <div class="play-button">{{variant.metafields.magento.audio_3_title}}</div>
                             </div>
-                          </audio-player>
-                        {% endif %}
-                        {% if variant.metafields.magento.audio_4_title != blank %} 
-                          <audio-player data-variant-id="{{variant.id}}" class="varaint_item {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}">
-                            <div class="padding">
-                              <div class="container">
-                                <audio preload="metadata" controls controlslist="nodownload">
-                                  <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{variant.metafields.magento.audio_4}}" type="audio/mpeg">
-                                  Your browser does not support the audio tag.
-                                </audio>
-                                <div class="play-button">{{variant.metafields.magento.audio_4_title}}</div>
-                              </div>
+                          </div>
+                        </audio-player>
+                      {% endif %}
+                      {% if variant.metafields.magento.audio_4_title != blank %} 
+                        <audio-player data-variant-id="{{variant.id}}" class="varaint_item {% if variant.id != product.selected_or_first_available_variant.id%}hide{% endif %}">
+                          <div class="padding">
+                            <div class="container">
+                              <audio preload="metadata" controls controlslist="nodownload">
+                                <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{variant.metafields.magento.audio_4}}" type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                              </audio>
+                              <div class="play-button">{{variant.metafields.magento.audio_4_title}}</div>
                             </div>
-                          </audio-player>
-                        {% endif %}
-                      {% endfor %}
-                    {% else %}
+                          </div>
+                        </audio-player>
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
                     {% if product.metafields.magento.audio_1_title != blank %}
                       <audio-player>
                         <div class="padding">
-                        <div class="container">
+                          <div class="container">
                             <audio preload="metadata" controls controlslist="nodownload">
                               <source src="https://cdn.shopify.com/s/files/1/0729/7938/2564/files/{{product.metafields.magento.audio_1}}" type="audio/mpeg">
                               Your browser does not support the audio tag.
@@ -752,10 +487,11 @@
                         </div>
                       </audio-player>
                     {% endif %}
-                    {% endunless %}
-                  {% elsif block.settings.content == 'DISCLAIMER' %}
-                    {{product.metafields.magento.disclaimer}}
-                  {% elsif block.settings.content == 'location' %}
+                  {% endunless %}
+
+                {% elsif block.settings.content == 'DISCLAIMER' %}
+                  {{product.metafields.magento.disclaimer}}
+                {% elsif block.settings.content == 'location' %}
                     {% assign no_location = false %}
                     {% for tag in product.tags %}
                       {% if tag == 'no_location' %}
@@ -802,46 +538,62 @@
                         document.getElementById('lcly-script-0').src = lcly_endpoint_0;
                       </script>
                     {% endunless %}
-                  {% elsif block.settings.content == 'DOWNLOAD' %}
-                    <div class="button-list">
-                      <a href="/pages/user-guides" target="_blank" class="button">User Guides</a>
-                      <a href="/pages/downloads" target="_blank" class="button">Downloads</a>
-                    </div>
-                  {% else %}
-                    {{ block.settings.content }}
-                    {% if product.metafields.magento.bullet != blank %}
-                    <ul class="bullet">
-                      {{product.metafields.magento.bullet | newline_to_br | replace: '<br />', '</li><li>' | prepend: '<li>' }}
-                    </ul>
-                  {% endif %}
-                  {% endif %}
-                {% endcapture %}
-                {% if content != blank %}
-                  <div class="product__accordion accordion quick-add-hidden {% if block.settings.content == 'demo_video' %} demo_video {%endif%}" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}" {% unless product.template_suffix == 'edrum-kit' %}open{% endunless %}>
-                      <summary>
-                        <div class="summary__title">
-                          {{block.settings.icon}}
-                          <div p1 class="accordion__title">
-                            {{ block.settings.heading | default: block.settings.page.title }} 
-                            {% if block.settings.heading contains 'Find a store' %}
-                            <span class="lcly-city-name"></span>? 
-                            <span class="change-copy lcly-location-prompt-link">change</span>
-                            {% endif %}
-                          </div>
-                        </div>
-                        {% render 'icon-caret' %}
-                      </summary>
-                      <a id="lcly-location-prompt-link-0" class="origin-change lcly-location-prompt-link" data-switchlive="true" data-switchlive-mode="auto" data-switchlive-id-pl="5" href="javascript:;" role="link"></a>
-                      <div class="accordion__content rte {{block.settings.heading | strip_html | handleize }}" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                        {{content}}
-                      </div>
-                    </details>
-                  </div>
+                {% else %}
+                {{ block.settings.content }}
+                
+                {% if product.metafields.magento.bullet != blank %}
+                <ul class="bullet">
+                  {{product.metafields.magento.bullet | newline_to_br | replace: '<br />', '</li><li>' | prepend: '<li>' }}
+                </ul>
                 {% endif %}
-              {% endunless %}
+                {% endif %}
+              {% endcapture %}
+              {% if content != blank %}
+              <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                <details id="Details-{{ block.id }}-{{ section.id }}" open>
+                  <summary>
+                    <div class="summary__title">
+                      {% assign prod_type = product.metafields.magento.type | handleize %}
+                      {% if block.settings.heading contains 'DETAILS' and prod_type contains 'mallets' %}
+                        <svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.7315 8.01992C11.1618 7.28962 12.0579 6.96958 12.8543 6.64926C13.3621 6.44499 13.8084 6.07982 14.104 5.57799C14.8049 4.3884 14.3941 2.88141 13.1865 2.21202C11.979 1.54264 10.4318 1.96435 9.73093 3.15394C9.43527 3.65577 9.33743 4.21408 9.41378 4.74216C9.53351 5.5703 9.7041 6.48161 9.27382 7.21191L2.7282 18.3216C2.49457 18.7181 2.63149 19.2204 3.03403 19.4436C3.43656 19.6667 3.95227 19.5261 4.1859 19.1296L10.7315 8.01992Z" stroke="#CE0E2D" stroke-width="2"/>
+                          <path d="M14.7315 15.0199C15.1618 14.2896 16.0579 13.9696 16.8543 13.6493C17.3621 13.445 17.8084 13.0798 18.104 12.578C18.8049 11.3884 18.3941 9.88141 17.1865 9.21202C15.979 8.54264 14.4318 8.96435 13.7309 10.1539C13.4353 10.6558 13.3374 11.2141 13.4138 11.7422C13.5335 12.5703 13.7041 13.4816 13.2738 14.2119L6.7282 25.3216C6.49457 25.7181 6.63149 26.2204 7.03403 26.4436C7.43656 26.6667 7.95227 26.5261 8.1859 26.1296L14.7315 15.0199Z" stroke="#CE0E2D" stroke-width="2"/>
+                        </svg>                        
+                      {% else %}
+                        {{block.settings.icon}}
+                      {% endif %}
+                      
+                      <div class="accordion__title">
+                        {% if prod_type contains 'sticks' %}
+                          {% assign type = 'Stick' | upcase %}
+                        {% elsif prod_type contains 'mallets' %}
+                          {% assign type = 'Mallet' | upcase %}
+                        {% elsif prod_type contains 'brushes' %}
+                          {% assign type = 'Brushe' | upcase %}
+                        {% elsif prod_type contains 'beater' %}
+                          {% assign type = 'Beater' | upcase %}
+                        {% else %}
+                          {% assign type = '' | upcase %}
+                        {% endif %}
+                        {{ block.settings.heading | replace: "$type", type | default: block.settings.page.title }} 
+                        {% if block.settings.heading contains 'Find a store' %}
+                        <span class="lcly-city-name"></span>? 
+                        <span class="change-copy lcly-location-link-tag"><u>Change</u></span>
+                      {% endif %}
+                    </div>
+                  </div>
+                  {% render 'icon-caret' %}
+                </summary>
+                <a id="lcly-location-prompt-link-0" class="lcly-location-prompt-link" data-switchlive="true" data-switchlive-mode="auto" data-switchlive-id-pl="5" href="javascript:;" style="display: none;">Change</a>
+                  <div class="accordion__content rte {{block.settings.heading | strip_html | handleize }}" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                    {{content}}
+                  </div>
+                </details>
+              </div>
+              {% endif %}
+              
             {%- when 'quantity_selector' -%}
-              <div     
+              <div
                 id="Quantity-Form-{{ section.id }}"
                 class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                 {{ block.shopify_attributes }}
@@ -965,7 +717,7 @@
                   <aside aria-label="{{ 'accessibility.complementary_products' | t }}" {{ block.shopify_attributes }}{% if block.settings.make_collapsible_row %} class="product__accordion accordion"{% endif %}>
                     <div class="complementary-products__container">
                       {%- if block.settings.make_collapsible_row -%}
-                        <details id="Details-{{ block.id }}-{{ section.id }}" {% unless product.template_suffix == 'edrum-kit' %}open{% endunless %}>
+                        <details id="Details-{{ block.id }}-{{ section.id }}" open>
                           <summary>
                       {%- endif %}
                       <div class="summary__title">
@@ -1058,44 +810,7 @@
         {% render 'product-media-gallery', variant_images: variant_images, is_duplicate: true %}
       </div>
     {%- endif -%}
-  </div> 
-
-  <script src="https://a.klaviyo.com/media/js/onsite/onsite.js" defer></script>
-  <script>
-    var klaviyo = klaviyo || [];
-    klaviyo.init({
-      account: "UBRz8g",
-      platform: "shopify"
-    });
-    klaviyo.enable("backinstock",{ 
-    trigger: {
-      product_page_text: "NOTIFY ME WHEN AVAILABLE",
-      product_page_class: "product-form__submit",
-      product_page_text_align: "center",
-      product_page_margin: "0px",
-      replace_anchor: false
-    },
-    modal: {
-    headline: '{{product.title}}',
-    body_content: "Register to receive a notification when this item comes back in stock.",
-    email_field_label: "Email",
-    button_label: "NOTIFY ME WHEN AVAILABLE",
-    subscription_success_label: "You're in! We'll let you know when it's back.",
-    footer_content: '',
-    additional_styles: "@import url('https://fonts.googleapis.com/css?family=Helvetica+Neue');",
-    drop_background_color: "#000",
-    background_color: "#fff",
-    text_color: "#222",
-    button_text_color: "#fff",
-    button_background_color: "#cc9f53",
-    close_button_color: "#ccc",
-    error_background_color: "#fcd6d7",
-    error_text_color: "#C72E2F",
-    success_background_color: "#d3efcd",
-    success_text_color: "#1B9500"
-    }
-  });
-  </script>
+  </div>
 
   {% render 'product-media-modal' variant_images: variant_images %}
 
@@ -1139,6 +854,25 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      const ts = setInterval(()=>{
+        if(document.querySelector('.yotpo-widget-clear')) {
+          document.querySelector('.yotpo-widget-clear').removeAttribute('aria-labelledby');
+
+          clearInterval(ts)
+        }
+      }, 1000)
+
+      const interval = setInterval(()=>{
+        
+        if(document.querySelectorAll(".lcly-dealer").length > 0) {
+          document.querySelectorAll(".lcly-dealer").forEach((item, index)=>{
+            item.removeAttribute("role")
+          })
+
+          clearInterval(interval)
+        }
+      }, 1000)
+
       function isIE() {
         const ua = window.navigator.userAgent;
         const msie = ua.indexOf('MSIE ');
@@ -1161,29 +895,10 @@
       document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function (event) {
         hiddenInput.value = event.currentTarget.value;
       });
-    });
-    
-    {% if product.metafields.custom.demo_video_link != blank%}
-    var demo_video_modal = document.getElementById("fs-demo-video-modal");
-    var demo_video_btn = document.getElementById("fs-demo-video-modal-btn");
-    var demo_video_close = document.getElementById("fs-demo-video-modal-close-btn");
-    var demo_video_ok = document.getElementById("fs-demo-video-model-ok-btn");
 
-    demo_video_btn.onclick = function() {
-      demo_video_modal.style.display = "block";
-    }
-    demo_video_close.onclick = function() {
-      demo_video_modal.style.display = "none";
-    }
-    demo_video_ok.onclick = function() {
-      demo_video_modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-      if (event.target == demo_video_modal) {
-        demo_video_modal.style.display = "none";
-      }
-    }
-    {% endif %}
+
+     
+    });
   </script>
 
   {%- liquid
@@ -1240,143 +955,29 @@
   </script>
 </section>
 
-
-
-<script>
-  window.pwr = window.pwr || function () {
-    (pwr.q = pwr.q || []).push(arguments); 
-  };
-  pwr("render", {
-    api_key: '76a29117-f53a-4a2c-b341-b715b976ec82',
-    locale: 'en_US',
-    merchant_group_id: '49888431',
-    merchant_id: '60819357',
-    page_id: "{{ product.id }}",
-    review_wrapper_url: "https://zildjianshop.myshopify.com/pages/write-a-review/?pr_page_id={{ product.id }}",
-    product: {
-      name: `{{ product.title | replace: "+", " " }}`,
-      url: "https://zildjianshop.myshopify.com{{ product.url }}",
-      image_url: "https:{{ product.featured_image | product_img_url: "large" }}",
-      description: "{{ product.description | strip_html | strip_newlines | replace: "%0A", "%20" | replace: '"', '%27' | escape }}",
-      category_name: {% if product.type != '' %}"{{ product.type }}"{% else %} "Default" {% endif %},
-      upc: "{{ product.magento.upc_code }}",
-      brand_name: "{{ product.metafields.magento.family }}",
-      price: "{{ product.price | money_without_currency }}",
-      in_stock: "{{ product.available }}",
-          variants: [ {% for variant in product.variants %}
-          {% assign product_name = product.title %}
-          {% if product.variants.size > 1 %}{% assign product_name = variant.title %}{% endif %}
-      {
-        name: `{{ product_name | replace: "+", " " }}`,
-        description: `{{ product_name | escape }}`,
-        page_id_variant: "{{variant.id}}",
-        upc: "{{ variant.barcode }}"
-      }{% if forloop.last == false %}, {% endif %} {% endfor %}
-    ]},
-    components: {
-      ReviewDisplay: "pr-reviewdisplay",
-      ReviewSnippet: "pr-reviewsnippet",
-      CategorySnippet: 'pr-categorysnippet',
-      QuestionDisplay:'pr-questiondisplay'
-    }	
-  });
-</script> 
-
-<script>
-  window.addEventListener('load', function() {
-  var _learnq = window._learnq || [];
-  function addedToCart() {
-    fetch(`${window.location.origin}/cart.js`)
-    .then(res => res.clone().json().then(data => {
-      var cart = {
-        total_price: data.total_price/100,
-        $value: data.total_price/100,
-        total_discount: data.total_discount,
-        original_total_price: data.original_total_price/100,
-        items: data.items
-      }
-      if (item !== 'undefined') {
-        cart = Object.assign(cart, item)
-      }
-      if (klAjax) {
-          _learnq.push(['track', 'Added to Cart', cart]);
-          klAjax = false;
-        }
-    }))
-  };
-  (function (ns, fetch) {
-    ns.fetch = function() {
-      const response = fetch.apply(this, arguments);
-      response.then(res => {
-        if (`${window.location.origin}/cart/add.js`
-          .includes(res.url)) {
-            addedToCart()
-        }
-      });
-      return response
-    }
-  }(window, window.fetch));
-  var klAjax = true;
-  var atcButtons = document.querySelectorAll("form[action*='/cart/add'] button[type='submit']");
-  for (var i = 0; i < atcButtons.length; i++) {
-      atcButtons[i].addEventListener("click", function() {
-        if (klAjax) {
-          _learnq.push(['track', 'Added to Cart', item]);
-          klAjax = false;
-        }
-      })
-  }
-  });
-
-
-
-</script>
-
 <script>
   document.addEventListener("DOMContentLoaded", ()=>{
-    document.addEventListener('click', (e)=>{
-      if(document.querySelector('.change-copy').contains(e.target)){
-        document.querySelector('.origin-change').click();
-      }
+    let change_btn = document.querySelector(".change-copy");
+    change_btn.addEventListener('click', (e)=>{
+      document.querySelector('.origin-change').click()
     })
 
-    setInterval(()=>{
-      if(document.querySelectorAll('.yotpo-dropdown-base #scoreDropdownInput').length > 0){
-        document.querySelectorAll('.yotpo-dropdown-base #scoreDropdownInput').forEach((item, index)=>{
-            if(!item.getAttribute('role') || item.getAttribute('aria-labelledby') || item.getAttribute('aria-describedby')){
-              item.setAttribute('role', 'combobox')
-              item.removeAttribute('aria-labelledby')
-              item.removeAttribute('aria-describedby')
-            }
-            
-        })
+    const removeRatingLabel = setInterval(()=>{
+      if(document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--inside")) {
+        document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--inside").remove();
+        clearInterval(removeRatingLabel);
       }
+    }, 1000)
 
-      if(document.querySelector('.yotpo-review-title')){
-        const inter = setInterval(()=>{
-          document.querySelectorAll('.yotpo-review-title').forEach((item, index)=>{
-            if(item.getAttribute('aria-level') == '3' ) {
-              item.setAttribute('aria-level', '2')
-            }
-          })
-          clearInterval(inter)
-        }, 1000)  
+    const removeSortLabel = setInterval(()=>{
+      if(document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--textual")) {
+        document.querySelector(".yotpo-dropdown-label.yotpo-dropdown-label--textual").remove();
+        clearInterval(removeSortLabel);
       }
-
-      if(document.querySelector('.product__info-wrapper .product__info-container .product__accordion .accordion__content .lcly-dealers-wrap .lcly-dealer')){
-        document.querySelectorAll('.product__info-wrapper .product__info-container .product__accordion .accordion__content .lcly-dealers-wrap .lcly-dealer').forEach((item, index)=>{
-          item.removeAttribute('role')
-        })
-      }
-
-      if(document.querySelector('.yotpo-main-layout')) {
-        if(document.querySelector('.yotpo-main-layout').hasAttribute('aria-labelledby')){
-          document.querySelector('.yotpo-main-layout').removeAttribute('aria-labelledby')
-        }
-      }
-    }, 1500)
+    }, 1000)
   })
 </script>
+
 
 {% schema %}
 {
