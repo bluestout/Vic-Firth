@@ -492,13 +492,13 @@
                 {% elsif block.settings.content == 'DISCLAIMER' %}
                   {{product.metafields.magento.disclaimer}}
                 {% elsif block.settings.content == 'location' %}
-                  {% assign no_location = false %}
+                    {% assign no_location = false %}
                     {% for tag in product.tags %}
                       {% if tag == 'no_location' %}
                         {% assign no_location = true %}
                       {% endif %}
                     {% endfor %}
-                  {% if no_location == true %}
+                    {% unless no_location %}
                       <!-- LOCALLY.COM WIDGET EMBED CODE -->
                       <div id="lcly-button-0" data-switchlive="true" data-switchlive-impression="true" data-switchlive-impression-id-PL="1">
 
@@ -511,13 +511,13 @@
                       <script id="lcly-config-0">
                         var __lcly_channel_domain_0 = "locally";
                         var lcly_config_0 = {
-                          "company_name": "vicfirth",
+                          "company_name": "Zildjian",
                           "button_text": "Find it Locally",
                           "button_id": "HTML",
-                          "company_id": "222420",
+                          "company_id": "222417",
                           "css": "4",
-                          "color_0": "#CE0E2D",
-                          "color_1": "#CE0E2D",
+                          "color_0": "#CC9F53",
+                          "color_1": "#CC9F53",
                           "always_hide_button": "1",
                           "upc": "{% for variant in product.variants %}{{ variant.barcode }},{% endfor %}",
                           "show_location_switcher": "1",
@@ -537,7 +537,7 @@
                         var lcly_endpoint_0 = 'https://zildjian.locally.com/stores/map.js?' + lcly_query_0;
                         document.getElementById('lcly-script-0').src = lcly_endpoint_0;
                       </script>
-                    {% endif %}
+                    {% endunless %}
                 {% else %}
                 {{ block.settings.content }}
                 
