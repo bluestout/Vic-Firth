@@ -492,6 +492,7 @@
                 {% elsif block.settings.content == 'DISCLAIMER' %}
                   {{product.metafields.magento.disclaimer}}
                 {% elsif block.settings.content == 'location' %}
+                  {% unless product.tags contains "no_location" %}
                   <!-- LOCALLY.COM WIDGET EMBED CODE -->
                   <div id="lcly-button-0" data-switchlive="true" data-switchlive-impression="true" data-switchlive-impression-id-PL="1">
 
@@ -530,6 +531,7 @@
                     var lcly_endpoint_0 = 'https://zildjian.locally.com/stores/map.js?' + lcly_query_0;
                     document.getElementById('lcly-script-0').src = lcly_endpoint_0;
                   </script>
+                {% endunless %}
                 {% else %}
                 {{ block.settings.content }}
                 
