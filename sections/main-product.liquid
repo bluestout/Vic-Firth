@@ -498,7 +498,7 @@
                         {% assign no_location = true %}
                       {% endif %}
                     {% endfor %}
-                  {% unless no_location %}
+                  {% if no_location == true %}
                       <!-- LOCALLY.COM WIDGET EMBED CODE -->
                       <div id="lcly-button-0" data-switchlive="true" data-switchlive-impression="true" data-switchlive-impression-id-PL="1">
 
@@ -537,7 +537,7 @@
                         var lcly_endpoint_0 = 'https://zildjian.locally.com/stores/map.js?' + lcly_query_0;
                         document.getElementById('lcly-script-0').src = lcly_endpoint_0;
                       </script>
-                    {% endunless %}
+                    {% endif %}
                 {% else %}
                 {{ block.settings.content }}
                 
