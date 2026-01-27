@@ -541,7 +541,6 @@
                 {% endif %}
               {% endcapture %}
               {% if content != blank %}
-                {% unless  product.tags contains 'no_location'  %}
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}" open>
                   <summary>
@@ -583,7 +582,6 @@
                   </div>
                 </details>
               </div>
-            {% endunless %}
               {% endif %}
               
             {%- when 'quantity_selector' -%}
