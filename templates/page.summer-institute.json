@@ -61,17 +61,17 @@
         "template--18486377316644__3ecbccab-bd42-4007-a0cf-7fdf878e010c-16808183520973493f-0": {
           "type": "heading",
           "settings": {
-            "heading": "VIC FIRTH SUMMER INSTITUTE",
+            "heading": "THE VIC FIRTH SUMMER INSTITUTE",
             "heading_link": "",
             "heading_size": "h2",
             "heading_color": "",
-            "max_width": "290"
+            "max_width": "300"
           }
         },
         "template--18486377316644__3ecbccab-bd42-4007-a0cf-7fdf878e010c-16808183520973493f-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Vic Firth's new series of drumsticks celebrates the natural beauty our earth gifts us in each drumstick we make. Using a proprietary staining process, the unique and beautiful grains are exposed so that no two pairs are alike. Crafted from premium USA Hickory, Vic Firth Terra™ series pays homage to the material drummers around the world rely on to make magic behind their kit.</p>",
+            "text": "<p>The Vic Firth Summer Institute is an immersive, week-long percussion intensive designed for advanced students and emerging professionals looking to deepen their skills across orchestral, chamber, and contemporary percussion. Hosted on the campus of the University of Maine, the institute combines world-class instruction, hands-on performance opportunities, and behind-the-scenes access to the Vic Firth factory, offering a unique blend of musical growth, professional insight, and artistic community.</p>",
             "text_style": "body",
             "color": ""
           }
@@ -363,7 +363,7 @@
         "full_width": true,
         "mobile_border_bottom": false,
         "padding_top": 36,
-        "padding_bottom": 60,
+        "padding_bottom": 88,
         "max_width": ""
       }
     },
@@ -373,14 +373,15 @@
         "column_VB4DyR": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Matty_Meyer2-VF-Profile.png",
+            "image": "shopify://shop_images/Gloria-Yehilevsky-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Gloria-Yehilevsky-Profile.jpg",
             "badge": "",
-            "title": "Column",
-            "heading_size": "h3",
+            "title": "World-Class Faculty",
+            "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -392,13 +393,14 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Payton-Taylor-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Payton-Taylor-Profile.jpg",
             "badge": "",
-            "title": "Column",
-            "heading_size": "h3",
+            "title": "Daily Performance & Technique Classes",
+            "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -410,13 +412,14 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Salin-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Salin-Profile.jpg",
             "badge": "",
-            "title": "Column",
-            "heading_size": "h3",
+            "title": "Chamber Music & Ensemble Experiences",
+            "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -428,13 +431,52 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/J-J-Garcia-Profile.jpg",
+            "mobile_image": "shopify://shop_images/J-J-Garcia-Profile.jpg",
             "badge": "",
-            "title": "Column",
-            "heading_size": "h3",
+            "title": "Specialized Workshops & Labs",
+            "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_FE4TGd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Payton-Taylor-Profile_ec264e18-f92b-4392-b9e9-a16f6052718f.jpg",
+            "mobile_image": "shopify://shop_images/Payton-Taylor-Profile_ec264e18-f92b-4392-b9e9-a16f6052718f.jpg",
+            "badge": "",
+            "title": "Vic Firth Factory Experience",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_b6EFAz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Russ-Miller-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Russ-Miller-Profile.jpg",
+            "badge": "",
+            "title": "Immersive,Community-Focused Environment",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -447,7 +489,9 @@
         "column_VB4DyR",
         "column_DfejBt",
         "column_AJ8tVh",
-        "column_PATRqV"
+        "column_PATRqV",
+        "column_FE4TGd",
+        "column_b6EFAz"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
@@ -459,13 +503,255 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "mobile_image_ratio": "adapt",
-        "overlay_image": true,
+        "overlay_image": false,
+        "dark_overlay": false,
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "step_style": false,
+        "column_alignment": "left",
+        "no_gap": false,
+        "no_padding": false,
+        "number": false,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "mobile_overlay": false,
+        "padding_top": 36,
+        "padding_bottom": 100,
+        "max_width": ""
+      }
+    },
+    "rich_text_rzRyw9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KHTrrd": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>MEET THE FACULTY</p>",
+            "heading_size": "h1",
+            "max_width": ""
+          }
+        },
+        "text_Mm4bDE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Vic Firth Summer Institute faculty represents a diverse group of internationally respected performers and educators drawn from leading university programs and professional performance careers. Together, they bring deep experience across orchestral, chamber, contemporary, and experimental percussion, offering participants a rare opportunity to study with artists who are actively shaping the future of  percussion performance and education.</p>",
+            "hide_mobile": false,
+            "max_width": ""
+          }
+        },
+        "button_BKUtRr": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "blank": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_KHTrrd",
+        "text_Mm4bDE",
+        "button_BKUtRr"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "mobile_border_bottom": true,
+        "padding_top": 40,
+        "padding_bottom": 32,
+        "max_width": "1445"
+      }
+    },
+    "rich_text_cfPVmU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_H9gBe8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>MEET THE FACULTY</p>",
+            "heading_size": "h1",
+            "max_width": ""
+          }
+        },
+        "text_rnT4T7": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>The Vic Firth Summer Institute faculty represents a diverse group of internationally respected performers and educators drawn from leading university programs and professional performance careers. Together, they bring deep experience across orchestral, chamber, contemporary, and experimental percussion, offering participants a rare opportunity to study with artists who are actively shaping the future of  percussion performance and education.</p>",
+            "hide_mobile": false,
+            "max_width": ""
+          }
+        },
+        "button_HPLeiK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "blank": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_H9gBe8",
+        "text_rnT4T7",
+        "button_HPLeiK"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "mobile_border_bottom": false,
+        "padding_top": 40,
+        "padding_bottom": 20,
+        "max_width": "1450"
+      }
+    },
+    "multicolumn_DbBDz3": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_BEJAz9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Payton-Taylor-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Payton-Taylor-Profile.jpg",
+            "badge": "",
+            "title": "Mike Gould –  University of Michigan",
+            "heading_size": "h4",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Mike Gould is an internationally recognized percussionist, educator, and interdisciplinary artist, and serves on the faculty at the University of Michigan, where he teaches in the Department of Jazz & Contemporary Improvisation. Known for his innovative approach to sound, collaboration, and creative practice, Gould challenges students to think expansively about performance, improvisation, and artistic identity.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_miHiCX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Salin-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Salin-Profile.jpg",
+            "badge": "",
+            "title": "Bonnie Whiting – Universityof Washington",
+            "heading_size": "h4",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Bonnie Whiting is Chair of Percussion Studies at the University of Washington School of Music and a leading voice in contemporary percussion performance and pedagogy. As a performer, composer, and educator, her work explores experimental techniques, new music, and interdisciplinary collaboration, encouraging students to expand their artistic vocabulary and rethink the role of the percussionist.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_BipHKD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/J-J-Garcia-Profile.jpg",
+            "mobile_image": "shopify://shop_images/J-J-Garcia-Profile.jpg",
+            "badge": "",
+            "title": "Clara Warnaar",
+            "heading_size": "h4",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Clara Warnaar is an accomplished percussionist and educator with experience teaching and performing in collegiate and professional settings. Her work focuses on orchestral and chamber performance, with an emphasis on refined technique, musical clarity, and thoughtful interpretation.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_kTUr8r": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Russ-Miller-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Russ-Miller-Profile.jpg",
+            "badge": "",
+            "title": "Terry Longshore",
+            "heading_size": "h4",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Terry Longshore is a percussion educator and performer with extensive experience working in academic and ensemble-based environments. His teaching emphasizes strong fundamentals, effective practice strategies, and practical musicianship skills applicable across a wide range of performance settings.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_TKqYLD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Payton-Taylor-Profile_ec264e18-f92b-4392-b9e9-a16f6052718f.jpg",
+            "mobile_image": "shopify://shop_images/Payton-Taylor-Profile_ec264e18-f92b-4392-b9e9-a16f6052718f.jpg",
+            "badge": "",
+            "title": "Mike Competello",
+            "heading_size": "h4",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Mike Competello is a percussionist and clinician whose work spans performance, education, and mentorship. With a focus on preparation, professionalism, and musical intent, he helps students develop a strong technical foundation while refining their artistic voice.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_BEJAz9",
+        "column_miHiCX",
+        "column_BipHKD",
+        "column_kTUr8r",
+        "column_TKqYLD"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "side_banner": false,
+        "full_width": false,
+        "title": "",
+        "heading_size": "h1",
+        "heading_align": "left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "mobile_image_ratio": "adapt",
+        "overlay_image": false,
         "dark_overlay": true,
         "columns_desktop": 3,
         "swipe_on_desktop": true,
         "step_style": false,
         "column_alignment": "left",
-        "no_gap": true,
+        "no_gap": false,
         "no_padding": false,
         "number": false,
         "background_style": "primary",
@@ -476,7 +762,202 @@
         "swipe_on_mobile": true,
         "mobile_overlay": false,
         "padding_top": 36,
+        "padding_bottom": 100,
+        "max_width": ""
+      }
+    },
+    "image_with_text_tAa79A": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_KyMKXJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Mike Gould – University of Michigan",
+            "heading_link": "",
+            "heading_size": "h2",
+            "heading_color": "",
+            "max_width": ""
+          }
+        },
+        "text_VBEeWF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mike Gould is an internationally recognized percussionist,<br/>educator, and interdisciplinary artist, and serves on the faculty at the<br/>University of Michigan, where he teaches in the Department of Jazz &<br/>Contemporary Improvisation. Known for his innovative approach to sound,<br/>collaboration, and creative practice, Gould challenges students to think<br/>expansively about performance, improvisation, and artistic identity.</p>",
+            "text_style": "body",
+            "color": ""
+          }
+        },
+        "button_TfUyWr": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "link": false,
+            "blank_button": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_KyMKXJ",
+        "text_VBEeWF",
+        "button_TfUyWr"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "tag": "",
+        "side_banner": false,
+        "full_width": false,
+        "image": "shopify://shop_images/J-J-Garcia-Header.jpg",
+        "height": "adapt",
+        "center_image": false,
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "container_image": false,
+        "media_max_width": "",
+        "desktop_content_position": "top",
+        "content_align": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-2",
+        "mobile_layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_space": false,
+        "overlay_section": false,
+        "padding_top": 36,
         "padding_bottom": 36,
+        "quote": false,
+        "max_width": ""
+      }
+    },
+    "image_with_text_BgQnyc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_iXNnBH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Mike Gould – University of Michigan",
+            "heading_link": "",
+            "heading_size": "h2",
+            "heading_color": "",
+            "max_width": ""
+          }
+        },
+        "text_eLUwDR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mike Gould is an internationally recognized percussionist,<br/>educator, and interdisciplinary artist, and serves on the faculty at the<br/>University of Michigan, where he teaches in the Department of Jazz &<br/>Contemporary Improvisation. Known for his innovative approach to sound,<br/>collaboration, and creative practice, Gould challenges students to think<br/>expansively about performance, improvisation, and artistic identity.</p>",
+            "text_style": "body",
+            "color": ""
+          }
+        },
+        "button_NiUkCi": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "link": false,
+            "blank_button": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iXNnBH",
+        "text_eLUwDR",
+        "button_NiUkCi"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "tag": "",
+        "side_banner": false,
+        "full_width": false,
+        "image": "shopify://shop_images/J-J-Garcia-Header.jpg",
+        "height": "adapt",
+        "center_image": false,
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "container_image": false,
+        "media_max_width": "",
+        "desktop_content_position": "top",
+        "content_align": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_space": false,
+        "overlay_section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "quote": false,
+        "max_width": ""
+      }
+    },
+    "image_with_text_p97JkG": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_FwWGmL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Mike Gould – University of Michigan",
+            "heading_link": "",
+            "heading_size": "h2",
+            "heading_color": "",
+            "max_width": ""
+          }
+        },
+        "text_mCwwiH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mike Gould is an internationally recognized percussionist,<br/>educator, and interdisciplinary artist, and serves on the faculty at the<br/>University of Michigan, where he teaches in the Department of Jazz &<br/>Contemporary Improvisation. Known for his innovative approach to sound,<br/>collaboration, and creative practice, Gould challenges students to think<br/>expansively about performance, improvisation, and artistic identity.</p>",
+            "text_style": "body",
+            "color": ""
+          }
+        },
+        "button_DGMAKd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "link": false,
+            "blank_button": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FwWGmL",
+        "text_mCwwiH",
+        "button_DGMAKd"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "tag": "",
+        "side_banner": false,
+        "full_width": false,
+        "image": "shopify://shop_images/J-J-Garcia-Header.jpg",
+        "height": "adapt",
+        "center_image": false,
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "container_image": false,
+        "media_max_width": "",
+        "desktop_content_position": "top",
+        "content_align": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_space": false,
+        "overlay_section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "quote": false,
         "max_width": ""
       }
     },
@@ -486,11 +967,12 @@
         "row_iUDRGe": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/Lifestyle-1_13cd93e8-e4f9-473e-bfc3-243745b3bd61.jpg",
             "caption": "Caption",
             "heading": "Row",
             "price": "",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
+            "text": "<p>Mike Gould is an internationally recognized percussionist, educator, and interdisciplinary artist, and serves on the faculty at the University of Michigan, where he teaches in the Department of Jazz & Contemporary Improvisation. Known for his innovative approach to sound, collaboration, and creative practice, Gould challenges students to think expansively about performance, improvisation, and artistic identity.</p>",
+            "button_label": "",
             "button_link": "",
             "product": ""
           }
@@ -528,7 +1010,7 @@
       "disabled": true,
       "name": "t:sections.multirow.presets.name",
       "settings": {
-        "header": "",
+        "header": "Meet the Faculty",
         "image_height": "medium",
         "desktop_image_width": "medium",
         "heading_size": "h1",
@@ -537,67 +1019,228 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "image_layout": "alternate-left",
-        "section_color_scheme": "background-1",
-        "row_color_scheme": "background-1",
-        "max_width": "",
+        "section_color_scheme": "background-2",
+        "row_color_scheme": "background-2",
+        "max_width": "2000",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
+    "image_with_text_jK6bUa": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_qr9mzD": {
+          "type": "heading",
+          "settings": {
+            "heading": "Mike Gould – University of Michigan",
+            "heading_link": "",
+            "heading_size": "h2",
+            "heading_color": "",
+            "max_width": ""
+          }
+        },
+        "text_yDBCPU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mike Gould is an internationally recognized percussionist,<br/>educator, and interdisciplinary artist, and serves on the faculty at the<br/>University of Michigan, where he teaches in the Department of Jazz &<br/>Contemporary Improvisation. Known for his innovative approach to sound,<br/>collaboration, and creative practice, Gould challenges students to think<br/>expansively about performance, improvisation, and artistic identity.</p>",
+            "text_style": "body",
+            "color": ""
+          }
+        },
+        "button_UDH9Yw": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "link": false,
+            "blank_button": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_qr9mzD",
+        "text_yDBCPU",
+        "button_UDH9Yw"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "tag": "",
+        "side_banner": false,
+        "full_width": false,
+        "image": "shopify://shop_images/J-J-Garcia-Header.jpg",
+        "height": "adapt",
+        "center_image": false,
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "container_image": false,
+        "media_max_width": "",
+        "desktop_content_position": "top",
+        "content_align": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_space": false,
+        "overlay_section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "quote": false,
+        "max_width": ""
+      }
+    },
     "collapsible_content_mwniwH": {
       "type": "collapsible-content",
       "blocks": {
-        "collapsible_row_ffTRem": {
+        "collapsible_row_XFkWqF": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What if I need to cancel",
+            "heading": "What is included with enrollment?",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
-            "row_content": "",
+            "row_content": "<p>Enrollment includes access to all scheduled classes, ensembles, workshops, special events, housing, meals, and the Vic Firth factory<br/>experience.</p>",
             "page": ""
           }
         },
         "collapsible_row_fqLwVa": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Who is the Vic Firth Summer Institute designed for?",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
-            "row_content": "",
+            "row_content": "<p>The Vic Firth Summer Institute is designed for percussionists 18 years of age and older, including advanced students, college-level musicians, and emerging professionals seeking focused, high-level<br/>instruction.</p>",
             "page": ""
           }
         },
         "collapsible_row_gVpM8W": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What styles and areas of percussion arecovered?",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
-            "row_content": "",
+            "row_content": "<p>The institute primarily focuses on  orchestral and chamber percussion, with additional exploration of contemporary techniques, ensemble performance, and professional development topics.</p>",
             "page": ""
           }
         },
         "collapsible_row_YgA7Gk": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Where does the institute take place?",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
-            "row_content": "",
+            "row_content": "<p>The Vic Firth Summer Institute is held on the campus of the University of Maine.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eEnBat": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What does a typical day look like?",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>Each day features a thoughtfully balanced schedule of performance classes, ensemble rehearsals, workshops, and faculty-led sessions, allowing for both intensive study and collaborative learning.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_H4NtUy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Who will be teaching at the institute?",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>Participants study with an accomplished faculty of professional percussionists and educators, including Mike Gould, Bonnie<br/>Whiting, Clara Warnaar, Terry Longshore, and Mike Competello.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_im7JKg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is there a Vic Firth factory visit included?",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>Yes. Enrollment includes an exclusive visit to the Vic Firth factory, offering articipants insight into the craftsmanship and design behind Vic Firth sticks and mallets.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ffTRem": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is housing and food included?",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>Yes. Housing and meals are provided for all enrolled participants throughout the duration of the institute.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_DyM9Hi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need to bring my own instruments andequipment?",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>No, participants do not need to bring their own instruments.  Everything needed for the week will be provided, including sticks and mallets.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_FERKJ6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is an audition required to attend?",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>No. An audition is not required to attend the Vic Firth Summer Institute.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9AHmb6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is travel included?",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>No. Travel to and from the University of Maine is the responsibility of the attendee.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YVCWPw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I register?",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>Registration details and instructions can be found on this page. Space is limited and early registration is encouraged.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
-        "collapsible_row_ffTRem",
+        "collapsible_row_XFkWqF",
         "collapsible_row_fqLwVa",
         "collapsible_row_gVpM8W",
-        "collapsible_row_YgA7Gk"
+        "collapsible_row_YgA7Gk",
+        "collapsible_row_eEnBat",
+        "collapsible_row_H4NtUy",
+        "collapsible_row_im7JKg",
+        "collapsible_row_ffTRem",
+        "collapsible_row_DyM9Hi",
+        "collapsible_row_FERKJ6",
+        "collapsible_row_9AHmb6",
+        "collapsible_row_YVCWPw"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
@@ -685,7 +1328,14 @@
     "multicolumn_f6aVT7",
     "rich_text_8U4XDW",
     "multicolumn_73cKBb",
+    "rich_text_rzRyw9",
+    "rich_text_cfPVmU",
+    "multicolumn_DbBDz3",
+    "image_with_text_tAa79A",
+    "image_with_text_BgQnyc",
+    "image_with_text_p97JkG",
     "multirow_NLgBpg",
+    "image_with_text_jK6bUa",
     "collapsible_content_mwniwH",
     "main",
     "rich_text_KRLax6"
