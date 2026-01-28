@@ -766,329 +766,56 @@
         "max_width": ""
       }
     },
-    "image_with_text_tAa79A": {
-      "type": "image-with-text",
+    "rich_text_KRLax6": {
+      "type": "rich-text",
       "blocks": {
-        "heading_KyMKXJ": {
+        "heading_azYDai": {
           "type": "heading",
+          "disabled": true,
           "settings": {
-            "heading": "Mike Gould – University of Michigan",
-            "heading_link": "",
-            "heading_size": "h2",
-            "heading_color": "",
+            "heading": "<p>Talk about your brand</p>",
+            "heading_size": "h1",
             "max_width": ""
           }
         },
-        "text_VBEeWF": {
+        "text_wfHXFU": {
           "type": "text",
+          "disabled": true,
           "settings": {
-            "text": "<p>Mike Gould is an internationally recognized percussionist,<br/>educator, and interdisciplinary artist, and serves on the faculty at the<br/>University of Michigan, where he teaches in the Department of Jazz &<br/>Contemporary Improvisation. Known for his innovative approach to sound,<br/>collaboration, and creative practice, Gould challenges students to think<br/>expansively about performance, improvisation, and artistic identity.</p>",
-            "text_style": "body",
-            "color": ""
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "hide_mobile": false,
+            "max_width": ""
           }
         },
-        "button_TfUyWr": {
+        "button_PfkFRG": {
           "type": "button",
           "disabled": true,
           "settings": {
             "button_label": "Button label",
             "button_link": "",
-            "link": false,
-            "blank_button": false
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "blank": false
           }
         }
       },
       "block_order": [
-        "heading_KyMKXJ",
-        "text_VBEeWF",
-        "button_TfUyWr"
+        "heading_azYDai",
+        "text_wfHXFU",
+        "button_PfkFRG"
       ],
-      "disabled": true,
-      "name": "t:sections.image-with-text.presets.name",
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "tag": "",
-        "side_banner": false,
-        "full_width": false,
-        "image": "shopify://shop_images/J-J-Garcia-Header.jpg",
-        "height": "adapt",
-        "center_image": false,
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "container_image": false,
-        "media_max_width": "",
-        "desktop_content_position": "top",
-        "content_align": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_layout": "image_first",
-        "mobile_content_alignment": "left",
-        "mobile_space": false,
-        "overlay_section": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "quote": false,
-        "max_width": ""
-      }
-    },
-    "image_with_text_BgQnyc": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_iXNnBH": {
-          "type": "heading",
-          "settings": {
-            "heading": "Mike Gould – University of Michigan",
-            "heading_link": "",
-            "heading_size": "h2",
-            "heading_color": "",
-            "max_width": ""
-          }
-        },
-        "text_eLUwDR": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Mike Gould is an internationally recognized percussionist,<br/>educator, and interdisciplinary artist, and serves on the faculty at the<br/>University of Michigan, where he teaches in the Department of Jazz &<br/>Contemporary Improvisation. Known for his innovative approach to sound,<br/>collaboration, and creative practice, Gould challenges students to think<br/>expansively about performance, improvisation, and artistic identity.</p>",
-            "text_style": "body",
-            "color": ""
-          }
-        },
-        "button_NiUkCi": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "link": false,
-            "blank_button": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_iXNnBH",
-        "text_eLUwDR",
-        "button_NiUkCi"
-      ],
-      "disabled": true,
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "tag": "",
-        "side_banner": false,
-        "full_width": false,
-        "image": "shopify://shop_images/J-J-Garcia-Header.jpg",
-        "height": "adapt",
-        "center_image": false,
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "container_image": false,
-        "media_max_width": "",
-        "desktop_content_position": "top",
-        "content_align": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "center",
         "color_scheme": "background-1",
-        "mobile_layout": "image_first",
-        "mobile_content_alignment": "left",
-        "mobile_space": false,
-        "overlay_section": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "quote": false,
-        "max_width": ""
-      }
-    },
-    "image_with_text_p97JkG": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_FwWGmL": {
-          "type": "heading",
-          "settings": {
-            "heading": "Mike Gould – University of Michigan",
-            "heading_link": "",
-            "heading_size": "h2",
-            "heading_color": "",
-            "max_width": ""
-          }
-        },
-        "text_mCwwiH": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Mike Gould is an internationally recognized percussionist,<br/>educator, and interdisciplinary artist, and serves on the faculty at the<br/>University of Michigan, where he teaches in the Department of Jazz &<br/>Contemporary Improvisation. Known for his innovative approach to sound,<br/>collaboration, and creative practice, Gould challenges students to think<br/>expansively about performance, improvisation, and artistic identity.</p>",
-            "text_style": "body",
-            "color": ""
-          }
-        },
-        "button_DGMAKd": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "link": false,
-            "blank_button": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_FwWGmL",
-        "text_mCwwiH",
-        "button_DGMAKd"
-      ],
-      "disabled": true,
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "tag": "",
-        "side_banner": false,
-        "full_width": false,
-        "image": "shopify://shop_images/J-J-Garcia-Header.jpg",
-        "height": "adapt",
-        "center_image": false,
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "container_image": false,
-        "media_max_width": "",
-        "desktop_content_position": "top",
-        "content_align": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_layout": "image_first",
-        "mobile_content_alignment": "left",
-        "mobile_space": false,
-        "overlay_section": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "quote": false,
-        "max_width": ""
-      }
-    },
-    "multirow_NLgBpg": {
-      "type": "multirow",
-      "blocks": {
-        "row_iUDRGe": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/Lifestyle-1_13cd93e8-e4f9-473e-bfc3-243745b3bd61.jpg",
-            "caption": "Caption",
-            "heading": "Row",
-            "price": "",
-            "text": "<p>Mike Gould is an internationally recognized percussionist, educator, and interdisciplinary artist, and serves on the faculty at the University of Michigan, where he teaches in the Department of Jazz & Contemporary Improvisation. Known for his innovative approach to sound, collaboration, and creative practice, Gould challenges students to think expansively about performance, improvisation, and artistic identity.</p>",
-            "button_label": "",
-            "button_link": "",
-            "product": ""
-          }
-        },
-        "row_WApPwm": {
-          "type": "row",
-          "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "price": "",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
-            "button_link": "",
-            "product": ""
-          }
-        },
-        "row_zbigPe": {
-          "type": "row",
-          "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "price": "",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
-            "button_link": "",
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "row_iUDRGe",
-        "row_WApPwm",
-        "row_zbigPe"
-      ],
-      "disabled": true,
-      "name": "t:sections.multirow.presets.name",
-      "settings": {
-        "header": "Meet the Faculty",
-        "image_height": "medium",
-        "desktop_image_width": "medium",
-        "heading_size": "h1",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "image_layout": "alternate-left",
-        "section_color_scheme": "background-2",
-        "row_color_scheme": "background-2",
-        "max_width": "2000",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_jK6bUa": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_qr9mzD": {
-          "type": "heading",
-          "settings": {
-            "heading": "Mike Gould – University of Michigan",
-            "heading_link": "",
-            "heading_size": "h2",
-            "heading_color": "",
-            "max_width": ""
-          }
-        },
-        "text_yDBCPU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Mike Gould is an internationally recognized percussionist,<br/>educator, and interdisciplinary artist, and serves on the faculty at the<br/>University of Michigan, where he teaches in the Department of Jazz &<br/>Contemporary Improvisation. Known for his innovative approach to sound,<br/>collaboration, and creative practice, Gould challenges students to think<br/>expansively about performance, improvisation, and artistic identity.</p>",
-            "text_style": "body",
-            "color": ""
-          }
-        },
-        "button_UDH9Yw": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "link": false,
-            "blank_button": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_qr9mzD",
-        "text_yDBCPU",
-        "button_UDH9Yw"
-      ],
-      "disabled": true,
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "tag": "",
-        "side_banner": false,
-        "full_width": false,
-        "image": "shopify://shop_images/J-J-Garcia-Header.jpg",
-        "height": "adapt",
-        "center_image": false,
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "container_image": false,
-        "media_max_width": "",
-        "desktop_content_position": "top",
-        "content_align": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_layout": "image_first",
-        "mobile_content_alignment": "left",
-        "mobile_space": false,
-        "overlay_section": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "quote": false,
+        "full_width": true,
+        "mobile_border_bottom": false,
+        "padding_top": 56,
+        "padding_bottom": 52,
         "max_width": ""
       }
     },
@@ -1254,7 +981,7 @@
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
-        "padding_top": 56,
+        "padding_top": 28,
         "padding_bottom": 36
       }
     },
@@ -1266,10 +993,10 @@
         "padding_bottom": 100
       }
     },
-    "rich_text_KRLax6": {
+    "rich_text_M4CNyU": {
       "type": "rich-text",
       "blocks": {
-        "heading_azYDai": {
+        "heading_4xD3yX": {
           "type": "heading",
           "disabled": true,
           "settings": {
@@ -1278,7 +1005,7 @@
             "max_width": ""
           }
         },
-        "text_wfHXFU": {
+        "text_htEMhb": {
           "type": "text",
           "disabled": true,
           "settings": {
@@ -1287,7 +1014,7 @@
             "max_width": ""
           }
         },
-        "button_PfkFRG": {
+        "button_j9f3bH": {
           "type": "button",
           "disabled": true,
           "settings": {
@@ -1302,9 +1029,9 @@
         }
       },
       "block_order": [
-        "heading_azYDai",
-        "text_wfHXFU",
-        "button_PfkFRG"
+        "heading_4xD3yX",
+        "text_htEMhb",
+        "button_j9f3bH"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -1331,13 +1058,9 @@
     "rich_text_rzRyw9",
     "rich_text_cfPVmU",
     "multicolumn_DbBDz3",
-    "image_with_text_tAa79A",
-    "image_with_text_BgQnyc",
-    "image_with_text_p97JkG",
-    "multirow_NLgBpg",
-    "image_with_text_jK6bUa",
+    "rich_text_KRLax6",
     "collapsible_content_mwniwH",
     "main",
-    "rich_text_KRLax6"
+    "rich_text_M4CNyU"
   ]
 }
