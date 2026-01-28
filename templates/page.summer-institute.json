@@ -196,23 +196,6 @@
     "multicolumn_f6aVT7": {
       "type": "multicolumn",
       "blocks": {
-        "column_zM6meV": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Program Length",
-            "heading_size": "h3",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>6 Days.</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
         "column_pFq9eh": {
           "type": "column",
           "settings": {
@@ -230,16 +213,16 @@
             "blank_link": false
           }
         },
-        "column_pbrK6d": {
+        "column_zM6meV": {
           "type": "column",
           "settings": {
             "badge": "",
-            "title": "Tuition",
+            "title": "Program Length",
             "heading_size": "h3",
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>$1500 - Tuition includes room and board and all institute activities/classes.</p>",
+            "text": "<p>6 Days.</p>",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -257,6 +240,23 @@
             "download_label": "",
             "download_link": "",
             "text": "<p>18 to 25 years old.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_pbrK6d": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Tuition & Registration",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Tuition includes housing, meals, instruction, campus activities, and exclusive access to the Vic Firth factory, including hands-on experiences with prototype products.</p><h5><strong>- Early Commitment Rate</strong> (Feb 1–15):<strong> </strong>$1,495</h5><h5><strong>- Standard Tuition </strong>(Feb 16–Mar 1<strong>): </strong>$1,695</h5><h5><strong>- Final Enrollment Rate</strong> (Mar 2–Mar 15)<strong>: </strong>$1,895</h5><h5></h5><p>Enrollment is limited. Early registration is strongly encouraged.</p>",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -300,10 +300,10 @@
         }
       },
       "block_order": [
-        "column_zM6meV",
         "column_pFq9eh",
-        "column_pbrK6d",
+        "column_zM6meV",
         "column_xejYgK",
+        "column_pbrK6d",
         "column_GgiTn7",
         "column_KThnU8"
       ],
