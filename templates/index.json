@@ -327,6 +327,18 @@
             "blank_link": false
           }
         },
+        "column_RQVxbK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vic-Firth-Promo-Block-Banner-Horizonal.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Promo-Block-Banner-Horizonal.jpg",
+            "badge": "Learn More",
+            "title": "Vic Firth Summer Institute",
+            "link_label": "Learn More",
+            "link": "shopify://pages/vic-firth-summer-institue",
+            "blank_link": false
+          }
+        },
         "column_iecrnL": {
           "type": "column",
           "settings": {
@@ -338,24 +350,12 @@
             "link": "shopify://collections/vic-firth-category-gear-accessories-hearing-protection",
             "blank_link": false
           }
-        },
-        "column_RQVxbK": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/American-Classic-Promo-Block_d5624eda-dc59-49d9-8654-58129615f17b.jpg",
-            "mobile_image": "shopify://shop_images/American-Classic-Promo-Block_d5624eda-dc59-49d9-8654-58129615f17b.jpg",
-            "badge": "Shop Now",
-            "title": "American Classic",
-            "link_label": "Shop Now",
-            "link": "shopify://collections/vic-firth-category-sticks-drum-set-american-classic",
-            "blank_link": false
-          }
         }
       },
       "block_order": [
         "column_MrYGhY",
-        "column_iecrnL",
-        "column_RQVxbK"
+        "column_RQVxbK",
+        "column_iecrnL"
       ],
       "custom_css": [
         ".column_heading {margin-bottom: 8px;}",
