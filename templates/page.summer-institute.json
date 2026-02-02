@@ -34,7 +34,7 @@
         "633eb824-4c8b-48aa-90e9-0cb1ebae4d91"
       ],
       "settings": {
-        "image": "shopify://shop_images/Terra-Campaign-Landing-Page-Header_f30429fa-645d-4e2e-a4ed-e410fc997438.jpg",
+        "image": "shopify://shop_images/Vic-Firth-Summer-Institue-Desktop-Banner.jpg",
         "mobile_image": "shopify://shop_images/Terra-Campaign-Landing-Page-Header-Mobile_1617e505-85d0-439a-b230-1b8bced1cd5b.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
@@ -111,9 +111,9 @@
         "tag": "",
         "side_banner": false,
         "full_width": true,
-        "image": "shopify://shop_images/Video-Thumbnail_b9cd143a-2c75-4bf4-ab27-21bdf056894a.jpg",
-        "mobile_image": "shopify://shop_images/Video-Thumbnail-Mobile_4e5f0af8-57c5-44cc-af8e-bbb9b70aa9b0.jpg",
-        "side_image": "shopify://shop_images/Terra-Side-Detail_cb32ef3d-de54-4634-b0f7-3b20ed45a2d5.jpg",
+        "image": "shopify://shop_images/Vic-Firth-Summer-Institute-Secodnary-Image-1.jpg",
+        "mobile_image": "shopify://shop_images/Vic-Firth-Summer-Institute-Secodnary-Image-1.jpg",
+        "side_image": "shopify://shop_images/Side-Image-3.jpg",
         "video_url": "",
         "height": "adapt",
         "center_image": false,
@@ -374,8 +374,8 @@
         "column_VB4DyR": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Gloria-Yehilevsky-Profile.jpg",
-            "mobile_image": "shopify://shop_images/Gloria-Yehilevsky-Profile.jpg",
+            "image": "shopify://shop_images/World-Class-Faculty.jpg",
+            "mobile_image": "shopify://shop_images/World-Class-Faculty.jpg",
             "badge": "",
             "title": "World-Class Faculty",
             "heading_size": "h5",
@@ -393,8 +393,8 @@
         "column_DfejBt": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Payton-Taylor-Profile.jpg",
-            "mobile_image": "shopify://shop_images/Payton-Taylor-Profile.jpg",
+            "image": "shopify://shop_images/Daily-Performances.jpg",
+            "mobile_image": "shopify://shop_images/Daily-Performances.jpg",
             "badge": "",
             "title": "Daily Performance & Technique Classes",
             "heading_size": "h5",
@@ -412,8 +412,8 @@
         "column_AJ8tVh": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Salin-Profile.jpg",
-            "mobile_image": "shopify://shop_images/Salin-Profile.jpg",
+            "image": "shopify://shop_images/Chamber-Music.jpg",
+            "mobile_image": "shopify://shop_images/Chamber-Music.jpg",
             "badge": "",
             "title": "Chamber Music & Ensemble Experiences",
             "heading_size": "h5",
@@ -431,8 +431,8 @@
         "column_PATRqV": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/J-J-Garcia-Profile.jpg",
-            "mobile_image": "shopify://shop_images/J-J-Garcia-Profile.jpg",
+            "image": "shopify://shop_images/Specialized-Workshops.jpg",
+            "mobile_image": "shopify://shop_images/Specialized-Workshops.jpg",
             "badge": "",
             "title": "Specialized Workshops & Labs",
             "heading_size": "h5",
@@ -450,8 +450,8 @@
         "column_FE4TGd": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Payton-Taylor-Profile_ec264e18-f92b-4392-b9e9-a16f6052718f.jpg",
-            "mobile_image": "shopify://shop_images/Payton-Taylor-Profile_ec264e18-f92b-4392-b9e9-a16f6052718f.jpg",
+            "image": "shopify://shop_images/VF-Factory-Experience.jpg",
+            "mobile_image": "shopify://shop_images/VF-Factory-Experience.jpg",
             "badge": "",
             "title": "Vic Firth Factory Experience",
             "heading_size": "h5",
@@ -469,8 +469,8 @@
         "column_b6EFAz": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Russ-Miller-Profile.jpg",
-            "mobile_image": "shopify://shop_images/Russ-Miller-Profile.jpg",
+            "image": "shopify://shop_images/Immersive-Community-focused-Environment.jpg",
+            "mobile_image": "shopify://shop_images/Immersive-Community-focused-Environment.jpg",
             "badge": "",
             "title": "Immersive, Community-Focused Environment",
             "heading_size": "h5",
