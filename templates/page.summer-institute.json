@@ -635,6 +635,7 @@
       "blocks": {
         "column_BEJAz9": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Vic-Firth-Artist-Placeholder-Profile-Graphic.jpg",
             "mobile_image": "shopify://shop_images/Payton-Taylor-Profile.jpg",
@@ -692,6 +693,7 @@
         },
         "column_kTUr8r": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/terry_longshore_profile_1.png",
             "mobile_image": "shopify://shop_images/terry_longshore_profile_1.png",
