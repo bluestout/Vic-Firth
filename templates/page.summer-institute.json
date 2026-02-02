@@ -71,7 +71,7 @@
         "template--18486377316644__3ecbccab-bd42-4007-a0cf-7fdf878e010c-16808183520973493f-1": {
           "type": "text",
           "settings": {
-            "text": "<p>The Vic Firth Summer Institute is an immersive, week-long percussion intensive designed for advanced students and emerging professionals looking to deepen their skills across orchestral, chamber, and contemporary percussion. Hosted on the campus of the University of Maine, the institute combines world-class instruction, hands-on performance opportunities, and behind-the-scenes access to the Vic Firth factory, offering a unique blend of musical growth, professional insight, and artistic community.</p>",
+            "text": "<p>The Vic Firth Summer Institute is an immersive, week-long percussion intensive designed for advanced students and emerging professionals looking to deepen their skills across orchestral, chamber, and contemporary percussion. Hosted on the campus of the University of Maine, the institute combines world-class instruction, hands-on performance opportunities, and behind-the-scenes access to the Vic Firth factory, offering a unique blend of musical growth, professional insight, and artistic community.</p><p></p><p><em><strong>Registration Opening Soon!</strong></em></p>",
             "text_style": "body",
             "color": ""
           }
@@ -92,6 +92,7 @@
         },
         "button_gQqm7r": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_label": "ENROLL NOW",
             "button_link": "shopify://products/vic-firth-summer-institute",
