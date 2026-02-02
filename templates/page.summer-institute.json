@@ -58,10 +58,18 @@
     "3ecbccab-bd42-4007-a0cf-7fdf878e010c": {
       "type": "image-with-text",
       "blocks": {
+        "caption_k4rJX9": {
+          "type": "caption",
+          "settings": {
+            "caption": "The Vic Firth",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
         "template--18486377316644__3ecbccab-bd42-4007-a0cf-7fdf878e010c-16808183520973493f-0": {
           "type": "heading",
           "settings": {
-            "heading": "THE VIC FIRTH SUMMER INSTITUTE",
+            "heading": "SUMMER INSTITUTE",
             "heading_link": "",
             "heading_size": "h2",
             "heading_color": "",
@@ -87,6 +95,7 @@
         }
       },
       "block_order": [
+        "caption_k4rJX9",
         "template--18486377316644__3ecbccab-bd42-4007-a0cf-7fdf878e010c-16808183520973493f-0",
         "template--18486377316644__3ecbccab-bd42-4007-a0cf-7fdf878e010c-16808183520973493f-1",
         "button_gQqm7r"
@@ -146,6 +155,163 @@
         "mobile_border_bottom": false,
         "padding_top": 36,
         "padding_bottom": 60,
+        "max_width": ""
+      }
+    },
+    "multicolumn_73cKBb": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_VB4DyR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/World-Class-Faculty.jpg",
+            "mobile_image": "shopify://shop_images/World-Class-Faculty.jpg",
+            "badge": "",
+            "title": "World-Class Faculty",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_DfejBt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Daily-Performances.jpg",
+            "mobile_image": "shopify://shop_images/Daily-Performances.jpg",
+            "badge": "",
+            "title": "Daily Performance & Technique Classes",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_AJ8tVh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Chamber-Music.jpg",
+            "mobile_image": "shopify://shop_images/Chamber-Music.jpg",
+            "badge": "",
+            "title": "Chamber Music & Ensemble Experiences",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_PATRqV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Specialized-Workshops.jpg",
+            "mobile_image": "shopify://shop_images/Specialized-Workshops.jpg",
+            "badge": "",
+            "title": "Specialized Workshops & Labs",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_b6EFAz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Immersive-Community-focused-Environment.jpg",
+            "mobile_image": "shopify://shop_images/Immersive-Community-focused-Environment.jpg",
+            "badge": "",
+            "title": "Immersive, Community-Focused Environment",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_FE4TGd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/VF-Factory-Experience.jpg",
+            "mobile_image": "shopify://shop_images/VF-Factory-Experience.jpg",
+            "badge": "",
+            "title": "BONUS: Vic Firth Factory Experience",
+            "heading_size": "h5",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Get <strong>exclusive behind-the-scenes access to the Vic Firth factory </strong>— a private, insider experience you simply can’t book or get anywhere else.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_VB4DyR",
+        "column_DfejBt",
+        "column_AJ8tVh",
+        "column_PATRqV",
+        "column_b6EFAz",
+        "column_FE4TGd"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "side_banner": false,
+        "full_width": false,
+        "title": "PROGRAM HIGHLIGHTS",
+        "heading_size": "h1",
+        "heading_align": "left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "mobile_image_ratio": "adapt",
+        "overlay_image": false,
+        "dark_overlay": false,
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "step_style": false,
+        "column_alignment": "left",
+        "no_gap": false,
+        "no_padding": false,
+        "number": false,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "mobile_overlay": false,
+        "padding_top": 36,
+        "padding_bottom": 100,
         "max_width": ""
       }
     },
@@ -352,160 +518,67 @@
         "max_width": ""
       }
     },
-    "multicolumn_73cKBb": {
-      "type": "multicolumn",
+    "image_with_text_mk3mAW": {
+      "type": "image-with-text",
       "blocks": {
-        "column_VB4DyR": {
-          "type": "column",
+        "heading_HjMBnj": {
+          "type": "heading",
           "settings": {
-            "image": "shopify://shop_images/World-Class-Faculty.jpg",
-            "mobile_image": "shopify://shop_images/World-Class-Faculty.jpg",
-            "badge": "",
-            "title": "World-Class Faculty",
-            "heading_size": "h5",
+            "heading": "Vic Firth on Education",
+            "heading_link": "",
+            "heading_size": "h1",
             "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
+            "max_width": ""
           }
         },
-        "column_DfejBt": {
-          "type": "column",
+        "text_RY3LQg": {
+          "type": "text",
           "settings": {
-            "image": "shopify://shop_images/Daily-Performances.jpg",
-            "mobile_image": "shopify://shop_images/Daily-Performances.jpg",
-            "badge": "",
-            "title": "Daily Performance & Technique Classes",
-            "heading_size": "h5",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
+            "text": "<p>\"Persistent hard work to achieving one’s goals is something I have always admired and encouraged to all students in not just music, but in life as a whole.\"</p>",
+            "text_style": "body",
+            "color": ""
           }
         },
-        "column_AJ8tVh": {
-          "type": "column",
+        "button_D7tDFi": {
+          "type": "button",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Chamber-Music.jpg",
-            "mobile_image": "shopify://shop_images/Chamber-Music.jpg",
-            "badge": "",
-            "title": "Chamber Music & Ensemble Experiences",
-            "heading_size": "h5",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_PATRqV": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Specialized-Workshops.jpg",
-            "mobile_image": "shopify://shop_images/Specialized-Workshops.jpg",
-            "badge": "",
-            "title": "Specialized Workshops & Labs",
-            "heading_size": "h5",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_FE4TGd": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/VF-Factory-Experience.jpg",
-            "mobile_image": "shopify://shop_images/VF-Factory-Experience.jpg",
-            "badge": "",
-            "title": "Vic Firth Factory Experience",
-            "heading_size": "h5",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_b6EFAz": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Immersive-Community-focused-Environment.jpg",
-            "mobile_image": "shopify://shop_images/Immersive-Community-focused-Environment.jpg",
-            "badge": "",
-            "title": "Immersive, Community-Focused Environment",
-            "heading_size": "h5",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
+            "button_label": "Button label",
+            "button_link": "",
+            "link": false,
+            "blank_button": false
           }
         }
       },
       "block_order": [
-        "column_VB4DyR",
-        "column_DfejBt",
-        "column_AJ8tVh",
-        "column_PATRqV",
-        "column_FE4TGd",
-        "column_b6EFAz"
+        "heading_HjMBnj",
+        "text_RY3LQg",
+        "button_D7tDFi"
       ],
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
+        "tag": "",
         "side_banner": false,
-        "full_width": false,
-        "title": "PROGRAM HIGHLIGHTS",
-        "heading_size": "h1",
-        "heading_align": "left",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "mobile_image_ratio": "adapt",
-        "overlay_image": false,
-        "dark_overlay": false,
-        "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "step_style": false,
-        "column_alignment": "left",
-        "no_gap": false,
-        "no_padding": false,
-        "number": false,
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "mobile_overlay": false,
+        "full_width": true,
+        "image": "shopify://shop_images/Vic-Firth-Quote.jpg",
+        "height": "adapt",
+        "center_image": false,
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "container_image": false,
+        "media_max_width": "",
+        "desktop_content_position": "top",
+        "content_align": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "color_scheme": "background-2",
+        "mobile_layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_space": false,
+        "overlay_section": false,
         "padding_top": 36,
-        "padding_bottom": 100,
+        "padding_bottom": 76,
+        "quote": false,
         "max_width": ""
       }
     },
@@ -1032,88 +1105,23 @@
         "padding_bottom": 52,
         "max_width": ""
       }
-    },
-    "image_with_text_mk3mAW": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_HjMBnj": {
-          "type": "heading",
-          "settings": {
-            "heading": "Vic Firth on Education",
-            "heading_link": "",
-            "heading_size": "h1",
-            "heading_color": "",
-            "max_width": ""
-          }
-        },
-        "text_RY3LQg": {
-          "type": "text",
-          "settings": {
-            "text": "<p>\"Persistent hard work to achieving one’s goals is something I have always admired and encouraged to all students in not just music, but in life as a whole.\"</p>",
-            "text_style": "body",
-            "color": ""
-          }
-        },
-        "button_D7tDFi": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "link": false,
-            "blank_button": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_HjMBnj",
-        "text_RY3LQg",
-        "button_D7tDFi"
-      ],
-      "disabled": true,
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "tag": "",
-        "side_banner": false,
-        "full_width": true,
-        "image": "shopify://shop_images/History-Photo-1_2_1_8bd4b1b8-d8a2-4557-a74c-ea292fe6694b.jpg",
-        "height": "adapt",
-        "center_image": false,
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "container_image": false,
-        "media_max_width": "",
-        "desktop_content_position": "top",
-        "content_align": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "overlap",
-        "color_scheme": "background-2",
-        "mobile_layout": "image_first",
-        "mobile_content_alignment": "left",
-        "mobile_space": false,
-        "overlay_section": false,
-        "padding_top": 36,
-        "padding_bottom": 76,
-        "quote": false,
-        "max_width": ""
-      }
     }
   },
   "order": [
     "3141c904-b6a6-4f2b-a1fe-aa2b9e911af8",
     "3ecbccab-bd42-4007-a0cf-7fdf878e010c",
     "rich_text_WXXaha",
+    "multicolumn_73cKBb",
     "rich_text_PYpAXz",
     "multicolumn_f6aVT7",
     "rich_text_8U4XDW",
-    "multicolumn_73cKBb",
+    "image_with_text_mk3mAW",
     "rich_text_rzRyw9",
     "rich_text_cfPVmU",
     "multicolumn_DbBDz3",
     "rich_text_KRLax6",
     "collapsible_content_mwniwH",
     "main",
-    "rich_text_M4CNyU",
-    "image_with_text_mk3mAW"
+    "rich_text_M4CNyU"
   ]
 }
