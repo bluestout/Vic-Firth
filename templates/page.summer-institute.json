@@ -489,6 +489,70 @@
         "max_width": ""
       }
     },
+    "image_with_text_mk3mAW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HjMBnj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Vic Firth on Education",
+            "heading_link": "",
+            "heading_size": "h1",
+            "heading_color": "",
+            "max_width": ""
+          }
+        },
+        "text_RY3LQg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"Persistent hard work to achieving one’s goals is something I have always admired and encouraged to all students in not just music, but in life as a whole.\"</p>",
+            "text_style": "body",
+            "color": ""
+          }
+        },
+        "button_D7tDFi": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "link": false,
+            "blank_button": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HjMBnj",
+        "text_RY3LQg",
+        "button_D7tDFi"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "tag": "",
+        "side_banner": false,
+        "full_width": true,
+        "image": "shopify://shop_images/Vic-Firth-Quote.jpg",
+        "height": "adapt",
+        "center_image": false,
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "container_image": false,
+        "media_max_width": "",
+        "desktop_content_position": "top",
+        "content_align": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "color_scheme": "background-2",
+        "mobile_layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_space": false,
+        "overlay_section": false,
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "quote": false,
+        "max_width": ""
+      }
+    },
     "rich_text_8U4XDW": {
       "type": "rich-text",
       "blocks": {
@@ -759,70 +823,6 @@
         "mobile_overlay": false,
         "padding_top": 36,
         "padding_bottom": 76,
-        "max_width": ""
-      }
-    },
-    "image_with_text_mk3mAW": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_HjMBnj": {
-          "type": "heading",
-          "settings": {
-            "heading": "Vic Firth on Education",
-            "heading_link": "",
-            "heading_size": "h1",
-            "heading_color": "",
-            "max_width": ""
-          }
-        },
-        "text_RY3LQg": {
-          "type": "text",
-          "settings": {
-            "text": "<p>\"Persistent hard work to achieving one’s goals is something I have always admired and encouraged to all students in not just music, but in life as a whole.\"</p>",
-            "text_style": "body",
-            "color": ""
-          }
-        },
-        "button_D7tDFi": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "link": false,
-            "blank_button": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_HjMBnj",
-        "text_RY3LQg",
-        "button_D7tDFi"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "tag": "",
-        "side_banner": false,
-        "full_width": true,
-        "image": "shopify://shop_images/Vic-Firth-Quote.jpg",
-        "height": "adapt",
-        "center_image": false,
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "container_image": false,
-        "media_max_width": "",
-        "desktop_content_position": "top",
-        "content_align": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "overlap",
-        "color_scheme": "background-2",
-        "mobile_layout": "image_first",
-        "mobile_content_alignment": "left",
-        "mobile_space": false,
-        "overlay_section": false,
-        "padding_top": 72,
-        "padding_bottom": 40,
-        "quote": false,
         "max_width": ""
       }
     },
@@ -1114,11 +1114,11 @@
     "multicolumn_73cKBb",
     "rich_text_PYpAXz",
     "multicolumn_f6aVT7",
+    "image_with_text_mk3mAW",
     "rich_text_8U4XDW",
     "rich_text_rzRyw9",
     "rich_text_cfPVmU",
     "multicolumn_DbBDz3",
-    "image_with_text_mk3mAW",
     "rich_text_KRLax6",
     "collapsible_content_mwniwH",
     "main",
