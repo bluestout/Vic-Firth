@@ -532,6 +532,7 @@
         "side_banner": false,
         "full_width": true,
         "image": "shopify://shop_images/Vic-Firth-Quote.jpg",
+        "video_url": "",
         "height": "adapt",
         "center_image": false,
         "desktop_image_width": "medium",
@@ -889,7 +890,7 @@
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
-            "row_content": "<p>Enrollment includes access to all scheduled classes, ensembles, workshops, special events, housing, meals, and the Vic Firth factory<br/>experience.</p>",
+            "row_content": "<p>Enrollment includes access to all scheduled classes, ensembles, workshops, special events, housing, meals, and the Vic Firth factory experience.</p>",
             "page": ""
           }
         },
@@ -900,7 +901,7 @@
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
-            "row_content": "<p>The Vic Firth Summer Institute is designed for percussionists 18 years of age and older, including advanced students, college-level musicians, and emerging professionals seeking focused, high-level<br/>instruction.</p>",
+            "row_content": "<p>The Vic Firth Summer Institute is designed for percussionists 18 years of age and older, including advanced students, college-level musicians, and emerging professionals seeking focused, high-level instruction.</p>",
             "page": ""
           }
         },
@@ -944,7 +945,7 @@
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
-            "row_content": "<p>Participants study with an accomplished faculty of professional percussionists and educators, including Mike Gould, Bonnie<br/>Whiting, Clara Warnaar, Terry Longshore, and Mike Competello.</p>",
+            "row_content": "<p>Participants study with an accomplished faculty of professional percussionists and educators, including Bonnie Whiting, Clara Warnaar, and Mike Competello.</p>",
             "page": ""
           }
         },
