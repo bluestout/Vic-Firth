@@ -79,7 +79,7 @@
         "template--18486377316644__3ecbccab-bd42-4007-a0cf-7fdf878e010c-16808183520973493f-1": {
           "type": "text",
           "settings": {
-            "text": "<p>The Vic Firth Summer Institute is an immersive week-long experience that combines the percussion performance and education aspect with the business side of the music industry. This unique experience is set on the campus of the University of Maine.  The program blends world-class instruction, performance and presentations from leaders of the music industry.  One of the highlights includes a behind the scences access to the VF factory.  This is a one of a kind mix of musical growth, industry insight and joining a creative community.</p>",
+            "text": "<p>The Vic Firth Summer Institute is an immersive week-long experience that combines the percussion performance and education aspect with the business side of the music industry. This unique experience is set on the campus of the University of Maine.  The program blends world-class instruction, performance and presentations from leaders of the music industry.  One of the highlights includes behind the scenes access to the Vic Firth factory.  This is a one-of-a-kind mix of musical growth, industry insight and joining a creative community.  </p>",
             "text_style": "body",
             "color": ""
           }
@@ -129,6 +129,71 @@
         "max_width": "468"
       }
     },
+    "image_with_text_mk3mAW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HjMBnj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Vic Firth on Education",
+            "heading_link": "",
+            "heading_size": "h1",
+            "heading_color": "",
+            "max_width": ""
+          }
+        },
+        "text_RY3LQg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"Persistent hard work to achieving one’s goals is something I have always admired and encouraged to all students in not just music, but in life as a whole.\"</p>",
+            "text_style": "body",
+            "color": ""
+          }
+        },
+        "button_D7tDFi": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "link": false,
+            "blank_button": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HjMBnj",
+        "text_RY3LQg",
+        "button_D7tDFi"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "tag": "",
+        "side_banner": false,
+        "full_width": true,
+        "image": "shopify://shop_images/Vic-Firth-Quote.jpg",
+        "video_url": "",
+        "height": "adapt",
+        "center_image": false,
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "container_image": false,
+        "media_max_width": "",
+        "desktop_content_position": "top",
+        "content_align": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "color_scheme": "background-2",
+        "mobile_layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_space": false,
+        "overlay_section": false,
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "quote": false,
+        "max_width": ""
+      }
+    },
     "rich_text_WXXaha": {
       "type": "rich-text",
       "blocks": {
@@ -167,7 +232,7 @@
             "image": "shopify://shop_images/World-Class-Faculty.jpg",
             "mobile_image": "shopify://shop_images/World-Class-Faculty.jpg",
             "badge": "",
-            "title": "World-Class Faculty",
+            "title": "Access to industry professionals and brand leadership.",
             "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
@@ -186,7 +251,7 @@
             "image": "shopify://shop_images/Daily-Performances.jpg",
             "mobile_image": "shopify://shop_images/Daily-Performances.jpg",
             "badge": "",
-            "title": "Daily Performance & Technique Classes",
+            "title": "Daily Performance Masterclasses with Faculty",
             "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
@@ -205,7 +270,7 @@
             "image": "shopify://shop_images/Chamber-Music.jpg",
             "mobile_image": "shopify://shop_images/Chamber-Music.jpg",
             "badge": "",
-            "title": "Chamber Music & Ensemble Experiences",
+            "title": "TWO Concerts by our World Class Faculty",
             "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
@@ -224,7 +289,7 @@
             "image": "shopify://shop_images/Specialized-Workshops.jpg",
             "mobile_image": "shopify://shop_images/Specialized-Workshops.jpg",
             "badge": "",
-            "title": "Specialized Workshops & Labs",
+            "title": "Clinics by Faculty and Industry Leaders",
             "heading_size": "h5",
             "heading_color": "",
             "download_label": "",
@@ -240,8 +305,8 @@
         "column_b6EFAz": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Immersive-Community-focused-Environment.jpg",
-            "mobile_image": "shopify://shop_images/Immersive-Community-focused-Environment.jpg",
+            "image": "shopify://shop_images/Immersive-Community-focused-Environment-1.jpg",
+            "mobile_image": "shopify://shop_images/Immersive-Community-focused-Environment-1.jpg",
             "badge": "",
             "title": "Immersive, Community-Focused Environment",
             "heading_size": "h5",
@@ -258,6 +323,7 @@
         },
         "column_FE4TGd": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/VF-Factory-Experience.jpg",
             "mobile_image": "shopify://shop_images/VF-Factory-Experience.jpg",
@@ -310,207 +376,33 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "mobile_overlay": false,
-        "padding_top": 36,
+        "padding_top": 16,
         "padding_bottom": 100,
         "max_width": ""
       }
     },
-    "rich_text_PYpAXz": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_XAMtwT": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "<p>Talk about your brand</p>",
-            "heading_size": "h1",
-            "max_width": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_XAMtwT"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "contnet_type": "list",
-        "content_alignment": "center",
-        "color_scheme": "inverse",
-        "full_width": true,
-        "mobile_border_bottom": false,
-        "padding_top": 36,
-        "padding_bottom": 16,
-        "max_width": ""
-      }
-    },
-    "multicolumn_f6aVT7": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_pFq9eh": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Program dates",
-            "heading_size": "h3",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>May 31st, 2026 to June 6th, 2026</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_zM6meV": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Program Length",
-            "heading_size": "h3",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>6 Days.</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_xejYgK": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Age Range",
-            "heading_size": "h3",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>18 to 25 years old.</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_pbrK6d": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Tuition & Registration",
-            "heading_size": "h3",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>Tuition includes housing, meals, instruction, campus activities, and exclusive access to the Vic Firth factory, including hands-on experiences with prototype products.</p><h5><strong>- Early Commitment Rate</strong> (Feb 1–15):<strong> </strong>$1,495</h5><h5><strong>- Standard Tuition </strong>(Feb 16–Mar 1<strong>): </strong>$1,695</h5><h5><strong>- Final Enrollment Rate</strong> (Mar 2–Mar 15)<strong>: </strong>$1,895</h5><h5></h5><p>Enrollment is limited. Early registration is strongly encouraged.</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_GgiTn7": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Attendance Limit",
-            "heading_size": "h3",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>25 attendies.</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        },
-        "column_KThnU8": {
-          "type": "column",
-          "settings": {
-            "badge": "",
-            "title": "Location",
-            "heading_size": "h3",
-            "heading_color": "",
-            "download_label": "",
-            "download_link": "",
-            "text": "<p>The University of Maine Campus</p>",
-            "link_label": "",
-            "link": "",
-            "full_link": false,
-            "link_list": "",
-            "blank_link": false
-          }
-        }
-      },
-      "block_order": [
-        "column_pFq9eh",
-        "column_zM6meV",
-        "column_xejYgK",
-        "column_pbrK6d",
-        "column_GgiTn7",
-        "column_KThnU8"
-      ],
-      "name": "t:sections.multicolumn.presets.name",
-      "settings": {
-        "side_banner": false,
-        "full_width": false,
-        "title": "PROGRAM DETAILS",
-        "heading_size": "h2",
-        "heading_align": "left",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "mobile_image_ratio": "adapt",
-        "overlay_image": false,
-        "dark_overlay": true,
-        "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "step_style": false,
-        "column_alignment": "left",
-        "no_gap": false,
-        "no_padding": false,
-        "number": false,
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "inverse-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "mobile_overlay": false,
-        "padding_top": 40,
-        "padding_bottom": 100,
-        "max_width": ""
-      }
-    },
-    "image_with_text_mk3mAW": {
+    "image_with_text_pMHGrK": {
       "type": "image-with-text",
       "blocks": {
-        "heading_HjMBnj": {
+        "heading_y6jBaB": {
           "type": "heading",
           "settings": {
-            "heading": "Vic Firth on Education",
+            "heading": "BONUS: Vic Firth Factory Experience",
             "heading_link": "",
             "heading_size": "h1",
             "heading_color": "",
             "max_width": ""
           }
         },
-        "text_RY3LQg": {
+        "text_ViPiaD": {
           "type": "text",
           "settings": {
-            "text": "<p>\"Persistent hard work to achieving one’s goals is something I have always admired and encouraged to all students in not just music, but in life as a whole.\"</p>",
+            "text": "<p>Get <strong>exclusive behind-the-scenes access to the Vic Firth factory </strong>— a private, insider experience you simply can’t book or get anywhere else.</p>",
             "text_style": "body",
             "color": ""
           }
         },
-        "button_D7tDFi": {
+        "button_qqtKRH": {
           "type": "button",
           "disabled": true,
           "settings": {
@@ -522,16 +414,17 @@
         }
       },
       "block_order": [
-        "heading_HjMBnj",
-        "text_RY3LQg",
-        "button_D7tDFi"
+        "heading_y6jBaB",
+        "text_ViPiaD",
+        "button_qqtKRH"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "tag": "",
         "side_banner": false,
         "full_width": true,
-        "image": "shopify://shop_images/Vic-Firth-Quote.jpg",
+        "image": "shopify://shop_images/VF-Factory-Experience_dd965339-9ab0-4e4b-982d-4a2c6c07ce88.jpg",
+        "mobile_image": "shopify://shop_images/VF-Factory-Experience_dd965339-9ab0-4e4b-982d-4a2c6c07ce88.jpg",
         "video_url": "",
         "height": "adapt",
         "center_image": false,
@@ -740,7 +633,7 @@
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>Michael Compitello is a percussionist and collaborator whose work explores how people connect, create, and learn through music. As a performer, Compitello is known for sustained and dynamic collaborations with composers that foreground the expressive and poetic potential of percussion instruments. With cellist Hannah Collins as the “remarkably inventive and resourceful” (Gramophone) New Morse Code, Michael has created a singular and personal repertoire through collaboration with some of America’s most esteemed young composers. <br/>Michael also performs with The Percussion Collective. In addition to<br/>performing, Compitello’s research focuses on multidisciplinary approaches to musical learning, practice design, collaboration, and peak performance. His first book, <em>Unsnared Drum Lab</em> will be released in 2026, and he shares his ideas through his newsletters (Learn with Mike and Learning Percussion) as well as the<strong> Mikedrop </strong>Podcast. Michael is Associate Professor of Percussion at Arizona State University, and holds degrees from The Yale School of Music and the Peabody Institute of Johns Hopkins University. For more information, learn more <a href=\"https://www.bonniewhitingpercussion.com\" target=\"_blank\" title=\"michaelcompitello.com\">here</a>. </p>",
+            "text": "<p>Michael Compitello is a percussionist and collaborator whose work explores how people connect, create, and learn through music. As a performer, Compitello is known for sustained and dynamic collaborations with composers that foreground the expressive and poetic potential of percussion instruments. With cellist Hannah Collins as the “remarkably inventive and resourceful” (Gramophone) New Morse Code, Michael has created a singular and personal repertoire through collaboration with some of America’s most esteemed young composers. <br/>Michael also performs with The Percussion Collective. In addition to performing, Compitello’s research focuses on multidisciplinary approaches to musical learning, practice design, collaboration, and peak performance. His first book, <em>Unsnared Drum Lab</em> will be released in 2026, and he shares his ideas through his newsletters (Learn with Mike and Learning Percussion) as well as the<strong> Mikedrop </strong>Podcast. Michael is Associate Professor of Percussion at Arizona State University, and holds degrees from The Yale School of Music and the Peabody Institute of Johns Hopkins University. For more information, learn more <a href=\"https://www.bonniewhitingpercussion.com\" target=\"_blank\" title=\"michaelcompitello.com\">here</a>. </p>",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -877,6 +770,209 @@
         "mobile_border_bottom": false,
         "padding_top": 56,
         "padding_bottom": 52,
+        "max_width": ""
+      }
+    },
+    "rich_text_PYpAXz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XAMtwT": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand</p>",
+            "heading_size": "h1",
+            "max_width": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_XAMtwT"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "center",
+        "color_scheme": "inverse",
+        "full_width": true,
+        "mobile_border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 16,
+        "max_width": ""
+      }
+    },
+    "multicolumn_f6aVT7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pFq9eh": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Program dates",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>May 31st, 2026 to June 6th, 2026</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_zM6meV": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Program Length",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>6 Days.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_xejYgK": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Age Range",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>18 to 25 years old.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_pbrK6d": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Tuition & Registration",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Tuition includes housing, meals, instruction, campus activities, and exclusive access to the Vic Firth factory, including hands-on experiences with prototype products.</p><h5><strong>- Early Commitment Rate</strong> (Feb 1–15):<strong> </strong>$1,495</h5><h5><strong>- Standard Tuition </strong>(Feb 16–Mar 1<strong>): </strong>$1,695</h5><h5><strong>- Final Enrollment Rate</strong> (Mar 2–Mar 15)<strong>: </strong>$1,895</h5><h5></h5><p>Enrollment is limited. Early registration is strongly encouraged.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_GgiTn7": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Attendance Limit",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>25 attendies.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_KThnU8": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Location",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>The University of Maine Campus</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_pFq9eh",
+        "column_zM6meV",
+        "column_xejYgK",
+        "column_pbrK6d",
+        "column_GgiTn7",
+        "column_KThnU8"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "side_banner": false,
+        "full_width": false,
+        "title": "PROGRAM DETAILS",
+        "heading_size": "h2",
+        "heading_align": "left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "mobile_image_ratio": "adapt",
+        "overlay_image": false,
+        "dark_overlay": true,
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "step_style": false,
+        "column_alignment": "left",
+        "no_gap": false,
+        "no_padding": false,
+        "number": false,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "inverse-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "mobile_overlay": false,
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "max_width": ""
+      }
+    },
+    "rich_text_AMr6jC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8RBwLX": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand</p>",
+            "heading_size": "h1",
+            "max_width": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_8RBwLX"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "mobile_border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 88,
         "max_width": ""
       }
     },
@@ -1042,7 +1138,7 @@
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
-        "padding_top": 28,
+        "padding_top": 16,
         "padding_bottom": 36
       }
     },
@@ -1111,16 +1207,18 @@
   "order": [
     "3141c904-b6a6-4f2b-a1fe-aa2b9e911af8",
     "3ecbccab-bd42-4007-a0cf-7fdf878e010c",
+    "image_with_text_mk3mAW",
     "rich_text_WXXaha",
     "multicolumn_73cKBb",
-    "rich_text_PYpAXz",
-    "multicolumn_f6aVT7",
-    "image_with_text_mk3mAW",
+    "image_with_text_pMHGrK",
     "rich_text_8U4XDW",
     "rich_text_rzRyw9",
     "rich_text_cfPVmU",
     "multicolumn_DbBDz3",
     "rich_text_KRLax6",
+    "rich_text_PYpAXz",
+    "multicolumn_f6aVT7",
+    "rich_text_AMr6jC",
     "collapsible_content_mwniwH",
     "main",
     "rich_text_M4CNyU"
