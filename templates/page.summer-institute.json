@@ -641,6 +641,25 @@
             "blank_link": false
           }
         },
+        "column_d4jCHN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Krygier-VF-summer-inst.jpg",
+            "mobile_image": "shopify://shop_images/Krygier-VF-summer-inst.jpg",
+            "badge": "",
+            "title": "Joseph Krygier",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Percussionist and composer Joseph Krygier specializes in the fusion of multiple styles and cultures, drawing on a background in classical, world, commercial, and electronic music to forge a sound that is distinctly his own. As a composer, Krygier has written commissioned works for solo, chamber, and large ensemble settings, including collaborative projects with artist Ann Hamilton and several contemporary dance groups. His music emphasizes timbre, physicality, and cross-genre influence, consistently resisting easy categorization. These works are published through his own company, Whirlygigs Collective. An active performer, Krygier is a member of the Sympatico Percussion Group and the Pendulum Percussion Duo, performing at festivals and universities throughout the United States and abroad. Based in Columbus, Ohio, he performs regularly with The Early Interval (medieval, Renaissance, and Baroque music) and the contemporary mixed chamber ensemble CODE, and serves as timpanist with the Newark–Granville Symphony. Additional performance credits include the ProMusica Chamber Orchestra and LULU & Co. Novelty Ragtime Band. Krygier currently serves as Associated Faculty in music at The Ohio State University School of Music and has held positions as a lecturer and dance accompanist with the OSU Department of Dance, Ohio Wesleyan University, BalletMet Dance Academy, and the Interlochen Center for the Arts Summer Camp. Earlier in his career, he served as a member of the United States Air Force Academy Band in Colorado Springs, Colorado. Krygier holds degrees in percussion performance from the Eastman School of Music (BM) and Northwestern University (MM). Learn more <a href=\"https://www.whirlygigscollective.com\" target=\"_blank\" title=\"https://www.whirlygigscollective.com\">here </a></p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
         "column_kTUr8r": {
           "type": "column",
           "settings": {
@@ -684,6 +703,7 @@
         "column_miHiCX",
         "column_BipHKD",
         "column_TKqYLD",
+        "column_d4jCHN",
         "column_kTUr8r",
         "column_BEJAz9"
       ],
