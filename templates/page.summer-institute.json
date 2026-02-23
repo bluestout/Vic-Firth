@@ -660,6 +660,25 @@
             "blank_link": false
           }
         },
+        "column_Wjxb6d": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Mike-Truesdell-Profile.jpg",
+            "mobile_image": "shopify://shop_images/Mike-Truesdell-Profile.jpg",
+            "badge": "",
+            "title": "Mike Truesdell",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Mike is currently Associate Professor of Percussion at Ithaca College, a Lecturer at Cornell University, and a member of the faculty at Rutgers University. Mike shapes many of tomorrow’s leaders both in and outside of music.</p><p> </p><p>Some of Mike’s highlights for 2025-26 include his sabbatical from Ithaca College, recording his first solo album, seemingly infinite fascinating discussions with fellow faculty member Mike Compitello on the MikeDrop podcast, recordings with Ensemble NewSRQ and the Talea Ensemble, a video release with Dallas Symphony Principal Percussionist (and Vic Firth artist) George Nickson, and a performance with Kiril Gerstein and his former teacher Daniel Druckman at the Santa Fe Chamber Music Festival. Also, this marks Mike’s first-ever trip to Maine (the 49th US state he has visited)!</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
         "column_kTUr8r": {
           "type": "column",
           "settings": {
@@ -704,6 +723,7 @@
         "column_BipHKD",
         "column_TKqYLD",
         "column_d4jCHN",
+        "column_Wjxb6d",
         "column_kTUr8r",
         "column_BEJAz9"
       ],
