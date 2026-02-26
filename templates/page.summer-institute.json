@@ -937,7 +937,7 @@
             "heading_color": "",
             "download_label": "",
             "download_link": "",
-            "text": "<p>The University of Maine Campus</p>",
+            "text": "<p>The University of Maine - Orono Campus</p>",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -981,13 +981,25 @@
         "swipe_on_mobile": false,
         "mobile_overlay": false,
         "padding_top": 40,
-        "padding_bottom": 100,
+        "padding_bottom": 56,
         "max_width": ""
       }
     },
     "rich_text_AMr6jC": {
       "type": "rich-text",
       "blocks": {
+        "button_tjtbip": {
+          "type": "button",
+          "settings": {
+            "button_label": "Enroll Now",
+            "button_link": "shopify://products/vic-firth-summer-institute",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "blank": false
+          }
+        },
         "heading_8RBwLX": {
           "type": "heading",
           "disabled": true,
@@ -999,7 +1011,51 @@
         }
       },
       "block_order": [
+        "button_tjtbip",
         "heading_8RBwLX"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "contnet_type": "list",
+        "content_alignment": "center",
+        "color_scheme": "inverse",
+        "full_width": true,
+        "mobile_border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 76,
+        "max_width": ""
+      }
+    },
+    "rich_text_kXtFTj": {
+      "type": "rich-text",
+      "blocks": {
+        "button_gpgeGi": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Enroll Now",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "blank": false
+          }
+        },
+        "heading_HzFFm8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand</p>",
+            "heading_size": "h1",
+            "max_width": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_gpgeGi",
+        "heading_HzFFm8"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -1009,14 +1065,26 @@
         "color_scheme": "background-1",
         "full_width": true,
         "mobile_border_bottom": false,
-        "padding_top": 36,
-        "padding_bottom": 88,
+        "padding_top": 64,
+        "padding_bottom": 44,
         "max_width": ""
       }
     },
     "collapsible_content_mwniwH": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_K3CEjX": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "Cancellation & Refund Policy",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "<p>We understand that plans can change. The following policy outlines our refund structure for cancellations. Because the Vic Firth Summer Institute involves significant advance planning for housing, meals, and programming, all refunds are based on the date we receive your written cancellation request.<br/><strong> </strong></p><p><strong>Participant Cancellations</strong></p><p><strong>On or before April 30, 2026</strong></p><ul><li>Participants will receive a <strong>100% refund</strong> of tuition paid.</li></ul><p><strong>May 1 - May 15, 2026</strong></p><ul><li>Participants will receive a <strong>50% refund</strong> of tuition paid.</li></ul><p><strong>May 16 – May 30, 2026</strong></p><ul><li><strong>No refunds</strong> will be issued.</li></ul><p></p><p>All cancellation requests must be submitted in writing to the Vic Firth Summer Institute team (<a href=\"mailto:vfcustomercare@vicfirth.com\" target=\"_blank\">vfcustomercare@vicfirth.com</a>).</p><p></p><p></p><p><strong> </strong></p><p><strong>Extenuating Circumstances</strong></p><p>We understand that unexpected situations may arise. Requests for exceptions due to <strong>extenuating circumstances</strong> will be reviewed on a <strong>case-by-case basis</strong> at the discretion of Vic Firth.<br/><strong><br/>Institute Cancellation</strong></p><p>If Vic Firth cancels the Vic Firth Summer Institute for any reason, participants will receive a <strong>full (100%) refund</strong> of all tuition paid.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_XFkWqF": {
           "type": "collapsible_row",
           "settings": {
@@ -1151,6 +1219,7 @@
         }
       },
       "block_order": [
+        "collapsible_row_K3CEjX",
         "collapsible_row_XFkWqF",
         "collapsible_row_fqLwVa",
         "collapsible_row_gVpM8W",
@@ -1257,6 +1326,7 @@
     "rich_text_PYpAXz",
     "multicolumn_f6aVT7",
     "rich_text_AMr6jC",
+    "rich_text_kXtFTj",
     "collapsible_content_mwniwH",
     "main",
     "rich_text_M4CNyU"
