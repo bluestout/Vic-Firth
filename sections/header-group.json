@@ -27,7 +27,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Free Ground Shipping on Orders $100+ in US",
+            "text": "Free Ground Shipping on Orders $50+ in US",
             "text_alignment": "center",
             "color_scheme": "accent-1",
             "link": ""
