@@ -91,7 +91,7 @@
           <rect x="0.75" y="0.75" width="17.5" height="17.5" stroke="black" stroke-width="1.5"/>
           <rect x="7.75" y="0.75" width="3.5" height="6.5" stroke="black" stroke-width="1.5"/>
           </svg>
-           Free Shipping over $50 in US</span>
+           Free Shipping over {{ settings.free_shipping_limit | times: 100 | money_without_trailing_zeros }} in US</span>
         <div id="cart-errors"></div>
       </div>
     </div>
