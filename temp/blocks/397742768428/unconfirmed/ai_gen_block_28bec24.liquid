@@ -1,6 +1,975 @@
+{% doc %}
+  @prompt
+    Create a “Factory Sessions” video showcase section for Vic Firth.
+    Use a two-column layout. On the left, show a vertical list of artists with headshots and names. On the right, show that selected artist’s videos.
+    When an artist is clicked, display two embedded videos for that artist instead of one, stacked vertically or side by side depending on screen size.
+    Each artist should have:
+    
+    headshot
+    
+    artist name
+    
+    optional short label like “2 performances”
+    
+    The right side should update dynamically based on the selected artist and show:
+    
+    video 1 embed
+    
+    video 2 embed
+    
+    optional video titles
+    
+    Style direction:
+    
+    clean, modern, performance-focused
+    
+    black / white / light gray base
+    
+    bold typography consistent with Vic Firth
+    
+    strong spacing and editorial feel
+    
+    active artist state should be clearly highlighted
+    
+    Responsive behavior:
+    
+    desktop: artist list on left, two videos on right
+    
+    mobile: artist list on top, selected artist’s two videos below
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-factory-sessions-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-factory-sessions-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-factory-sessions-header-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.header_spacing }}px;
+    text-align: {{ block.settings.header_alignment }};
+  }
+
+  .ai-factory-sessions-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .ai-factory-sessions-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+  }
+
+  .ai-factory-sessions-layout-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: {{ block.settings.layout_gap }}px;
+    align-items: start;
+  }
+
+  .ai-factory-sessions-artists-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.artist_spacing }}px;
+  }
+
+  .ai-factory-sessions-artist-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: {{ block.settings.artist_padding }}px;
+    background-color: {{ block.settings.artist_bg_color }};
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-factory-sessions-artist-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.artist_hover_bg_color }};
+    border-color: {{ block.settings.artist_hover_border_color }};
+  }
+
+  .ai-factory-sessions-artist-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.artist_active_bg_color }};
+    border-color: {{ block.settings.artist_active_border_color }};
+  }
+
+  .ai-factory-sessions-artist-image-{{ ai_gen_id }} {
+    width: {{ block.settings.headshot_size }}px;
+    height: {{ block.settings.headshot_size }}px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .ai-factory-sessions-artist-image-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.headshot_size }}px;
+    height: {{ block.settings.headshot_size }}px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-factory-sessions-artist-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-factory-sessions-artist-info-{{ ai_gen_id }} {
+    flex-grow: 1;
+  }
+
+  .ai-factory-sessions-artist-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.artist_name_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.artist_name_color }};
+    margin: 0 0 4px;
+  }
+
+  .ai-factory-sessions-artist-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.artist_label_size }}px;
+    color: {{ block.settings.artist_label_color }};
+    margin: 0;
+  }
+
+  .ai-factory-sessions-videos-{{ ai_gen_id }} {
+    display: none;
+  }
+
+  .ai-factory-sessions-videos-{{ ai_gen_id }}.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.video_gap }}px;
+  }
+
+  .ai-factory-sessions-video-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #000000;
+  }
+
+  .ai-factory-sessions-video-wrapper-{{ ai_gen_id }} iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-factory-sessions-video-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.video_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.video_title_color }};
+    margin: 12px 0 0;
+  }
+
+  .ai-factory-sessions-empty-state-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background-color: {{ block.settings.empty_state_bg_color }};
+    color: {{ block.settings.empty_state_text_color }};
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-factory-sessions-layout-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_layout_gap }}px;
+    }
+
+    .ai-factory-sessions-videos-{{ ai_gen_id }}.active {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-factory-sessions-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.8);
+    }
+
+    .ai-factory-sessions-artist-{{ ai_gen_id }} {
+      padding: {{ block.settings.mobile_artist_padding }}px;
+    }
+  }
+
+  @media screen and (min-width: 990px) and (max-width: 1200px) {
+    .ai-factory-sessions-videos-{{ ai_gen_id }}.active {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<factory-sessions-{{ ai_gen_id }}
+  class="ai-factory-sessions-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-factory-sessions-container-{{ ai_gen_id }}">
+    {% if block.settings.show_header %}
+      <div class="ai-factory-sessions-header-{{ ai_gen_id }}">
+        {% if block.settings.title != blank %}
+          <h2 class="ai-factory-sessions-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <p class="ai-factory-sessions-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-factory-sessions-layout-{{ ai_gen_id }}">
+      <div class="ai-factory-sessions-artists-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% liquid
+            assign artist_enabled_key = 'artist_' | append: i | append: '_enabled'
+            assign artist_name_key = 'artist_' | append: i | append: '_name'
+            assign artist_label_key = 'artist_' | append: i | append: '_label'
+            assign artist_image_key = 'artist_' | append: i | append: '_image'
+            assign video_1_url_key = 'artist_' | append: i | append: '_video_1_url'
+            assign video_2_url_key = 'artist_' | append: i | append: '_video_2_url'
+            assign video_1_title_key = 'artist_' | append: i | append: '_video_1_title'
+            assign video_2_title_key = 'artist_' | append: i | append: '_video_2_title'
+
+            assign artist_enabled = block.settings[artist_enabled_key]
+            assign artist_name = block.settings[artist_name_key]
+            assign artist_label = block.settings[artist_label_key]
+            assign artist_image = block.settings[artist_image_key]
+          %}
+
+          {% if artist_enabled %}
+            <div
+              class="ai-factory-sessions-artist-{{ ai_gen_id }} {% if forloop.first %}active{% endif %}"
+              data-artist-id="{{ i }}"
+              role="button"
+              tabindex="0"
+              aria-label="Select {{ artist_name }}"
+            >
+              {% if artist_image %}
+                <img
+                  src="{{ artist_image | image_url: width: 200 }}"
+                  alt="{{ artist_name }}"
+                  class="ai-factory-sessions-artist-image-{{ ai_gen_id }}"
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                >
+              {% else %}
+                <div class="ai-factory-sessions-artist-image-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+              <div class="ai-factory-sessions-artist-info-{{ ai_gen_id }}">
+                <h3 class="ai-factory-sessions-artist-name-{{ ai_gen_id }}">{{ artist_name }}</h3>
+                {% if artist_label != blank %}
+                  <p class="ai-factory-sessions-artist-label-{{ ai_gen_id }}">{{ artist_label }}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="ai-factory-sessions-videos-container-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% liquid
+            assign artist_enabled_key = 'artist_' | append: i | append: '_enabled'
+            assign video_1_url_key = 'artist_' | append: i | append: '_video_1_url'
+            assign video_2_url_key = 'artist_' | append: i | append: '_video_2_url'
+            assign video_1_title_key = 'artist_' | append: i | append: '_video_1_title'
+            assign video_2_title_key = 'artist_' | append: i | append: '_video_2_title'
+
+            assign artist_enabled = block.settings[artist_enabled_key]
+            assign video_1_url = block.settings[video_1_url_key]
+            assign video_2_url = block.settings[video_2_url_key]
+            assign video_1_title = block.settings[video_1_title_key]
+            assign video_2_title = block.settings[video_2_title_key]
+          %}
+
+          {% if artist_enabled %}
+            <div
+              class="ai-factory-sessions-videos-{{ ai_gen_id }} {% if forloop.first %}active{% endif %}"
+              data-videos-id="{{ i }}"
+            >
+              {% if video_1_url != blank or video_2_url != blank %}
+                {% if video_1_url != blank %}
+                  <div>
+                    <div class="ai-factory-sessions-video-wrapper-{{ ai_gen_id }}">
+                      <iframe
+                        src="{{ video_1_url }}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        title="{% if video_1_title != blank %}{{ video_1_title }}{% else %}Video 1{% endif %}"
+                      ></iframe>
+                    </div>
+                    {% if video_1_title != blank %}
+                      <p class="ai-factory-sessions-video-title-{{ ai_gen_id }}">{{ video_1_title }}</p>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if video_2_url != blank %}
+                  <div>
+                    <div class="ai-factory-sessions-video-wrapper-{{ ai_gen_id }}">
+                      <iframe
+                        src="{{ video_2_url }}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        title="{% if video_2_title != blank %}{{ video_2_title }}{% else %}Video 2{% endif %}"
+                      ></iframe>
+                    </div>
+                    {% if video_2_title != blank %}
+                      <p class="ai-factory-sessions-video-title-{{ ai_gen_id }}">{{ video_2_title }}</p>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% else %}
+                <div class="ai-factory-sessions-empty-state-{{ ai_gen_id }}">
+                  Add video URLs for this artist in the block settings
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</factory-sessions-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FactorySessions{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.artists = this.querySelectorAll('.ai-factory-sessions-artist-{{ ai_gen_id }}');
+        this.videoContainers = this.querySelectorAll('.ai-factory-sessions-videos-{{ ai_gen_id }}');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.artists.forEach((artist) => {
+          artist.addEventListener('click', () => this.handleArtistClick(artist));
+          artist.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              this.handleArtistClick(artist);
+            }
+          });
+        });
+      }
+
+      handleArtistClick(selectedArtist) {
+        const artistId = selectedArtist.getAttribute('data-artist-id');
+
+        this.artists.forEach((artist) => {
+          artist.classList.remove('active');
+        });
+
+        selectedArtist.classList.add('active');
+
+        this.videoContainers.forEach((container) => {
+          container.classList.remove('active');
+          if (container.getAttribute('data-videos-id') === artistId) {
+            container.classList.add('active');
+          }
+        });
+      }
+    }
+
+    customElements.define('factory-sessions-{{ ai_gen_id }}', FactorySessions{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Factory Sessions",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show header",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Factory Sessions"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Watch exclusive performances from world-class artists"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header spacing",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "layout_gap",
+      "label": "Desktop layout gap",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_layout_gap",
+      "label": "Mobile layout gap",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Artist list"
+    },
+    {
+      "type": "range",
+      "id": "artist_spacing",
+      "label": "Artist spacing",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "artist_padding",
+      "label": "Artist padding",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_artist_padding",
+      "label": "Mobile artist padding",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "headshot_size",
+      "label": "Headshot size",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "color",
+      "id": "artist_bg_color",
+      "label": "Background",
+      "default": "#f8f8f9"
+    },
+    {
+      "type": "color",
+      "id": "artist_hover_bg_color",
+      "label": "Hover background",
+      "default": "#eeeeee"
+    },
+    {
+      "type": "color",
+      "id": "artist_hover_border_color",
+      "label": "Hover border",
+      "default": "#cccccc"
+    },
+    {
+      "type": "color",
+      "id": "artist_active_bg_color",
+      "label": "Active background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "artist_active_border_color",
+      "label": "Active border",
+      "default": "#ce0e2d"
+    },
+    {
+      "type": "range",
+      "id": "artist_name_size",
+      "label": "Name size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "artist_name_color",
+      "label": "Name color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "artist_label_size",
+      "label": "Label size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "artist_label_color",
+      "label": "Label color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Videos"
+    },
+    {
+      "type": "range",
+      "id": "video_gap",
+      "label": "Video gap",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "video_title_size",
+      "label": "Title size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "video_title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "empty_state_bg_color",
+      "label": "Empty state background",
+      "default": "#f8f8f9"
+    },
+    {
+      "type": "color",
+      "id": "empty_state_text_color",
+      "label": "Empty state text",
+      "default": "#999999"
+    },
+    {
+      "type": "header",
+      "content": "Artist 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "artist_1_enabled",
+      "label": "Enable artist 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "artist_1_name",
+      "label": "Name",
+      "default": "Artist Name"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_label",
+      "label": "Label",
+      "default": "2 performances"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_1_image",
+      "label": "Headshot"
+    },
+    {
+      "type": "url",
+      "id": "artist_1_video_1_url",
+      "label": "Video 1 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "url",
+      "id": "artist_1_video_2_url",
+      "label": "Video 2 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "header",
+      "content": "Artist 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "artist_2_enabled",
+      "label": "Enable artist 2",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "artist_2_name",
+      "label": "Name",
+      "default": "Artist Name"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_label",
+      "label": "Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_2_image",
+      "label": "Headshot"
+    },
+    {
+      "type": "url",
+      "id": "artist_2_video_1_url",
+      "label": "Video 1 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "url",
+      "id": "artist_2_video_2_url",
+      "label": "Video 2 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "header",
+      "content": "Artist 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "artist_3_enabled",
+      "label": "Enable artist 3",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "artist_3_name",
+      "label": "Name",
+      "default": "Artist Name"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_label",
+      "label": "Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_3_image",
+      "label": "Headshot"
+    },
+    {
+      "type": "url",
+      "id": "artist_3_video_1_url",
+      "label": "Video 1 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "url",
+      "id": "artist_3_video_2_url",
+      "label": "Video 2 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "header",
+      "content": "Artist 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "artist_4_enabled",
+      "label": "Enable artist 4",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "artist_4_name",
+      "label": "Name",
+      "default": "Artist Name"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_label",
+      "label": "Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_4_image",
+      "label": "Headshot"
+    },
+    {
+      "type": "url",
+      "id": "artist_4_video_1_url",
+      "label": "Video 1 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "url",
+      "id": "artist_4_video_2_url",
+      "label": "Video 2 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "header",
+      "content": "Artist 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "artist_5_enabled",
+      "label": "Enable artist 5",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "artist_5_name",
+      "label": "Name",
+      "default": "Artist Name"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_label",
+      "label": "Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_5_image",
+      "label": "Headshot"
+    },
+    {
+      "type": "url",
+      "id": "artist_5_video_1_url",
+      "label": "Video 1 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "url",
+      "id": "artist_5_video_2_url",
+      "label": "Video 2 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "header",
+      "content": "Artist 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "artist_6_enabled",
+      "label": "Enable artist 6",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "artist_6_name",
+      "label": "Name",
+      "default": "Artist Name"
+    },
+    {
+      "type": "text",
+      "id": "artist_6_label",
+      "label": "Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_6_image",
+      "label": "Headshot"
+    },
+    {
+      "type": "url",
+      "id": "artist_6_video_1_url",
+      "label": "Video 1 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_6_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "url",
+      "id": "artist_6_video_2_url",
+      "label": "Video 2 embed URL"
+    },
+    {
+      "type": "text",
+      "id": "artist_6_video_2_title",
+      "label": "Video 2 title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Factory Sessions"
+    }
+  ]
+}
 {% endschema %}
