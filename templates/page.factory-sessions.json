@@ -14,6 +14,7 @@
       "blocks": {
         "template--18142515003684__3141c904-b6a6-4f2b-a1fe-aa2b9e911af8-1679425999b0455fe5-0": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "FACTORY SESSIONS",
             "heading_size": "h1",
@@ -60,7 +61,7 @@
         "template--18718031053092__d5384b51-da84-42f6-ae5a-9a680c08a677-168244574359a98456-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>AN UNDERGROUND MUSICAL ADVENTURE</p>",
+            "heading": "<p>FACTORY SESSIONS</p>",
             "heading_size": "h1",
             "max_width": ""
           }
@@ -87,7 +88,7 @@
         "mobile_border_bottom": false,
         "padding_top": 40,
         "padding_bottom": 52,
-        "max_width": ""
+        "max_width": "1200"
       }
     },
     "ccc832b0-18d4-49b3-b454-b004b12ae5e8": {
@@ -96,9 +97,9 @@
         "heading": "",
         "heading_size": "h1",
         "cover_image": "shopify://shop_images/jpeg_zunderground_nate_smith_thumb_1.jpg",
-        "video_url": "https://youtu.be/ak410L2Z5d8",
+        "video_url": "https://www.youtube.com/watch?v=ak410L2Z5d8",
         "description": "",
-        "section_width": "page-width",
+        "section_width": "page-width page-width--narrow",
         "mobile_full_width": false,
         "color_scheme": "background-1",
         "caption_color_scheme": "background-1",
@@ -209,6 +210,96 @@
         "quote": false,
         "max_width": "500"
       }
+    },
+    "17738565753fe61205": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_28bec24_nXDjGc": {
+          "type": "ai_gen_block_28bec24",
+          "settings": {
+            "show_header": true,
+            "title": "Factory Sessions",
+            "subtitle": "Watch exclusive performances from world-class artists",
+            "header_alignment": "left",
+            "header_spacing": 40,
+            "max_width": 1400,
+            "section_padding": 60,
+            "layout_gap": 40,
+            "mobile_layout_gap": 32,
+            "background_color": "#ffffff",
+            "title_color": "#000000",
+            "subtitle_color": "#666666",
+            "title_size": 42,
+            "subtitle_size": 16,
+            "artist_spacing": 12,
+            "artist_padding": 16,
+            "mobile_artist_padding": 12,
+            "headshot_size": 70,
+            "artist_bg_color": "#f8f8f9",
+            "artist_hover_bg_color": "#eeeeee",
+            "artist_hover_border_color": "#cccccc",
+            "artist_active_bg_color": "#ffffff",
+            "artist_active_border_color": "#000000",
+            "artist_name_size": 16,
+            "artist_name_color": "#000000",
+            "artist_label_size": 13,
+            "artist_label_color": "#666666",
+            "video_gap": 24,
+            "video_title_size": 14,
+            "video_title_color": "#000000",
+            "empty_state_bg_color": "#f8f8f9",
+            "empty_state_text_color": "#999999",
+            "artist_1_enabled": true,
+            "artist_1_name": "Craig Reynolds",
+            "artist_1_label": "2 performances",
+            "artist_1_image": "shopify://shop_images/Gifford-Howarth-Profile.jpg",
+            "artist_1_video_1_url": "https://youtu.be/jPsEukQkUuM?list=PLpreW_E4-BQxRgS8qnXkguLDkXEtrgImJ",
+            "artist_1_video_1_title": "SDSDS",
+            "artist_1_video_2_url": "https://youtu.be/jPsEukQkUuM?list=PLpreW_E4-BQxRgS8qnXkguLDkXEtrgImJ",
+            "artist_1_video_2_title": "ASAS",
+            "artist_2_enabled": false,
+            "artist_2_name": "Craig",
+            "artist_2_label": "",
+            "artist_2_video_1_url": "",
+            "artist_2_video_1_title": "",
+            "artist_2_video_2_url": "",
+            "artist_2_video_2_title": "",
+            "artist_3_enabled": false,
+            "artist_3_name": "Artist Name",
+            "artist_3_label": "",
+            "artist_3_video_1_url": "",
+            "artist_3_video_1_title": "",
+            "artist_3_video_2_url": "",
+            "artist_3_video_2_title": "",
+            "artist_4_enabled": false,
+            "artist_4_name": "Artist Name",
+            "artist_4_label": "",
+            "artist_4_video_1_url": "",
+            "artist_4_video_1_title": "",
+            "artist_4_video_2_url": "",
+            "artist_4_video_2_title": "",
+            "artist_5_enabled": false,
+            "artist_5_name": "Artist Name",
+            "artist_5_label": "",
+            "artist_5_video_1_url": "",
+            "artist_5_video_1_title": "",
+            "artist_5_video_2_url": "",
+            "artist_5_video_2_title": "",
+            "artist_6_enabled": false,
+            "artist_6_name": "Artist Name",
+            "artist_6_label": "",
+            "artist_6_video_1_url": "",
+            "artist_6_video_1_title": "",
+            "artist_6_video_2_url": "",
+            "artist_6_video_2_title": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_28bec24_nXDjGc"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -217,6 +308,7 @@
     "d5384b51-da84-42f6-ae5a-9a680c08a677",
     "ccc832b0-18d4-49b3-b454-b004b12ae5e8",
     "0ad64e14-f6e6-4ed7-8f66-c32123372d8e",
-    "92497ea8-71f4-43ce-ae10-22e1986a11fb"
+    "92497ea8-71f4-43ce-ae10-22e1986a11fb",
+    "17738565753fe61205"
   ]
 }
