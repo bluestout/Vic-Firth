@@ -401,6 +401,7 @@
         "heading_xjBqL7",
         "text_kXM7Vc"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "contnet_type": "list",
@@ -449,6 +450,7 @@
         "text_dbDa9d",
         "button_cJnBxN"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "tag": "",
@@ -512,6 +514,7 @@
         "text_CQTKYN",
         "button_6FVmFf"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "tag": "",
@@ -575,6 +578,7 @@
         "text_yhhMrb",
         "button_ULeRFE"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "tag": "",
@@ -602,8 +606,75 @@
         "max_width": ""
       }
     },
-    "1773946467a70235ab": {
+    "1773949538d243702e": {
       "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6d30305_f6VfAg": {
+          "type": "ai_gen_block_6d30305",
+          "settings": {
+            "section_title": "Session Gear",
+            "background_color": "#ffffff",
+            "title_font": "poppins_n6",
+            "title_size": 36,
+            "title_color": "#000000",
+            "body_font": "poppins_n3",
+            "artist_1_name": "Tony",
+            "artist_2_name": "John",
+            "artist_3_name": "Pete",
+            "artist_4_name": "",
+            "filter_bg_color": "#ffffff",
+            "filter_text_color": "#000000",
+            "filter_border_color": "#000000",
+            "filter_hover_bg_color": "#f8f8f9",
+            "filter_hover_text_color": "#000000",
+            "filter_hover_border_color": "#000000",
+            "filter_active_bg_color": "#000000",
+            "filter_active_text_color": "#ffffff",
+            "filter_active_border_color": "#000000",
+            "card_bg_color": "#ffffff",
+            "card_text_color": "#000000",
+            "show_label": false,
+            "label_text": "Used in session",
+            "label_bg_color": "#ce0e2d",
+            "label_text_color": "#ffffff",
+            "button_text": "View product",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#000000",
+            "button_hover_bg_color": "#ce0e2d",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#ce0e2d",
+            "product_1": "american-classicr-1a",
+            "product_1_artists": "artist1",
+            "product_2": "american-classicr-2b",
+            "product_2_artists": "artist1",
+            "product_3": "american-classicr-2bn-nylon-tip",
+            "product_3_artists": "artist2",
+            "product_4": "12-single-sided-double-surface-practice-pad",
+            "product_4_artists": "artist2",
+            "product_5": "american-classicr-5a-w-black-finish",
+            "product_5_artists": "artist3",
+            "product_6": "american-classic®-5atn-terratm-series-drumsticks-nylon-tip",
+            "product_6_artists": "artist3",
+            "product_7": "",
+            "product_7_artists": "artist1",
+            "product_8": "",
+            "product_8_artists": "artist2",
+            "product_9": "",
+            "product_9_artists": "artist3",
+            "product_10": "",
+            "product_10_artists": "artist1",
+            "product_11": "",
+            "product_11_artists": "artist2",
+            "product_12": "",
+            "product_12_artists": "artist3"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6d30305_f6VfAg"
+      ],
       "settings": {}
     }
   },
@@ -621,6 +692,6 @@
     "image_with_text_LJbXdR",
     "image_with_text_cjFdfy",
     "image_with_text_QD6cwe",
-    "1773946467a70235ab"
+    "1773949538d243702e"
   ]
 }
