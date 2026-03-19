@@ -1,6 +1,642 @@
+{% doc %}
+  @prompt
+    Layout:
+    
+    Display 3–4 products only
+    
+    Do not use a carousel if there are only a few products
+    
+    Use a clean horizontal row (desktop) and stacked or scrollable layout on mobile
+    
+    Design:
+    
+    make products slightly larger and more prominent
+    
+    increase spacing between items
+    
+    remove unnecessary navigation arrows
+    
+    keep the layout minimal and premium
+    
+    Optional:
+    
+    include a short 1-line description about the gear
+    
+    highlight one product slightly more as a featured item
+    
+    Style:
+    
+    editorial, clean, performance-focused
+    
+    feel like a recommendation, not a storefront
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-curated-gear-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.section_padding }}px 0;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-curated-gear__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.desktop_width_percent }}%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-curated-gear__header-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.header_spacing }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-curated-gear__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 12px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .ai-curated-gear__description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ai-curated-gear__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.products_per_row }}, 1fr);
+    gap: {{ block.settings.product_spacing }}px;
+    margin-top: {{ block.settings.grid_top_spacing }}px;
+  }
+
+  .ai-curated-gear__product-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+  }
+
+  .ai-curated-gear__product-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+  }
+
+  .ai-curated-gear__product-{{ ai_gen_id }}--featured {
+    grid-column: span 1;
+  }
+
+  .ai-curated-gear__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: #f8f8f9;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .ai-curated-gear__image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-curated-gear__image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f9;
+  }
+
+  .ai-curated-gear__image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-curated-gear__featured-badge-{{ ai_gen_id }} {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: {{ block.settings.featured_badge_color }};
+    color: {{ block.settings.featured_badge_text_color }};
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .ai-curated-gear__info-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ai-curated-gear__product-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_title_size }}px;
+    color: {{ block.settings.product_title_color }};
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .ai-curated-gear__product-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_description_size }}px;
+    color: {{ block.settings.product_description_color }};
+    margin: 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .ai-curated-gear__price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size }}px;
+    color: {{ block.settings.price_color }};
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-curated-gear__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: {{ block.settings.product_spacing | times: 0.7 }}px;
+    }
+
+    .ai-curated-gear__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-curated-gear__description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-curated-gear__product-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.product_title_size | times: 0.9 }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-curated-gear__grid-{{ ai_gen_id }} {
+      {% if block.settings.mobile_layout == 'stack' %}
+        grid-template-columns: 1fr;
+      {% elsif block.settings.mobile_layout == 'scroll' %}
+        grid-template-columns: repeat({{ block.settings.products_per_row }}, 75%);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      {% else %}
+        grid-template-columns: repeat(2, 1fr);
+      {% endif %}
+    }
+
+    .ai-curated-gear__grid-{{ ai_gen_id }}::-webkit-scrollbar {
+      display: none;
+    }
+
+    {% if block.settings.mobile_layout == 'scroll' %}
+      .ai-curated-gear__product-{{ ai_gen_id }} {
+        scroll-snap-align: start;
+      }
+    {% endif %}
+
+    .ai-curated-gear__container-{{ ai_gen_id }} {
+      padding: 0 16px;
+    }
+  }
+{% endstyle %}
+
+<curated-gear-{{ ai_gen_id }} class="ai-curated-gear-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-curated-gear__container-{{ ai_gen_id }}">
+    {% if block.settings.section_title != blank or block.settings.section_description != blank %}
+      <div class="ai-curated-gear__header-{{ ai_gen_id }}">
+        {% if block.settings.section_title != blank %}
+          <h2 class="ai-curated-gear__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+        {% endif %}
+        {% if block.settings.section_description != blank %}
+          <p class="ai-curated-gear__description-{{ ai_gen_id }}">{{ block.settings.section_description }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-curated-gear__grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign product_key = 'product_' | append: i
+          assign product = block.settings[product_key]
+          assign is_featured = false
+          if i == block.settings.featured_product_position
+            assign is_featured = true
+          endif
+        %}
+
+        {% if product != blank %}
+          <a
+            href="{{ product.url }}"
+            class="ai-curated-gear__product-{{ ai_gen_id }} {% if is_featured %}ai-curated-gear__product-{{ ai_gen_id }}--featured{% endif %}"
+          >
+            <div class="ai-curated-gear__image-wrapper-{{ ai_gen_id }}">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 800 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  class="ai-curated-gear__image-{{ ai_gen_id }}"
+                  loading="lazy"
+                  width="800"
+                  height="800"
+                >
+              {% else %}
+                <div class="ai-curated-gear__image-placeholder-{{ ai_gen_id }}">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+
+              {% if is_featured and block.settings.show_featured_badge %}
+                <div class="ai-curated-gear__featured-badge-{{ ai_gen_id }}">
+                  {{ block.settings.featured_badge_text }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="ai-curated-gear__info-{{ ai_gen_id }}">
+              <h3 class="ai-curated-gear__product-title-{{ ai_gen_id }}">{{ product.title }}</h3>
+
+              {% if block.settings.show_product_description and product.description != blank %}
+                <p class="ai-curated-gear__product-description-{{ ai_gen_id }}">
+                  {{ product.description | strip_html | truncate: 80 }}
+                </p>
+              {% endif %}
+
+              {% if block.settings.show_price %}
+                <div class="ai-curated-gear__price-{{ ai_gen_id }}">
+                  {{ product.price | money }}
+                </div>
+              {% endif %}
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</curated-gear-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CuratedGear{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupScrollBehavior();
+      }
+
+      setupScrollBehavior() {
+        const grid = this.querySelector('.ai-curated-gear__grid-{{ ai_gen_id }}');
+        if (!grid) return;
+
+        const isMobile = window.matchMedia('(max-width: 749px)').matches;
+        const isScrollLayout = '{{ block.settings.mobile_layout }}' === 'scroll';
+
+        if (isMobile && isScrollLayout) {
+          grid.style.scrollBehavior = 'smooth';
+        }
+      }
+    }
+
+    customElements.define('curated-gear-{{ ai_gen_id }}', CuratedGear{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Curated gear",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Recommended gear"
+    },
+    {
+      "type": "text",
+      "id": "section_description",
+      "label": "Description",
+      "default": "Performance-tested essentials for serious players"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 90
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Product 3"
+    },
+    {
+      "type": "product",
+      "id": "product_4",
+      "label": "Product 4"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "range",
+      "id": "product_spacing",
+      "label": "Product spacing",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header spacing",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "grid_top_spacing",
+      "label": "Grid top spacing",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "2 columns"
+        },
+        {
+          "value": "stack",
+          "label": "Stacked"
+        },
+        {
+          "value": "scroll",
+          "label": "Horizontal scroll"
+        }
+      ],
+      "default": "scroll"
+    },
+    {
+      "type": "header",
+      "content": "Featured product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_badge",
+      "label": "Show featured badge",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "featured_product_position",
+      "label": "Featured product position",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "text",
+      "id": "featured_badge_text",
+      "label": "Badge text",
+      "default": "Featured"
+    },
+    {
+      "type": "color",
+      "id": "featured_badge_color",
+      "label": "Badge background",
+      "default": "#ce0e2d"
+    },
+    {
+      "type": "color",
+      "id": "featured_badge_text_color",
+      "label": "Badge text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "product_title_size",
+      "label": "Product title size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "product_title_color",
+      "label": "Product title color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Product details"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_description",
+      "label": "Show product description",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "product_description_size",
+      "label": "Description size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "product_description_color",
+      "label": "Description color",
+      "default": "#666666"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "label": "Price size",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Curated gear"
+    }
+  ]
+}
 {% endschema %}
