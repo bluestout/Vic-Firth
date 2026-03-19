@@ -1,6 +1,1305 @@
+{% doc %}
+  @prompt
+    Session Gear Section Request
+    Section Overview
+    
+    Add a section titled “Session Gear”
+    
+    The section should span the full available content width of the page
+    
+    Include a horizontal, scrollable product carousel
+    
+    Product Cards
+    
+    Each product card should include:
+    
+    Product image
+    
+    Product name
+    
+    Price
+    
+    “View product” or “Quick add” button
+    
+    Requirements:
+    
+    All product cards must be evenly sized and aligned
+    
+    Cards should feel clean, premium, and not cluttered
+    
+    Artist Filtering
+    
+    Include a row of artist filter buttons at the top (e.g. Tony, John, Pete)
+    
+    Do NOT include an “All Gear” / “All” filter option
+    
+    When an artist is selected:
+    
+    Only show products associated with that artist
+    
+    Each product should be manually assigned to an artist within the section settings
+    
+    Clearly indicate the active selected artist
+    
+    Carousel Behavior
+    
+    Display products in a single horizontal row
+    
+    On desktop:
+    
+    Show exactly 4 products at a time
+    
+    Do NOT display all products at once
+    
+    If more than 4 products exist:
+    
+    Allow users to scroll/slide horizontally to view more
+    
+    Include:
+    
+    Previous / Next navigation controls
+    
+    When switching artists:
+    
+    Reset the carousel scroll position to the beginning
+    
+    Ensure:
+    
+    Smooth horizontal movement
+    
+    No layout shifting or breaking
+    
+    Mobile Behavior
+    
+    Maintain a horizontal swipeable carousel
+    
+    Ensure smooth touch scrolling
+    
+    Keep product cards readable and properly sized
+    
+    Design & Branding
+    
+    Style should be:
+    
+    Clean
+    
+    Minimal
+    
+    Performance-focused
+    
+    Match Vic Firth brand styling:
+    
+    Black / white / light gray palette
+    
+    Strong typography
+    
+    Use the existing Vic Firth brand font already loaded in the theme
+    
+    Match typography used elsewhere on the site
+    
+    Maintain strong spacing and visual hierarchy
+    
+    Ensure the section feels like a branded gear showcase, not a default Shopify grid
+    
+    Functionality Requirements
+    
+    Filtering must happen:
+    
+    Instantly on click
+    
+    Without page reload
+    
+    Products should:
+    
+    Not reload
+    
+    Not break layout when filtering
+    
+    Important Constraints
+    
+    Scope all styles and functionality ONLY to this section
+    
+    Do NOT apply global styles to:
+    
+    buttons
+    
+    divs
+    
+    fonts
+    
+    product cards
+    
+    sliders
+    
+    Do NOT affect any other sections on the site
+    
+    Optional Enhancements
+    
+    Allow one product to appear under multiple artists
+    
+    Include a small label on cards like:
+    
+    “Used in session”
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-session-gear-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 60px 0;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-session-gear-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-session-gear-header-{{ ai_gen_id }} {
+    margin-bottom: 40px;
+  }
+
+  .ai-session-gear-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 24px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .ai-session-gear-filters-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .ai-session-gear-filter-btn-{{ ai_gen_id }} {
+    padding: 10px 24px;
+    background-color: {{ block.settings.filter_bg_color }};
+    color: {{ block.settings.filter_text_color }};
+    border: 1px solid {{ block.settings.filter_border_color }};
+    border-radius: {{ block.settings.filter_border_radius }}px;
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .ai-session-gear-filter-btn-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.filter_hover_bg_color }};
+    color: {{ block.settings.filter_hover_text_color }};
+    border-color: {{ block.settings.filter_hover_border_color }};
+  }
+
+  .ai-session-gear-filter-btn-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.filter_active_bg_color }};
+    color: {{ block.settings.filter_active_text_color }};
+    border-color: {{ block.settings.filter_active_border_color }};
+  }
+
+  .ai-session-gear-carousel-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    margin-top: 32px;
+  }
+
+  .ai-session-gear-carousel-{{ ai_gen_id }} {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ai-session-gear-track-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.card_gap }}px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ai-session-gear-card-{{ ai_gen_id }} {
+    flex: 0 0 calc((100% - (3 * {{ block.settings.card_gap }}px)) / 4);
+    background-color: {{ block.settings.card_bg_color }};
+    border: 1px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .ai-session-gear-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-session-gear-card-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: #f8f8f9;
+    overflow: hidden;
+  }
+
+  .ai-session-gear-card-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-session-gear-card-label-{{ ai_gen_id }} {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: {{ block.settings.label_bg_color }};
+    color: {{ block.settings.label_text_color }};
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .ai-session-gear-card-content-{{ ai_gen_id }} {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-session-gear-card-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: 700;
+    font-size: 16px;
+    color: {{ block.settings.card_title_color }};
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .ai-session-gear-card-price-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: 18px;
+    color: {{ block.settings.card_price_color }};
+    margin: 0 0 16px 0;
+    font-weight: 700;
+  }
+
+  .ai-session-gear-card-button-{{ ai_gen_id }} {
+    margin-top: auto;
+    padding: 12px 20px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: 1px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+
+  .ai-session-gear-card-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+  }
+
+  .ai-session-gear-nav-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background-color: {{ block.settings.nav_bg_color }};
+    border: 1px solid {{ block.settings.nav_border_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+  }
+
+  .ai-session-gear-nav-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.nav_hover_bg_color }};
+    border-color: {{ block.settings.nav_hover_border_color }};
+  }
+
+  .ai-session-gear-nav-{{ ai_gen_id }}:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ai-session-gear-nav-{{ ai_gen_id }}.prev {
+    left: -24px;
+  }
+
+  .ai-session-gear-nav-{{ ai_gen_id }}.next {
+    right: -24px;
+  }
+
+  .ai-session-gear-nav-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+    stroke: {{ block.settings.nav_icon_color }};
+  }
+
+  .ai-session-gear-empty-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-session-gear-card-{{ ai_gen_id }} {
+      flex: 0 0 calc((100% - (2 * {{ block.settings.card_gap }}px)) / 3);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-session-gear-{{ ai_gen_id }} {
+      padding: 40px 0;
+    }
+
+    .ai-session-gear-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.75 }}px;
+    }
+
+    .ai-session-gear-carousel-{{ ai_gen_id }} {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .ai-session-gear-carousel-{{ ai_gen_id }}::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ai-session-gear-track-{{ ai_gen_id }} {
+      transition: none;
+    }
+
+    .ai-session-gear-card-{{ ai_gen_id }} {
+      flex: 0 0 280px;
+    }
+
+    .ai-session-gear-nav-{{ ai_gen_id }} {
+      display: none;
+    }
+  }
+{% endstyle %}
+
+<session-gear-{{ ai_gen_id }} class="ai-session-gear-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-session-gear-container-{{ ai_gen_id }}">
+    <div class="ai-session-gear-header-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-session-gear-title-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+
+      <div class="ai-session-gear-filters-{{ ai_gen_id }}">
+        {% for i in (1..5) %}
+          {% liquid
+            assign artist_name_key = 'artist_' | append: i | append: '_name'
+            assign artist_name = block.settings[artist_name_key]
+          %}
+          {% if artist_name != blank %}
+            <button
+              class="ai-session-gear-filter-btn-{{ ai_gen_id }} {% if forloop.first %}active{% endif %}"
+              data-artist="{{ i }}"
+            >
+              {{ artist_name }}
+            </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="ai-session-gear-carousel-wrapper-{{ ai_gen_id }}">
+      <button class="ai-session-gear-nav-{{ ai_gen_id }} prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="ai-session-gear-carousel-{{ ai_gen_id }}">
+        <div class="ai-session-gear-track-{{ ai_gen_id }}">
+          {% for i in (1..20) %}
+            {% liquid
+              assign product_key = 'product_' | append: i
+              assign artist_key = 'product_' | append: i | append: '_artist'
+              assign product = block.settings[product_key]
+              assign artist = block.settings[artist_key]
+            %}
+            {% if product != blank and artist != blank %}
+              <div class="ai-session-gear-card-{{ ai_gen_id }}" data-artist="{{ artist }}" style="display: none;">
+                <div class="ai-session-gear-card-image-wrapper-{{ ai_gen_id }}">
+                  {% if product.featured_image %}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 600 }}"
+                      alt="{{ product.featured_image.alt | escape }}"
+                      class="ai-session-gear-card-image-{{ ai_gen_id }}"
+                      loading="lazy"
+                      width="600"
+                      height="600"
+                    >
+                  {% endif %}
+                  {% if block.settings.show_label %}
+                    <div class="ai-session-gear-card-label-{{ ai_gen_id }}">{{ block.settings.label_text }}</div>
+                  {% endif %}
+                </div>
+                <div class="ai-session-gear-card-content-{{ ai_gen_id }}">
+                  <h3 class="ai-session-gear-card-title-{{ ai_gen_id }}">{{ product.title }}</h3>
+                  <div class="ai-session-gear-card-price-{{ ai_gen_id }}">{{ product.price | money }}</div>
+                  <a href="{{ product.url }}" class="ai-session-gear-card-button-{{ ai_gen_id }}">
+                    {{ block.settings.button_text }}
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <button class="ai-session-gear-nav-{{ ai_gen_id }} next" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <div class="ai-session-gear-empty-{{ ai_gen_id }}" style="display: none;">
+      No products found for this artist.
+    </div>
+  </div>
+</session-gear-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class SessionGear{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentArtist = '1';
+        this.currentIndex = 0;
+        this.cardsPerView = 4;
+      }
+
+      connectedCallback() {
+        this.filterButtons = this.querySelectorAll('.ai-session-gear-filter-btn-{{ ai_gen_id }}');
+        this.cards = this.querySelectorAll('.ai-session-gear-card-{{ ai_gen_id }}');
+        this.track = this.querySelector('.ai-session-gear-track-{{ ai_gen_id }}');
+        this.prevButton = this.querySelector('.ai-session-gear-nav-{{ ai_gen_id }}.prev');
+        this.nextButton = this.querySelector('.ai-session-gear-nav-{{ ai_gen_id }}.next');
+        this.emptyState = this.querySelector('.ai-session-gear-empty-{{ ai_gen_id }}');
+        this.carousel = this.querySelector('.ai-session-gear-carousel-{{ ai_gen_id }}');
+
+        this.setupEventListeners();
+        this.updateCardsPerView();
+        this.filterProducts(this.currentArtist);
+
+        window.addEventListener('resize', () => {
+          this.updateCardsPerView();
+          this.updateCarousel();
+        });
+      }
+
+      setupEventListeners() {
+        this.filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            this.filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            this.currentArtist = button.dataset.artist;
+            this.currentIndex = 0;
+            this.filterProducts(this.currentArtist);
+          });
+        });
+
+        this.prevButton.addEventListener('click', () => this.navigate(-1));
+        this.nextButton.addEventListener('click', () => this.navigate(1));
+      }
+
+      updateCardsPerView() {
+        const width = window.innerWidth;
+        if (width <= 749) {
+          this.cardsPerView = 1;
+        } else if (width <= 989) {
+          this.cardsPerView = 3;
+        } else {
+          this.cardsPerView = 4;
+        }
+      }
+
+      filterProducts(artistId) {
+        let visibleCards = [];
+
+        this.cards.forEach(card => {
+          if (card.dataset.artist === artistId) {
+            card.style.display = 'flex';
+            visibleCards.push(card);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (visibleCards.length === 0) {
+          this.emptyState.style.display = 'block';
+          this.carousel.style.display = 'none';
+          this.prevButton.style.display = 'none';
+          this.nextButton.style.display = 'none';
+        } else {
+          this.emptyState.style.display = 'none';
+          this.carousel.style.display = 'block';
+          if (window.innerWidth > 749) {
+            this.prevButton.style.display = 'flex';
+            this.nextButton.style.display = 'flex';
+          }
+        }
+
+        this.visibleCards = visibleCards;
+        this.updateCarousel();
+      }
+
+      navigate(direction) {
+        const maxIndex = Math.max(0, this.visibleCards.length - this.cardsPerView);
+        this.currentIndex = Math.max(0, Math.min(maxIndex, this.currentIndex + direction));
+        this.updateCarousel();
+      }
+
+      updateCarousel() {
+        if (!this.visibleCards || this.visibleCards.length === 0) return;
+
+        const cardWidth = this.visibleCards[0].offsetWidth;
+        const gap = {{ block.settings.card_gap }};
+        const offset = -(this.currentIndex * (cardWidth + gap));
+
+        this.track.style.transform = `translateX(${offset}px)`;
+
+        const maxIndex = Math.max(0, this.visibleCards.length - this.cardsPerView);
+        this.prevButton.disabled = this.currentIndex === 0;
+        this.nextButton.disabled = this.currentIndex >= maxIndex;
+      }
+    }
+
+    customElements.define('session-gear-{{ ai_gen_id }}', SessionGear{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Session gear",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Session Gear"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Container width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1600
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "century_gothic_n7"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "century_gothic_n4"
+    },
+    {
+      "type": "header",
+      "content": "Artist filters"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_name",
+      "label": "Artist 1 name",
+      "default": "Tony"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_name",
+      "label": "Artist 2 name",
+      "default": "John"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_name",
+      "label": "Artist 3 name",
+      "default": "Pete"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_name",
+      "label": "Artist 4 name"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_name",
+      "label": "Artist 5 name"
+    },
+    {
+      "type": "color",
+      "id": "filter_bg_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "filter_text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_border_color",
+      "label": "Border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_hover_bg_color",
+      "label": "Hover background",
+      "default": "#f8f8f9"
+    },
+    {
+      "type": "color",
+      "id": "filter_hover_text_color",
+      "label": "Hover text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_hover_border_color",
+      "label": "Hover border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_active_bg_color",
+      "label": "Active background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_active_text_color",
+      "label": "Active text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "filter_active_border_color",
+      "label": "Active border",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "filter_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Product cards"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Gap between cards",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border",
+      "default": "#e8e8e8"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "card_price_color",
+      "label": "Price color",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_label",
+      "label": "Show label on cards",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Label text",
+      "default": "Used in session"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "Label background",
+      "default": "#ce0e2d"
+    },
+    {
+      "type": "color",
+      "id": "label_text_color",
+      "label": "Label text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Card button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "View product"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background",
+      "default": "#ce0e2d"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border",
+      "default": "#ce0e2d"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "color",
+      "id": "nav_bg_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nav_border_color",
+      "label": "Border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "nav_icon_color",
+      "label": "Icon",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "nav_hover_bg_color",
+      "label": "Hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "nav_hover_border_color",
+      "label": "Hover border",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Products - Artist 1"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Product 1"
+    },
+    {
+      "type": "select",
+      "id": "product_1_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Product 2"
+    },
+    {
+      "type": "select",
+      "id": "product_2_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Product 3"
+    },
+    {
+      "type": "select",
+      "id": "product_3_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_4",
+      "label": "Product 4"
+    },
+    {
+      "type": "select",
+      "id": "product_4_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "header",
+      "content": "Products - Artist 2"
+    },
+    {
+      "type": "product",
+      "id": "product_5",
+      "label": "Product 5"
+    },
+    {
+      "type": "select",
+      "id": "product_5_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "product",
+      "id": "product_6",
+      "label": "Product 6"
+    },
+    {
+      "type": "select",
+      "id": "product_6_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "product",
+      "id": "product_7",
+      "label": "Product 7"
+    },
+    {
+      "type": "select",
+      "id": "product_7_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "product",
+      "id": "product_8",
+      "label": "Product 8"
+    },
+    {
+      "type": "select",
+      "id": "product_8_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Products - Artist 3"
+    },
+    {
+      "type": "product",
+      "id": "product_9",
+      "label": "Product 9"
+    },
+    {
+      "type": "select",
+      "id": "product_9_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "product",
+      "id": "product_10",
+      "label": "Product 10"
+    },
+    {
+      "type": "select",
+      "id": "product_10_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "product",
+      "id": "product_11",
+      "label": "Product 11"
+    },
+    {
+      "type": "select",
+      "id": "product_11_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "product",
+      "id": "product_12",
+      "label": "Product 12"
+    },
+    {
+      "type": "select",
+      "id": "product_12_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "header",
+      "content": "Additional products"
+    },
+    {
+      "type": "product",
+      "id": "product_13",
+      "label": "Product 13"
+    },
+    {
+      "type": "select",
+      "id": "product_13_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_14",
+      "label": "Product 14"
+    },
+    {
+      "type": "select",
+      "id": "product_14_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_15",
+      "label": "Product 15"
+    },
+    {
+      "type": "select",
+      "id": "product_15_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_16",
+      "label": "Product 16"
+    },
+    {
+      "type": "select",
+      "id": "product_16_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_17",
+      "label": "Product 17"
+    },
+    {
+      "type": "select",
+      "id": "product_17_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_18",
+      "label": "Product 18"
+    },
+    {
+      "type": "select",
+      "id": "product_18_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_19",
+      "label": "Product 19"
+    },
+    {
+      "type": "select",
+      "id": "product_19_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "product",
+      "id": "product_20",
+      "label": "Product 20"
+    },
+    {
+      "type": "select",
+      "id": "product_20_artist",
+      "label": "Artist",
+      "options": [
+        { "value": "1", "label": "Artist 1" },
+        { "value": "2", "label": "Artist 2" },
+        { "value": "3", "label": "Artist 3" },
+        { "value": "4", "label": "Artist 4" },
+        { "value": "5", "label": "Artist 5" }
+      ],
+      "default": "1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Session gear"
+    }
+  ]
+}
 {% endschema %}
