@@ -1,6 +1,1089 @@
+{% doc %}
+  @prompt
+    Use a two-column layout for a “Factory Sessions” video block.
+    
+    On the left, show a vertical list of artists with:
+    
+    headshot
+    
+    artist name
+    
+    short label like “2 performances”
+    
+    On the right, show one large featured video player for the selected artist.
+    
+    When an artist is clicked, load that artist’s performances into the featured video area.
+    Only show one video at a time in the large player.
+    Allow the user to switch between that artist’s videos using simple previous / next controls, tabs, dots, or thumbnail selectors below the player.
+    
+    For each selected artist, the video area should include:
+    
+    one large playable video
+    
+    video title
+    
+    optional performance subtitle
+    
+    controls to switch to the artist’s other videos
+    
+    Important:
+    
+    Use actual playable video blocks / hosted video elements / clickable video players
+    
+    Do not use static image placeholders
+    
+    Do not create broken embed boxes
+    
+    The videos should be functional and visually prominent
+    
+    Style direction:
+    
+    clean, modern, performance-focused
+    
+    black / white / light gray base
+    
+    bold typography consistent with Vic Firth
+    
+    strong spacing and editorial feel
+    
+    active artist state should be clearly highlighted
+    
+    Responsive behavior:
+    
+    desktop: artist list on left, large featured video on right
+    
+    mobile: artist list on top, featured video below
+    
+    keep the video player large and easy to interact with on all screen sizes
+    
+    Design goal:
+    The experience should feel like selecting an artist, then watching their performances one at a time in a hero-style video player, with an easy way to move to the next performance.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-factory-sessions-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-factory-sessions-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-factory-sessions-layout-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .ai-factory-sessions-artists-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ai-factory-sessions-artist-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s ease;
+    border-left: 3px solid transparent;
+  }
+
+  .ai-factory-sessions-artist-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.artist_hover_bg }};
+  }
+
+  .ai-factory-sessions-artist-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.artist_active_bg }};
+    border-left-color: {{ block.settings.accent_color }};
+  }
+
+  .ai-factory-sessions-artist-headshot-{{ ai_gen_id }} {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background-color: #e0e0e0;
+  }
+
+  .ai-factory-sessions-artist-info-{{ ai_gen_id }} {
+    flex-grow: 1;
+  }
+
+  .ai-factory-sessions-artist-name-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 700;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+  }
+
+  .ai-factory-sessions-artist-label-{{ ai_gen_id }} {
+    font-size: 13px;
+    color: {{ block.settings.label_color }};
+    margin: 0;
+  }
+
+  .ai-factory-sessions-video-area-{{ ai_gen_id }} {
+    position: sticky;
+    top: 20px;
+  }
+
+  .ai-factory-sessions-video-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    background-color: #000000;
+    border-radius: {{ block.settings.video_border_radius }}px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+  }
+
+  .ai-factory-sessions-video-wrapper-{{ ai_gen_id }} video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-factory-sessions-video-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #666666;
+    font-size: 18px;
+  }
+
+  .ai-factory-sessions-video-info-{{ ai_gen_id }} {
+    margin-top: 24px;
+  }
+
+  .ai-factory-sessions-video-title-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: 700;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .ai-factory-sessions-video-subtitle-{{ ai_gen_id }} {
+    font-size: 16px;
+    color: {{ block.settings.label_color }};
+    margin: 0 0 24px 0;
+  }
+
+  .ai-factory-sessions-controls-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .ai-factory-sessions-nav-button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_bg }};
+    color: {{ block.settings.button_text }};
+    border: 1px solid {{ block.settings.button_border }};
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-factory-sessions-nav-button-{{ ai_gen_id }}:hover:not(:disabled) {
+    background-color: {{ block.settings.button_hover_bg }};
+    color: {{ block.settings.button_hover_text }};
+  }
+
+  .ai-factory-sessions-nav-button-{{ ai_gen_id }}:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ai-factory-sessions-dots-{{ ai_gen_id }} {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .ai-factory-sessions-dot-{{ ai_gen_id }} {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .ai-factory-sessions-dot-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.accent_color }};
+    transform: scale(1.2);
+  }
+
+  .ai-factory-sessions-dot-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.accent_color }};
+    opacity: 0.7;
+  }
+
+  .ai-factory-sessions-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666666;
+  }
+
+  .ai-factory-sessions-empty-state-{{ ai_gen_id }} h3 {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-factory-sessions-empty-state-{{ ai_gen_id }} p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-factory-sessions-layout-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-factory-sessions-video-area-{{ ai_gen_id }} {
+      position: static;
+      order: -1;
+    }
+
+    .ai-factory-sessions-artists-{{ ai_gen_id }} {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-factory-sessions-layout-{{ ai_gen_id }} {
+      gap: 32px;
+    }
+
+    .ai-factory-sessions-artist-{{ ai_gen_id }} {
+      padding: 16px;
+    }
+
+    .ai-factory-sessions-artist-headshot-{{ ai_gen_id }} {
+      width: 50px;
+      height: 50px;
+    }
+
+    .ai-factory-sessions-artist-name-{{ ai_gen_id }} {
+      font-size: 15px;
+    }
+
+    .ai-factory-sessions-artist-label-{{ ai_gen_id }} {
+      font-size: 12px;
+    }
+
+    .ai-factory-sessions-video-title-{{ ai_gen_id }} {
+      font-size: 20px;
+    }
+
+    .ai-factory-sessions-video-subtitle-{{ ai_gen_id }} {
+      font-size: 14px;
+    }
+
+    .ai-factory-sessions-controls-{{ ai_gen_id }} {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .ai-factory-sessions-nav-button-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-factory-sessions-dots-{{ ai_gen_id }} {
+      justify-content: center;
+    }
+  }
+{% endstyle %}
+
+<factory-sessions-{{ ai_gen_id }} class="ai-factory-sessions-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-factory-sessions-container-{{ ai_gen_id }}">
+    {% assign has_artists = false %}
+    {% for i in (1..5) %}
+      {% assign artist_name_key = 'artist_' | append: i | append: '_name' %}
+      {% assign artist_name = block.settings[artist_name_key] %}
+      {% if artist_name != blank %}
+        {% assign has_artists = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if has_artists %}
+      <div class="ai-factory-sessions-layout-{{ ai_gen_id }}">
+        <div class="ai-factory-sessions-artists-{{ ai_gen_id }}">
+          {% for i in (1..5) %}
+            {% liquid
+              assign artist_name_key = 'artist_' | append: i | append: '_name'
+              assign artist_headshot_key = 'artist_' | append: i | append: '_headshot'
+              assign artist_label_key = 'artist_' | append: i | append: '_label'
+              assign video_1_key = 'artist_' | append: i | append: '_video_1'
+              assign video_2_key = 'artist_' | append: i | append: '_video_2'
+              assign video_3_key = 'artist_' | append: i | append: '_video_3'
+
+              assign artist_name = block.settings[artist_name_key]
+              assign artist_headshot = block.settings[artist_headshot_key]
+              assign artist_label = block.settings[artist_label_key]
+              assign video_1 = block.settings[video_1_key]
+              assign video_2 = block.settings[video_2_key]
+              assign video_3 = block.settings[video_3_key]
+
+              assign video_count = 0
+              if video_1 != blank
+                assign video_count = video_count | plus: 1
+              endif
+              if video_2 != blank
+                assign video_count = video_count | plus: 1
+              endif
+              if video_3 != blank
+                assign video_count = video_count | plus: 1
+              endif
+            %}
+
+            {% if artist_name != blank %}
+              <button
+                class="ai-factory-sessions-artist-{{ ai_gen_id }} {% if forloop.first %}active{% endif %}"
+                data-artist-index="{{ i }}"
+                data-video-count="{{ video_count }}"
+              >
+                {% if artist_headshot %}
+                  <img
+                    src="{{ artist_headshot | image_url: width: 120 }}"
+                    alt="{{ artist_name | escape }}"
+                    class="ai-factory-sessions-artist-headshot-{{ ai_gen_id }}"
+                    width="60"
+                    height="60"
+                    loading="lazy"
+                  >
+                {% else %}
+                  <div class="ai-factory-sessions-artist-headshot-{{ ai_gen_id }}"></div>
+                {% endif %}
+                <div class="ai-factory-sessions-artist-info-{{ ai_gen_id }}">
+                  <h3 class="ai-factory-sessions-artist-name-{{ ai_gen_id }}">{{ artist_name }}</h3>
+                  {% if artist_label != blank %}
+                    <p class="ai-factory-sessions-artist-label-{{ ai_gen_id }}">{{ artist_label }}</p>
+                  {% elsif video_count > 0 %}
+                    <p class="ai-factory-sessions-artist-label-{{ ai_gen_id }}">
+                      {{ video_count }}
+                      {% if video_count == 1 %}
+                        performance
+                      {% else %}
+                        performances
+                      {% endif %}
+                    </p>
+                  {% endif %}
+                </div>
+              </button>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="ai-factory-sessions-video-area-{{ ai_gen_id }}">
+          {% for i in (1..5) %}
+            {% liquid
+              assign artist_name_key = 'artist_' | append: i | append: '_name'
+              assign artist_name = block.settings[artist_name_key]
+            %}
+
+            {% if artist_name != blank %}
+              <div
+                class="ai-factory-sessions-artist-videos-{{ ai_gen_id }}"
+                data-artist-index="{{ i }}"
+                style="{% unless forloop.first %}display: none;{% endunless %}"
+              >
+                {% for j in (1..3) %}
+                  {% liquid
+                    assign video_key = 'artist_' | append: i | append: '_video_' | append: j
+                    assign title_key = 'artist_' | append: i | append: '_video_' | append: j | append: '_title'
+                    assign subtitle_key = 'artist_' | append: i | append: '_video_' | append: j | append: '_subtitle'
+
+                    assign video = block.settings[video_key]
+                    assign video_title = block.settings[title_key]
+                    assign video_subtitle = block.settings[subtitle_key]
+                  %}
+
+                  <div
+                    class="ai-factory-sessions-video-item-{{ ai_gen_id }}"
+                    data-video-index="{{ j }}"
+                    style="{% unless forloop.first %}display: none;{% endunless %}"
+                  >
+                    <div class="ai-factory-sessions-video-wrapper-{{ ai_gen_id }}">
+                      {% if video != blank %}
+                        {{
+                          video
+                          | video_tag:
+                            image_size: '1100x',
+                            controls: true,
+                            muted: false,
+                            autoplay: false
+                        }}
+                      {% else %}
+                        <div class="ai-factory-sessions-video-placeholder-{{ ai_gen_id }}">
+                          Select a video for this performance
+                        </div>
+                      {% endif %}
+                    </div>
+
+                    {% if video_title != blank or video_subtitle != blank %}
+                      <div class="ai-factory-sessions-video-info-{{ ai_gen_id }}">
+                        {% if video_title != blank %}
+                          <h2 class="ai-factory-sessions-video-title-{{ ai_gen_id }}">{{ video_title }}</h2>
+                        {% endif %}
+                        {% if video_subtitle != blank %}
+                          <p class="ai-factory-sessions-video-subtitle-{{ ai_gen_id }}">{{ video_subtitle }}</p>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+
+                <div class="ai-factory-sessions-controls-{{ ai_gen_id }}">
+                  <button
+                    class="ai-factory-sessions-nav-button-{{ ai_gen_id }} ai-factory-sessions-prev-{{ ai_gen_id }}"
+                    data-action="prev"
+                  >
+                    ← Previous
+                  </button>
+                  <div class="ai-factory-sessions-dots-{{ ai_gen_id }}"></div>
+                  <button
+                    class="ai-factory-sessions-nav-button-{{ ai_gen_id }} ai-factory-sessions-next-{{ ai_gen_id }}"
+                    data-action="next"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <div class="ai-factory-sessions-empty-state-{{ ai_gen_id }}">
+        <h3>Factory Sessions</h3>
+        <p>Add artists and their performance videos to get started</p>
+      </div>
+    {% endif %}
+  </div>
+</factory-sessions-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FactorySessions{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentArtistIndex = 1;
+        this.currentVideoIndex = 1;
+      }
+
+      connectedCallback() {
+        this.artistButtons = this.querySelectorAll('.ai-factory-sessions-artist-{{ ai_gen_id }}');
+        this.artistVideosContainers = this.querySelectorAll('.ai-factory-sessions-artist-videos-{{ ai_gen_id }}');
+        
+        this.setupArtistButtons();
+        this.initializeFirstArtist();
+      }
+
+      setupArtistButtons() {
+        this.artistButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const artistIndex = parseInt(button.dataset.artistIndex);
+            this.switchArtist(artistIndex);
+          });
+        });
+      }
+
+      initializeFirstArtist() {
+        const firstArtist = this.querySelector('.ai-factory-sessions-artist-{{ ai_gen_id }}.active');
+        if (firstArtist) {
+          const artistIndex = parseInt(firstArtist.dataset.artistIndex);
+          this.currentArtistIndex = artistIndex;
+          this.setupVideoControls(artistIndex);
+        }
+      }
+
+      switchArtist(artistIndex) {
+        this.currentArtistIndex = artistIndex;
+        this.currentVideoIndex = 1;
+
+        this.artistButtons.forEach((btn) => {
+          btn.classList.remove('active');
+          if (parseInt(btn.dataset.artistIndex) === artistIndex) {
+            btn.classList.add('active');
+          }
+        });
+
+        this.artistVideosContainers.forEach((container) => {
+          const containerIndex = parseInt(container.dataset.artistIndex);
+          if (containerIndex === artistIndex) {
+            container.style.display = 'block';
+            this.setupVideoControls(artistIndex);
+            this.showVideo(1);
+          } else {
+            container.style.display = 'none';
+          }
+        });
+      }
+
+      setupVideoControls(artistIndex) {
+        const container = this.querySelector(`.ai-factory-sessions-artist-videos-{{ ai_gen_id }}[data-artist-index="${artistIndex}"]`);
+        if (!container) return;
+
+        const videoItems = container.querySelectorAll('.ai-factory-sessions-video-item-{{ ai_gen_id }}');
+        const videoCount = Array.from(videoItems).filter(item => {
+          const video = item.querySelector('video');
+          return video !== null;
+        }).length;
+
+        const prevButton = container.querySelector('.ai-factory-sessions-prev-{{ ai_gen_id }}');
+        const nextButton = container.querySelector('.ai-factory-sessions-next-{{ ai_gen_id }}');
+        const dotsContainer = container.querySelector('.ai-factory-sessions-dots-{{ ai_gen_id }}');
+
+        if (prevButton) {
+          prevButton.replaceWith(prevButton.cloneNode(true));
+        }
+        if (nextButton) {
+          nextButton.replaceWith(nextButton.cloneNode(true));
+        }
+
+        const newPrevButton = container.querySelector('.ai-factory-sessions-prev-{{ ai_gen_id }}');
+        const newNextButton = container.querySelector('.ai-factory-sessions-next-{{ ai_gen_id }}');
+
+        if (newPrevButton) {
+          newPrevButton.addEventListener('click', () => this.navigateVideo(-1, videoCount));
+        }
+        if (newNextButton) {
+          newNextButton.addEventListener('click', () => this.navigateVideo(1, videoCount));
+        }
+
+        if (dotsContainer) {
+          dotsContainer.innerHTML = '';
+          for (let i = 1; i <= videoCount; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'ai-factory-sessions-dot-{{ ai_gen_id }}';
+            if (i === 1) dot.classList.add('active');
+            dot.dataset.videoIndex = i;
+            dot.addEventListener('click', () => this.showVideo(i));
+            dotsContainer.appendChild(dot);
+          }
+        }
+
+        this.updateNavigationState(videoCount);
+      }
+
+      navigateVideo(direction, videoCount) {
+        let newIndex = this.currentVideoIndex + direction;
+        if (newIndex < 1) newIndex = 1;
+        if (newIndex > videoCount) newIndex = videoCount;
+        this.showVideo(newIndex);
+      }
+
+      showVideo(videoIndex) {
+        this.currentVideoIndex = videoIndex;
+        const container = this.querySelector(`.ai-factory-sessions-artist-videos-{{ ai_gen_id }}[data-artist-index="${this.currentArtistIndex}"]`);
+        if (!container) return;
+
+        const videoItems = container.querySelectorAll('.ai-factory-sessions-video-item-{{ ai_gen_id }}');
+        const dots = container.querySelectorAll('.ai-factory-sessions-dot-{{ ai_gen_id }}');
+
+        videoItems.forEach((item) => {
+          const itemIndex = parseInt(item.dataset.videoIndex);
+          item.style.display = itemIndex === videoIndex ? 'block' : 'none';
+        });
+
+        dots.forEach((dot) => {
+          const dotIndex = parseInt(dot.dataset.videoIndex);
+          if (dotIndex === videoIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+
+        const videoCount = dots.length;
+        this.updateNavigationState(videoCount);
+      }
+
+      updateNavigationState(videoCount) {
+        const container = this.querySelector(`.ai-factory-sessions-artist-videos-{{ ai_gen_id }}[data-artist-index="${this.currentArtistIndex}"]`);
+        if (!container) return;
+
+        const prevButton = container.querySelector('.ai-factory-sessions-prev-{{ ai_gen_id }}');
+        const nextButton = container.querySelector('.ai-factory-sessions-next-{{ ai_gen_id }}');
+
+        if (prevButton) {
+          prevButton.disabled = this.currentVideoIndex === 1;
+        }
+        if (nextButton) {
+          nextButton.disabled = this.currentVideoIndex === videoCount;
+        }
+      }
+    }
+
+    customElements.define('factory-sessions-{{ ai_gen_id }}', FactorySessions{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Factory Sessions",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "video_border_radius",
+      "label": "Video border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label text",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#ce0e2d"
+    },
+    {
+      "type": "color",
+      "id": "artist_hover_bg",
+      "label": "Artist hover background",
+      "default": "#f8f8f9"
+    },
+    {
+      "type": "color",
+      "id": "artist_active_bg",
+      "label": "Artist active background",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_border",
+      "label": "Button border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Button hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Button hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Artist 1"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_name",
+      "label": "Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_1_headshot",
+      "label": "Headshot"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_label",
+      "label": "Label"
+    },
+    {
+      "type": "video",
+      "id": "artist_1_video_1",
+      "label": "Performance 1"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_video_1_title",
+      "label": "Performance 1 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_video_1_subtitle",
+      "label": "Performance 1 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_1_video_2",
+      "label": "Performance 2"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_video_2_title",
+      "label": "Performance 2 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_video_2_subtitle",
+      "label": "Performance 2 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_1_video_3",
+      "label": "Performance 3"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_video_3_title",
+      "label": "Performance 3 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_1_video_3_subtitle",
+      "label": "Performance 3 subtitle"
+    },
+    {
+      "type": "header",
+      "content": "Artist 2"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_name",
+      "label": "Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_2_headshot",
+      "label": "Headshot"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_label",
+      "label": "Label"
+    },
+    {
+      "type": "video",
+      "id": "artist_2_video_1",
+      "label": "Performance 1"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_video_1_title",
+      "label": "Performance 1 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_video_1_subtitle",
+      "label": "Performance 1 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_2_video_2",
+      "label": "Performance 2"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_video_2_title",
+      "label": "Performance 2 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_video_2_subtitle",
+      "label": "Performance 2 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_2_video_3",
+      "label": "Performance 3"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_video_3_title",
+      "label": "Performance 3 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_2_video_3_subtitle",
+      "label": "Performance 3 subtitle"
+    },
+    {
+      "type": "header",
+      "content": "Artist 3"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_name",
+      "label": "Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_3_headshot",
+      "label": "Headshot"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_label",
+      "label": "Label"
+    },
+    {
+      "type": "video",
+      "id": "artist_3_video_1",
+      "label": "Performance 1"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_video_1_title",
+      "label": "Performance 1 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_video_1_subtitle",
+      "label": "Performance 1 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_3_video_2",
+      "label": "Performance 2"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_video_2_title",
+      "label": "Performance 2 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_video_2_subtitle",
+      "label": "Performance 2 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_3_video_3",
+      "label": "Performance 3"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_video_3_title",
+      "label": "Performance 3 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_3_video_3_subtitle",
+      "label": "Performance 3 subtitle"
+    },
+    {
+      "type": "header",
+      "content": "Artist 4"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_name",
+      "label": "Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_4_headshot",
+      "label": "Headshot"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_label",
+      "label": "Label"
+    },
+    {
+      "type": "video",
+      "id": "artist_4_video_1",
+      "label": "Performance 1"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_video_1_title",
+      "label": "Performance 1 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_video_1_subtitle",
+      "label": "Performance 1 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_4_video_2",
+      "label": "Performance 2"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_video_2_title",
+      "label": "Performance 2 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_video_2_subtitle",
+      "label": "Performance 2 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_4_video_3",
+      "label": "Performance 3"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_video_3_title",
+      "label": "Performance 3 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_4_video_3_subtitle",
+      "label": "Performance 3 subtitle"
+    },
+    {
+      "type": "header",
+      "content": "Artist 5"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_name",
+      "label": "Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "artist_5_headshot",
+      "label": "Headshot"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_label",
+      "label": "Label"
+    },
+    {
+      "type": "video",
+      "id": "artist_5_video_1",
+      "label": "Performance 1"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_video_1_title",
+      "label": "Performance 1 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_video_1_subtitle",
+      "label": "Performance 1 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_5_video_2",
+      "label": "Performance 2"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_video_2_title",
+      "label": "Performance 2 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_video_2_subtitle",
+      "label": "Performance 2 subtitle"
+    },
+    {
+      "type": "video",
+      "id": "artist_5_video_3",
+      "label": "Performance 3"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_video_3_title",
+      "label": "Performance 3 title"
+    },
+    {
+      "type": "text",
+      "id": "artist_5_video_3_subtitle",
+      "label": "Performance 3 subtitle"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Factory Sessions"
+    }
+  ]
+}
 {% endschema %}
