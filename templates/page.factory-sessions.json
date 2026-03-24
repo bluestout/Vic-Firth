@@ -26,8 +26,8 @@
         "template--18142515003684__3141c904-b6a6-4f2b-a1fe-aa2b9e911af8-1679425999b0455fe5-0"
       ],
       "settings": {
-        "image": "shopify://shop_images/Temp-Factory-Banner.jpg",
-        "mobile_image": "shopify://shop_images/Temp-Banner-Mobile.jpg",
+        "image": "shopify://shop_images/Factory-Sessions-Landing-Page-Banner-Desktop.jpg",
+        "mobile_image": "shopify://shop_images/Factory-Sessions-Landing-Page-Banner-Mobile.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "content_width": "",
@@ -58,10 +58,19 @@
     "d5384b51-da84-42f6-ae5a-9a680c08a677": {
       "type": "rich-text",
       "blocks": {
+        "caption_BzgEYW": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Vic Firth",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
         "template--18718031053092__d5384b51-da84-42f6-ae5a-9a680c08a677-168244574359a98456-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>FACTORY SESSIONS</p>",
+            "heading": "<p>VIC FIRTH FACTORY SESSIONS</p>",
             "heading_size": "h1",
             "max_width": ""
           }
@@ -76,6 +85,7 @@
         }
       },
       "block_order": [
+        "caption_BzgEYW",
         "template--18718031053092__d5384b51-da84-42f6-ae5a-9a680c08a677-168244574359a98456-0",
         "template--18718031053092__d5384b51-da84-42f6-ae5a-9a680c08a677-168244574359a98456-1"
       ],
@@ -242,7 +252,7 @@
             "button_border": "#000000",
             "button_hover_bg": "#000000",
             "button_hover_text": "#ffffff",
-            "artist_1_name": "Tony",
+            "artist_1_name": "Porter Bliquez",
             "artist_1_headshot": "shopify://shop_images/Artist-1-Thumbnail.jpg",
             "artist_1_label": "",
             "artist_1_youtube_1": "https://youtu.be/0PsOJ_fRckg",
@@ -457,6 +467,7 @@
         "side_banner": false,
         "full_width": false,
         "image": "shopify://shop_images/Secondary_Image-1_6c348e2e-1164-4324-bbf4-88339c116da9.jpg",
+        "video_url": "",
         "height": "adapt",
         "center_image": false,
         "desktop_image_width": "medium",
@@ -521,6 +532,7 @@
         "side_banner": false,
         "full_width": false,
         "image": "shopify://shop_images/Secondary_Image-1_6c348e2e-1164-4324-bbf4-88339c116da9.jpg",
+        "video_url": "",
         "height": "adapt",
         "center_image": false,
         "desktop_image_width": "medium",
@@ -585,6 +597,7 @@
         "side_banner": false,
         "full_width": false,
         "image": "shopify://shop_images/Secondary_Image-1_6c348e2e-1164-4324-bbf4-88339c116da9.jpg",
+        "video_url": "",
         "height": "adapt",
         "center_image": false,
         "desktop_image_width": "medium",

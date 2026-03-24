@@ -584,6 +584,23 @@
     "multicolumn_DbBDz3": {
       "type": "multicolumn",
       "blocks": {
+        "column_nbEfyX": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "Column",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "",
+            "download_link": "",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
         "column_miHiCX": {
           "type": "column",
           "settings": {
@@ -719,6 +736,7 @@
         }
       },
       "block_order": [
+        "column_nbEfyX",
         "column_miHiCX",
         "column_BipHKD",
         "column_TKqYLD",
