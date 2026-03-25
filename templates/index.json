@@ -15,8 +15,8 @@
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Feel-The-Precision-Homepage-Banner_Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Feel-The-Precision-Homepage-Banner_mobile.jpg",
+            "image": "shopify://shop_images/Factory-Sessions-Homepage-Banner_Desktop_a573ab5b-4b89-462d-958d-4bb7939b5ae7.jpg",
+            "mobile_image": "shopify://shop_images/Factory-Sessions-Homepage-Banner_mobile_376a9732-29ea-41bd-a012-e1619ded2010.jpg",
             "video": "",
             "content_width": "",
             "heading": "",
@@ -25,7 +25,7 @@
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/vic-firth-category-sticks",
+            "link": "shopify://pages/factory-sessions",
             "button_style_secondary": false,
             "box_align": "middle-right",
             "show_text_box": false,
@@ -34,6 +34,30 @@
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
             "mobile_box_align": "bottom"
+          }
+        },
+        "262998ab-7eb4-4458-9650-2ecbe593dff8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Vic-Firth-Summer-Institue-Homepage-Banner_Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Summer-Institue-Homepage-Banner_Mobile.jpg",
+            "video": "",
+            "content_width": "450",
+            "heading": "",
+            "uppercase": true,
+            "heading_size": "h0",
+            "heading_color": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://pages/vic-firth-summer-institute",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center",
+            "mobile_box_align": "middle"
           }
         },
         "32f9ef7e-529b-4262-8994-75ae15e876ce": {
@@ -62,6 +86,7 @@
         },
         "slide_UtACbe": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Vic-Firth-Headphones-Homepage-Banner-Desktop.jpg",
             "mobile_image": "shopify://shop_images/Vic-Firth-Headphones-Homepage-Banner-Mobile.jpg",
@@ -78,30 +103,6 @@
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center",
-            "mobile_box_align": "middle"
-          }
-        },
-        "262998ab-7eb4-4458-9650-2ecbe593dff8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Summer-Institue-Homepage-Banner_Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Summer-Institue-Homepage-Banner_Mobile.jpg",
-            "video": "",
-            "content_width": "450",
-            "heading": "",
-            "uppercase": true,
-            "heading_size": "h0",
-            "heading_color": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://pages/vic-firth-summer-institute",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "left",
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
@@ -136,9 +137,9 @@
       },
       "block_order": [
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f",
+        "262998ab-7eb4-4458-9650-2ecbe593dff8",
         "32f9ef7e-529b-4262-8994-75ae15e876ce",
         "slide_UtACbe",
-        "262998ab-7eb4-4458-9650-2ecbe593dff8",
         "6b7c598a-839d-4439-a8c4-abd0a698fd46"
       ],
       "settings": {
