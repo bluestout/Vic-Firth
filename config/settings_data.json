@@ -138,7 +138,7 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
-    "free_shipping_limit": "50",
+    "free_shipping_limit": "100",
     "cart_success": "✓ Congratulations! You've earned FREE SHIPPING!",
     "sections": {
       "main-password-header": {
