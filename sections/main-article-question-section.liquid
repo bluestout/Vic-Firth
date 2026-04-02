@@ -11,23 +11,23 @@
       }
     </style>
   {% endif %}
-  
+   
   {% capture questions %}
     {% if article.metafields.global.qestion_1 != blank %}
     <li>
-      <p class="first-pp">WHAT INSPIRES YOU?</p>
+      <p class="first-pp">{{ section.settings.question_1 }}</p>
       <p>{{ article.metafields.global.qestion_1 }}</p>
     </li>
     {% endif %}
     {% if article.metafields.global.qestion_2 != blank %}
     <li>
-      <p class="first-pp">WORDS OF WISDOM FOR THE NEXT GENERATION OF DRUMMERS</p>
+      <p class="first-pp">{{ section.settings.question_2  }}</p>
       <p>{{ article.metafields.global.qestion_2 }}</p>
     </li>
     {% endif %}
     {% if article.metafields.global.question_3 != blank %}
     <li>
-      <p class="first-pp">FAVORITE ZILDJIAN CYMBAL/COMBO</p>
+      <p class="first-pp">{{ section.settings.question_3 }}</p>
       <p>{{ article.metafields.global.question_3 }}</p>
     </li>
     {% endif %}
@@ -94,6 +94,26 @@
   {% schema %}
     {
       "name": "Artist Question",
+      "settings": [
+        {
+          "type": "textarea",
+          "label": "Question 1",
+          "id": "question_1",
+          "default": "Most Memorable Next-Level Performance?"
+        },
+        {
+          "type": "textarea",
+          "label": "Question 2",
+          "id": "question_2",
+          "default": "What Drives Your Creativity?"
+        },
+        {
+          "type": "textarea",
+          "label": "Question 3",
+          "id": "question_3",
+          "default": "Why Do You Choose Vic Firth?"
+        }
+      ],
       "blocks": [
         {
           "type": "text",
