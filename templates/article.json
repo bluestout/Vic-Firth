@@ -95,16 +95,20 @@
           "settings": {
             "arti_blg": "",
             "Artists_Title": "{{ block.settings.arti_blg.title }}",
-            "quest": "",
-            "quest2": "",
-            "quest3": ""
+            "quest": "Most Memorable Next-Level Performance?",
+            "quest2": "What Drives Your Creativity?",
+            "quest3": "Why Do You Choose Vic Firth?"
           }
         }
       },
       "block_order": [
         "text_qUjbjw"
       ],
-      "settings": {}
+      "settings": {
+        "question_1": "Most Memorable Next-Level Performance?",
+        "question_2": "What Drives Your Creativity?",
+        "question_3": "Why Do You Choose Vic Firth?"
+      }
     },
     "a4dfb8e7-5c4d-4afe-a8c0-8b68a4fb9ad6": {
       "type": "artist-featured-collection",

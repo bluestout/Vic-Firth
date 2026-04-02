@@ -38,7 +38,6 @@
         },
         "262998ab-7eb4-4458-9650-2ecbe593dff8": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Vic-Firth-Summer-Institue-Homepage-Banner_Desktop.jpg",
             "mobile_image": "shopify://shop_images/Vic-Firth-Summer-Institue-Homepage-Banner_Mobile.jpg",
@@ -331,12 +330,12 @@
         "column_RQVxbK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/American-Classic-Promo-Block_d5624eda-dc59-49d9-8654-58129615f17b.jpg",
+            "image": "shopify://shop_images/Vic-Firth-Promo-Block-Banner-Horizonal.jpg",
             "mobile_image": "shopify://shop_images/Vic-Firth-Promo-Block-Banner-Horizonal.jpg",
-            "badge": "SHOP NOW",
-            "title": "American Classic",
-            "link_label": "SHOP NOW",
-            "link": "shopify://collections/vic-firth-category-sticks-drum-set-american-classic",
+            "badge": "Learn More",
+            "title": "Vic Firth Summer Institute",
+            "link_label": "Learn More",
+            "link": "shopify://pages/vic-firth-summer-institute",
             "blank_link": false
           }
         },

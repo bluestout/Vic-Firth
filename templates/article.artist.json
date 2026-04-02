@@ -109,7 +109,11 @@
       "block_order": [
         "text_RNdjTJ"
       ],
-      "settings": {}
+      "settings": {
+        "question_1": "Most Memorable Next-Level Performance?",
+        "question_2": "What Drives Your Creativity?",
+        "question_3": "Why Do You Choose Vic Firth?"
+      }
     },
     "artist_featured_collection_tyUtrh": {
       "type": "artist-featured-collection",
