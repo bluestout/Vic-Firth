@@ -88,7 +88,7 @@
       "type": "apps",
       "blocks": {
         "5b3d005e-0b0e-423f-bcc1-5150ee7d65c9": {
-          "type": "shopify://apps/boost-ai-search-discovery/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
+          "type": "shopify://apps/boost-ai-search-filter/blocks/filter-product-list-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
           "settings": {}
         }
       },
@@ -117,6 +117,7 @@
       "block_order": [
         "54ecfd6c-5a79-4bda-ac81-26ec3eac2b4c"
       ],
+      "disabled": true,
       "settings": {
         "caption": "",
         "heading": "More about Cymbals",
