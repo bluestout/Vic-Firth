@@ -279,40 +279,6 @@
         "max_width": ""
       }
     },
-    "a5608f55-88cd-40d5-bb3f-909f408e4027": {
-      "type": "featured-collection",
-      "custom_css": [
-        ".slider-button--next .icon {transform: rotate(270deg);}",
-        ".slider--desktop.grid--3-col-desktop .grid__item {width: 21%;}",
-        ".slider-button--prev .icon {transform: rotate(-270deg);}",
-        "@media screen and (min-width: 749px) and (max-width: 1100px) {.card-wrapper .card .card__content .card__information .card__heading {font-size: 15px; } .pr-star-v4 {width: 15px; height: 15px; } .p-w-r .pr-category-snippet__total {font-size: 11px; } .collection__title--desktop-slider .title {font-size: 30px; } .price__regular .price-item--regular {font-size: 15px; }}"
-      ],
-      "settings": {
-        "title": "PLAYER FAVORITES",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "player-favorites",
-        "new_blank": false,
-        "products_to_show": 25,
-        "columns_desktop": 3,
-        "full_width": true,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": true,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "multicolumn_with_largecolumn_pryarn": {
       "type": "multicolumn-with-largecolumn",
       "blocks": {
@@ -366,6 +332,40 @@
       ],
       "settings": {}
     },
+    "a5608f55-88cd-40d5-bb3f-909f408e4027": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".slider-button--next .icon {transform: rotate(270deg);}",
+        ".slider--desktop.grid--3-col-desktop .grid__item {width: 21%;}",
+        ".slider-button--prev .icon {transform: rotate(-270deg);}",
+        "@media screen and (min-width: 749px) and (max-width: 1100px) {.card-wrapper .card .card__content .card__information .card__heading {font-size: 15px; } .pr-star-v4 {width: 15px; height: 15px; } .p-w-r .pr-category-snippet__total {font-size: 11px; } .collection__title--desktop-slider .title {font-size: 30px; } .price__regular .price-item--regular {font-size: 15px; }}"
+      ],
+      "settings": {
+        "title": "PLAYER FAVORITES",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "player-favorites",
+        "new_blank": false,
+        "products_to_show": 25,
+        "columns_desktop": 3,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
     "featured_collections_AC4Hc6": {
       "type": "featured-collections",
       "blocks": {
@@ -416,51 +416,6 @@
         "sub_title": "",
         "button_text": "",
         "button_link": ""
-      }
-    },
-    "featured_collections_gMGbNC": {
-      "type": "featured-collections",
-      "blocks": {
-        "column_9c4Hpz": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Percussion-101_d9c369f0-d636-4a4d-a2f6-98bc44be764e.jpg",
-            "title": "PERCUSSION 101",
-            "link": "https://ae.vicfirth.com/education/percussion-101/"
-          }
-        },
-        "column_XDdLyP": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/40-Essential-Rudiments_48acb0e6-55aa-465e-8f07-f3829ead508d.jpg",
-            "title": "40 ESSENTIAL RUDIMENTS",
-            "link": "https://ae.vicfirth.com/education/40-essential-rudiments/"
-          }
-        },
-        "column_LHBKF8": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Groove-essentials.jpg",
-            "title": "GROOVE ESSENTIALS",
-            "link": "https://ae.vicfirth.com/education/groove-essentials/"
-          }
-        }
-      },
-      "block_order": [
-        "column_9c4Hpz",
-        "column_XDdLyP",
-        "column_LHBKF8"
-      ],
-      "custom_css": [
-        ".featured_collections .featured_collections_column {width: 33.333%; align-self: flex-start; text-align: left;}",
-        ".featured_collections .home_subtitle img {display: none;}",
-        "@media screen and (max-width: 767px) {.featured_collections_wrapper {overflow: scroll; margin-left: 18px; } .featured_collections {width: 617px; gap: 6px; flex-wrap: nowrap; } .featured_collections .home_subtitle {justify-content: flex-start; } .featured_collections_title {text-align: left; margin-left: 18px; } .featured_collections_subtitle {display: none; }}"
-      ],
-      "settings": {
-        "title": "Education",
-        "sub_title": "Take your playing to the next level",
-        "button_text": "Browse All Topics",
-        "button_link": "https://ae.vicfirth.com/education/"
       }
     },
     "c2348606-646b-4927-bb99-fa2e7e2d5711": {
@@ -528,8 +483,53 @@
         "color_scheme": "background-1",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 68,
+        "padding_top": 96,
         "padding_bottom": 100
+      }
+    },
+    "featured_collections_gMGbNC": {
+      "type": "featured-collections",
+      "blocks": {
+        "column_9c4Hpz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Percussion-101_d9c369f0-d636-4a4d-a2f6-98bc44be764e.jpg",
+            "title": "PERCUSSION 101",
+            "link": "https://ae.vicfirth.com/education/percussion-101/"
+          }
+        },
+        "column_XDdLyP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/40-Essential-Rudiments_48acb0e6-55aa-465e-8f07-f3829ead508d.jpg",
+            "title": "40 ESSENTIAL RUDIMENTS",
+            "link": "https://ae.vicfirth.com/education/40-essential-rudiments/"
+          }
+        },
+        "column_LHBKF8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Groove-essentials.jpg",
+            "title": "GROOVE ESSENTIALS",
+            "link": "https://ae.vicfirth.com/education/groove-essentials/"
+          }
+        }
+      },
+      "block_order": [
+        "column_9c4Hpz",
+        "column_XDdLyP",
+        "column_LHBKF8"
+      ],
+      "custom_css": [
+        ".featured_collections .featured_collections_column {width: 33.333%; align-self: flex-start; text-align: left;}",
+        ".featured_collections .home_subtitle img {display: none;}",
+        "@media screen and (max-width: 767px) {.featured_collections_wrapper {overflow: scroll; margin-left: 18px; } .featured_collections {width: 617px; gap: 6px; flex-wrap: nowrap; } .featured_collections .home_subtitle {justify-content: flex-start; } .featured_collections_title {text-align: left; margin-left: 18px; } .featured_collections_subtitle {display: none; }}"
+      ],
+      "settings": {
+        "title": "Education",
+        "sub_title": "Take your playing to the next level",
+        "button_text": "Browse All Topics",
+        "button_link": "https://ae.vicfirth.com/education/"
       }
     },
     "7a022ea4-eafd-49be-990d-b7a9c2f0f1e9": {
@@ -982,7 +982,7 @@
         "full_width": false,
         "custom_liquid": "<svg width=\"745\" height=\"24\" viewBox=\"0 0 745 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <line x1=\"746\" y1=\"12.5\" x2=\"25\" y2=\"12.4999\" stroke=\"#CE0E2D\" stroke-opacity=\"0.17\"/>\n          <circle cx=\"12\" cy=\"12\" r=\"11.5\" stroke=\"#CE0E2D\" stroke-opacity=\"0.17\"/>\n          </svg>",
         "color_scheme": "background-1",
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 52
       }
     },
@@ -1044,11 +1044,11 @@
     "d75dd4ef-8e47-487d-9740-f50edc07b08d",
     "b3792904-a3a5-4955-8fc4-21e2a1ca7659",
     "079b5030-d8b0-4d99-95f9-6e125c31b917",
-    "a5608f55-88cd-40d5-bb3f-909f408e4027",
     "multicolumn_with_largecolumn_pryarn",
+    "a5608f55-88cd-40d5-bb3f-909f408e4027",
     "featured_collections_AC4Hc6",
-    "featured_collections_gMGbNC",
     "c2348606-646b-4927-bb99-fa2e7e2d5711",
+    "featured_collections_gMGbNC",
     "7a022ea4-eafd-49be-990d-b7a9c2f0f1e9",
     "8d3f9090-0426-40a2-92e9-140c7674d4a0",
     "70227862-9b25-4fa1-ab86-79d72e440326",
