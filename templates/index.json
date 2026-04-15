@@ -285,12 +285,12 @@
         "column_MrYGhY": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Heavy-Hitter-Promo-Block-Verticle.jpg",
-            "mobile_image": "shopify://shop_images/Heavy-Hitter-Promo-Block-Horizontal.jpg",
-            "badge": "Shop Collection",
-            "title": "Heavy Hitter Practice Pads",
-            "link_label": "Shop Now",
-            "link": "shopify://collections/vic-firth-category-gear-accessories-practice-accessories",
+            "image": "shopify://shop_images/4-for-3-Promo-Block-Verticle.jpg",
+            "mobile_image": "shopify://shop_images/4-for-3-promo-block-horizontal_e8fdb159-f21f-49ca-a9eb-68036f4fb8a7.jpg",
+            "badge": "American Classic Extreme",
+            "title": "Limited Time - Buy 3 Get 1 Free",
+            "link_label": "Save Now",
+            "link": "shopify://collections/value-packs",
             "blank_link": false
           }
         },
