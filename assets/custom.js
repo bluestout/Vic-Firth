@@ -377,7 +377,7 @@ document.querySelectorAll('.mega-menu').forEach(mega_menu => {
 });
 
 var country1 = 'US';
-var country2 = 'PR';
+// var country2 = 'PR';
 
 fetch('/browsing_context_suggestions.json')
 .then(function(response) {
@@ -385,7 +385,8 @@ fetch('/browsing_context_suggestions.json')
 })
 .then(function(e) {
   console.log(e)
-  if (e.detected_values.country.handle == country1 || e.detected_values.country.handle == country2) {
+  // if (e.detected_values.country.handle == country1 || e.detected_values.country.handle == country2) {
+  if (e.detected_values.country.handle == country1 ) {
     document.querySelector('body').classList.remove('hide-price')
   } else {
     document.querySelector('body').classList.add('hide-price')
