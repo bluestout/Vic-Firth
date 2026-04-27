@@ -376,20 +376,40 @@ document.querySelectorAll('.mega-menu').forEach(mega_menu => {
   })
 });
 
-var country1 = 'US';
-// var country2 = 'PR';
+const allowedCountries = new Set(['US', 'PR', 'GU', 'VI']);
 
 fetch('/browsing_context_suggestions.json')
-.then(function(response) {
-  return response.json();
-})
-.then(function(e) {
-  console.log(e)
-  // if (e.detected_values.country.handle == country1 || e.detected_values.country.handle == country2) {
-  if (e.detected_values.country.handle == country1 ) {
-    document.querySelector('body').classList.remove('hide-price')
-  } else {
-    document.querySelector('body').classList.add('hide-price')
-  }
-    
-});
+  .then(r => r.json())
+  .then(data => {
+    let countryHandle = data?.detected_values?.country?.handle;
+
+    if (!countryHandle) {
+      document.body.classList.add('hide-price');
+      return;
+    }
+
+    countryHandle = countryHandle.toString().toUpperCase();
+
+    // normalize common Shopify variants
+    const map = {
+      UNITED_STATES: 'US',
+      USA: 'US',
+      US: 'US',
+      PUERTO_RICO: 'PR',
+      GUAM: 'GU',
+      'U.S. VIRGIN ISLANDS': 'VI',
+      'US VIRGIN ISLANDS': 'VI'
+    };
+
+    countryHandle = map[countryHandle] || countryHandle;
+
+    if (allowedCountries.has(countryHandle)) {
+      document.body.classList.remove('hide-price');
+    } else {
+      document.body.classList.add('hide-price');
+    }
+  })
+  .catch(err => {
+    console.error('Geo detection failed:', err);
+    document.body.classList.add('hide-price');
+  });
