@@ -38,10 +38,9 @@
         },
         "262998ab-7eb4-4458-9650-2ecbe593dff8": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Vic-Firth-Summer-Institue-Homepage-Banner_Desktop.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Summer-Institue-Homepage-Banner_Mobile.jpg",
+            "image": "shopify://shop_images/Vic-Firth-Young-Drummer-Of-The-Year-Homepage_Banner-Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Young-Drummer-Of-The-Year-Homepage_Banner-Mobile.jpg",
             "video": "",
             "content_width": "450",
             "heading": "",
@@ -50,7 +49,7 @@
             "heading_color": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://pages/vic-firth-summer-institute",
+            "link": "https://zildjian.com/pages/young-drummer-of-the-year",
             "button_style_secondary": false,
             "box_align": "bottom-left",
             "show_text_box": false,
@@ -63,6 +62,7 @@
         },
         "32f9ef7e-529b-4262-8994-75ae15e876ce": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Terra-Drumstick-Collection-Homepage-Banner-Final_78bca6bf-2627-4e04-b546-2df3c1f38748.jpg",
             "mobile_image": "shopify://shop_images/Terra-Drumstick-Collection-Homepage-Banner-Mobile_7b1c7c5e-83f1-42c5-b485-145f354c0fd1.jpg",
@@ -297,21 +297,21 @@
         "column_RQVxbK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/American-Classic-Promo-Block_d5624eda-dc59-49d9-8654-58129615f17b.jpg",
-            "mobile_image": "shopify://shop_images/Vic-Firth-Promo-Block-Banner-Horizonal.jpg",
-            "badge": "SHOP NOW",
-            "title": "American Classic",
+            "image": "shopify://shop_images/Iain-Moyer-Promo-Block-1.jpg",
+            "mobile_image": "shopify://shop_images/Iain-Moyer-Promo-Block-1.jpg",
+            "badge": "Marching Mallets",
+            "title": "Corpsmaster Iain Moyer Keyboard Series",
             "link_label": "SHOP NOW",
-            "link": "shopify://collections/vic-firth-category-sticks-drum-set-american-classic",
+            "link": "shopify://collections/vic-firth-category-mallets-keyboard-vic-firth-iain-moyer",
             "blank_link": false
           }
         },
         "column_iecrnL": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Hearing-Protection-Promo-Block.jpg",
-            "mobile_image": "shopify://shop_images/Hearing-Protection-Promo-Block.jpg",
-            "badge": "Shop Now",
+            "image": "shopify://shop_images/Hearing-Protection-Promo-Block_ad61f016-0307-41a3-a4e0-7045db3f4b4b.jpg",
+            "mobile_image": "shopify://shop_images/Hearing-Protection-Promo-Block_ad61f016-0307-41a3-a4e0-7045db3f4b4b.jpg",
+            "badge": "Headphones",
             "title": "Hearing Protection",
             "link_label": "Shop Now",
             "link": "shopify://collections/vic-firth-category-gear-accessories-hearing-protection",
@@ -341,12 +341,12 @@
         "@media screen and (min-width: 749px) and (max-width: 1100px) {.card-wrapper .card .card__content .card__information .card__heading {font-size: 15px; } .pr-star-v4 {width: 15px; height: 15px; } .p-w-r .pr-category-snippet__total {font-size: 11px; } .collection__title--desktop-slider .title {font-size: 30px; } .price__regular .price-item--regular {font-size: 15px; }}"
       ],
       "settings": {
-        "title": "PLAYER FAVORITES",
+        "title": "BEST SELLERS",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "player-favorites",
+        "collection": "vic-firth-category-best-sellers",
         "new_blank": false,
         "products_to_show": 25,
         "columns_desktop": 3,
