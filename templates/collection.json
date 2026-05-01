@@ -11,7 +11,6 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
-      "disabled": true,
       "custom_css": [
         "@media only screen and (max-width: 1100px) and (min-width: 749px) {.collection-hero__title img + span {text-align: left; font-size: 45px; }}"
       ],
