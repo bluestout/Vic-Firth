@@ -27,6 +27,7 @@
       "blocks": {
         "3597bd55-66ef-44fc-85e5-965facfec0c7": {
           "type": "image_text",
+          "disabled": true,
           "settings": {
             "side_banner": false,
             "adapted_media": true,
@@ -53,7 +54,7 @@
             "heading": "{{ collection.metafields.global.banner_title.value }}",
             "heading_size": "h2",
             "heading_color": "",
-            "text": "<p>{{ collection.metafields.global.banner_text | metafield_tag }}</p>",
+            "text": "{{ collection.metafields.global.banner_text | metafield_tag }}",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
