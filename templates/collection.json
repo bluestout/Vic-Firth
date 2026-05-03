@@ -27,7 +27,6 @@
       "blocks": {
         "3597bd55-66ef-44fc-85e5-965facfec0c7": {
           "type": "image_text",
-          "disabled": true,
           "settings": {
             "side_banner": false,
             "adapted_media": true,
