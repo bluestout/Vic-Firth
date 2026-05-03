@@ -53,7 +53,7 @@
             "heading": "{{ collection.metafields.global.banner_title.value }}",
             "heading_size": "h2",
             "heading_color": "",
-            "text": "{{ collection.metafields.global.banner_text | metafield_tag }}",
+            "text": "<p>{{ collection.metafields.global.banner_text | metafield_tag }}</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
