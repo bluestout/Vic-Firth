@@ -79,7 +79,7 @@
               {% endif %}
 
               {% if object.settings.heading != blank  %}
-                <h2 class="image-with-text__heading {{ object.settings.heading_size }}" {{ block.shopify_attributes }} style="color:{{object.settings.heading_color}}">
+                <h2 class="image-with-text__heading {{ object.settings.heading_size }}" {{ block.shopify_attributes }} style="color:{{object.settings.heading_color}}; font-family: Century Gothic;">
                   {{ object.settings.heading | escape }}
                 </h2>
               {% endif %}
