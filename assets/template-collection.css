@@ -94,3 +94,7 @@
 .boost-sd__pagination-number--active {
   color: #CE0E2D;
 }
+
+.collection-hero--with-image .collection-hero__title {
+  font-family: 'Century Gothic'!important;
+}
