@@ -79,26 +79,28 @@
               {% endif %}
 
               {% if object.settings.heading != blank  %}
-                <h2 class="image-with-text__heading {{ object.settings.heading_size }}" {{ block.shopify_attributes }} style="color:{{object.settings.heading_color}}">
+                <h2 class="image-with-text__heading {{ object.settings.heading_size }}" {{ block.shopify_attributes }} style="color:{{object.settings.heading_color}}; font-family: Century Gothic;">
                   {{ object.settings.heading | escape }}
                 </h2>
               {% endif %}
               
               {% if object.settings.text != blank %}
-                <div 7 class="image-with-text__text rte  {{ object.settings.text_style }}" {{ block.shopify_attributes }}>
-                  {% assign text_length = object.settings.text | size%}
-                  {% if text_length < 400%}
+                {% assign text_html = object.settings.text %}
+                {% assign text_plain = text_html | strip_html %}
+                {% assign text_length = text_plain | size %}
+                <div class="image-with-text__text rte  {{ object.settings.text_style }}" {{ block.shopify_attributes }}>
+                  {% if text_length < 400 %}
                     <div class = "small-hide" >
-                    {{ object.settings.text }}
+                    {{ text_html }}
                     </div>
                     <div class = "large-up-hide medium-hide">
-                      <div id="fs_lessDesc1"><div>{{ object.settings.text | truncate: 200}}</div><span id="fs_moreDesc1" class="fs_moreDesc1">READ MORE</span></div>
-                      <div id="fs_fullDesc"><div>{{ object.settings.text }}</div><span id="fs_lessBtn" class="fs_lessBtn">READ LESS</span></div>
+                      <div id="fs_lessDesc1"><div>{{ text_plain | truncate: 200 | escape }}</div><span id="fs_moreDesc1" class="fs_moreDesc1">READ MORE</span></div>
+                      <div id="fs_fullDesc"><div>{{ text_html }}</div><span id="fs_lessBtn" class="fs_lessBtn">READ LESS</span></div>
                     </div>
                   {% else %}
                     <div class = "">
-                      <div id="fs_lessDesc1"><div>{{ object.settings.text | truncate: 200}}</div><span id="fs_moreDesc1" class="fs_moreDesc1">READ MORE</span></div>
-                      <div id="fs_fullDesc"><div>{{ object.settings.text }}</div><span id="fs_lessBtn" class="fs_lessBtn">READ LESS</span></div>
+                      <div id="fs_lessDesc1"><div>{{ text_plain | truncate: 200 | escape }}</div><span id="fs_moreDesc1" class="fs_moreDesc1">READ MORE</span></div>
+                      <div id="fs_fullDesc"><div>{{ text_html }}</div><span id="fs_lessBtn" class="fs_lessBtn">READ LESS</span></div>
                     </div>
                   {% endif %}
                 </div>
