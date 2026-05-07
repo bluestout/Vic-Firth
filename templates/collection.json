@@ -53,7 +53,7 @@
             "heading": "{{ collection.metafields.global.banner_title.value }}",
             "heading_size": "h2",
             "heading_color": "",
-            "text": "<p>{{ collection.metafields.global.banner_text | metafield_tag }}</p>",
+            "text": "{{ collection.metafields.global.banner_text | metafield_tag }}",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -117,7 +117,6 @@
       "block_order": [
         "54ecfd6c-5a79-4bda-ac81-26ec3eac2b4c"
       ],
-      "disabled": true,
       "settings": {
         "caption": "",
         "heading": "More about Cymbals",
