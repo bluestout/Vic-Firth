@@ -51,36 +51,92 @@
       "blocks": {
         "template--18451450364196__343f0242-dc55-4e8b-bcf4-f25c1985fea0-1680595913aeac9796-0": {
           "type": "column",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/img_2.png",
-            "mobile_image": "shopify://shop_images/img_2.png",
+            "image": "shopify://shop_images/Vic-Firth-Artist-Placeholder-Header-Graphic_5a657ec7-fa19-4a01-8fdf-fa8918d39661.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Artist-Placeholder-Header-Graphic_5a657ec7-fa19-4a01-8fdf-fa8918d39661.jpg",
             "badge": "",
-            "title": "2022 ZILDJIAN PRODUCT GUIDE",
+            "title": "Lesson 1",
             "heading_size": "h3",
             "heading_color": "",
-            "download_label": "DOWNLOAD PRODUCT GUIDE",
+            "download_label": "DOWNLOAD LESSON",
             "download_link": "https://zildjian.com/media/wysiwyg/product_guides/Z-2021_Catalog-small.pdf?_gl=1*eimpb2*_gcl_aw*R0NMLjE2ODI0NDkyNzEuRUFJYUlRb2JDaE1JaGVfRTg5dkZfZ0lWUGdpdEJoMmJpUS1zRUFBWUFTQUFFZ0xWN2ZEX0J3RQ..",
-            "text": "<p>Check out the latest product guide from Zildjian. Contains a full listing of products in 39 pages. </p>",
+            "text": "",
             "link_label": "",
             "link": "",
             "full_link": false,
             "link_list": "",
-            "blank_link": false
+            "blank_link": true
           }
         },
         "template--18451450364196__343f0242-dc55-4e8b-bcf4-f25c1985fea0-1680595913aeac9796-1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/img_3.png",
-            "mobile_image": "shopify://shop_images/img_3.png",
+            "image": "shopify://shop_images/Vic-Firth-Artist-Placeholder-Header-Graphic_5a657ec7-fa19-4a01-8fdf-fa8918d39661.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Artist-Placeholder-Header-Graphic_76062880-25bb-4f42-90bf-10091085f02e.jpg",
             "badge": "",
-            "title": "2022 VIC FIRTH PRODUCT GUIDE",
+            "title": "LESSON 2",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "DOWNLOAD LESSON",
+            "download_link": "https://drive.google.com/file/d/1HC5am3tsfd8sc0LUgFtbsrme-aJJ0dAB/view?usp=share_link",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": true
+          }
+        },
+        "template--18451450364196__343f0242-dc55-4e8b-bcf4-f25c1985fea0-1680595913aeac9796-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vic-Firth-Artist-Placeholder-Header-Graphic_5a657ec7-fa19-4a01-8fdf-fa8918d39661.jpg",
+            "mobile_image": "shopify://shop_images/img_4.png",
+            "badge": "",
+            "title": "Lesson 3",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "DOWNLOAD LESSON",
+            "download_link": "https://cdn.shopify.com/s/files/1/0734/0271/2364/files/BalterMallets-2021_Catalog.pdf?v=1752775707",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": true
+          }
+        },
+        "column_PHhUk3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vic-Firth-Artist-Placeholder-Header-Graphic_5a657ec7-fa19-4a01-8fdf-fa8918d39661.jpg",
+            "mobile_image": "shopify://shop_images/Vic-Firth-Artist-Placeholder-Header-Graphic_5a657ec7-fa19-4a01-8fdf-fa8918d39661.jpg",
+            "badge": "",
+            "title": "lesson 4",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "DOWNLOAD LESSON",
+            "download_link": "https://cdn.shopify.com/s/files/1/0734/0271/2364/files/BalterMallets-2021_Catalog.pdf?v=1752775707",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": true
+          }
+        },
+        "column_APAWLF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/img_4.png",
+            "mobile_image": "shopify://shop_images/img_4.png",
+            "badge": "",
+            "title": "2022 BALTER MALLETS PRODUCT GUIDE",
             "heading_size": "h3",
             "heading_color": "",
             "download_label": "DOWNLOAD PRODUCT GUIDE",
-            "download_link": "https://drive.google.com/file/d/1HC5am3tsfd8sc0LUgFtbsrme-aJJ0dAB/view?usp=share_link",
-            "text": "<p>Check out the latest product guide from Vic Firth. Giving you an in-depth look at this 33-page guide.</p>",
+            "download_link": "https://cdn.shopify.com/s/files/1/0734/0271/2364/files/BalterMallets-2021_Catalog.pdf?v=1752775707",
+            "text": "<p>Check out the latest product guide from Balter Mallets. Catch up on all Balter models in this guide.</p>",
             "link_label": "",
             "link": "",
             "full_link": false,
@@ -88,7 +144,64 @@
             "blank_link": false
           }
         },
-        "template--18451450364196__343f0242-dc55-4e8b-bcf4-f25c1985fea0-1680595913aeac9796-2": {
+        "column_xYzHJf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/img_4.png",
+            "mobile_image": "shopify://shop_images/img_4.png",
+            "badge": "",
+            "title": "2022 BALTER MALLETS PRODUCT GUIDE",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "DOWNLOAD PRODUCT GUIDE",
+            "download_link": "https://cdn.shopify.com/s/files/1/0734/0271/2364/files/BalterMallets-2021_Catalog.pdf?v=1752775707",
+            "text": "<p>Check out the latest product guide from Balter Mallets. Catch up on all Balter models in this guide.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_jK63iX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/img_4.png",
+            "mobile_image": "shopify://shop_images/img_4.png",
+            "badge": "",
+            "title": "2022 BALTER MALLETS PRODUCT GUIDE",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "DOWNLOAD PRODUCT GUIDE",
+            "download_link": "https://cdn.shopify.com/s/files/1/0734/0271/2364/files/BalterMallets-2021_Catalog.pdf?v=1752775707",
+            "text": "<p>Check out the latest product guide from Balter Mallets. Catch up on all Balter models in this guide.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_qXNmFr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/img_4.png",
+            "mobile_image": "shopify://shop_images/img_4.png",
+            "badge": "",
+            "title": "2022 BALTER MALLETS PRODUCT GUIDE",
+            "heading_size": "h3",
+            "heading_color": "",
+            "download_label": "DOWNLOAD PRODUCT GUIDE",
+            "download_link": "https://cdn.shopify.com/s/files/1/0734/0271/2364/files/BalterMallets-2021_Catalog.pdf?v=1752775707",
+            "text": "<p>Check out the latest product guide from Balter Mallets. Catch up on all Balter models in this guide.</p>",
+            "link_label": "",
+            "link": "",
+            "full_link": false,
+            "link_list": "",
+            "blank_link": false
+          }
+        },
+        "column_YeAjCG": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/img_4.png",
@@ -111,12 +224,19 @@
       "block_order": [
         "template--18451450364196__343f0242-dc55-4e8b-bcf4-f25c1985fea0-1680595913aeac9796-0",
         "template--18451450364196__343f0242-dc55-4e8b-bcf4-f25c1985fea0-1680595913aeac9796-1",
-        "template--18451450364196__343f0242-dc55-4e8b-bcf4-f25c1985fea0-1680595913aeac9796-2"
+        "template--18451450364196__343f0242-dc55-4e8b-bcf4-f25c1985fea0-1680595913aeac9796-2",
+        "column_PHhUk3",
+        "column_APAWLF",
+        "column_xYzHJf",
+        "column_jK63iX",
+        "column_qXNmFr",
+        "column_YeAjCG"
       ],
+      "disabled": true,
       "settings": {
         "side_banner": false,
         "full_width": false,
-        "title": "PRODUCT GUIDES",
+        "title": "",
         "heading_size": "h1",
         "heading_align": "center",
         "image_width": "full",
@@ -150,11 +270,142 @@
         "padding_top": 60,
         "padding_bottom": 100
       }
+    },
+    "collapsible_content_EFGpYV": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_T9BwAT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 1",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_8NCbyc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 2",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_TGtAyH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 3",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_cDDeLa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 4",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_BtyQep": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 5",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_tETVpF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 6",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_wMz7K7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 7",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_j7ARe3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 8",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ef4rCx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "LESSON 9",
+            "icon_text": "",
+            "icon": "check_mark",
+            "image_caption": "",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_T9BwAT",
+        "collapsible_row_8NCbyc",
+        "collapsible_row_TGtAyH",
+        "collapsible_row_cDDeLa",
+        "collapsible_row_BtyQep",
+        "collapsible_row_tETVpF",
+        "collapsible_row_wMz7K7",
+        "collapsible_row_j7ARe3",
+        "collapsible_row_Ef4rCx"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Download Lessons",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 64,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "3141c904-b6a6-4f2b-a1fe-aa2b9e911af8",
     "343f0242-dc55-4e8b-bcf4-f25c1985fea0",
-    "main"
+    "main",
+    "collapsible_content_EFGpYV"
   ]
 }
