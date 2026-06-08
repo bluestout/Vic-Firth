@@ -1,6 +1,344 @@
+{% doc %}
+  @prompt
+    Create a "Read More" dropdown/accordion functionality for mobile devices on the Project Dojo page. When on mobile, long text content should be collapsed by default with a "Read More" button that expands to show the full content, and a "Read Less" button to collapse it again. On desktop, the full content should always be visible. The toggle should be smooth with a CSS transition animation.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-read-more-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-read-more-container-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-read-more-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    margin: 0 0 16px 0;
+  }
+
+  .ai-read-more-content-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.6;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+
+  .ai-read-more-content-{{ ai_gen_id }} p {
+    margin: 0 0 16px 0;
+  }
+
+  .ai-read-more-content-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-read-more-toggle-{{ ai_gen_id }} {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    cursor: pointer;
+    font-size: {{ block.settings.button_text_size }}px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+
+  .ai-read-more-toggle-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-read-more-content-{{ ai_gen_id }} {
+      max-height: {{ block.settings.collapsed_height }}px;
+      position: relative;
+    }
+
+    .ai-read-more-content-{{ ai_gen_id }}.collapsed::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, {{ block.settings.background_color }});
+      pointer-events: none;
+    }
+
+    .ai-read-more-content-{{ ai_gen_id }}.expanded {
+      max-height: none;
+    }
+
+    .ai-read-more-content-{{ ai_gen_id }}.expanded::after {
+      display: none;
+    }
+
+    .ai-read-more-toggle-{{ ai_gen_id }} {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-read-more-content-{{ ai_gen_id }} {
+      max-height: none;
+    }
+  }
+{% endstyle %}
+
+<read-more-accordion-{{ ai_gen_id }} class="ai-read-more-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-read-more-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-read-more-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="ai-read-more-content-{{ ai_gen_id }} collapsed" data-content>
+      {{ block.settings.content }}
+    </div>
+
+    <button 
+      class="ai-read-more-toggle-{{ ai_gen_id }}" 
+      data-toggle
+      aria-expanded="false"
+    >
+      <span data-read-more-text>{{ block.settings.read_more_text }}</span>
+      <span data-read-less-text style="display: none;">{{ block.settings.read_less_text }}</span>
+    </button>
+  </div>
+</read-more-accordion-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ReadMoreAccordion{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.content = this.querySelector('[data-content]');
+        this.toggle = this.querySelector('[data-toggle]');
+        this.readMoreText = this.querySelector('[data-read-more-text]');
+        this.readLessText = this.querySelector('[data-read-less-text]');
+        
+        if (this.toggle && this.content) {
+          this.toggle.addEventListener('click', this.handleToggle.bind(this));
+          this.checkIfNeeded();
+          window.addEventListener('resize', this.checkIfNeeded.bind(this));
+        }
+      }
+
+      checkIfNeeded() {
+        if (window.innerWidth >= 750) {
+          this.content.classList.remove('collapsed', 'expanded');
+          this.toggle.style.display = 'none';
+        } else {
+          if (!this.content.classList.contains('expanded')) {
+            this.content.classList.add('collapsed');
+          }
+          this.toggle.style.display = 'block';
+        }
+      }
+
+      handleToggle() {
+        const isExpanded = this.content.classList.contains('expanded');
+        
+        if (isExpanded) {
+          this.content.classList.remove('expanded');
+          this.content.classList.add('collapsed');
+          this.toggle.setAttribute('aria-expanded', 'false');
+          this.readMoreText.style.display = 'inline';
+          this.readLessText.style.display = 'none';
+        } else {
+          this.content.classList.remove('collapsed');
+          this.content.classList.add('expanded');
+          this.toggle.setAttribute('aria-expanded', 'true');
+          this.readMoreText.style.display = 'none';
+          this.readLessText.style.display = 'inline';
+        }
+      }
+
+      disconnectedCallback() {
+        if (this.toggle) {
+          this.toggle.removeEventListener('click', this.handleToggle.bind(this));
+        }
+        window.removeEventListener('resize', this.checkIfNeeded.bind(this));
+      }
+    }
+
+    customElements.define('read-more-accordion-{{ ai_gen_id }}', ReadMoreAccordion{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Read more accordion",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "About Project Dojo"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Project Dojo is an innovative program designed to support and develop the next generation of percussionists. Through comprehensive training, mentorship, and performance opportunities, participants gain the skills and experience needed to excel in their musical journey.</p><p>Our program brings together world-class instructors, cutting-edge techniques, and a supportive community of fellow musicians. Whether you're just starting out or looking to take your skills to the next level, Project Dojo provides the resources and guidance you need to succeed.</p><p>Join us in this exciting journey and discover what you're truly capable of achieving in the world of percussion.</p>"
+    },
+    {
+      "type": "range",
+      "id": "collapsed_height",
+      "label": "Collapsed height (mobile)",
+      "min": 100,
+      "max": 400,
+      "step": 20,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Read more text",
+      "default": "Read More"
+    },
+    {
+      "type": "text",
+      "id": "read_less_text",
+      "label": "Read less text",
+      "default": "Read Less"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#ce0e2d"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#a00b24"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Read more accordion"
+    }
+  ]
+}
 {% endschema %}
