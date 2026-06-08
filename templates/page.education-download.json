@@ -14,6 +14,7 @@
       "blocks": {
         "template--18142515003684__3141c904-b6a6-4f2b-a1fe-aa2b9e911af8-1679425999b0455fe5-0": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "{{ page.title }}",
             "heading_size": "h1",
@@ -25,8 +26,8 @@
         "template--18142515003684__3141c904-b6a6-4f2b-a1fe-aa2b9e911af8-1679425999b0455fe5-0"
       ],
       "settings": {
-        "image": "shopify://shop_images/hero_5.jpg",
-        "mobile_image": "shopify://shop_images/hero_6.jpg",
+        "image": "shopify://shop_images/Project-Dojo-Collections-Banner_desktop.jpg",
+        "mobile_image": "shopify://shop_images/Project-Dojo-Collections-Banner_mobile.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "content_width": "",
@@ -45,6 +46,48 @@
         "padding_top": 0,
         "padding_bottom": 36
       }
+    },
+    "1780939762d78c7e70": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_bcbc5af_Pdtp6L": {
+          "type": "ai_gen_block_bcbc5af",
+          "settings": {
+            "title": "ABOUT THE DOJO CHALLENGE",
+            "content": "<p>Dojo Challenge is a structured drumming program for players with some experience, from semi- beginners to advanced drummers who want to strengthen their fundamentals.<br/><br/>The program is divided into nine progressive levels.Each level includes focused exercises and a short solo that shows how the ideas work in real music. The exercises are primarily designed for hand technique and stick control, making them ideal for practice on a drum pad or a single drum. Every level also includes play-along tracks, helping players develop timing, feel, and consistency in a musical way.<br/><br/>The focus of Dojo Challenge is on the essentials: good sound, solid hand technique, control, and musical feel. Instead of flashy tricks, the material emphasizes clarity, efficiency, and exercises that are both effective and enjoyable to practice. For teachers, the program includes diplomas that can be awarded when a student reaches a strong level of proficiency. The teacher decides what level of achievement is required, making the material flexible for different students and teaching situations. Whether you are practicing on your own, challenging friends, or teaching others, Dojo Challenge is designed to support steady, meaningful improvement. Let’s get better together! — Rob</p>",
+            "desktop_width_percent": 80,
+            "mobile_max_height": 200,
+            "read_more_text": "READ MORE",
+            "read_less_text": "READ LESS",
+            "title_size": 24,
+            "title_color": "#000000",
+            "title_spacing": 16,
+            "text_size": 16,
+            "text_color": "#000000",
+            "fade_color": "#ffffff",
+            "button_spacing": 16,
+            "button_padding": 12,
+            "button_text_size": 14,
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_border_width": 0,
+            "button_border_color": "#000000",
+            "button_border_radius": 40,
+            "padding": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_bcbc5af_Pdtp6L"
+      ],
+      "settings": {}
+    },
+    "178093960832c8471b": {
+      "type": "_blocks",
+      "settings": {}
     },
     "343f0242-dc55-4e8b-bcf4-f25c1985fea0": {
       "type": "multicolumn",
@@ -404,6 +447,8 @@
   },
   "order": [
     "3141c904-b6a6-4f2b-a1fe-aa2b9e911af8",
+    "1780939762d78c7e70",
+    "178093960832c8471b",
     "343f0242-dc55-4e8b-bcf4-f25c1985fea0",
     "main",
     "collapsible_content_EFGpYV"
