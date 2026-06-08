@@ -54,7 +54,7 @@
           "type": "ai_gen_block_bcbc5af",
           "settings": {
             "title": "ABOUT THE DOJO CHALLENGE",
-            "content": "<p>Dojo Challenge is a structured drumming program for players with some experience, from semi- beginners to advanced drummers who want to strengthen their fundamentals.<br/><br/>The program is divided into nine progressive levels.Each level includes focused exercises and a short solo that shows how the ideas work in real music. The exercises are primarily designed for hand technique and stick control, making them ideal for practice on a drum pad or a single drum. Every level also includes play-along tracks, helping players develop timing, feel, and consistency in a musical way.<br/><br/>The focus of Dojo Challenge is on the essentials: good sound, solid hand technique, control, and musical feel. Instead of flashy tricks, the material emphasizes clarity, efficiency, and exercises that are both effective and enjoyable to practice. For teachers, the program includes diplomas that can be awarded when a student reaches a strong level of proficiency. The teacher decides what level of achievement is required, making the material flexible for different students and teaching situations. Whether you are practicing on your own, challenging friends, or teaching others, Dojo Challenge is designed to support steady, meaningful improvement. Let’s get better together! — Rob</p>",
+            "content": "<p>Dojo Challenge is a structured drumming program for players with some experience. From semi- beginners to advanced drummers who want to strengthen their fundamentals.<br/><br/>The program is divided into nine progressive levels. Each level includes focused exercises and a short solo that shows how the ideas work in real music. The exercises are primarily designed for hand technique and stick control, making them ideal for practice on a drum pad or a single drum. Every level also includes play-along tracks, helping players develop timing, feel, and consistency in a musical way.<br/><br/>The focus of Dojo Challenge is on the essentials: good sound, solid hand technique, control, and musical feel. Instead of flashy tricks, the material emphasizes clarity, efficiency, and exercises that are both effective and enjoyable to practice. For teachers, the program includes diplomas that can be awarded when a student reaches a strong level of proficiency. The teacher decides what level of achievement is required, making the material flexible for different students and teaching situations. Whether you are practicing on your own, challenging friends, or teaching others, Dojo Challenge is designed to support steady, meaningful improvement. Let’s get better together! — Rob</p>",
             "desktop_width_percent": 80,
             "mobile_max_height": 240,
             "read_more_text": "READ MORE",
@@ -320,18 +320,18 @@
         "collapsible_row_T9BwAT": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 1",
+            "heading": "LESSON 1 - BRONZE EAGLE",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
-            "row_content": "",
+            "row_content": "<p><a href=\"https://cdn.shopify.com/s/files/1/0734/0271/2364/files/Dojo_Challenge_Vol._1_Level_1.zip?v=1780940946\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0734/0271/2364/files/Dojo_Challenge_Vol._1_Level_1.zip?v=1780940946\"><strong>Download Lesson</strong></a><br/><br/><strong>What's Included:</strong></p><ul><li>Play Along Track</li><li>Play Along Video </li><li>Sheet Music</li><li>Dojo Challenge Vol. 1 Introduction </li></ul>",
             "page": ""
           }
         },
         "collapsible_row_8NCbyc": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 2",
+            "heading": "LESSON 2 - SILVER EAGLE",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -342,7 +342,7 @@
         "collapsible_row_TGtAyH": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 3",
+            "heading": "LESSON 3 - GOLD EAGLE",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -353,7 +353,7 @@
         "collapsible_row_cDDeLa": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 4",
+            "heading": "LESSON 4- BRONZE TIGER",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -364,7 +364,7 @@
         "collapsible_row_BtyQep": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 5",
+            "heading": "LESSON 5- SILVER TIGER",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -375,7 +375,7 @@
         "collapsible_row_tETVpF": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 6",
+            "heading": "LESSON 6- GOLD TIGER",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -386,7 +386,7 @@
         "collapsible_row_wMz7K7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 7",
+            "heading": "LESSON 7- BRONZE DRAGON",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -397,7 +397,7 @@
         "collapsible_row_j7ARe3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 8",
+            "heading": "LESSON 8- SILVER DRAGON",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -408,7 +408,7 @@
         "collapsible_row_Ef4rCx": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "LESSON 9",
+            "heading": "LESSON 9 - GOLD DRAGON",
             "icon_text": "",
             "icon": "check_mark",
             "image_caption": "",
@@ -441,7 +441,7 @@
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "padding_top": 64,
-        "padding_bottom": 36
+        "padding_bottom": 64
       }
     }
   },
