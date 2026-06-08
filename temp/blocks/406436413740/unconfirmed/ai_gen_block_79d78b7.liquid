@@ -1,6 +1,283 @@
+{% doc %}
+  @prompt
+    Create a "Read more / Read less" accordion block for the education-download template. The block should show a "Read more" button that expands hidden content, and a "Read less" button to collapse it. The button should only be visible on mobile devices (hidden on desktop). On desktop, all content should be fully visible without any button. Include customizable settings for: heading, content, button text for read more and read less, and basic styling options (colors, font size, padding).
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-read-more-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-read-more-heading-{{ ai_gen_id }} {
+    margin: 0 0 16px 0;
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_font_size }}px;
+  }
+
+  .ai-read-more-content-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_font_size }}px;
+    line-height: 1.6;
+  }
+
+  .ai-read-more-toggle-{{ ai_gen_id }} {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    cursor: pointer;
+    font-size: {{ block.settings.button_font_size }}px;
+    width: 100%;
+  }
+
+  .ai-read-more-toggle-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-read-more-content-{{ ai_gen_id }} {
+      max-height: {{ block.settings.collapsed_height }}px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .ai-read-more-content-{{ ai_gen_id }}.expanded {
+      max-height: none;
+    }
+
+    .ai-read-more-toggle-{{ ai_gen_id }} {
+      display: block;
+    }
+  }
+{% endstyle %}
+
+<read-more-accordion-{{ ai_gen_id }} class="ai-read-more-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.heading != blank %}
+    <h2 class="ai-read-more-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="ai-read-more-content-{{ ai_gen_id }}">
+    {{ block.settings.content }}
+  </div>
+
+  <button
+    class="ai-read-more-toggle-{{ ai_gen_id }}"
+    aria-expanded="false"
+  >
+    <span class="ai-read-more-text-{{ ai_gen_id }}">{{ block.settings.read_more_text }}</span>
+  </button>
+</read-more-accordion-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ReadMoreAccordion{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.button = this.querySelector('.ai-read-more-toggle-{{ ai_gen_id }}');
+        this.content = this.querySelector('.ai-read-more-content-{{ ai_gen_id }}');
+        this.buttonText = this.querySelector('.ai-read-more-text-{{ ai_gen_id }}');
+        this.readMoreText = '{{ block.settings.read_more_text }}';
+        this.readLessText = '{{ block.settings.read_less_text }}';
+        this.isExpanded = false;
+
+        if (this.button && this.content) {
+          this.button.addEventListener('click', () => this.toggleContent());
+        }
+      }
+
+      toggleContent() {
+        this.isExpanded = !this.isExpanded;
+
+        if (this.isExpanded) {
+          this.content.classList.add('expanded');
+          this.buttonText.textContent = this.readLessText;
+          this.button.setAttribute('aria-expanded', 'true');
+        } else {
+          this.content.classList.remove('expanded');
+          this.buttonText.textContent = this.readMoreText;
+          this.button.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+
+    customElements.define('read-more-accordion-{{ ai_gen_id }}', ReadMoreAccordion{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Read more accordion",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "About this resource"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Add your detailed content here. This content will be fully visible on desktop, but will be collapsed on mobile devices with a read more button to expand it.</p>"
+    },
+    {
+      "type": "range",
+      "id": "collapsed_height",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Collapsed height on mobile",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "read_more_text",
+      "label": "Read more text",
+      "default": "Read more"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "read_less_text",
+      "label": "Read less text",
+      "default": "Read less"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#ce0e2d"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#a00b24"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading font size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text font size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Read more accordion"
+    }
+  ]
+}
 {% endschema %}
