@@ -726,7 +726,7 @@
         "template--18299388363044__578c17c9-8e48-410b-a17a-ec597b1885a9-1679521908245457a8-0": {
           "type": "heading",
           "settings": {
-            "heading": "CADY ZILDJIAN",
+            "heading": "SAMANTHA ZILDJIAN",
             "heading_link": "",
             "heading_size": "h2",
             "heading_color": "",
@@ -744,7 +744,7 @@
         "template--18299388363044__578c17c9-8e48-410b-a17a-ec597b1885a9-1679521908245457a8-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Cady is the daughter of Debbie Zildjian and the granddaughter of Armand Zildjian. She is the oldest of the 15th generation of Zildjian shareholders.<br/><br/>After graduating from Colgate University in 2002, Cady worked as Senior Account Manager at SmartPak, a fast-growing supplier of supplements and accessories for animals. Five years later, she joined the family business as Manager of Z Gear, the Zildjian line of apparel and accessories.<br/><br/>Upon earning an MBA from Babson College, Cady was appointed to the Board of Directors, and was later elevated to Vice Chair of the Board in 2021.</p>",
+            "text": "<p>Samantha is a 15th generation shareholder. She is the daughter of Craigie Zildjian and the granddaughter of Armand Zildjian.</p><p>In 2011, Samantha graduated from Babson College with a Bachelor of Science degree in Business.  She started her career as a Supply Chain Analyst at Talbots Inc., a specialty retailer of women’s clothing.  In 2012, Samantha joined Keurig Green Mountain Coffee as a Supply Planner, progressing to Supply Planning Team Leader and ultimately Supply Chain Productivity Manager.</p><p>Samantha was appointed to the Board of Directors in 2023 and became Vice Chair of the Board two years later.</p><p>She is the mother of two daughters Bridget and Faye.</p>",
             "text_style": "body",
             "color": "#5c5d60"
           }
@@ -755,12 +755,12 @@
         "52ebc7b9-107e-48fe-b064-a720f761cc9f",
         "template--18299388363044__578c17c9-8e48-410b-a17a-ec597b1885a9-1679521908245457a8-1"
       ],
-      "disabled": true,
       "settings": {
         "tag": "",
         "side_banner": false,
         "full_width": true,
-        "image": "shopify://shop_images/History-Photo-1_2_2_3_1.jpg",
+        "image": "shopify://shop_images/Sam-ZIldjian_c80b0e10-d51f-4323-b8ae-edbdc67265a9.png",
+        "mobile_image": "shopify://shop_images/Sam-ZIldjian_c80b0e10-d51f-4323-b8ae-edbdc67265a9.png",
         "video_url": "",
         "height": "adapt",
         "center_image": false,
@@ -789,7 +789,7 @@
         "heading_Nrwx7g": {
           "type": "heading",
           "settings": {
-            "heading": "DEBBIE ZILDJIAN",
+            "heading": "EMILY ZILDJIAN HILL",
             "heading_link": "",
             "heading_size": "h2",
             "heading_color": "",
@@ -798,6 +798,7 @@
         },
         "caption_LRinJ7": {
           "type": "caption",
+          "disabled": true,
           "settings": {
             "caption": "Member Of The Board Of Directors, Formerly Senior Vice President Of Human Resources.",
             "text_style": "caption-with-letter-spacing",
@@ -807,7 +808,7 @@
         "text_UWm8CN": {
           "type": "text",
           "settings": {
-            "text": "<p>Debbie’s career at Zildjian started in the factory, where she was taught the proprietary process for the secret alloy by her father Armand. Shortly thereafter, she assumed responsibility for that process, and continues in that oversight role to this day.<br/><br/>For twenty-two years, Debbie has been responsible for Zildjian’s Human Resources function. As such, she played a critical role in the integration of the Vic Firth and Balter acquisitions.<br/><br/>Debbie has two daughters, Cady and Emily, both 15th Generation shareholders.</p>",
+            "text": "<p>Emily is a 15th generation shareholder.  She is the daughter of Deborah Zildjian and the granddaughter of Armand Zildjian.</p><p>In 2004, Emily received a Bachelor of Arts degree from Lehigh University. She began her career as a Marketing Assistant at Converse Footwear and Apparel and shortly there after joined the Zildjian Company.  After completing a cymbal making apprenticeship, she progressed to become a Finish Lathe Operator and Cymbal Tester.</p><p>Currently, Emily is Property Manager for the Equestrian Real Estate business which she and her husband own. She is a nationally ranked equestrian, who continues to compete on the A Show Jumping Circuit.</p><p>She has two children, Lillian and Colton.</p>",
             "text_style": "body",
             "color": "#5c5d60"
           }
@@ -818,12 +819,11 @@
         "caption_LRinJ7",
         "text_UWm8CN"
       ],
-      "disabled": true,
       "settings": {
         "tag": "",
         "side_banner": false,
         "full_width": true,
-        "image": "shopify://shop_images/History-Photo-1_2_1_4_1.jpg",
+        "image": "shopify://shop_images/Emily-Zildjian_6bdd5cb3-d9a1-430e-b38d-063f5d4532a6.png",
         "video_url": "",
         "height": "adapt",
         "center_image": false,
