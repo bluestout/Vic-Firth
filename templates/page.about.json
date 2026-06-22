@@ -485,11 +485,11 @@
         "e0b6d281-58d8-4674-a025-0cf4ea0f30c3": {
           "type": "address",
           "settings": {
-            "title": "Zildjian Singapore",
-            "text": "<p>Singapore</p>",
+            "title": "Zildjian Tokyo",
+            "text": "<p>Tokyo</p>",
             "text_mob": "<p>Singapore</p>",
-            "position_x": 82,
-            "position_y": 84,
+            "position_x": 94,
+            "position_y": 39,
             "desktop_layout": "top",
             "mobile_layout": "right"
           }
@@ -557,7 +557,7 @@
         "template--18299388363044__9627a3a4-d662-4e6b-b31d-d52fe4c4d0c3-1679521908245457a8-1": {
           "type": "text",
           "settings": {
-            "text": "<p>In 1976, Craigie Zildjian joined her father (Armand) and grandfather (Avedis) in the family business. This was the first time three generations of Zildjians would work side by side in the family cymbal business. In another first, Craigie became the first woman to be appointed CEO of the company in 1999, a position she held for 20 years.<br/><br/>An active member in the musical community, Craigie has served on the Boards of the New England Conservatory, the NAMM International Music Products Association, and the Berklee College of Music. Currently, Craigie serves on the Advisory Panel for the National Black Musicians Coalition<br/><br/>Craigie has a daughter, Samantha.</p>",
+            "text": "<p>In 1976, Craigie Zildjian joined her father (Armand) and grandfather (Avedis) in the family business. This was the first time three generations of Zildjians would work side by side in the family cymbal business. In another first, Craigie became the first woman to be appointed CEO of the company in 1999, a position she held for 20 years.<br/><br/>An active member in the musical community, Craigie has served on the Boards of the New England Conservatory, the NAMM International Music Products Association, and the Berklee College of Music. Currently, Craigie serves on the Advisory Panel for the National Black Musicians Coalition.<br/><br/>Craigie has a daughter, Samantha.</p>",
             "text_style": "body",
             "color": "#5c5d60"
           }
@@ -682,7 +682,7 @@
         "template--18299388363044__73ee9d13-771b-48b9-868d-d1469320c468-1679521908245457a8-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Debbie’s career at Zildjian started in the factory, where she was taught the proprietary process for the secret alloy by her father Armand. Shortly thereafter, she assumed responsibility for that process, and continues in that oversight role to this day.<br/><br/>For twenty-two years, Debbie has been responsible for Zildjian’s Human Resources function. As such, she played a critical role in the integration of the Vic Firth and Balter acquisitions.<br/><br/>Debbie has two daughters, Cady and Emily, both 15th Generation shareholders.</p>",
+            "text": "<p>Debbie’s career at Zildjian started in the factory, where she was taught the proprietary process for the secret alloy by her father Armand. Shortly thereafter, she assumed responsibility for that process, and continues in that oversight role to this day.<br/><br/>For twenty-two years, Debbie was responsible for Zildjian’s Human Resources function. As such, she played a critical role in the integration of the Vic Firth and Balter acquisitions.<br/><br/>Debbie has two daughters, Cady and Emily, both 15th Generation shareholders.</p>",
             "text_style": "body",
             "color": "#5c5d60"
           }
