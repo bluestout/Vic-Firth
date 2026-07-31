@@ -130,7 +130,7 @@
 
             <p class="product__title">{{ product.title }}</p>
             <p class="product__price">{{ product.price | money}}</p>
-            <div class="yotpo-widget-instance" data-yotpo-instance-id="851116" data-yotpo-product-id="{{product.id}}" data-yotpo-cart-product-id="{{product.id}}" data-yotpo-section-id="collection"></div>
+            {% comment %} <div class="yotpo-widget-instance" data-yotpo-instance-id="851116" data-yotpo-product-id="{{product.id}}" data-yotpo-cart-product-id="{{product.id}}" data-yotpo-section-id="collection"></div> {% endcomment %}
           </a>
         </div>
       {%- endfor -%}
