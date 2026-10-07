@@ -3,6 +3,1195 @@
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 {{ 'component-rte.css' | asset_url | stylesheet_tag }}
 {{ 'custom-contact-form.scss.css' | asset_url | stylesheet_tag }}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css">
+<script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div data-section-type="contact-form" class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contents">
+    {% for block in section.blocks %}
+      <div class="content">
+        <div
+          class="accordion content-container"
+          {{ block.shopify_attributes }}
+        >
+          <details id="Details-{{ block.id }}-{{ section.id }}" open>
+            <summary id="Summary-{{ block.id }}-{{ section.id }}">
+              {{ block.settings.icon }}
+              <h3 class="accordion__title h4">
+                {{ block.settings.title }}
+              </h3>
+              {% render 'icon-caret' %}
+            </summary>
+            <div
+              class="accordion__content rte"
+              id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
+              role="region"
+              aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
+            >
+              {{ block.settings.text }}
+            </div>
+          </details>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="contact-form">
+    <div class="contact">
+      <svg width="27" height="29" viewBox="0 0 27 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.3828 22.709H25.2461C23.6758 24.666 22.2227 26.0371 20.8867 26.8223C18.9883 27.9238 16.8262 28.4746 14.4004 28.4746C11.834 28.4746 9.4668 27.8711 7.29883 26.6641C5.13086 25.4453 3.4375 23.7871 2.21875 21.6895C1.01172 19.5918 0.408203 17.3008 0.408203 14.8164C0.408203 12.2969 1.01758 9.95312 2.23633 7.78516C3.4668 5.61719 5.13672 3.93555 7.24609 2.74023C9.35547 1.5332 11.6641 0.929688 14.1719 0.929688C17.7109 0.929688 20.6992 2.06641 23.1367 4.33984C25.5742 6.60156 26.793 9.23828 26.793 12.25C26.793 14.4414 26.2832 16.334 25.2637 17.9277C24.2559 19.5098 22.8848 20.7402 21.1504 21.6191C19.8262 22.2988 18.6953 22.6387 17.7578 22.6387C17.0781 22.6387 16.5391 22.457 16.1406 22.0938C15.8359 21.8242 15.6777 21.3555 15.666 20.6875C15.2676 21.1914 14.7168 21.6133 14.0137 21.9531C13.3223 22.293 12.6016 22.4629 11.8516 22.4629C10.1641 22.4629 8.76953 21.8828 7.66797 20.7227C6.56641 19.5508 6.01562 18.0039 6.01562 16.082C6.01562 14.0078 6.68359 12.1152 8.01953 10.4043C9.35547 8.69336 11.1953 7.83789 13.5391 7.83789C14.5703 7.83789 15.4316 8.03125 16.123 8.41797C16.8262 8.80469 17.4883 9.47852 18.1094 10.4395L18.5664 8.01367H20.4648L18.4258 19.5098C18.3672 19.8848 18.3379 20.125 18.3379 20.2305C18.3379 20.5 18.4199 20.7109 18.584 20.8633C18.748 21.0156 18.959 21.0918 19.2168 21.0918C19.9082 21.0918 20.8047 20.6934 21.9062 19.8965C23.0195 19.0879 23.8809 18.0566 24.4902 16.8027C25.1113 15.5371 25.4219 14.1367 25.4219 12.6016C25.4219 9.625 24.2676 7.1582 21.959 5.20117C19.8027 3.38477 17.1777 2.47656 14.084 2.47656C11.7871 2.47656 9.70117 3.00391 7.82617 4.05859C5.96289 5.10156 4.48633 6.57812 3.39648 8.48828C2.31836 10.3867 1.7793 12.4434 1.7793 14.6582C1.7793 16.8965 2.32422 18.9648 3.41406 20.8633C4.50391 22.75 6.00977 24.2324 7.93164 25.3105C9.86523 26.3887 11.9922 26.9277 14.3125 26.9277C16.0117 26.9277 17.5527 26.623 18.9355 26.0137C20.3184 25.4043 21.8008 24.3027 23.3828 22.709ZM12.7305 20.4766C13.5039 20.4766 14.2305 20.2363 14.9102 19.7559C15.5898 19.2637 16.1289 18.5312 16.5273 17.5586C17.043 16.2812 17.3008 14.998 17.3008 13.709C17.3008 12.5254 16.9668 11.5645 16.2988 10.8262C15.6426 10.0879 14.7871 9.71875 13.7324 9.71875C12.3262 9.71875 11.1074 10.2988 10.0762 11.459C9.05664 12.6074 8.54688 14.043 8.54688 15.7656C8.54688 17.207 8.93359 18.3555 9.70703 19.2109C10.4922 20.0547 11.5 20.4766 12.7305 20.4766Z" fill="#CC9F53"/>
+        <path d="M23.3828 22.709V22.409H23.2579L23.1699 22.4976L23.3828 22.709ZM25.2461 22.709L25.4801 22.8967L25.8714 22.409H25.2461V22.709ZM20.8867 26.8223L21.0373 27.0818L21.0387 27.0809L20.8867 26.8223ZM7.29883 26.6641L7.15182 26.9256L7.15289 26.9262L7.29883 26.6641ZM2.21875 21.6895L1.95872 21.8391L1.95935 21.8402L2.21875 21.6895ZM2.23633 7.78516L1.97542 7.63707L1.97482 7.63815L2.23633 7.78516ZM7.24609 2.74023L7.394 3.00124L7.39509 3.00062L7.24609 2.74023ZM23.1367 4.33984L22.9321 4.55923L22.9327 4.55976L23.1367 4.33984ZM25.2637 17.9277L25.011 17.7661L25.0107 17.7666L25.2637 17.9277ZM21.1504 21.6191L21.0148 21.3515L21.0134 21.3522L21.1504 21.6191ZM16.1406 22.0938L16.3428 21.872L16.3394 21.8691L16.1406 22.0938ZM15.666 20.6875L15.966 20.6822L15.9512 19.8431L15.4307 20.5014L15.666 20.6875ZM14.0137 21.9531L13.8831 21.683L13.8813 21.6839L14.0137 21.9531ZM7.66797 20.7227L7.44938 20.9281L7.45041 20.9292L7.66797 20.7227ZM16.123 8.41797L15.9766 8.6798L15.9785 8.68083L16.123 8.41797ZM18.1094 10.4395L17.8574 10.6023L18.2651 11.2331L18.4042 10.495L18.1094 10.4395ZM18.5664 8.01367V7.71367H18.3176L18.2716 7.95813L18.5664 8.01367ZM20.4648 8.01367L20.7602 8.06606L20.8227 7.71367H20.4648V8.01367ZM18.4258 19.5098L18.1303 19.4574L18.1294 19.4635L18.4258 19.5098ZM21.9062 19.8965L22.0821 20.1396L22.0826 20.1392L21.9062 19.8965ZM24.4902 16.8027L24.2209 16.6706L24.2204 16.6716L24.4902 16.8027ZM21.959 5.20117L22.153 4.97233L22.1523 4.97173L21.959 5.20117ZM7.82617 4.05859L7.9727 4.32037L7.97325 4.32007L7.82617 4.05859ZM3.39648 8.48828L3.13591 8.33961L3.13562 8.34013L3.39648 8.48828ZM3.41406 20.8633L3.15389 21.0126L3.15429 21.0133L3.41406 20.8633ZM7.93164 25.3105L7.78486 25.5722L7.78554 25.5726L7.93164 25.3105ZM14.9102 19.7559L15.0833 20.0008L15.0861 19.9988L14.9102 19.7559ZM16.5273 17.5586L16.805 17.6723L16.8055 17.6709L16.5273 17.5586ZM16.2988 10.8262L16.0746 11.0255L16.0764 11.0274L16.2988 10.8262ZM10.0762 11.459L9.85195 11.2597L9.85182 11.2598L10.0762 11.459ZM9.70703 19.2109L9.48448 19.4122L9.48741 19.4153L9.70703 19.2109ZM23.3828 23.009H25.2461V22.409H23.3828V23.009ZM25.0121 22.5212C23.4522 24.4652 22.0258 25.8048 20.7347 26.5636L21.0387 27.0809C22.4195 26.2694 23.8993 24.8668 25.4801 22.8967L25.0121 22.5212ZM20.7362 26.5628C18.8882 27.6351 16.779 28.1746 14.4004 28.1746V28.7746C16.8733 28.7746 19.0884 28.2126 21.0373 27.0817L20.7362 26.5628ZM14.4004 28.1746C11.8832 28.1746 9.56654 27.5833 7.44476 26.402L7.15289 26.9262C9.36706 28.1589 11.7847 28.7746 14.4004 28.7746V28.1746ZM7.44584 26.4026C5.32332 25.2094 3.66929 23.5889 2.47815 21.5387L1.95935 21.8402C3.20571 23.9853 4.9384 25.6813 7.15182 26.9256L7.44584 26.4026ZM2.47878 21.5398C1.29865 19.4889 0.708203 17.2497 0.708203 14.8164H0.108203C0.108203 17.3518 0.724785 19.6947 1.95873 21.8391L2.47878 21.5398ZM0.708203 14.8164C0.708203 12.3477 1.30467 10.0546 2.49784 7.93217L1.97482 7.63815C0.73049 9.85161 0.108203 12.2461 0.108203 14.8164H0.708203ZM2.49723 7.93324C3.70173 5.81104 5.33318 4.16904 7.394 3.00124L7.09819 2.47923C4.94026 3.70206 3.23187 5.42334 1.97542 7.63708L2.49723 7.93324ZM7.39509 3.00062C9.45761 1.8204 11.7146 1.22969 14.1719 1.22969V0.629687C11.6135 0.629687 9.25333 1.24601 7.0971 2.47985L7.39509 3.00062ZM14.1719 1.22969C17.6401 1.22969 20.5538 2.34101 22.9321 4.55923L23.3413 4.12046C20.8446 1.79181 17.7817 0.629687 14.1719 0.629687V1.22969ZM22.9327 4.55976C25.3161 6.77127 26.493 9.33092 26.493 12.25H27.093C27.093 9.14564 25.8324 6.43185 23.3408 4.11993L22.9327 4.55976ZM26.493 12.25C26.493 14.3934 25.995 16.2278 25.011 17.7661L25.5164 18.0894C26.5714 16.4401 27.093 14.4894 27.093 12.25H26.493ZM25.0107 17.7666C24.0328 19.3015 22.703 20.496 21.0148 21.3515L21.286 21.8867C23.0665 20.9845 24.4789 19.718 25.5167 18.0889L25.0107 17.7666ZM21.0134 21.3522C19.7092 22.0216 18.6277 22.3387 17.7578 22.3387V22.9387C18.7629 22.9387 19.9431 22.576 21.2874 21.886L21.0134 21.3522ZM17.7578 22.3387C17.1327 22.3387 16.6726 22.1728 16.3428 21.8721L15.9385 22.3154C16.4055 22.7413 17.0236 22.9387 17.7578 22.9387V22.3387ZM16.3394 21.8691C16.1283 21.6823 15.9771 21.3182 15.966 20.6822L15.3661 20.6928C15.3783 21.3927 15.5436 21.9661 15.9419 22.3184L16.3394 21.8691ZM15.4307 20.5014C15.0658 20.9629 14.5541 21.3587 13.8831 21.683L14.1442 22.2232C14.8795 21.8678 15.4694 21.4199 15.9013 20.8736L15.4307 20.5014ZM13.8813 21.6839C13.23 22.0041 12.5544 22.1629 11.8516 22.1629V22.7629C12.6487 22.7629 13.4146 22.5819 14.146 22.2224L13.8813 21.6839ZM11.8516 22.1629C10.2413 22.1629 8.92706 21.613 7.88552 20.5161L7.45041 20.9292C8.61201 22.1526 10.0869 22.7629 11.8516 22.7629V22.1629ZM7.88656 20.5172C6.84719 19.4115 6.31563 17.9434 6.31563 16.082H5.71562C5.71562 18.0645 6.28562 19.6901 7.44938 20.9281L7.88656 20.5172ZM6.31563 16.082C6.31563 14.078 6.95917 12.2498 8.25599 10.5889L7.78307 10.2197C6.40802 11.9807 5.71562 13.9376 5.71562 16.082H6.31563ZM8.25599 10.5889C9.53005 8.95723 11.2792 8.13789 13.5391 8.13789V7.53789C11.1114 7.53789 9.18089 8.42949 7.78307 10.2197L8.25599 10.5889ZM13.5391 8.13789C14.5341 8.13789 15.3415 8.32455 15.9766 8.6798L16.2695 8.15614C15.5218 7.73795 14.6065 7.53789 13.5391 7.53789V8.13789ZM15.9785 8.68083C16.6235 9.03559 17.2525 9.66641 17.8574 10.6023L18.3613 10.2766C17.724 9.29062 17.0289 8.57378 16.2676 8.1551L15.9785 8.68083ZM18.4042 10.495L18.8612 8.06922L18.2716 7.95813L17.8146 10.3839L18.4042 10.495ZM18.5664 8.31367H20.4648V7.71367H18.5664V8.31367ZM20.1695 7.96128L18.1304 19.4574L18.7212 19.5622L20.7602 8.06606L20.1695 7.96128ZM18.1294 19.4635C18.0719 19.8315 18.0379 20.0969 18.0379 20.2305H18.6379C18.6379 20.1531 18.6625 19.938 18.7222 19.5561L18.1294 19.4635ZM18.0379 20.2305C18.0379 20.565 18.1424 20.8626 18.3798 21.0831L18.7881 20.6434C18.6975 20.5593 18.6379 20.435 18.6379 20.2305H18.0379ZM18.3798 21.0831C18.6078 21.2948 18.8956 21.3918 19.2168 21.3918V20.7918C19.0224 20.7918 18.8883 20.7365 18.7881 20.6434L18.3798 21.0831ZM19.2168 21.3918C20.0083 21.3918 20.9709 20.9434 22.0821 20.1396L21.7304 19.6534C20.6385 20.4433 19.8081 20.7918 19.2168 20.7918V21.3918ZM22.0826 20.1392C23.2362 19.3013 24.1294 18.2315 24.7601 16.9339L24.2204 16.6716C23.6323 17.8818 22.8028 18.8745 21.7299 19.6538L22.0826 20.1392ZM24.7596 16.9349C25.4026 15.6246 25.7219 14.1784 25.7219 12.6016H25.1219C25.1219 14.095 24.8201 15.4496 24.2209 16.6706L24.7596 16.9349ZM25.7219 12.6016C25.7219 9.53516 24.5275 6.98526 22.153 4.97233L21.765 5.43001C24.0076 7.33114 25.1219 9.71484 25.1219 12.6016H25.7219ZM22.1523 4.97173C19.9365 3.10522 17.2411 2.17656 14.084 2.17656V2.77656C17.1144 2.77656 19.6689 3.66431 21.7657 5.43061L22.1523 4.97173ZM14.084 2.17656C11.7392 2.17656 9.60204 2.71547 7.67909 3.79712L7.97325 4.32007C9.80031 3.29235 11.835 2.77656 14.084 2.77656V2.17656ZM7.67964 3.79681C5.7673 4.86724 4.25193 6.38358 3.13591 8.33961L3.65706 8.63695C4.72072 6.77267 6.15848 5.33588 7.9727 4.32037L7.67964 3.79681ZM3.13562 8.34013C2.03146 10.2844 1.4793 12.3922 1.4793 14.6582H2.0793C2.0793 12.4945 2.60526 10.489 3.65735 8.63643L3.13562 8.34013ZM1.4793 14.6582C1.4793 16.9477 2.03734 19.0677 3.15389 21.0126L3.67424 20.7139C2.6111 18.862 2.0793 16.8453 2.0793 14.6582H1.4793ZM3.15429 21.0133C4.27141 22.9473 5.81655 24.468 7.78487 25.5722L8.07842 25.0489C6.20298 23.9968 4.7364 22.5527 3.67384 20.7132L3.15429 21.0133ZM7.78554 25.5726C9.76598 26.6768 11.9436 27.2277 14.3125 27.2277V26.6277C12.0408 26.6277 9.96449 26.1005 8.07774 25.0485L7.78554 25.5726ZM14.3125 27.2277C16.0482 27.2277 17.6311 26.9163 19.0565 26.2882L18.8146 25.7391C17.4744 26.3298 15.9753 26.6277 14.3125 26.6277V27.2277ZM19.0565 26.2882C20.4861 25.6582 21.9989 24.529 23.5957 22.9203L23.1699 22.4976C21.6027 24.0765 20.1506 25.1504 18.8146 25.7391L19.0565 26.2882ZM12.7305 20.7766C13.5707 20.7766 14.3571 20.5142 15.0833 20.0008L14.737 19.5109C14.1039 19.9584 13.4371 20.1766 12.7305 20.1766V20.7766ZM15.0861 19.9988C15.8212 19.4665 16.3906 18.6837 16.805 17.6723L16.2497 17.4449C15.8672 18.3788 15.3585 19.0608 14.7342 19.5129L15.0861 19.9988ZM16.8055 17.6709C17.3346 16.3603 17.6008 15.0391 17.6008 13.709H17.0008C17.0008 14.957 16.7514 16.2022 16.2492 17.4463L16.8055 17.6709ZM17.6008 13.709C17.6008 12.4659 17.2483 11.4284 16.5213 10.6249L16.0764 11.0274C16.6853 11.7005 17.0008 12.5849 17.0008 13.709H17.6008ZM16.5231 10.6269C15.8057 9.81979 14.8662 9.41875 13.7324 9.41875V10.0187C14.708 10.0187 15.4795 10.356 16.0746 11.0255L16.5231 10.6269ZM13.7324 9.41875C12.231 9.41875 10.9335 10.0429 9.85195 11.2597L10.3004 11.6583C11.2813 10.5547 12.4213 10.0187 13.7324 10.0187V9.41875ZM9.85182 11.2598C8.77754 12.4699 8.24687 13.9792 8.24687 15.7656H8.84688C8.84688 14.1068 9.33574 12.7449 10.3005 11.6582L9.85182 11.2598ZM8.24687 15.7656C8.24687 17.2621 8.6496 18.4887 9.4845 19.4121L9.92956 19.0097C9.21759 18.2223 8.84688 17.152 8.84688 15.7656H8.24687ZM9.48741 19.4153C10.3335 20.3245 11.423 20.7766 12.7305 20.7766V20.1766C11.577 20.1766 10.6509 19.7849 9.92665 19.0066L9.48741 19.4153Z" fill="#CC9F53"/>
+      </svg>
+      {%- if section.settings.heading != blank -%}
+        <h2 class="title title-wrapper--no-top-margin">
+          {{ section.settings.heading | escape }}
+        </h2>
+      {%- else -%}
+        <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+      {%- endif -%}
+      <div class="text">
+        {{ section.settings.text }}
+      </div>
+      <div class="freshdesk-contact-form">
+        <div class="contact-page-section">
+          <div class="contact-page-section__wrapper">
+            <h2 class="contact-page-section__heading">{{ section.settings.heading }}</h2>
+
+            <form id="freshdesk-contact-form" class="contact-page-section__form" novalidate>
+              <div class="contact-page-section__field select">
+                <label for="fd-ticket-type"></label>
+                <select id="fd-ticket-type" name="ticket_type">
+                  <option value="email_us">Email Us</option>
+                  <option value="return_authorization">Return Authorization Request</option>
+                  <option value="account_deletion">Account Deletion Request</option>
+                </select>
+              </div>
+
+              <div class="requied-fields-message">
+                <p>Fields marked <span class="required-field-asterisk">*</span> are mandatory</p>
+              </div>
+
+              <!-- ===================== EMAIL US ===================== -->
+              <div class="fd-type-group" data-type="email_us" hidden>
+                <div class="contact-page-section__row">
+                  <div class="contact-page-section__field">
+                    <label for="fd-first-name">First Name <span class="required-field-asterisk">*</span></label>
+                    <input type="text" id="fd-first-name" name="first_name" class="fd-required-email_us">
+                  </div>
+                  <div class="contact-page-section__field">
+                    <label for="fd-last-name">Last Name <span class="required-field-asterisk">*</span></label>
+                    <input type="text" id="fd-last-name" name="last_name" class="fd-required-email_us">
+                  </div>
+                </div>
+
+                <!-- Fields common to every type -->
+                <div class="contact-page-section__field">
+                  <label for="fd-email">Email <span class="required-field-asterisk">*</span></label>
+                  <input
+                    type="email"
+                    id="fd-email"
+                    name="email"
+                    placeholder="Enter a valid email address"
+                    class="fd-required-email_us"
+                  >
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-brand">Brand</label>
+                  <select id="fd-brand" name="brand">
+                    <option value="">Choose...</option>
+                    <option value="Zildjian">Zildjian</option>
+                    <option value="Vic Firth">Vic Firth</option>
+                    <option value="Balter Mallets">Balter Mallets</option>
+                  </select>
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-reason">Reason for Inquiry <span class="required-field-asterisk">*</span></label>
+                  <select id="fd-reason" name="reason_for_inquiry" class="fd-required-email_us">
+                    <option value="">Choose...</option>
+                    <option value="General question">General Question</option>
+                    <option value="Alchem-e">Alchem-e</option>
+                  </select>
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-message">Message <span class="required-field-asterisk">*</span></label>
+                  <textarea id="fd-message" name="message" rows="5" class="fd-required-email_us"></textarea>
+                </div>
+              </div>
+
+              <!-- ============ RETURN AUTHORIZATION REQUEST ============ -->
+              <div class="fd-type-group" data-type="return_authorization" hidden>
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-email">Your Email Address <span class="required-field-asterisk">*</span></label>
+                  <input
+                    type="email"
+                    id="fd-ra-email"
+                    name="ra_email"
+                    placeholder="Enter a valid email address"
+                    class="fd-required-return_authorization"
+                  >
+                </div>
+
+                <div class="contact-page-section__row">
+                  <div class="contact-page-section__field">
+                    <label for="fd-ra-first-name">First Name <span class="required-field-asterisk">*</span></label>
+                    <input
+                      type="text"
+                      id="fd-ra-first-name"
+                      name="ra_first_name"
+                      class="fd-required-return_authorization"
+                    >
+                  </div>
+                  <div class="contact-page-section__field">
+                    <label for="fd-ra-last-name">Last Name <span class="required-field-asterisk">*</span></label>
+                    <input
+                      type="text"
+                      id="fd-ra-last-name"
+                      name="ra_last_name"
+                      class="fd-required-return_authorization"
+                    >
+                  </div>
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-street1">Street Address <span class="required-field-asterisk">*</span></label>
+                  <input
+                    type="text"
+                    id="fd-ra-street1"
+                    name="ra_street_address"
+                    class="fd-required-return_authorization"
+                  >
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-street2">Street Address 2</label>
+                  <input type="text" id="fd-ra-street2" name="ra_street_address_2">
+                </div>
+
+                <div class="contact-page-section__row">
+                  <div class="contact-page-section__field">
+                    <label for="fd-ra-city">City <span class="required-field-asterisk">*</span></label>
+                    <input type="text" id="fd-ra-city" name="ra_city" class="fd-required-return_authorization">
+                  </div>
+                  <div class="contact-page-section__field">
+                    <label for="fd-ra-state">State <span class="required-field-asterisk">*</span></label>
+                    <input type="text" id="fd-ra-state" name="ra_state" class="fd-required-return_authorization">
+                  </div>
+                </div>
+
+                <div class="contact-page-section__row">
+                  <div class="contact-page-section__field">
+                    <label for="fd-ra-postal">Postal Code <span class="required-field-asterisk">*</span></label>
+                    <input type="text" id="fd-ra-postal" name="ra_postal_code" class="fd-required-return_authorization">
+                  </div>
+                  <div class="contact-page-section__field">
+                    <label for="fd-ra-phone">Phone Number</label>
+                    <input type="text" id="fd-ra-phone" name="ra_phone">
+                  </div>
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-company">Company Name</label>
+                  <input type="text" id="fd-ra-company" name="ra_company">
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-model">Product Model <span class="required-field-asterisk">*</span></label>
+                  <input type="text" id="fd-ra-model" name="ra_product_model" class="fd-required-return_authorization">
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-serial">Serial Number</label>
+                  <input type="text" id="fd-ra-serial" name="ra_serial_number">
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-retailer"
+                    >Name of Retailer Where Cymbal Was Purchased <span class="required-field-asterisk">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="fd-ra-retailer"
+                    name="ra_retailer_name"
+                    class="fd-required-return_authorization"
+                  >
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-retailer-loc"
+                    >Retailer City and State <span class="required-field-asterisk">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="fd-ra-retailer-loc"
+                    name="ra_retailer_location"
+                    class="fd-required-return_authorization"
+                  >
+                </div>
+
+                <div class="contact-page-section__row">
+                  <div class="contact-page-section__field">
+                    <label for="fd-ra-month">Month Purchased</label>
+                    <select id="fd-ra-month" name="ra_month_purchased">
+                      <option value="">Choose...</option>
+                      <option>January</option>
+                      <option>February</option>
+                      <option>March</option>
+                      <option>April</option>
+                      <option>May</option>
+                      <option>June</option>
+                      <option>July</option>
+                      <option>August</option>
+                      <option>September</option>
+                      <option>October</option>
+                      <option>November</option>
+                      <option>December</option>
+                    </select>
+                  </div>
+                  <div class="contact-page-section__field">
+                    <label for="fd-ra-year">Year Purchased</label>
+                    <select id="fd-ra-year" name="ra_year_purchased">
+                      <option value="">Choose...</option>
+                      <option value="2026">2026</option>
+                      <option value="2025">2025</option>
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                      <option value="2020">2020</option>
+                      <option value="2019">2019</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ra-return-reason">Return Reason</label>
+                  <textarea id="fd-ra-return-reason" name="ra_return_reason" rows="3"></textarea>
+                </div>
+
+                <div class="contact-page-section__checkbox">
+                  <input type="checkbox" id="fd-ra-agree" name="ra_agree" class="fd-required-return_authorization">
+                  <label for="fd-ra-agree">Yes, I have read and agree to the Privacy Policy and Terms of Use. *</label>
+                </div>
+                <div class="contact-page-section__checkbox">
+                  <input type="checkbox" id="fd-ra-photo" name="ra_has_photo">
+                  <label for="fd-ra-photo">I have attached a photo of the damaged cymbal</label>
+                </div>
+              </div>
+
+              <!-- ============== ACCOUNT DELETION REQUEST ============== -->
+              <div class="fd-type-group" data-type="account_deletion" hidden>
+                <div class="contact-page-section__field">
+                  <label for="fd-ad-email">Your Email Address <span class="required-field-asterisk">*</span></label>
+                  <input
+                    type="email"
+                    id="fd-ad-email"
+                    name="ad_email"
+                    placeholder="Enter a valid email address"
+                    class="fd-required-account_deletion"
+                  >
+                </div>
+                <div class="contact-page-section__field">
+                  <label for="fd-ad-issue"
+                    >Please choose your issue below <span class="required-field-asterisk">*</span></label
+                  >
+                  <select id="fd-ad-issue" name="ad_issue" class="fd-required-account_deletion">
+                    <option value="">Choose...</option>
+                    <option value="Data Retrieval or Deletion Request">Data Retrieval or Deletion Request</option>
+                    <option value="Opt-out of Third-Part Disclosure">Opt-out of Third-Part Disclosure</option>
+                    <option value="Order Information">Order Information</option>
+                  </select>
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ad-subject">Subject <span class="required-field-asterisk">*</span></label>
+                  <input type="text" id="fd-ad-subject" name="ad_subject" class="fd-required-account_deletion">
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ad-description">Description <span class="required-field-asterisk">*</span></label>
+                  <textarea
+                    id="fd-ad-description"
+                    name="ad_description"
+                    rows="4"
+                    class="fd-required-account_deletion"
+                  ></textarea>
+                </div>
+
+                <div class="contact-page-section__field">
+                  <label for="fd-ad-device">Device ID <span class="required-field-asterisk">*</span></label>
+                  <input type="text" id="fd-ad-device" name="ad_device_id" class="fd-required-account_deletion">
+                </div>
+              </div>
+
+              <div class="contact-page-section__field">
+                <div class="fd-attach-wrap">
+                  <button type="button" id="fd-attach-btn" class="fd-attach-btn">
+                    <svg
+                      class="fd-attach-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 0 1-7.78-7.78l9.19-9.19a3.5 3.5 0 0 1 4.95 4.95l-9.2 9.19a1.5 1.5 0 0 1-2.12-2.12l8.49-8.48" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Attach files
+                  </button>
+                  <input type="file" id="fd-attachments" name="attachments" multiple hidden>
+                  <div id="fd-attach-list" class="fd-attach-list"></div>
+                </div>
+              </div>
+
+              {% if section.settings.recaptcha_site_key != blank %}
+                <div class="contact-page-section__field">
+                  <div
+                    id="fd-recaptcha"
+                    class="g-recaptcha"
+                    data-sitekey="{{ section.settings.recaptcha_site_key }}"
+                  ></div>
+                </div>
+              {% endif %}
+
+              <div class="contact-page-section__actions">
+                <button type="button" class="contact-page-section__cancel" id="fd-cancel-btn">Cancel</button>
+                <button type="submit" class="contact-page-section__submit">
+                  {{ section.settings.button_label }}
+                </button>
+              </div>
+
+              <p class="contact-page-section__status" id="fd-form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      {% comment %} <div style="margin:0 auto;" class="pxFormGenerator" id="8ErZyAXAKNFKC_BfobjPmg"></div> {% endcomment %}
+    </div>
+  </div>
+</div>
+
+{% if section.settings.recaptcha_site_key != blank %}
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endif %}
+
+<style>
+
+
+  div#fd-recaptcha iframe{
+  
+  height:78px!important;
+  }
+    svg.fd-attach-icon {
+        position: unset !important;
+        height: 15px;
+        color: black;
+    }
+
+      .choices__item.choices__placeholder.choices__item--selectable {
+        color: #12344d !important;
+        font-size: 16px !important;
+        opacity: 1 !important;
+        font-weight: 400 !important;
+    }
+
+    .required-field-asterisk {
+        color: #f73f3e;
+    }
+      .contact-page-section {
+        box-shadow: 0 6px 19px rgba(39, 49, 58, 0.1);
+        border: 1px solid #ebeff3;
+        border-radius: 12px;
+       }
+       .contact-page-section__wrapper {
+        margin: 24px 32px;
+       }
+       h2.contact-page-section__heading {
+        font-size: 24px;
+        margin: 0;
+        padding-top: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+       }
+       .contact-page-section__field.select {
+        margin-top: 16px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #cfd7df;
+        margin-bottom: 32px;
+      }
+
+      .requied-fields-message {
+        padding-bottom: 24px;
+        color: #12344d;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .requied-fields-message p {
+        margin: 0;
+    }
+
+        .contact-page-section__field input:focus,
+      .contact-page-section__field input:focus-visible,
+      .contact-page-section__field select:focus,
+      .contact-page-section__field select:focus-visible,
+      .contact-page-section__field textarea:focus,
+      .contact-page-section__field textarea:focus-visible {
+        outline: 2px solid #2E6ED8 !important;
+        outline-offset: 0.2rem !important;
+        box-shadow: none !important;
+      }
+      .choices.is-focused .choices__inner,
+      .choices.is-open .choices__inner {
+        outline: 2px solid #2E6ED8 !important;
+        outline-offset: 0.2rem !important;
+        box-shadow: none !important;
+      }
+      .choices.is-open .choices__list--dropdown {
+        border: 2px solid #2E6ED8 !important;
+        border-top: none !important;
+      }
+      .choices__list--dropdown .choices__item--selectable.is-highlighted {
+        background-color: #6F8396 !important;
+        color: #fff !important;
+      }
+      .choices__list.choices__list--single {
+        padding: 0 !important;
+        font-size: 18px;
+        font-weight: 600;
+        color: #12344D;
+    }
+
+    .choices__inner {
+        background: transparent;
+            border-radius: 4px;
+    }
+
+    .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+        font-size: 16px !important;
+    }
+    .choices__list{
+       font-size: 18px !important;
+        font-weight: 600;
+        color: #12344D;
+    }
+    .choices__inner {
+        padding: 12px 16px;
+    }
+    .contact-page-section__actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .contact-page-section__cancel {
+    padding: 12px 24px;
+    border: 1px solid #cfd7df;
+    border-radius: 4px;
+    background: #fff;
+    color: #12344d;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .contact-page-section__cancel:hover {
+    background: #f7f9fb;
+    border-color: #6f8396;
+  }
+     .contact-page-section__field { flex: 1; margin-bottom: 16px; }
+      .contact-page-section__field {  display: flex; flex-direction: column; }
+      .contact-page-section__field label { margin-bottom: 4px; font-size: 16px; font-weight: 600; color:#000000; }
+      .contact-page-section__field input,
+      .contact-page-section__field select,
+      .contact-page-section__field textarea {
+        padding: 12px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 15px;
+        font-family: inherit;
+      }
+      .contact-page-section__hint { color: #666; font-size: 12px; margin-top: 4px; }
+      .contact-page-section__checkbox { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+      .contact-page-section__checkbox label { font-size: 14px; }
+      .contact-page-section__submit {
+          padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        background: #12344D;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .contact-page-section__checkbox input#fd-ra-photo  {
+        margin: 0;
+    }
+
+    .contact-page-section__checkbox input#fd-ra-agree {
+        margin: 0;
+    }
+
+    .contact-page-section__checkbox label {
+        font-size: 16px;
+        font-weight: 600;
+        color: black;
+    }
+
+        .fd-attach-wrap { display: flex; flex-direction: column; gap: 10px; }
+    .fd-attach-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        color: #003057;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 0;
+        width: fit-content;
+    }
+      .fd-attach-btn:hover { text-decoration: underline; }
+      .fd-attach-icon { flex-shrink: 0; }
+      .fd-attach-list { display: flex; flex-wrap: wrap; gap: 10px; }
+      .fd-attach-chip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid #cfd7df;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #12344d;
+        background: #f7f9fb;
+      }
+      .fd-attach-chip button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #6f8396;
+        font-size: 16px;
+        line-height: 1;
+        padding: 0;
+      }
+      .contact-page-section__checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .contact-page-section__checkbox label {
+      font-size: 14px;
+      cursor: pointer;
+      line-height: 1.4;
+      padding-top: 1px;
+    }
+
+    /* Custom checkbox styling */
+    .contact-page-section__checkbox input[type="checkbox"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border: 2px solid #6f8396;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      position: relative;
+      margin: 0;
+      flex-shrink: 0;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .contact-page-section__checkbox input[type="checkbox"]:hover {
+      border-color: #12344d;
+    }
+
+    .contact-page-section__checkbox input[type="checkbox"]:checked {
+      background: #12344d;
+      border-color: #12344d;
+    }
+
+    .contact-page-section__checkbox input[type="checkbox"]:checked::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 5px;
+      height: 9px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .contact-page-section__checkbox input[type="checkbox"]:focus-visible {
+      outline: 2px solid #2E6ED8;
+      outline-offset: 2px;
+    }
+      .fd-attach-chip button:hover { color: #f73f3e; }
+      .fd-attach-size { color: #6f8396; font-size: 12px; }
+
+      .contact-page-section__submit:disabled { opacity: 0.6; cursor: not-allowed; }
+      .contact-page-section__status { margin-top: 12px; font-size: 14px; }
+      .contact-page-section__status.is-success { color: #157a3a; }
+      .contact-page-section__status.is-error { color: #b3261e; }
+      @media (max-width: 600px) {
+        .contact-page-section__row { flex-direction: column; gap: 0; }
+      }
+</style>
+
+<script>
+      (function () {
+        var form = document.getElementById('freshdesk-contact-form');
+        var status = document.getElementById('fd-form-status');
+        var typeSelect = document.getElementById('fd-ticket-type');
+        var groups = form.querySelectorAll('.fd-type-group');
+        if (!form) return;
+
+        var choicesInstances = [];
+if (window.Choices) {
+  form.querySelectorAll('select').forEach(function (el) {
+    var instance = new Choices(el, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false
+    });
+    choicesInstances.push(instance);
+  });
+}
+
+        var ENDPOINT_URL = {{ section.settings.endpoint_url | json }};
+        var FRESHDESK_DOMAIN = {{ section.settings.freshdesk_domain | json }};
+        var FRESHDESK_API_KEY = {{ section.settings.freshdesk_api_key | json }};
+        var GROUP_ID = {{ section.settings.freshdesk_group_id | json }};
+
+        function setStatus(message, kind) {
+          status.textContent = message;
+          status.className = 'contact-page-section__status' + (kind ? ' is-' + kind : '');
+        }
+
+        function showGroupFor(type) {
+          groups.forEach(function (group) {
+            group.hidden = group.getAttribute('data-type') !== type;
+          });
+        }
+
+        function getEmailForType(type) {
+      if (type === 'email_us') {
+        return form.email ? form.email.value.trim() : '';
+      }
+      if (type === 'return_authorization') {
+        var el = document.getElementById('fd-ra-email');
+        return el ? el.value.trim() : '';
+      }
+      if (type === 'account_deletion') {
+        var el2 = document.getElementById('fd-ad-email');
+        return el2 ? el2.value.trim() : '';
+      }
+      return '';
+    }
+
+        typeSelect.addEventListener('change', function () {
+          showGroupFor(typeSelect.value);
+        });
+        showGroupFor(typeSelect.value);
+
+        function labelFor(input) {
+          var label = form.querySelector('label[for="' + input.id + '"]');
+          return label ? label.textContent.replace(/\s*\*$/, '') : input.name;
+        }
+
+        function validateVisibleRequiredFields(type) {
+          var missing = [];
+          var requiredInputs = form.querySelectorAll('.fd-required-' + type);
+          requiredInputs.forEach(function (input) {
+            var value = input.type === 'checkbox' ? input.checked : input.value.trim();
+            if (!value) missing.push(labelFor(input));
+          });
+          return missing;
+        }
+
+        function collectVisibleFieldsAsText(type) {
+          var lines = [];
+          var group = form.querySelector('.fd-type-group[data-type="' + type + '"]');
+          var inputs = group.querySelectorAll('input, select, textarea');
+          inputs.forEach(function (input) {
+            var value = input.type === 'checkbox' ? (input.checked ? 'Yes' : 'No') : input.value.trim();
+            if (value) lines.push(labelFor(input) + ': ' + value);
+          });
+          return lines.join('\n');
+        }
+
+        var TYPE_LABELS = {
+          email_us: 'Email Us',
+          return_authorization: 'Return Authorization Request',
+          account_deletion: 'Account Deletion Request'
+        };
+
+        var RECAPTCHA_ENABLED = Boolean({{ section.settings.recaptcha_site_key | json }});
+
+        function recaptchaResponse() {
+          if (window.grecaptcha && typeof window.grecaptcha.getResponse === 'function') {
+            return window.grecaptcha.getResponse();
+          }
+          return '';
+        }
+
+        function resetFormUI() {
+  form.reset();
+  showGroupFor(typeSelect.value);
+
+  choicesInstances.forEach(function (choice) {
+    var selectEl = choice.passedElement.element;
+    choice.setChoiceByValue(selectEl.value);
+  });
+
+  fdSelectedFiles = [];
+  syncInputFromSelectedFiles();
+  renderAttachList();
+}
+
+ var cancelBtn = document.getElementById('fd-cancel-btn');
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', function () {
+      resetFormUI();
+      setStatus('', '');
+      if (RECAPTCHA_ENABLED && window.grecaptcha) window.grecaptcha.reset();
+    });
+  }
+
+          // Custom attach-files UI (button + chip list) syncing with the real file input
+    var attachBtn = document.getElementById('fd-attach-btn');
+    var attachInput = document.getElementById('fd-attachments');
+    var attachList = document.getElementById('fd-attach-list');
+    var fdSelectedFiles = []; // master list jo files ko naye selections ke saath persist karti hai
+
+    function formatSize(bytes) {
+      if (bytes < 1024) return bytes + ' B';
+      if (bytes < 1024 * 1024) return Math.round(bytes / 1024) + ' KB';
+      return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    }
+
+    function syncInputFromSelectedFiles() {
+      var dt = new DataTransfer();
+      fdSelectedFiles.forEach(function (file) {
+        dt.items.add(file);
+      });
+      attachInput.files = dt.files;
+    }
+
+    function renderAttachList() {
+      attachList.innerHTML = '';
+      fdSelectedFiles.forEach(function (file, index) {
+        var chip = document.createElement('div');
+        chip.className = 'fd-attach-chip';
+        chip.innerHTML =
+          '<span>' + file.name + '</span>' +
+          '<span class="fd-attach-size">(' + formatSize(file.size) + ')</span>' +
+          '<button type="button" aria-label="Remove file">&times;</button>';
+        chip.querySelector('button').addEventListener('click', function () {
+          removeAttachment(index);
+        });
+        attachList.appendChild(chip);
+      });
+    }
+
+    function removeAttachment(indexToRemove) {
+      fdSelectedFiles.splice(indexToRemove, 1);
+      syncInputFromSelectedFiles();
+      renderAttachList();
+    }
+
+    if (attachBtn && attachInput) {
+      attachBtn.addEventListener('click', function () {
+        attachInput.click();
+      });
+
+      attachInput.addEventListener('change', function () {
+        // Naye choose ki hui files ko purani list ke saath merge karo (duplicates skip karke)
+        Array.prototype.forEach.call(attachInput.files, function (newFile) {
+          var alreadyExists = fdSelectedFiles.some(function (existingFile) {
+            return (
+              existingFile.name === newFile.name &&
+              existingFile.size === newFile.size &&
+              existingFile.lastModified === newFile.lastModified
+            );
+          });
+          if (!alreadyExists) {
+            fdSelectedFiles.push(newFile);
+          }
+        });
+
+        syncInputFromSelectedFiles();
+        renderAttachList();
+      });
+    }
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var type = typeSelect.value;
+           var email = getEmailForType(type);
+
+          if (!email) {
+            setStatus('Please enter your email address.', 'error');
+            return;
+          }
+
+          var missing = validateVisibleRequiredFields(type);
+          if (missing.length) {
+            setStatus('Please fill in: ' + missing.join(', '), 'error');
+            return;
+          }
+
+          if (RECAPTCHA_ENABLED && !recaptchaResponse()) {
+            setStatus('Please confirm the "I\'m not a robot" checkbox.', 'error');
+            return;
+          }
+
+          var submitBtn = form.querySelector('.contact-page-section__submit');
+          submitBtn.disabled = true;
+          setStatus('Sending...');
+
+          var descriptionBody = collectVisibleFieldsAsText(type);
+          var subject = TYPE_LABELS[type] + ' - ' + email;
+
+          var CF_SUBJECT_VALUES = [
+  'Question about an order',
+  'Question about a return.',
+  'Question about a product',
+  'General question'
+];
+
+function getCfSubject(t) {
+  if (t === 'return_authorization') return 'Question about a return.';
+  if (t === 'email_us') {
+    var reasonEl = document.getElementById('fd-reason');
+    var reason = reasonEl ? reasonEl.value : '';
+    if (CF_SUBJECT_VALUES.indexOf(reason) !== -1) return reason;
+  }
+  return 'General question';
+}
+
+var cfSubject = getCfSubject(type);
+
+          var url = ENDPOINT_URL || ('https://' + FRESHDESK_DOMAIN + '.freshdesk.com/api/v2/tickets');
+          var headers = {};
+          var body;
+
+          var fileInput = document.getElementById('fd-attachments');
+          var hasFiles = fileInput && fileInput.files && fileInput.files.length > 0;
+
+          if (hasFiles) {
+            var formData = new FormData();
+            formData.append('subject', subject);
+            formData.append('description', descriptionBody || '(no additional details provided)');
+            formData.append('email', email);
+            formData.append('priority', 1);
+            formData.append('status', 2);
+            formData.append('source', 2);
+            formData.append('tags[]', type);
+            formData.append('custom_fields[cf_subject]', cfSubject);
+            if (GROUP_ID) formData.append('group_id', Number(GROUP_ID));
+            for (var i = 0; i < fileInput.files.length; i++) {
+              formData.append('attachments[]', fileInput.files[i]);
+            }
+            body = formData;
+          } else {
+            headers['Content-Type'] = 'application/json';
+            body = JSON.stringify({
+              subject: subject,
+              description: descriptionBody || '(no additional details provided)',
+              email: email,
+              priority: 1,
+              status: 2,
+              source: 2,
+              tags: [type],
+              custom_fields: { cf_subject: cfSubject },
+              group_id: GROUP_ID ? Number(GROUP_ID) : undefined
+            });
+          }
+
+          if (!ENDPOINT_URL && FRESHDESK_API_KEY) {
+            headers['Authorization'] = 'Basic ' + btoa(FRESHDESK_API_KEY + ':X');
+          }
+
+          fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: body
+          })
+            .then(function (response) {
+  if (!response.ok) {
+    return response.json().then(function (err) {
+      console.error('Freshdesk response:', JSON.stringify(err));
+      throw new Error((err && err.description) || 'Request failed');
+    });
+  }
+  return response.json();
+})
+           .then(function () {
+              setStatus({{ section.settings.success_message | json }}, 'success');
+              resetFormUI();
+              if (RECAPTCHA_ENABLED && window.grecaptcha) window.grecaptcha.reset();
+            })
+            .catch(function (err) {
+              console.error('Freshdesk ticket error:', err);
+              setStatus('Something went wrong. Please try again.', 'error');
+            })
+            .finally(function () {
+              submitBtn.disabled = false;
+            });
+         });
+
+        // ---- iOS Safari keyboard-dismiss fix ----
+              // ---- iOS Safari keyboard-dismiss fix ----
+        var submitBtnEl = form.querySelector('.contact-page-section__submit');
+        if (submitBtnEl) {
+          submitBtnEl.addEventListener('touchend', function (e) {
+            e.preventDefault(); // ghost click rokne ke liye
+
+            // pehle keyboard band karo
+            if (document.activeElement && typeof document.activeElement.blur === 'function') {
+              document.activeElement.blur();
+            }
+
+            // keyboard dismiss ke baad layout settle hone do, phir submit
+            setTimeout(function () {
+              if (typeof form.requestSubmit === 'function') {
+                form.requestSubmit();
+              } else {
+                // fallback: submit event manually fire karo
+                var evt;
+                try {
+                  evt = new Event('submit', { bubbles: true, cancelable: true });
+                } catch (err) {
+                  evt = document.createEvent('Event');
+                  evt.initEvent('submit', true, true);
+                }
+                form.dispatchEvent(evt);
+              }
+            }, 60);
+          }, { passive: false });
+        }
+
+      })();
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Contact form",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks! We've received your request and will be in touch soon."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Submit button label",
+      "default": "Submit"
+    },
+    {
+      "type": "text",
+      "id": "freshdesk_domain",
+      "label": "Freshdesk domain (e.g. 'bluestout' for bluestout.freshdesk.com)",
+      "default": "bluestout"
+    },
+    {
+      "type": "text",
+      "id": "freshdesk_api_key",
+      "label": "Freshdesk API key (testing only - not secure client-side)"
+    },
+    {
+      "type": "header",
+      "content": "Spam protection"
+    },
+    {
+      "type": "paragraph",
+      "content": "Get a free reCAPTCHA v2 ('I'm not a robot' checkbox) Site Key at google.com/recaptcha/admin, then paste it below. Leave blank to hide the checkbox."
+    },
+    {
+      "type": "text",
+      "id": "recaptcha_site_key",
+      "label": "reCAPTCHA Site Key"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.contact-form.presets.name"
+    }
+  ]
+}
+{% endschema %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+{{ 'custom-contact-form.scss.css' | asset_url | stylesheet_tag }}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -217,4 +1406,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %} {% endcomment %}
