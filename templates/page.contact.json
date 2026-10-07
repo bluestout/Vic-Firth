@@ -105,7 +105,12 @@
         "text": "<p>Get in touch with us by filling out the form below. We will get back to you within two business days.</p>",
         "color_scheme": "background-1",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "success_message": "Thanks! We've received your request and will be in touch soon.",
+        "button_label": "Submit",
+        "freshdesk_domain": "zildjianvicfirth",
+        "freshdesk_api_key": "hHoR2g2HSN9ZIEqGV5Tc",
+        "recaptcha_site_key": "6LeZw9ctAAAAAE2kCP9tkC74tjgiEEfW4bJkBVnr"
       }
     }
   },
