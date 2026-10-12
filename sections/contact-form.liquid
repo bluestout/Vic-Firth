@@ -659,6 +659,44 @@
       @media (max-width: 600px) {
         .contact-page-section__row { flex-direction: column; gap: 0; }
       }
+
+
+      .contact-page-section__field input,
+.contact-page-section__field select,
+.contact-page-section__field textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile fix */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 20px 12px;
+  }
+
+  .contact-page-section__wrapper {
+    margin: 16px 12px;
+  }
+
+  .contact-page-section__field:has(#fd-recaptcha) {
+    overflow: hidden;
+  }
+
+  #fd-recaptcha {
+    transform: scale(0.85);
+    transform-origin: 0 0;
+    height: 66px; /* 78px x 0.85 */
+  }
+}
+
+/* Bahut chhote phones */
+@media (max-width: 360px) {
+  #fd-recaptcha {
+    transform: scale(0.75);
+    height: 58px; /* 78px x 0.75 */
+  }
+}
+
 </style>
 
 <script>
@@ -781,11 +819,10 @@ if (window.Choices) {
     });
   }
 
-          // Custom attach-files UI (button + chip list) syncing with the real file input
     var attachBtn = document.getElementById('fd-attach-btn');
     var attachInput = document.getElementById('fd-attachments');
     var attachList = document.getElementById('fd-attach-list');
-    var fdSelectedFiles = []; // master list jo files ko naye selections ke saath persist karti hai
+    var fdSelectedFiles = []; 
 
     function formatSize(bytes) {
       if (bytes < 1024) return bytes + ' B';
@@ -829,7 +866,6 @@ if (window.Choices) {
       });
 
       attachInput.addEventListener('change', function () {
-        // Naye choose ki hui files ko purani list ke saath merge karo (duplicates skip karke)
         Array.prototype.forEach.call(attachInput.files, function (newFile) {
           var alreadyExists = fdSelectedFiles.some(function (existingFile) {
             return (
