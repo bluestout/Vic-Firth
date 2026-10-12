@@ -1001,24 +1001,19 @@ var cfSubject = getCfSubject(type);
             });
          });
 
-        // ---- iOS Safari keyboard-dismiss fix ----
-              // ---- iOS Safari keyboard-dismiss fix ----
         var submitBtnEl = form.querySelector('.contact-page-section__submit');
         if (submitBtnEl) {
           submitBtnEl.addEventListener('touchend', function (e) {
-            e.preventDefault(); // ghost click rokne ke liye
+            e.preventDefault();
 
-            // pehle keyboard band karo
             if (document.activeElement && typeof document.activeElement.blur === 'function') {
               document.activeElement.blur();
             }
 
-            // keyboard dismiss ke baad layout settle hone do, phir submit
             setTimeout(function () {
               if (typeof form.requestSubmit === 'function') {
                 form.requestSubmit();
               } else {
-                // fallback: submit event manually fire karo
                 var evt;
                 try {
                   evt = new Event('submit', { bubbles: true, cancelable: true });
