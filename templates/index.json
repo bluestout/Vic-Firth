@@ -14,6 +14,7 @@
       "blocks": {
         "slide_UtACbe": {
           "type": "slide",
+          "name": "Marching Essentials",
           "settings": {
             "image": "shopify://shop_images/Marching-Essentials_830fdbec-65de-4efa-9a08-6b878901fb05.jpg",
             "mobile_image": "shopify://shop_images/Marching-Essentials-Mobile.jpg",
@@ -38,6 +39,7 @@
         },
         "bbdfa06a-7e78-4ac9-9e5a-9bfe8e2a314f": {
           "type": "slide",
+          "name": "Foundry Sessions",
           "settings": {
             "image": "shopify://shop_images/Factory-Sessions-Homepage-Banner_Desktop_a573ab5b-4b89-462d-958d-4bb7939b5ae7.jpg",
             "mobile_image": "shopify://shop_images/Factory-Sessions-Homepage-Banner_mobile_94aa61a1-a5fc-4aa9-afc3-5a2f2444950c.jpg",
@@ -62,6 +64,7 @@
         },
         "262998ab-7eb4-4458-9650-2ecbe593dff8": {
           "type": "slide",
+          "name": "Young Drummer Sponsor",
           "settings": {
             "image": "shopify://shop_images/Vic-Firth-Young-Drummer-Of-The-Year-Homepage_Banner-Desktop.jpg",
             "mobile_image": "shopify://shop_images/Vic-Firth-Young-Drummer-Of-The-Year-Homepage_Banner-Mobile.jpg",
@@ -86,20 +89,21 @@
         },
         "32f9ef7e-529b-4262-8994-75ae15e876ce": {
           "type": "slide",
+          "name": "Have yourself a Merry Little Stickmas",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Terra-Drumstick-Collection-Homepage-Banner-Final_78bca6bf-2627-4e04-b546-2df3c1f38748.jpg",
-            "mobile_image": "shopify://shop_images/Terra-Drumstick-Collection-Homepage-Banner-Mobile_7b1c7c5e-83f1-42c5-b485-145f354c0fd1.jpg",
-            "video": "https://cdn.shopify.com/videos/c/o/v/e8f9fa62529d4d17abd62386fed785ba.mp4",
+            "image": "shopify://shop_images/Vic_Holiday_2026_Holiday_Campaign_Template_revised_Homepage_Banner_-_Desktop.jpg",
+            "mobile_image": "shopify://shop_images/Vic_Holiday_2026_Holiday_Campaign_Template_revised_Homepage_Banner_-_Mobile.jpg",
+            "video": "",
             "content_width": "",
-            "heading": "Experience  Terra Series",
+            "heading": "",
             "uppercase": true,
             "heading_size": "h0",
             "heading_color": "",
             "subheading": "",
-            "button_label": "LEARN MORE",
-            "link": "shopify://pages/terra",
-            "button_style_secondary": false,
+            "button_label": "",
+            "link": "shopify://collections/have-yourself-a-merry-little-stickmas",
+            "button_style_secondary": true,
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
